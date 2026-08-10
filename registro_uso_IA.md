@@ -4,11 +4,10 @@
 **Herramientas utilizadas:** ChatGPT y Codex  
 **Finalidad del registro:** documentar las intervenciones de IA que tuvieron incidencia relevante en la formulación, verificación de viabilidad y documentación inicial del proyecto.
 
-> **Criterio de registro:** no se incluyen todas las consultas realizadas. Se registran únicamente las interacciones que influyeron de manera sustantiva en decisiones metodológicas, auditorías de datos o redacción de la propuesta. Las respuestas de IA se presentan de forma resumida cuando la respuesta original fue extensa. Las decisiones no se adoptaron automáticamente: fueron contrastadas con los datos, el código del proyecto anterior y las verificaciones realizadas en Jupyter/Codex.
+**Criterio de registro:** no se incluyen todas las consultas realizadas. Se registran únicamente las interacciones que influyeron de manera sustantiva en decisiones metodológicas, auditorías de datos o redacción de la propuesta. Las respuestas de IA se presentan de forma resumida cuando la respuesta original fue extensa. Las decisiones no se adoptaron automáticamente: fueron contrastadas con los datos, el código del proyecto anterior y las verificaciones realizadas en Jupyter/Codex.
 
----
 
-## 1. Formulación inicial del problema de aprendizaje automático
+## Formulación inicial del problema de aprendizaje automático
 
 **Prompt utilizado**
 
@@ -28,9 +27,8 @@ Como orientación inicial recomendó una **clasificación supervisada con compon
 
 Se mantuvo como formulación preliminar un problema de clasificación supervisada con componente temporal, sujeto a la viabilidad real de los datos.
 
----
 
-## 2. Evaluación de Uruguay como área principal
+## Evaluación de Uruguay como área principal
 
 **Prompt utilizado**
 
@@ -56,9 +54,8 @@ La construcción preliminar de un panel `departamento-semana` produjo:
 
 Uruguay se mantiene como ámbito principal del proyecto. Argentina y Brasil no se consideran necesarios en esta etapa para aumentar artificialmente el volumen de datos.
 
----
 
-## 3. Definición preliminar de la unidad espacial
+## Definición preliminar de la unidad espacial
 
 **Prompt utilizado**
 
@@ -82,9 +79,8 @@ De las 8.525 detecciones FIRMS de Uruguay:
 
 Se adoptó **departamento-semana** como unidad preliminar de análisis para evaluar la viabilidad del problema. La decisión sigue abierta a revisión durante etapas posteriores si la integración de variables ambientales lo requiere.
 
----
 
-## 4. Revisión de la integración FIRMS–INUMET
+## Revisión de la integración FIRMS–INUMET
 
 **Prompt utilizado**
 
@@ -114,9 +110,7 @@ Se comprobó que:
 
 INUMET queda como fuente complementaria y no como única fuente meteorológica del proyecto. Se evitará construir predictores mediante una unión horaria al evento futuro.
 
----
-
-## 5. Auditoría de viabilidad del panel departamento-semana
+## Auditoría de viabilidad del panel departamento-semana
 
 **Prompt enviado a Codex**
 
@@ -144,9 +138,8 @@ También concluyó que la principal limitación ya no era la cantidad de detecci
 
 Se mantuvo `departamento-semana` como estructura preliminar y se decidió auditar otras fuentes ambientales antes de construir el dataset definitivo.
 
----
 
-## 6. Auditoría de METEO y CHIRPS
+## Auditoría de METEO y CHIRPS
 
 **Prompt enviado a Codex**
 
@@ -189,9 +182,8 @@ Se clasificó como **viable condicionado**, principalmente para precipitación m
 
 METEO pasó a considerarse la principal fuente meteorológica candidata. CHIRPS e INUMET permanecen como fuentes complementarias sujetas a validación y armonización.
 
----
 
-## 7. Identificación de la procedencia de METEO
+## Identificación de la procedencia de METEO
 
 **Prompt / información proporcionada**
 
@@ -209,9 +201,8 @@ La IA identificó que el endpoint corresponde a la **Historical Weather / Archiv
 
 También observó que el código proporcionado no coincidía exactamente con la estructura de `meteo_2018_2025.parquet`, por lo que recomendó rastrear el pipeline completo dentro del proyecto anterior.
 
----
 
-## 8. Trazabilidad completa del pipeline METEO
+## Trazabilidad completa del pipeline METEO
 
 **Prompt enviado a Codex**
 
@@ -248,9 +239,8 @@ Se decidió considerar trazables las variables meteorológicas originales, pero 
 
 También se identificó como posible estrategia futura realizar una nueva extracción homogénea y reproducible de Open-Meteo para los 19 departamentos, en lugar de corregir silenciosamente el dataset heredado.
 
----
 
-## 9. Revisión de la propuesta académica
+## Revisión de la propuesta académica
 
 **Prompts utilizados**
 
@@ -285,7 +275,6 @@ La IA ayudó a redactar y revisar las secciones de la propuesta conforme se inco
 
 La IA se utilizó como apoyo de redacción y revisión metodológica, mientras que los valores, períodos, coberturas y decisiones técnicas se incorporaron únicamente después de ser contrastados con auditorías de datos y código.
 
----
 
 ## Consideraciones sobre el uso responsable de IA
 
