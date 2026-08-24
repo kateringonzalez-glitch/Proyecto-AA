@@ -1,0 +1,19 @@
+{
+  "mode": "execute",
+  "coordinates": 5,
+  "windows": [
+    {
+      "window_id": "2018_winter_week",
+      "start_date": "2018-08-06",
+      "end_date": "2018-08-12"
+    },
+    {
+      "window_id": "2025_winter_week",
+      "start_date": "2025-08-04",
+      "end_date": "2025-08-10"
+    }
+  ],
+  "requests": 2,
+  "expected_rows": 70,
+  "network_calls_performed": 0
+}

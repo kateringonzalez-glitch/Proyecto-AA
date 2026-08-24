@@ -1,0 +1,20 @@
+departamento,departamento_iso,fecha_inicio_semana,fecha_fin_semana,cantidad_detecciones,clase_preliminar
+Artigas,UY-AR,2025-12-29,2026-01-04,0,Sin detección
+Canelones,UY-CA,2025-12-29,2026-01-04,4,Alto
+Cerro Largo,UY-CL,2025-12-29,2026-01-04,0,Sin detección
+Colonia,UY-CO,2025-12-29,2026-01-04,0,Sin detección
+Durazno,UY-DU,2025-12-29,2026-01-04,0,Sin detección
+Flores,UY-FS,2025-12-29,2026-01-04,0,Sin detección
+Florida,UY-FD,2025-12-29,2026-01-04,1,Bajo
+Lavalleja,UY-LA,2025-12-29,2026-01-04,0,Sin detección
+Maldonado,UY-MA,2025-12-29,2026-01-04,0,Sin detección
+Montevideo,UY-MO,2025-12-29,2026-01-04,2,Moderado
+Paysandú,UY-PA,2025-12-29,2026-01-04,0,Sin detección
+Rivera,UY-RV,2025-12-29,2026-01-04,0,Sin detección
+Rocha,UY-RO,2025-12-29,2026-01-04,2,Moderado
+Río Negro,UY-RN,2025-12-29,2026-01-04,1,Bajo
+Salto,UY-SA,2025-12-29,2026-01-04,0,Sin detección
+San José,UY-SJ,2025-12-29,2026-01-04,0,Sin detección
+Soriano,UY-SO,2025-12-29,2026-01-04,0,Sin detección
+Tacuarembó,UY-TA,2025-12-29,2026-01-04,0,Sin detección
+Treinta y Tres,UY-TT,2025-12-29,2026-01-04,0,Sin detección

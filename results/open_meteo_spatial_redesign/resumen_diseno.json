@@ -1,0 +1,16 @@
+{
+  "margins_evaluated_m": [
+    0,
+    5000,
+    7500,
+    10000
+  ],
+  "recommended_margin_m": 7500,
+  "original_points": 283,
+  "grid_points_after_margin": 186,
+  "fallback_points": 1,
+  "candidate_points": 187,
+  "departments": 19,
+  "estimated_one_day_requests_batch_10": 19,
+  "expected_one_day_rows": 187
+}

@@ -1,0 +1,43 @@
+{
+  "mode": "dry-run",
+  "script_version": "1.0.0",
+  "endpoint": "https://archive-api.open-meteo.com/v1/archive",
+  "model": "era5_seamless",
+  "period": [
+    "2017-01-02",
+    "2025-12-31"
+  ],
+  "days_per_coordinate": 3286,
+  "coordinates": 187,
+  "departments": 19,
+  "variables": [
+    "temperature_2m_max",
+    "temperature_2m_min",
+    "relative_humidity_2m_min",
+    "relative_humidity_2m_max",
+    "wind_speed_10m_max",
+    "wind_direction_10m_dominant",
+    "precipitation_sum",
+    "et0_fao_evapotranspiration"
+  ],
+  "units": {
+    "temperature_unit": "celsius",
+    "wind_speed_unit": "ms",
+    "precipitation_unit": "mm",
+    "temperature_2m_max": "degC",
+    "temperature_2m_min": "degC",
+    "relative_humidity_2m_min": "%",
+    "relative_humidity_2m_max": "%",
+    "wind_speed_10m_max": "m/s",
+    "wind_direction_10m_dominant": "degree",
+    "precipitation_sum": "mm",
+    "et0_fao_evapotranspiration": "mm"
+  },
+  "timezone": "America/Montevideo",
+  "estimated_rows": 614482,
+  "estimated_requests": 171,
+  "estimated_processed_parquet_mib": 5.95,
+  "estimated_raw_json_size": null,
+  "coordinates_per_request": 10,
+  "network_calls_performed": 0
+}

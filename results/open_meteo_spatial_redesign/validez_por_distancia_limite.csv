@@ -1,0 +1,5 @@
+intervalo_distancia_limite,puntos,validos,fallos,porcentaje_valido
+0-7.5 km,1,1,0,100.0
+7.5-10 km,32,32,0,100.0
+10-15 km,42,42,0,100.0
+>=15 km,112,112,0,100.0

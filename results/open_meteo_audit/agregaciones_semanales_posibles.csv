@@ -1,0 +1,15 @@
+variable,frecuencia_origen,agregaciones_semanales_tecnicamente_posibles,armonizacion_2018_2025
+temperature_2m_max,diaria,máximo semanal; media de máximas diarias,"sí, con máximo horario 2025"
+temperature_2m_min,diaria,mínimo semanal; media de mínimas diarias,"sí, con mínimo horario 2025"
+relative_humidity_2m_min,diaria,mínimo semanal; media de mínimas diarias,"sí, derivable de horario 2025"
+relative_humidity_2m_max,diaria,máximo semanal,"sí, derivable de horario 2025"
+wind_speed_10m_max,diaria,máximo semanal; media de máximos diarios,"sí, derivable de horario 2025"
+wind_direction_10m_dominant,diaria,"estadística circular, no media aritmética",requiere metodología circular
+precipitation_sum,diaria,suma semanal; días con precipitación,no confirmada contra rain 2025
+et0_fao_evapotranspiration,diaria,suma o media semanal,no: ausente en 2025
+temperature_2m,horaria,"media, mínimo y máximo semanal",sólo 2025
+relative_humidity_2m,horaria,media y mínimo semanal,sólo 2025
+wind_speed_10m,horaria,media y máximo semanal,sólo 2025
+wind_direction_10m,horaria,estadística circular,sólo 2025
+rain,horaria,suma semanal; días/horas con lluvia,equivalencia con precipitation_sum no probada
+surface_pressure,horaria,"media, mínimo y máximo semanal",no: ausente antes de 2025

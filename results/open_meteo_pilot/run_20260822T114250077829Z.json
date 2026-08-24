@@ -1,0 +1,34 @@
+{
+  "run_id": "20260822T114250077829Z",
+  "network_calls_performed": 0,
+  "checkpoints_reused": 2,
+  "rows": 70,
+  "coordinates": 5,
+  "date_windows": [
+    {
+      "window_id": "2018_winter_week",
+      "start_date": "2018-08-06",
+      "end_date": "2018-08-12"
+    },
+    {
+      "window_id": "2025_winter_week",
+      "start_date": "2025-08-04",
+      "end_date": "2025-08-10"
+    }
+  ],
+  "variables": [
+    "temperature_2m_max",
+    "temperature_2m_min",
+    "relative_humidity_2m_min",
+    "relative_humidity_2m_max",
+    "wind_speed_10m_max",
+    "wind_direction_10m_dominant",
+    "precipitation_sum",
+    "et0_fao_evapotranspiration"
+  ],
+  "missing_weather_values": 0,
+  "duplicate_keys": 0,
+  "same_department_all": false,
+  "max_requested_returned_distance_m": 6464.587295814813,
+  "processed_sha256": "0a0797fc39ff7f9cb181c679b69e73ecfebe787057b08924b15ec6bacb71312c"
+}

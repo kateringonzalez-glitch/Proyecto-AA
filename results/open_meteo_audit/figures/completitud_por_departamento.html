@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <style>
+    #vis.vega-embed {
+      width: 100%;
+      display: flex;
+    }
+
+    #vis.vega-embed details,
+    #vis.vega-embed details summary {
+      position: relative;
+    }
+  </style>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/vega@6"></script>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/vega-lite@6.4.1"></script>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/vega-embed@7"></script>
+</head>
+<body>
+  <div id="vis"></div>
+  <script>
+    (function(vegaEmbed) {
+      var spec = {"config": {"view": {"continuousWidth": 300, "continuousHeight": 300}}, "data": {"name": "data-116d0cb44bf39d0274cb9f73df90d599"}, "mark": {"type": "bar"}, "encoding": {"tooltip": [{"field": "departamento", "type": "nominal"}, {"field": "observaciones_cubiertas", "type": "quantitative"}, {"field": "observaciones_sin_meteo_completo", "type": "quantitative"}, {"field": "porcentaje_cubierto", "format": ".2f", "type": "quantitative"}], "x": {"field": "porcentaje_cubierto", "title": "Semanas FIRMS con cobertura temporal completa (%)", "type": "quantitative"}, "y": {"field": "departamento", "sort": "-x", "title": "Departamento", "type": "nominal"}}, "height": 480, "title": "Cobertura potencial de METEO sobre claves FIRMS", "width": 700, "$schema": "https://vega.github.io/schema/vega-lite/v6.4.1.json", "datasets": {"data-116d0cb44bf39d0274cb9f73df90d599": [{"departamento": "Artigas", "observaciones_firms": 417, "observaciones_cubiertas": 51, "observaciones_sin_meteo_completo": 366, "porcentaje_cubierto": 12.23021582733813}, {"departamento": "Canelones", "observaciones_firms": 417, "observaciones_cubiertas": 417, "observaciones_sin_meteo_completo": 0, "porcentaje_cubierto": 100.0}, {"departamento": "Cerro Largo", "observaciones_firms": 417, "observaciones_cubiertas": 417, "observaciones_sin_meteo_completo": 0, "porcentaje_cubierto": 100.0}, {"departamento": "Colonia", "observaciones_firms": 417, "observaciones_cubiertas": 417, "observaciones_sin_meteo_completo": 0, "porcentaje_cubierto": 100.0}, {"departamento": "Durazno", "observaciones_firms": 417, "observaciones_cubiertas": 417, "observaciones_sin_meteo_completo": 0, "porcentaje_cubierto": 100.0}, {"departamento": "Flores", "observaciones_firms": 417, "observaciones_cubiertas": 51, "observaciones_sin_meteo_completo": 366, "porcentaje_cubierto": 12.23021582733813}, {"departamento": "Florida", "observaciones_firms": 417, "observaciones_cubiertas": 417, "observaciones_sin_meteo_completo": 0, "porcentaje_cubierto": 100.0}, {"departamento": "Lavalleja", "observaciones_firms": 417, "observaciones_cubiertas": 51, "observaciones_sin_meteo_completo": 366, "porcentaje_cubierto": 12.23021582733813}, {"departamento": "Maldonado", "observaciones_firms": 417, "observaciones_cubiertas": 417, "observaciones_sin_meteo_completo": 0, "porcentaje_cubierto": 100.0}, {"departamento": "Montevideo", "observaciones_firms": 417, "observaciones_cubiertas": 417, "observaciones_sin_meteo_completo": 0, "porcentaje_cubierto": 100.0}, {"departamento": "Paysand\u00fa", "observaciones_firms": 417, "observaciones_cubiertas": 417, "observaciones_sin_meteo_completo": 0, "porcentaje_cubierto": 100.0}, {"departamento": "Rivera", "observaciones_firms": 417, "observaciones_cubiertas": 51, "observaciones_sin_meteo_completo": 366, "porcentaje_cubierto": 12.23021582733813}, {"departamento": "Rocha", "observaciones_firms": 417, "observaciones_cubiertas": 417, "observaciones_sin_meteo_completo": 0, "porcentaje_cubierto": 100.0}, {"departamento": "R\u00edo Negro", "observaciones_firms": 417, "observaciones_cubiertas": 51, "observaciones_sin_meteo_completo": 366, "porcentaje_cubierto": 12.23021582733813}, {"departamento": "Salto", "observaciones_firms": 417, "observaciones_cubiertas": 417, "observaciones_sin_meteo_completo": 0, "porcentaje_cubierto": 100.0}, {"departamento": "San Jos\u00e9", "observaciones_firms": 417, "observaciones_cubiertas": 51, "observaciones_sin_meteo_completo": 366, "porcentaje_cubierto": 12.23021582733813}, {"departamento": "Soriano", "observaciones_firms": 417, "observaciones_cubiertas": 51, "observaciones_sin_meteo_completo": 366, "porcentaje_cubierto": 12.23021582733813}, {"departamento": "Tacuaremb\u00f3", "observaciones_firms": 417, "observaciones_cubiertas": 417, "observaciones_sin_meteo_completo": 0, "porcentaje_cubierto": 100.0}, {"departamento": "Treinta y Tres", "observaciones_firms": 417, "observaciones_cubiertas": 417, "observaciones_sin_meteo_completo": 0, "porcentaje_cubierto": 100.0}]}};
+      var embedOpt = {"mode": "vega-lite"};
+
+      function showError(el, error){
+          el.innerHTML = ('<div style="color:red;">'
+                          + '<p>JavaScript Error: ' + error.message + '</p>'
+                          + "<p>This usually means there's a typo in your chart specification. "
+                          + "See the javascript console for the full traceback.</p>"
+                          + '</div>');
+          throw error;
+      }
+      const el = document.getElementById('vis');
+      vegaEmbed("#vis", spec, embedOpt)
+        .catch(error => showError(el, error));
+    })(vegaEmbed);
+
+  </script>
+</body>
+</html>

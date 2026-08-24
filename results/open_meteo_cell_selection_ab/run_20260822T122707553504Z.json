@@ -1,0 +1,70 @@
+{
+  "run_id": "20260822T122707553504Z",
+  "date": [
+    "2018-08-06"
+  ],
+  "coordinates": 5,
+  "network_calls_performed": 0,
+  "checkpoints_reused": 2,
+  "variants": {
+    "land": {
+      "same_department": 4,
+      "changed_department": 1,
+      "outside_uruguay_adm1": 0,
+      "problem_coordinate_ids": [
+        "URY_RO_G_E725000_N6150000"
+      ],
+      "distance_mean_m": 4530.879883281399,
+      "distance_median_m": 4323.322759317986,
+      "distance_max_m": 6464.587295814813
+    },
+    "nearest": {
+      "same_department": 4,
+      "changed_department": 1,
+      "outside_uruguay_adm1": 1,
+      "problem_coordinate_ids": [
+        "URY_RO_G_E725000_N6150000"
+      ],
+      "distance_mean_m": 4287.498783947616,
+      "distance_median_m": 4323.322759317986,
+      "distance_max_m": 5400.821196340208
+    }
+  },
+  "meteorological_validation": {
+    "land": {
+      "rows": 5,
+      "variables": [
+        "temperature_2m_max",
+        "temperature_2m_min",
+        "relative_humidity_2m_min",
+        "relative_humidity_2m_max",
+        "wind_speed_10m_max",
+        "wind_direction_10m_dominant",
+        "precipitation_sum",
+        "et0_fao_evapotranspiration"
+      ],
+      "nulls": 0,
+      "timezone_values": [
+        "America/Montevideo"
+      ]
+    },
+    "nearest": {
+      "rows": 5,
+      "variables": [
+        "temperature_2m_max",
+        "temperature_2m_min",
+        "relative_humidity_2m_min",
+        "relative_humidity_2m_max",
+        "wind_speed_10m_max",
+        "wind_direction_10m_dominant",
+        "precipitation_sum",
+        "et0_fao_evapotranspiration"
+      ],
+      "nulls": 0,
+      "timezone_values": [
+        "America/Montevideo"
+      ]
+    }
+  },
+  "processed_sha256": "c602281f8bef2d6e7f48367f39e8429e30bd5f47bbb468ea910599989c497390"
+}

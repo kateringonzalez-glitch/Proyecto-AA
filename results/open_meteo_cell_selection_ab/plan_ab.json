@@ -1,0 +1,48 @@
+{
+  "mode": "execute",
+  "date": "2018-08-06",
+  "coordinates": [
+    {
+      "coordenada_id": "URY_CA_G_E600000_N6175000",
+      "departamento": "Canelones",
+      "tipo_caso": "departamento_intermedio",
+      "latitud": -34.561892,
+      "longitud": -55.909931
+    },
+    {
+      "coordenada_id": "URY_MO_G_E575000_N6150000",
+      "departamento": "Montevideo",
+      "tipo_caso": "montevideo",
+      "latitud": -34.789446,
+      "longitud": -56.180201
+    },
+    {
+      "coordenada_id": "URY_RO_G_E725000_N6150000",
+      "departamento": "Rocha",
+      "tipo_caso": "costa",
+      "latitud": -34.767374,
+      "longitud": -54.541496
+    },
+    {
+      "coordenada_id": "URY_RV_G_E625000_N6575000",
+      "departamento": "Rivera",
+      "tipo_caso": "frontera_internacional",
+      "latitud": -30.95185,
+      "longitud": -55.691345
+    },
+    {
+      "coordenada_id": "URY_TA_G_E600000_N6450000",
+      "departamento": "Tacuarembó",
+      "tipo_caso": "interior_departamento_grande",
+      "latitud": -32.081856,
+      "longitud": -55.940383
+    }
+  ],
+  "variants": [
+    "land",
+    "nearest"
+  ],
+  "expected_requests": 2,
+  "expected_rows": 10,
+  "network_calls_performed": 0
+}

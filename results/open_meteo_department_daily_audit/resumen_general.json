@@ -1,0 +1,37 @@
+{
+  "input": "data/processed/open_meteo_daily/open_meteo_daily_2017_2025.parquet",
+  "catalog": "data/reference/open_meteo_coordinates_validated.csv",
+  "output": "data/processed/open_meteo_department_daily/open_meteo_department_daily_2017_2025.parquet",
+  "input_validation": {
+    "rows": true,
+    "coordinates": true,
+    "departments": true,
+    "date_min": true,
+    "date_max": true,
+    "unique_input_key": true,
+    "coordinate_counts_match_catalog": true
+  },
+  "output_validation": {
+    "expected_rows": 62434,
+    "observed_rows": 62434,
+    "departments": 19,
+    "dates": 3286,
+    "duplicate_keys": 0,
+    "dates_with_not_19_departments": 0,
+    "departments_with_not_expected_days": 0,
+    "departments_with_wrong_min_date": 0,
+    "departments_with_wrong_max_date": 0,
+    "coverage_problems": 0,
+    "nulls": 0,
+    "temperature_order_problems": 0,
+    "humidity_range_problems": 0,
+    "negative_wind": 0,
+    "negative_precipitation": 0,
+    "negative_et0": 0,
+    "direction_range_problems": 0,
+    "resultant_range_problems": 0
+  },
+  "reconciliation_rows": 36,
+  "reconciliation_failures": 0,
+  "montevideo_points": 1
+}

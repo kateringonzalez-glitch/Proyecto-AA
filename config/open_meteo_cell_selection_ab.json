@@ -1,0 +1,13 @@
+{
+  "schema_version": "1.0.0",
+  "main_config": "config/open_meteo.json",
+  "pilot_coordinates": "results/open_meteo_pilot/coordenadas_piloto.csv",
+  "date": "2018-08-06",
+  "variants": ["land", "nearest"],
+  "limits": {"coordinates": 5, "requests": 2, "rows": 10},
+  "paths": {
+    "raw_directory": "data/raw/open_meteo_cell_selection_ab",
+    "processed_directory": "data/processed/open_meteo_cell_selection_ab",
+    "results_directory": "results/open_meteo_cell_selection_ab"
+  }
+}

@@ -1,0 +1,36 @@
+{
+  "catalog": "data/reference/open_meteo_coordinates_validated.csv",
+  "coordinates": 187,
+  "departments": 19,
+  "expected_days_per_coordinate": 3286,
+  "expected_rows": 614482,
+  "observed_rows": 614482,
+  "date_min": "2017-01-02",
+  "date_max": "2025-12-31",
+  "missing_dates": 0,
+  "exact_duplicates": 0,
+  "key_duplicates": 0,
+  "logical_quality": {
+    "temperature_min_gt_max": 0,
+    "humidity_min_gt_max": 0
+  },
+  "spatial_problems": 0,
+  "coordinates_with_multiple_model_cells": 0,
+  "coordinates_different_from_prior_audit": 0,
+  "checksums_sha256": {
+    "processed": "7b71554a5cf5b91dfa51158cc8657151d0a25cb93d01b0b085aedac15457e3fc",
+    "config": "99483362fbe27de81ac15b1c03978b2d03164527b632aa70f7b454b398284929",
+    "catalog": "93db754f840dddc68868f2b48e6c27c3cd1cddfb41fb44c8e66b17686adde4ae"
+  },
+  "manifest": {
+    "jobs_esperados": 171,
+    "jobs_exitosos_unicos": 171,
+    "registros_downloaded": 171,
+    "registros_checkpoint_reused": 881,
+    "registros_failed": 7,
+    "jobs_reintentados": 33,
+    "jobs_duplicados_manifest": 888,
+    "raw_json": 171,
+    "raw_checksums_duplicados": 0
+  }
+}

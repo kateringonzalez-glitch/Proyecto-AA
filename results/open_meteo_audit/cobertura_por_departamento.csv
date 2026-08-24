@@ -1,0 +1,39 @@
+frecuencia,departamento,cantidad_puntos,lat_min,lat_max,lon_min,lon_max,registros,fecha_min,fecha_max,variables_disponibles
+diaria,Artigas,0,,,,,0,,,
+diaria,Canelones,1,-34.52,-34.52,-56.28,-56.28,2557,2018-01-01,2024-12-31,temperature_2m_max;temperature_2m_min;relative_humidity_2m_min;relative_humidity_2m_max;wind_speed_10m_max;wind_direction_10m_dominant;precipitation_sum;et0_fao_evapotranspiration;riesgo_temp;riesgo_humedad;riesgo_viento;riesgo_sequia;indice_riesgo;nivel_riesgo
+diaria,Cerro Largo,1,-32.37,-32.37,-54.18,-54.18,2557,2018-01-01,2024-12-31,temperature_2m_max;temperature_2m_min;relative_humidity_2m_min;relative_humidity_2m_max;wind_speed_10m_max;wind_direction_10m_dominant;precipitation_sum;et0_fao_evapotranspiration;riesgo_temp;riesgo_humedad;riesgo_viento;riesgo_sequia;indice_riesgo;nivel_riesgo
+diaria,Colonia,1,-34.46,-34.46,-57.84,-57.84,2557,2018-01-01,2024-12-31,temperature_2m_max;temperature_2m_min;relative_humidity_2m_min;relative_humidity_2m_max;wind_speed_10m_max;wind_direction_10m_dominant;precipitation_sum;et0_fao_evapotranspiration;riesgo_temp;riesgo_humedad;riesgo_viento;riesgo_sequia;indice_riesgo;nivel_riesgo
+diaria,Durazno,1,-33.38,-33.38,-56.52,-56.52,2557,2018-01-01,2024-12-31,temperature_2m_max;temperature_2m_min;relative_humidity_2m_min;relative_humidity_2m_max;wind_speed_10m_max;wind_direction_10m_dominant;precipitation_sum;et0_fao_evapotranspiration;riesgo_temp;riesgo_humedad;riesgo_viento;riesgo_sequia;indice_riesgo;nivel_riesgo
+diaria,Flores,0,,,,,0,,,
+diaria,Florida,1,-34.1,-34.1,-56.21,-56.21,2557,2018-01-01,2024-12-31,temperature_2m_max;temperature_2m_min;relative_humidity_2m_min;relative_humidity_2m_max;wind_speed_10m_max;wind_direction_10m_dominant;precipitation_sum;et0_fao_evapotranspiration;riesgo_temp;riesgo_humedad;riesgo_viento;riesgo_sequia;indice_riesgo;nivel_riesgo
+diaria,Lavalleja,0,,,,,0,,,
+diaria,Maldonado,1,-34.91,-34.91,-54.96,-54.96,2557,2018-01-01,2024-12-31,temperature_2m_max;temperature_2m_min;relative_humidity_2m_min;relative_humidity_2m_max;wind_speed_10m_max;wind_direction_10m_dominant;precipitation_sum;et0_fao_evapotranspiration;riesgo_temp;riesgo_humedad;riesgo_viento;riesgo_sequia;indice_riesgo;nivel_riesgo
+diaria,Montevideo,1,-34.9,-34.9,-56.19,-56.19,2557,2018-01-01,2024-12-31,temperature_2m_max;temperature_2m_min;relative_humidity_2m_min;relative_humidity_2m_max;wind_speed_10m_max;wind_direction_10m_dominant;precipitation_sum;et0_fao_evapotranspiration;riesgo_temp;riesgo_humedad;riesgo_viento;riesgo_sequia;indice_riesgo;nivel_riesgo
+diaria,Paysandú,1,-32.32,-32.32,-58.08,-58.08,2557,2018-01-01,2024-12-31,temperature_2m_max;temperature_2m_min;relative_humidity_2m_min;relative_humidity_2m_max;wind_speed_10m_max;wind_direction_10m_dominant;precipitation_sum;et0_fao_evapotranspiration;riesgo_temp;riesgo_humedad;riesgo_viento;riesgo_sequia;indice_riesgo;nivel_riesgo
+diaria,Rivera,0,,,,,0,,,
+diaria,Rocha,1,-34.48,-34.48,-54.33,-54.33,2557,2018-01-01,2024-12-31,temperature_2m_max;temperature_2m_min;relative_humidity_2m_min;relative_humidity_2m_max;wind_speed_10m_max;wind_direction_10m_dominant;precipitation_sum;et0_fao_evapotranspiration;riesgo_temp;riesgo_humedad;riesgo_viento;riesgo_sequia;indice_riesgo;nivel_riesgo
+diaria,Río Negro,0,,,,,0,,,
+diaria,Salto,1,-31.38,-31.38,-57.97,-57.97,2557,2018-01-01,2024-12-31,temperature_2m_max;temperature_2m_min;relative_humidity_2m_min;relative_humidity_2m_max;wind_speed_10m_max;wind_direction_10m_dominant;precipitation_sum;et0_fao_evapotranspiration;riesgo_temp;riesgo_humedad;riesgo_viento;riesgo_sequia;indice_riesgo;nivel_riesgo
+diaria,San José,0,,,,,0,,,
+diaria,Soriano,0,,,,,0,,,
+diaria,Tacuarembó,2,-31.73,-31.38,-55.98,-55.98,2648,2018-01-01,2024-12-31,temperature_2m_max;temperature_2m_min;relative_humidity_2m_min;relative_humidity_2m_max;wind_speed_10m_max;wind_direction_10m_dominant;precipitation_sum;et0_fao_evapotranspiration;riesgo_temp;riesgo_humedad;riesgo_viento;riesgo_sequia;indice_riesgo;nivel_riesgo
+diaria,Treinta y Tres,1,-33.23,-33.23,-54.38,-54.38,2557,2018-01-01,2024-12-31,temperature_2m_max;temperature_2m_min;relative_humidity_2m_min;relative_humidity_2m_max;wind_speed_10m_max;wind_direction_10m_dominant;precipitation_sum;et0_fao_evapotranspiration;riesgo_temp;riesgo_humedad;riesgo_viento;riesgo_sequia;indice_riesgo;nivel_riesgo
+horaria,Artigas,1,-30.4,-30.4,-56.47,-56.47,8760,2025-01-01,2025-12-31,temperature_2m;relative_humidity_2m;wind_speed_10m;wind_direction_10m;rain;surface_pressure
+horaria,Canelones,1,-34.52,-34.52,-56.28,-56.28,8760,2025-01-01,2025-12-31,temperature_2m;relative_humidity_2m;wind_speed_10m;wind_direction_10m;rain;surface_pressure
+horaria,Cerro Largo,1,-32.37,-32.37,-54.17,-54.17,8760,2025-01-01,2025-12-31,temperature_2m;relative_humidity_2m;wind_speed_10m;wind_direction_10m;rain;surface_pressure
+horaria,Colonia,1,-34.47,-34.47,-57.84,-57.84,8760,2025-01-01,2025-12-31,temperature_2m;relative_humidity_2m;wind_speed_10m;wind_direction_10m;rain;surface_pressure
+horaria,Durazno,1,-33.41,-33.41,-56.5,-56.5,8760,2025-01-01,2025-12-31,temperature_2m;relative_humidity_2m;wind_speed_10m;wind_direction_10m;rain;surface_pressure
+horaria,Flores,1,-33.54,-33.54,-56.89,-56.89,8760,2025-01-01,2025-12-31,temperature_2m;relative_humidity_2m;wind_speed_10m;wind_direction_10m;rain;surface_pressure
+horaria,Florida,1,-34.1,-34.1,-56.21,-56.21,8760,2025-01-01,2025-12-31,temperature_2m;relative_humidity_2m;wind_speed_10m;wind_direction_10m;rain;surface_pressure
+horaria,Lavalleja,1,-34.37,-34.37,-55.23,-55.23,8760,2025-01-01,2025-12-31,temperature_2m;relative_humidity_2m;wind_speed_10m;wind_direction_10m;rain;surface_pressure
+horaria,Maldonado,1,-34.9,-34.9,-54.95,-54.95,8760,2025-01-01,2025-12-31,temperature_2m;relative_humidity_2m;wind_speed_10m;wind_direction_10m;rain;surface_pressure
+horaria,Montevideo,1,-34.9,-34.9,-56.16,-56.16,8760,2025-01-01,2025-12-31,temperature_2m;relative_humidity_2m;wind_speed_10m;wind_direction_10m;rain;surface_pressure
+horaria,Paysandú,1,-32.32,-32.32,-58.08,-58.08,8760,2025-01-01,2025-12-31,temperature_2m;relative_humidity_2m;wind_speed_10m;wind_direction_10m;rain;surface_pressure
+horaria,Rivera,1,-30.9,-30.9,-55.55,-55.55,8760,2025-01-01,2025-12-31,temperature_2m;relative_humidity_2m;wind_speed_10m;wind_direction_10m;rain;surface_pressure
+horaria,Rocha,1,-34.48,-34.48,-54.33,-54.33,8760,2025-01-01,2025-12-31,temperature_2m;relative_humidity_2m;wind_speed_10m;wind_direction_10m;rain;surface_pressure
+horaria,Río Negro,1,-33.12,-33.12,-58.31,-58.31,8760,2025-01-01,2025-12-31,temperature_2m;relative_humidity_2m;wind_speed_10m;wind_direction_10m;rain;surface_pressure
+horaria,Salto,1,-31.38,-31.38,-57.97,-57.97,8760,2025-01-01,2025-12-31,temperature_2m;relative_humidity_2m;wind_speed_10m;wind_direction_10m;rain;surface_pressure
+horaria,San José,1,-34.34,-34.34,-56.71,-56.71,8760,2025-01-01,2025-12-31,temperature_2m;relative_humidity_2m;wind_speed_10m;wind_direction_10m;rain;surface_pressure
+horaria,Soriano,1,-33.25,-33.25,-58.03,-58.03,8760,2025-01-01,2025-12-31,temperature_2m;relative_humidity_2m;wind_speed_10m;wind_direction_10m;rain;surface_pressure
+horaria,Tacuarembó,1,-31.73,-31.73,-55.98,-55.98,8760,2025-01-01,2025-12-31,temperature_2m;relative_humidity_2m;wind_speed_10m;wind_direction_10m;rain;surface_pressure
+horaria,Treinta y Tres,1,-33.23,-33.23,-54.38,-54.38,8760,2025-01-01,2025-12-31,temperature_2m;relative_humidity_2m;wind_speed_10m;wind_direction_10m;rain;surface_pressure

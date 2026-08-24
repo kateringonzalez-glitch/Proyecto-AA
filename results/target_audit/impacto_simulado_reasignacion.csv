@@ -1,0 +1,8 @@
+departamento,fecha_inicio_semana,conteo_original,cantidad_detecciones,clase_original,clase_simulada,cambia_clase
+San José,2020-02-10,2,3,Moderado,Moderado,False
+Rivera,2021-11-15,0,1,Sin detección,Bajo,True
+Artigas,2022-10-31,0,1,Sin detección,Bajo,True
+Artigas,2024-12-23,0,1,Sin detección,Bajo,True
+Artigas,2024-12-30,1,2,Bajo,Moderado,True
+Artigas,2025-03-31,1,2,Bajo,Moderado,True
+Rivera,2025-11-03,0,1,Sin detección,Bajo,True

@@ -1,0 +1,18 @@
+{
+  "status": "resolved_complete",
+  "date_utc": "2026-08-22",
+  "active_catalog": "data/reference/open_meteo_coordinates_validated.csv",
+  "expected_coordinates": 187,
+  "expected_days_per_coordinate": 3286,
+  "expected_rows": 614482,
+  "expected_http_jobs": 171,
+  "completed_valid_jobs": 171,
+  "completed_years": [2017, 2018, 2019, 2020, 2021, 2022, 2023, 2024, 2025],
+  "partial_year": null,
+  "blocking_job": null,
+  "http_status": 200,
+  "api_reason": null,
+  "resume_command": "python src/extract_open_meteo.py --execute",
+  "audit_command_after_completion": "python src/audit_open_meteo_historical_extraction.py",
+  "note": "El bloqueo se resolvió distribuyendo la extracción entre ventanas gratuitas. Se generaron el consolidado y la auditoría final."
+}

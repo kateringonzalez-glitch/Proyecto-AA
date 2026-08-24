@@ -1,0 +1,37 @@
+{
+  "criterio_exploratorio": {
+    "Sin detección": "0",
+    "Bajo": "1",
+    "Moderado": "2–3",
+    "Alto": ">=4"
+  },
+  "observaciones_panel_original": 7942,
+  "casos_altos": 686,
+  "porcentaje_altos_panel": 8.637622765046588,
+  "porcentaje_altos_entre_positivas": 23.167848699763592,
+  "rango_porcentaje_alto_anual": [
+    3.8728897715988087,
+    16.902834008097166
+  ],
+  "mayor_concentracion_alta_departamento": {
+    "departamento": "Artigas",
+    "porcentaje": 9.329446064139942
+  },
+  "mayor_concentracion_alta_anio": {
+    "anio": 2020,
+    "porcentaje": 24.34402332361516
+  },
+  "anios_con_clases_ausentes": [],
+  "departamentos_con_clases_ausentes": [],
+  "registros_sin_departamento": 7,
+  "filas_panel_afectadas_si_reasignacion_cercana": 7,
+  "clases_que_cambiarian_si_reasignacion_cercana": 6,
+  "semana_parcial_inicio": "2025-12-29",
+  "dias_disponibles_semana_parcial": 3,
+  "detecciones_semana_parcial": 10,
+  "observaciones_si_se_excluye": 7923,
+  "observaciones_removidas": 19,
+  "recomendacion_clases": "adecuada con precauciones",
+  "recomendacion_no_asignados": "mantener excluidos hasta contar con evidencia cartográfica adicional",
+  "recomendacion_semana_parcial": "excluir del futuro dataset supervisado mediante regla general de semana completa"
+}

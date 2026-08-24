@@ -1,0 +1,11 @@
+job_id,coordenada_id,tipo_caso,departamento_solicitado,departamento_punto_modelo,mismo_departamento,distancia_solicitado_modelo_m,latitud_solicitada,longitud_solicitada,latitud_modelo,longitud_modelo
+2018_winter_week,URY_RO_G_E825000_N6250000,costa,Rocha,Rocha,True,4608.068609989028,-33.840301,-53.488099,-33.8,-53.5
+2018_winter_week,URY_CA_G_E600000_N6175000,departamento_intermedio,Canelones,Canelones,True,4323.322759317986,-34.561892,-55.909931,-34.6,-55.9
+2018_winter_week,URY_RV_G_E625000_N6575000,frontera_internacional,Rivera,Rivera,True,5400.821196340208,-30.95185,-55.691345,-31.0,-55.699997
+2018_winter_week,URY_TA_G_E600000_N6450000,interior_departamento_grande,Tacuarembó,Tacuarembó,True,4309.330712623822,-32.081856,-55.940383,-32.1,-55.9
+2018_winter_week,URY_MO_G_E575000_N6150000,montevideo,Montevideo,Montevideo,True,2156.3374523101643,-34.789446,-56.180201,-34.8,-56.199997
+2025_winter_week,URY_RO_G_E825000_N6250000,costa,Rocha,Rocha,True,4608.068609989028,-33.840301,-53.488099,-33.8,-53.5
+2025_winter_week,URY_CA_G_E600000_N6175000,departamento_intermedio,Canelones,Canelones,True,4323.322759317986,-34.561892,-55.909931,-34.6,-55.9
+2025_winter_week,URY_RV_G_E625000_N6575000,frontera_internacional,Rivera,Rivera,True,5400.821196340208,-30.95185,-55.691345,-31.0,-55.699997
+2025_winter_week,URY_TA_G_E600000_N6450000,interior_departamento_grande,Tacuarembó,Tacuarembó,True,4309.330712623822,-32.081856,-55.940383,-32.1,-55.9
+2025_winter_week,URY_MO_G_E575000_N6150000,montevideo,Montevideo,Montevideo,True,2156.3374523101643,-34.789446,-56.180201,-34.8,-56.199997

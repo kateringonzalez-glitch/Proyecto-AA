@@ -1,0 +1,5 @@
+margen_m,puntos_total,departamentos_con_puntos,departamentos_sin_puntos,cantidad_departamentos_sin_puntos,min_puntos_depto,max_puntos_depto,puntos_eliminados,porcentaje_eliminado
+0,283,19,,0,1,26,0,0.0
+5000,206,18,Montevideo,1,0,20,77,27.208480565371026
+7500,186,18,Montevideo,1,0,19,97,34.275618374558306
+10000,154,18,Montevideo,1,0,15,129,45.58303886925795

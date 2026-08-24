@@ -1,0 +1,7 @@
+{
+  "catalogo": "data/reference/open_meteo_coordinates.csv",
+  "coordenadas": 283,
+  "departamentos": 19,
+  "separacion_grilla_m": 25000,
+  "fallbacks": 0
+}

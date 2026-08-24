@@ -1,0 +1,16 @@
+{
+  "observaciones": 7942,
+  "departamentos": 19,
+  "semanas": 418,
+  "ceros": 4981,
+  "positivos": 2961,
+  "detecciones_total_panel": 8518,
+  "conteo_positivo_moda": 1,
+  "porcentaje_positivos_con_conteo_1": 41.843971631205676,
+  "correlacion_spearman_ranking_absoluto_normalizado": 0.33157894736842103,
+  "meses_calendario_observados": 96,
+  "meses_sin_detecciones": 0,
+  "advertencia_discontinuidad": "No hay meses completos sin detecciones, pero los cambios anuales no permiten distinguir variación real de cambios de cobertura/sensor sin metadatos de adquisiciones esperadas.",
+  "nota_temporal": "La grilla usa año de inicio de semana y ordinal de lunes; totales anuales/mensuales usan fecha de adquisición.",
+  "nota_objetivo": "Conteos para análisis descriptivo; no se construyen predictores ni clases finales."
+}

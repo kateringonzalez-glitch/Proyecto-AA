@@ -1,0 +1,11 @@
+{
+  "jobs_esperados": 171,
+  "jobs_exitosos_unicos": 171,
+  "registros_downloaded": 171,
+  "registros_checkpoint_reused": 881,
+  "registros_failed": 7,
+  "jobs_reintentados": 33,
+  "jobs_duplicados_manifest": 888,
+  "raw_json": 171,
+  "raw_checksums_duplicados": 0
+}

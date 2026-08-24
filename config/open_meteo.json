@@ -1,0 +1,88 @@
+{
+  "schema_version": "1.0.0",
+  "endpoint": "https://archive-api.open-meteo.com/v1/archive",
+  "api_product": "Open-Meteo Historical Weather API",
+  "model": "era5_seamless",
+  "model_description": "ERA5-Seamless: temperatura y humedad de ERA5-Land; viento, precipitación y radiación de ERA5",
+  "start_date": "2017-01-02",
+  "end_date": "2025-12-31",
+  "frequency": "daily",
+  "daily_variables": [
+    "temperature_2m_max",
+    "temperature_2m_min",
+    "relative_humidity_2m_min",
+    "relative_humidity_2m_max",
+    "wind_speed_10m_max",
+    "wind_direction_10m_dominant",
+    "precipitation_sum",
+    "et0_fao_evapotranspiration"
+  ],
+  "units": {
+    "temperature_unit": "celsius",
+    "wind_speed_unit": "ms",
+    "precipitation_unit": "mm",
+    "temperature_2m_max": "degC",
+    "temperature_2m_min": "degC",
+    "relative_humidity_2m_min": "%",
+    "relative_humidity_2m_max": "%",
+    "wind_speed_10m_max": "m/s",
+    "wind_direction_10m_dominant": "degree",
+    "precipitation_sum": "mm",
+    "et0_fao_evapotranspiration": "mm"
+  },
+  "api_response_units": {
+    "temperature_2m_max": "°C",
+    "temperature_2m_min": "°C",
+    "relative_humidity_2m_min": "%",
+    "relative_humidity_2m_max": "%",
+    "wind_speed_10m_max": "m/s",
+    "wind_direction_10m_dominant": "°",
+    "precipitation_sum": "mm",
+    "et0_fao_evapotranspiration": "mm"
+  },
+  "timezone": "America/Montevideo",
+  "timeformat": "iso8601",
+  "cell_selection": "land",
+  "format": "json",
+  "spatial_design": {
+    "boundary_file": "geoBoundaries-URY-ADM1-all/geoBoundaries-URY-ADM1.geojson",
+    "boundary_source": "geoBoundaries URY ADM1, año representativo 2017, OpenStreetMap/Wambacher",
+    "generation_crs": "EPSG:32721",
+    "output_crs": "EPSG:4326",
+    "grid_spacing_m": 25000,
+    "validated_coordinate_count": 187,
+    "interior_margin_m": 7500,
+    "validated_strategy": "regular_grid_25km_filtered_by_department_boundary_distance_plus_representative_point_fallback",
+    "validation_result": "187/187 reported Open-Meteo cells remained in requested department on 2018-08-06",
+    "montevideo_fallback": "representative_point",
+    "grid_anchor_easting_m": 0,
+    "grid_anchor_northing_m": 0,
+    "predicate": "within",
+    "empty_department_fallback": "representative_point"
+  },
+  "batching": {
+    "coordinates_per_request": 10,
+    "period_strategy": "calendar_year",
+    "max_retries": 5,
+    "initial_backoff_seconds": 2,
+    "request_timeout_seconds": 120,
+    "delay_between_requests_seconds": 10,
+    "rate_limit_backoff_seconds": 60
+  },
+  "size_estimation": {
+    "processed_parquet_bytes_per_row": 10.15987002437043,
+    "basis": "Parquet temporal con 30.775 filas diarias uruguayas heredadas y columnas meteorológicas equivalentes",
+    "raw_json_estimate": null
+  },
+  "paths": {
+    "coordinate_catalog": "data/reference/open_meteo_coordinates_validated.csv",
+    "raw_directory": "data/raw/open_meteo",
+    "processed_parts_directory": "data/processed/open_meteo_daily/parts",
+    "processed_dataset": "data/processed/open_meteo_daily/open_meteo_daily_2017_2025.parquet",
+    "audit_directory": "results/open_meteo_extraction"
+  },
+  "documentation": {
+    "historical_weather_api": "https://open-meteo.com/en/docs/historical-weather-api",
+    "openapi_schema": "https://github.com/open-meteo/open-meteo/blob/main/openapi/historical-weather.yml"
+  }
+}

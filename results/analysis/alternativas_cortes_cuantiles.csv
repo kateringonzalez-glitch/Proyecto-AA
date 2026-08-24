@@ -1,0 +1,14 @@
+metodo,probabilidad,cuantil_observado,cortes_internos_unicos,clases_resultantes
+terciles_positivos,0.0,1.0,"1, 3",3
+terciles_positivos,0.3333333333333333,1.0,"1, 3",3
+terciles_positivos,0.6666666666666666,3.0,"1, 3",3
+terciles_positivos,1.0,173.0,"1, 3",3
+cuartiles_positivos,0.0,1.0,"1, 2, 3",4
+cuartiles_positivos,0.25,1.0,"1, 2, 3",4
+cuartiles_positivos,0.5,2.0,"1, 2, 3",4
+cuartiles_positivos,0.75,3.0,"1, 2, 3",4
+cuartiles_positivos,1.0,173.0,"1, 2, 3",4
+mediana_p90_positivos,0.0,1.0,"2, 6",3
+mediana_p90_positivos,0.5,2.0,"2, 6",3
+mediana_p90_positivos,0.9,6.0,"2, 6",3
+mediana_p90_positivos,1.0,173.0,"2, 6",3

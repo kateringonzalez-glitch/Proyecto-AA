@@ -1,0 +1,37 @@
+departamento,fecha,variable,recalculado_desde_origen,valor_salida,diferencia_absoluta,coincide
+Artigas,2017-01-02,temperature_2m_max_mean_spatial,31.942857142857147,31.942857142857143,3.552713678800501e-15,True
+Artigas,2017-01-02,precipitation_sum_mean_spatial,0.7285714285714286,0.7285714285714285,1.1102230246251565e-16,True
+Artigas,2017-01-02,wind_speed_10m_max_max_spatial,5.28,5.28,0.0,True
+Artigas,2017-01-02,wind_direction_10m_dominant_circular_mean,110.07290507355093,110.07290507355093,0.0,True
+Artigas,2021-07-03,temperature_2m_max_mean_spatial,16.221428571428575,16.22142857142857,3.552713678800501e-15,True
+Artigas,2021-07-03,precipitation_sum_mean_spatial,0.0,0.0,0.0,True
+Artigas,2021-07-03,wind_speed_10m_max_max_spatial,3.0,3.0,0.0,True
+Artigas,2021-07-03,wind_direction_10m_dominant_circular_mean,125.07152359449012,125.07152359449012,0.0,True
+Artigas,2025-12-31,temperature_2m_max_mean_spatial,32.221428571428575,32.221428571428575,0.0,True
+Artigas,2025-12-31,precipitation_sum_mean_spatial,0.1285714285714286,0.1285714285714286,0.0,True
+Artigas,2025-12-31,wind_speed_10m_max_max_spatial,3.67,3.67,0.0,True
+Artigas,2025-12-31,wind_direction_10m_dominant_circular_mean,82.00002178231168,82.00002178231168,0.0,True
+Montevideo,2017-01-02,temperature_2m_max_mean_spatial,26.5,26.5,0.0,True
+Montevideo,2017-01-02,precipitation_sum_mean_spatial,0.0,0.0,0.0,True
+Montevideo,2017-01-02,wind_speed_10m_max_max_spatial,6.94,6.94,0.0,True
+Montevideo,2017-01-02,wind_direction_10m_dominant_circular_mean,106.0,106.0,0.0,True
+Montevideo,2021-07-03,temperature_2m_max_mean_spatial,14.8,14.8,0.0,True
+Montevideo,2021-07-03,precipitation_sum_mean_spatial,0.0,0.0,0.0,True
+Montevideo,2021-07-03,wind_speed_10m_max_max_spatial,5.52,5.52,0.0,True
+Montevideo,2021-07-03,wind_direction_10m_dominant_circular_mean,303.0,303.0,0.0,True
+Montevideo,2025-12-31,temperature_2m_max_mean_spatial,35.3,35.3,0.0,True
+Montevideo,2025-12-31,precipitation_sum_mean_spatial,0.0,0.0,0.0,True
+Montevideo,2025-12-31,wind_speed_10m_max_max_spatial,5.86,5.86,0.0,True
+Montevideo,2025-12-31,wind_direction_10m_dominant_circular_mean,303.0,303.0,0.0,True
+Treinta y Tres,2017-01-02,temperature_2m_max_mean_spatial,27.522222222222222,27.522222222222222,0.0,True
+Treinta y Tres,2017-01-02,precipitation_sum_mean_spatial,0.0,0.0,0.0,True
+Treinta y Tres,2017-01-02,wind_speed_10m_max_max_spatial,5.65,5.65,0.0,True
+Treinta y Tres,2017-01-02,wind_direction_10m_dominant_circular_mean,123.22171964632118,123.22171964632118,0.0,True
+Treinta y Tres,2021-07-03,temperature_2m_max_mean_spatial,15.466666666666669,15.466666666666665,3.552713678800501e-15,True
+Treinta y Tres,2021-07-03,precipitation_sum_mean_spatial,0.0,0.0,0.0,True
+Treinta y Tres,2021-07-03,wind_speed_10m_max_max_spatial,3.85,3.85,0.0,True
+Treinta y Tres,2021-07-03,wind_direction_10m_dominant_circular_mean,281.77790688404076,281.77790688404076,0.0,True
+Treinta y Tres,2025-12-31,temperature_2m_max_mean_spatial,33.73333333333333,33.733333333333334,7.105427357601002e-15,True
+Treinta y Tres,2025-12-31,precipitation_sum_mean_spatial,0.0,0.0,0.0,True
+Treinta y Tres,2025-12-31,wind_speed_10m_max_max_spatial,4.65,4.65,0.0,True
+Treinta y Tres,2025-12-31,wind_direction_10m_dominant_circular_mean,348.6675626558297,348.6675626558297,0.0,True

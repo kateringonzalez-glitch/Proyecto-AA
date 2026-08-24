@@ -1,0 +1,21 @@
+{
+  "schema_version": "1.0.0",
+  "main_config": "config/open_meteo.json",
+  "windows": [
+    {"window_id": "2018_winter_week", "start_date": "2018-08-06", "end_date": "2018-08-12"},
+    {"window_id": "2025_winter_week", "start_date": "2025-08-04", "end_date": "2025-08-10"}
+  ],
+  "selection": [
+    {"case": "montevideo", "department": "Montevideo", "rule": "max_department_boundary_distance"},
+    {"case": "interior_departamento_grande", "department": "Tacuarembó", "rule": "max_department_boundary_distance"},
+    {"case": "costa", "department": "Rocha", "rule": "min_latitude_southernmost"},
+    {"case": "frontera_internacional", "department": "Rivera", "rule": "min_national_boundary_distance"},
+    {"case": "departamento_intermedio", "department": "Canelones", "rule": "max_department_boundary_distance"}
+  ],
+  "limits": {"coordinates": 5, "windows": 2, "days_per_window": 7, "requests": 2, "rows": 70},
+  "paths": {
+    "raw_directory": "data/raw/open_meteo_pilot",
+    "processed_directory": "data/processed/open_meteo_pilot",
+    "results_directory": "results/open_meteo_pilot"
+  }
+}

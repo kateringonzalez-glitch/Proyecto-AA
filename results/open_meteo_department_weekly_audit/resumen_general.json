@@ -1,0 +1,41 @@
+{
+  "input": "data/processed/open_meteo_department_daily/open_meteo_department_daily_2017_2025.parquet",
+  "firms_keys_source": "results/data/firms_departamento_semana_clean.parquet",
+  "output": "data/processed/open_meteo_department_weekly/open_meteo_department_weekly_2017_2025.parquet",
+  "output_validation": {
+    "complete_weeks": 469,
+    "expected_rows": 8911,
+    "observed_rows": 8911,
+    "departments": 19,
+    "duplicate_keys": 0,
+    "weeks_with_not_19_departments": 0,
+    "departments_with_unequal_weeks": 0,
+    "rows_with_not_7_days": 0,
+    "coverage_temporal_problems": 0,
+    "coverage_spatial_problems": 0,
+    "start_not_monday": 0,
+    "end_not_sunday": 0,
+    "wrong_duration": 0,
+    "nulls": 0,
+    "cross_year_rows": 114,
+    "cross_year_unique_weeks": 6,
+    "temperature_order_problems": 0,
+    "humidity_range_problems": 0,
+    "negative_precipitation": 0,
+    "negative_et0": 0,
+    "negative_wind": 0,
+    "direction_range_problems": 0,
+    "resultant_range_problems": 0
+  },
+  "incomplete_department_weeks_excluded": 19,
+  "incomplete_unique_weeks": 1,
+  "reconciliation_rows": 45,
+  "reconciliation_failures": 0,
+  "firms_compatibility": {
+    "claves_firms": 7923.0,
+    "claves_open_meteo": 8911.0,
+    "claves_firms_encontradas": 7923.0,
+    "claves_firms_sin_meteorologia": 0.0,
+    "porcentaje_cobertura_potencial": 100.0
+  }
+}

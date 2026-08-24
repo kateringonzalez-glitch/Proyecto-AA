@@ -1,0 +1,14 @@
+{
+  "schema_version": "1.0.0",
+  "main_config": "config/open_meteo.json",
+  "candidate_catalog": "data/reference/open_meteo_coordinates_candidate.csv",
+  "validated_catalog": "data/reference/open_meteo_coordinates_validated.csv",
+  "date": "2018-08-06",
+  "batch_size": 10,
+  "limits": {"max_coordinates": 200, "max_requests": 20, "days": 1},
+  "paths": {
+    "raw_directory": "data/raw/open_meteo_spatial_audit",
+    "processed_directory": "data/processed/open_meteo_spatial_audit",
+    "results_directory": "results/open_meteo_spatial_redesign"
+  }
+}

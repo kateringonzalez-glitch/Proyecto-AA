@@ -1,0 +1,46 @@
+departamento,fecha_inicio_semana,variable,recalculado_desde_diario,valor_semanal,diferencia_absoluta,coincide
+Artigas,2017-01-02,precipitation_sum_weekly,16.414285714285715,16.414285714285715,0.0,True
+Artigas,2017-01-02,temperature_2m_max_mean_weekly,30.098979591836734,30.09897959183673,3.552713678800501e-15,True
+Artigas,2017-01-02,temperature_2m_max_weekly,34.3,34.3,0.0,True
+Artigas,2017-01-02,et0_fao_evapotranspiration_sum_weekly,33.16571428571429,33.16571428571428,7.105427357601002e-15,True
+Artigas,2017-01-02,wind_direction_10m_dominant_circular_mean_weekly,54.172100576403174,54.172100576403174,0.0,True
+Artigas,2021-06-28,precipitation_sum_weekly,0.0071428571428571435,0.0071428571428571435,0.0,True
+Artigas,2021-06-28,temperature_2m_max_mean_weekly,13.794897959183674,13.794897959183674,0.0,True
+Artigas,2021-06-28,temperature_2m_max_weekly,17.9,17.9,0.0,True
+Artigas,2021-06-28,et0_fao_evapotranspiration_sum_weekly,11.569285714285712,11.569285714285714,1.7763568394002505e-15,True
+Artigas,2021-06-28,wind_direction_10m_dominant_circular_mean_weekly,34.2051206168536,34.2051206168536,0.0,True
+Artigas,2025-12-22,precipitation_sum_weekly,55.650000000000006,55.650000000000006,0.0,True
+Artigas,2025-12-22,temperature_2m_max_mean_weekly,29.23979591836735,29.23979591836735,0.0,True
+Artigas,2025-12-22,temperature_2m_max_weekly,32.2,32.2,0.0,True
+Artigas,2025-12-22,et0_fao_evapotranspiration_sum_weekly,27.557857142857145,27.55785714285714,3.552713678800501e-15,True
+Artigas,2025-12-22,wind_direction_10m_dominant_circular_mean_weekly,331.82030796573474,331.82030796573474,0.0,True
+Montevideo,2017-01-02,precipitation_sum_weekly,82.4,82.4,0.0,True
+Montevideo,2017-01-02,temperature_2m_max_mean_weekly,26.685714285714283,26.685714285714287,3.552713678800501e-15,True
+Montevideo,2017-01-02,temperature_2m_max_weekly,30.1,30.1,0.0,True
+Montevideo,2017-01-02,et0_fao_evapotranspiration_sum_weekly,34.199999999999996,34.2,7.105427357601002e-15,True
+Montevideo,2017-01-02,wind_direction_10m_dominant_circular_mean_weekly,48.08074901529936,48.08074901529936,0.0,True
+Montevideo,2021-06-28,precipitation_sum_weekly,11.4,11.4,0.0,True
+Montevideo,2021-06-28,temperature_2m_max_mean_weekly,12.842857142857142,12.842857142857143,1.7763568394002505e-15,True
+Montevideo,2021-06-28,temperature_2m_max_weekly,14.8,14.8,0.0,True
+Montevideo,2021-06-28,et0_fao_evapotranspiration_sum_weekly,10.1,10.1,0.0,True
+Montevideo,2021-06-28,wind_direction_10m_dominant_circular_mean_weekly,306.3138984980229,306.3138984980229,0.0,True
+Montevideo,2025-12-22,precipitation_sum_weekly,2.9000000000000004,2.9,4.440892098500626e-16,True
+Montevideo,2025-12-22,temperature_2m_max_mean_weekly,29.542857142857144,29.542857142857144,0.0,True
+Montevideo,2025-12-22,temperature_2m_max_weekly,32.5,32.5,0.0,True
+Montevideo,2025-12-22,et0_fao_evapotranspiration_sum_weekly,45.23,45.230000000000004,7.105427357601002e-15,True
+Montevideo,2025-12-22,wind_direction_10m_dominant_circular_mean_weekly,120.30743018030756,120.30743018030756,0.0,True
+Treinta y Tres,2017-01-02,precipitation_sum_weekly,27.3,27.3,0.0,True
+Treinta y Tres,2017-01-02,temperature_2m_max_mean_weekly,28.49047619047619,28.49047619047619,0.0,True
+Treinta y Tres,2017-01-02,temperature_2m_max_weekly,30.8,30.8,0.0,True
+Treinta y Tres,2017-01-02,et0_fao_evapotranspiration_sum_weekly,34.931111111111115,34.931111111111115,0.0,True
+Treinta y Tres,2017-01-02,wind_direction_10m_dominant_circular_mean_weekly,61.09810029205891,61.09810029205891,0.0,True
+Treinta y Tres,2021-06-28,precipitation_sum_weekly,0.3555555555555556,0.3555555555555556,0.0,True
+Treinta y Tres,2021-06-28,temperature_2m_max_mean_weekly,13.815873015873018,13.815873015873015,3.552713678800501e-15,True
+Treinta y Tres,2021-06-28,temperature_2m_max_weekly,17.1,17.1,0.0,True
+Treinta y Tres,2021-06-28,et0_fao_evapotranspiration_sum_weekly,10.264444444444443,10.264444444444443,0.0,True
+Treinta y Tres,2021-06-28,wind_direction_10m_dominant_circular_mean_weekly,297.9579672692915,297.9579672692915,0.0,True
+Treinta y Tres,2025-12-22,precipitation_sum_weekly,30.400000000000002,30.400000000000002,0.0,True
+Treinta y Tres,2025-12-22,temperature_2m_max_mean_weekly,29.704761904761906,29.704761904761906,0.0,True
+Treinta y Tres,2025-12-22,temperature_2m_max_weekly,33.0,33.0,0.0,True
+Treinta y Tres,2025-12-22,et0_fao_evapotranspiration_sum_weekly,32.53111111111111,32.53111111111111,0.0,True
+Treinta y Tres,2025-12-22,wind_direction_10m_dominant_circular_mean_weekly,60.7371126477769,60.7371126477769,0.0,True

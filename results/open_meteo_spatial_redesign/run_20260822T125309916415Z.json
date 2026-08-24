@@ -1,0 +1,42 @@
+{
+  "run_id": "20260822T125309916415Z",
+  "audit_date": [
+    "2018-08-06"
+  ],
+  "candidate_coordinates": 187,
+  "valid_coordinates": 187,
+  "invalid_coordinates": 0,
+  "valid_percentage": 100.0,
+  "changed_department": 0,
+  "outside_uruguay": 0,
+  "departments_all_valid": 19,
+  "departments_with_failures": [],
+  "distance_requested_reported_m": {
+    "mean": 3833.6375894081957,
+    "median": 3910.233923944188,
+    "p90": 5519.5575960819915,
+    "p95": 5917.291080499396,
+    "max": 6578.322988783051
+  },
+  "network_calls_performed": 19,
+  "checkpoints_reused": 0,
+  "meteorology": {
+    "variables": [
+      "temperature_2m_max",
+      "temperature_2m_min",
+      "relative_humidity_2m_min",
+      "relative_humidity_2m_max",
+      "wind_speed_10m_max",
+      "wind_direction_10m_dominant",
+      "precipitation_sum",
+      "et0_fao_evapotranspiration"
+    ],
+    "nulls": 0,
+    "duplicate_keys": 0,
+    "timezone_values": [
+      "America/Montevideo"
+    ]
+  },
+  "validated_departments": 19,
+  "validated_catalog_sha256": "93db754f840dddc68868f2b48e6c27c3cd1cddfb41fb44c8e66b17686adde4ae"
+}

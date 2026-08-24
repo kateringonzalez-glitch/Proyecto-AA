@@ -1,0 +1,6 @@
+altair>=5,<7
+geopandas>=1,<2
+numpy>=1.26,<3
+pandas>=2,<4
+pyarrow>=14,<24
+shapely>=2,<3

@@ -1,0 +1,55 @@
+{
+  "artefacto_auditado": "data/meteo_2018_2025.parquet",
+  "artefacto_2025": "data/meteo_2025.parquet",
+  "bloque_2025_valores_identicos_al_artefacto_separado": true,
+  "bloque_2025_esquema_dtypes_identico": false,
+  "diferencias_valores_2025_por_columna": {
+    "ubicacion": 0,
+    "temperature_2m": 0,
+    "relative_humidity_2m": 0,
+    "wind_speed_10m": 0,
+    "wind_direction_10m": 0,
+    "rain": 0,
+    "surface_pressure": 0,
+    "fecha_hora_utc": 0,
+    "fecha": 0,
+    "pais_codigo": 0,
+    "punto": 0,
+    "latitud": 0,
+    "longitud": 0,
+    "fuente": 0
+  },
+  "evidencia_extraccion_en_repositorio": {
+    "endpoint": null,
+    "api_producto": null,
+    "parametros": null,
+    "modelo_subyacente": null,
+    "momento_descarga": null,
+    "conclusion": "No hay scripts ni metadata suficientes para reconstruir la extracción."
+  },
+  "filas_regionales_combinadas": 325348,
+  "filas_uruguay": 197215,
+  "bloque_diario_uruguay": {
+    "filas": 30775,
+    "fecha_min": "2018-01-01",
+    "fecha_max": "2024-12-31",
+    "puntos_nominales": 13,
+    "departamentos_geometricos": 12
+  },
+  "bloque_horario_uruguay": {
+    "filas": 166440,
+    "fecha_min": "2025-01-01 00:00 UTC",
+    "fecha_max": "2025-12-31 23:00 UTC",
+    "puntos": 19,
+    "departamentos_geometricos": 19
+  },
+  "puntos_fuera_uruguay_segun_adm1": 0,
+  "puntos_a_menos_de_5km_de_limite_departamental": 12,
+  "duplicados_exactos_uruguay": 0,
+  "observaciones_firms": 7923,
+  "claves_firms_con_cobertura_temporal_meteo_completa": 5361,
+  "claves_firms_sin_cobertura_temporal_meteo_completa": 2562,
+  "porcentaje_firms_cubierto": 67.66376372586141,
+  "advertencia_homogeneidad": "Cobertura temporal completa no implica variables homogéneas: 2018–2024 es diario y 2025 horario.",
+  "recomendacion": "Opción C: realizar una nueva extracción uniforme y documentada; no ejecutada."
+}

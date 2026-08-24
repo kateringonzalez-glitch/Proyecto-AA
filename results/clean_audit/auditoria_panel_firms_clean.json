@@ -1,0 +1,69 @@
+{
+  "proceso": "depuracion_final_firms_departamento_semana",
+  "version_proceso": "1.0.0",
+  "fecha_ejecucion_utc": "2026-08-20T19:58:33.840353+00:00",
+  "fuente_firms": "data/firms_2018_2025.parquet",
+  "panel_original": "results/data/firms_departamento_semana.parquet",
+  "panel_limpio": "results/data/firms_departamento_semana_clean.parquet",
+  "registros_firms_uruguay_originales": 8525,
+  "registros_asignados_espacialmente": 8518,
+  "registros_no_asignados_mantenidos_excluidos": 7,
+  "proporcion_no_asignados_pct": 0.08211143695014662,
+  "fecha_minima_firms_uruguay": "2018-01-02",
+  "fecha_maxima_firms_uruguay": "2025-12-31",
+  "regla_semana_completa": "fecha_fin_semana <= fecha_maxima_firms_uruguay",
+  "semanas_originales": 418,
+  "semanas_completas_conservadas": 417,
+  "semanas_parciales_excluidas": [
+    "2025-12-29"
+  ],
+  "filas_panel_antes": 7942,
+  "filas_panel_despues": 7923,
+  "filas_excluidas_semana_parcial": 19,
+  "detecciones_asignadas_antes_de_excluir_semana_parcial": 8518,
+  "detecciones_excluidas_unicamente_por_semana_parcial": 10,
+  "detecciones_conservadas_panel_limpio": 8508,
+  "valores_extremos_conservados": {
+    "Paysandú_2021-12-27": 100,
+    "Río Negro_2021-12-27": 173
+  },
+  "criterio_clase_candidata": {
+    "0": "Sin detección",
+    "1": "Bajo",
+    "2-3": "Moderado",
+    ">=4": "Alto"
+  },
+  "codificacion_ordinal": {
+    "Sin detección": 0,
+    "Bajo": 1,
+    "Moderado": 2,
+    "Alto": 3
+  },
+  "distribucion_final": {
+    "Sin detección": {
+      "cantidad": 4967,
+      "porcentaje": 62.69089991164962
+    },
+    "Bajo": {
+      "cantidad": 1237,
+      "porcentaje": 15.6127729395431
+    },
+    "Moderado": {
+      "cantidad": 1034,
+      "porcentaje": 13.050612141865455
+    },
+    "Alto": {
+      "cantidad": 685,
+      "porcentaje": 8.645715006941815
+    }
+  },
+  "validaciones": {
+    "departamentos": 19,
+    "semanas": 417,
+    "filas": 7923,
+    "duplicados_clave": 0,
+    "nulos_columnas_obligatorias": 0,
+    "semanas_incompletas": 0
+  },
+  "nota_objetivo": "Definición candidata de actividad FIRMS observada, sujeta a validación posterior con partición cronológica; no es riesgo estimado ni predicción."
+}

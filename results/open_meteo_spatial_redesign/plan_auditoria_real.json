@@ -1,0 +1,10 @@
+{
+  "mode": "execute",
+  "date": "2018-08-06",
+  "cell_selection": "land",
+  "candidate_coordinates": 187,
+  "departments": 19,
+  "expected_requests": 19,
+  "expected_rows": 187,
+  "network_calls_performed": 0
+}

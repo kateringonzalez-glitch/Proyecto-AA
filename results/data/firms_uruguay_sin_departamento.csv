@@ -1,0 +1,8 @@
+latitud,longitud,brillo_ti4,scan,track,fecha_adq,hora_adq_hhmm,satelite,instrumento,confianza_raw,version,brillo_ti5,potencia_radiativa,dia_noche,type,pais,pais_codigo,confianza_num,hora_adq,es_diurno,fecha,departamento,departamento_iso,shapeID
+-34.4659,-57.1148,388.9,1.4,1.2,2020-02-13,1805,Aqua,MODIS,87,6.03,305.7,318.2,D,3,URY,URY,87,1805,True,2020-02-13,,,
+-30.8912,-55.543,307.8,2.0,1.4,2021-11-17,1414,Terra,MODIS,25,6.03,293.8,12.3,D,2,URY,URY,25,1414,True,2021-11-17,,,
+-30.4785,-56.3859,313.9,1.0,1.0,2022-11-04,1749,Aqua,MODIS,23,6.03,302.1,6.8,D,0,URY,URY,23,1749,True,2022-11-04,,,
+-30.4683,-56.3948,326.2,1.1,1.0,2024-12-27,1823,Aqua,MODIS,75,61.03,303.3,18.8,D,0,URY,URY,75,1823,True,2024-12-27,,,
+-30.4693,-56.3933,312.9,1.4,1.2,2024-12-31,1318,Terra,MODIS,31,61.03,299.6,8.5,D,0,URY,URY,31,1318,True,2024-12-31,,,
+-30.4683,-56.3933,319.3,1.1,1.0,2025-04-04,1847,Aqua,MODIS,79,61.03,293.9,17.3,D,0,URY,URY,79,1847,True,2025-04-04,,,
+-30.9148,-55.5057,311.1,1.0,1.0,2025-11-03,1859,Aqua,MODIS,32,61.03,298.8,4.5,D,0,URY,URY,32,1859,True,2025-11-03,,,

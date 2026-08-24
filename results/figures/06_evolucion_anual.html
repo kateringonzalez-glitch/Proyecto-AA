@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <style>
+    #vis.vega-embed {
+      width: 100%;
+      display: flex;
+    }
+
+    #vis.vega-embed details,
+    #vis.vega-embed details summary {
+      position: relative;
+    }
+  </style>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/vega@6"></script>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/vega-lite@6.4.1"></script>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/vega-embed@7"></script>
+</head>
+<body>
+  <div id="vis"></div>
+  <script>
+    (function(vegaEmbed) {
+      var spec = {"config": {"view": {"continuousWidth": 300, "continuousHeight": 300}}, "data": {"name": "data-5c59f7b82a53891d520c5219d3d1bf13"}, "mark": {"type": "line", "color": "#386cb0", "point": true}, "encoding": {"tooltip": [{"field": "anio", "type": "ordinal"}, {"field": "detecciones_totales", "type": "quantitative"}], "x": {"field": "anio", "title": "A\u00f1o calendario", "type": "ordinal"}, "y": {"field": "detecciones_totales", "title": "Cantidad de detecciones FIRMS", "type": "quantitative"}}, "height": 420, "title": "Evoluci\u00f3n anual de detecciones FIRMS asignadas", "width": 760, "$schema": "https://vega.github.io/schema/vega-lite/v6.4.1.json", "datasets": {"data-5c59f7b82a53891d520c5219d3d1bf13": [{"anio": 2018, "observaciones_departamento_semana": 1007, "semanas_departamento_positivas": 354, "inicios_semana": 53, "porcentaje_semanas_departamento_positivas": 35.15392254220457, "detecciones_totales": 914, "variacion_interanual_pct": null}, {"anio": 2019, "observaciones_departamento_semana": 988, "semanas_departamento_positivas": 420, "inicios_semana": 52, "porcentaje_semanas_departamento_positivas": 42.51012145748988, "detecciones_totales": 1171, "variacion_interanual_pct": 28.118161925601747}, {"anio": 2020, "observaciones_departamento_semana": 988, "semanas_departamento_positivas": 468, "inicios_semana": 52, "porcentaje_semanas_departamento_positivas": 47.368421052631575, "detecciones_totales": 1738, "variacion_interanual_pct": 48.420153714773704}, {"anio": 2021, "observaciones_departamento_semana": 988, "semanas_departamento_positivas": 345, "inicios_semana": 52, "porcentaje_semanas_departamento_positivas": 34.91902834008097, "detecciones_totales": 1046, "variacion_interanual_pct": -39.81588032220944}, {"anio": 2022, "observaciones_departamento_semana": 988, "semanas_departamento_positivas": 371, "inicios_semana": 52, "porcentaje_semanas_departamento_positivas": 37.550607287449395, "detecciones_totales": 1130, "variacion_interanual_pct": 8.030592734225618}, {"anio": 2023, "observaciones_departamento_semana": 988, "semanas_departamento_positivas": 373, "inicios_semana": 52, "porcentaje_semanas_departamento_positivas": 37.75303643724696, "detecciones_totales": 898, "variacion_interanual_pct": -20.53097345132744}, {"anio": 2024, "observaciones_departamento_semana": 1007, "semanas_departamento_positivas": 269, "inicios_semana": 53, "porcentaje_semanas_departamento_positivas": 26.713008937437934, "detecciones_totales": 581, "variacion_interanual_pct": -35.30066815144765}, {"anio": 2025, "observaciones_departamento_semana": 988, "semanas_departamento_positivas": 361, "inicios_semana": 52, "porcentaje_semanas_departamento_positivas": 36.53846153846153, "detecciones_totales": 1040, "variacion_interanual_pct": 79.00172117039588}]}};
+      var embedOpt = {"mode": "vega-lite"};
+
+      function showError(el, error){
+          el.innerHTML = ('<div style="color:red;">'
+                          + '<p>JavaScript Error: ' + error.message + '</p>'
+                          + "<p>This usually means there's a typo in your chart specification. "
+                          + "See the javascript console for the full traceback.</p>"
+                          + '</div>');
+          throw error;
+      }
+      const el = document.getElementById('vis');
+      vegaEmbed("#vis", spec, embedOpt)
+        .catch(error => showError(el, error));
+    })(vegaEmbed);
+
+  </script>
+</body>
+</html>

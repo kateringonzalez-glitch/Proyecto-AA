@@ -1,0 +1,9 @@
+escenario,clase_preliminar,cantidad,porcentaje,observaciones_totales
+A_mantener_semana_parcial,Sin detección,4981,62.717199697809114,7942
+A_mantener_semana_parcial,Bajo,1239,15.600604381767816,7942
+A_mantener_semana_parcial,Moderado,1036,13.04457315537648,7942
+A_mantener_semana_parcial,Alto,686,8.637622765046588,7942
+B_excluir_semana_parcial,Sin detección,4967,62.69089991164962,7923
+B_excluir_semana_parcial,Bajo,1237,15.6127729395431,7923
+B_excluir_semana_parcial,Moderado,1034,13.050612141865455,7923
+B_excluir_semana_parcial,Alto,685,8.645715006941815,7923

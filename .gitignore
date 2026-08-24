@@ -1,0 +1,31 @@
+# Python
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.ipynb_checkpoints/
+.venv/
+venv/
+
+# Local configuration and credentials
+.env
+.env.*
+!.env.example
+
+# Operating-system and editor files
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+
+# Source datasets inherited from LIDIA (kept locally, not versioned)
+/data/*.parquet
+
+# Raw API responses and restartable intermediate partitions
+/data/raw/
+/data/processed/open_meteo_daily/parts/
+
+# Temporary files
+*.tmp
+*.log
+*.pid
+~$*

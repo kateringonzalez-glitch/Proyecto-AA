@@ -1,0 +1,284 @@
+coordenada_id,departamento,departamento_iso,metodo_seleccion,crs_generacion,separacion_grilla_m,easting_m,northing_m,fuente_limite,latitud,longitud
+URY_AR_G_E425000_N6600000,Artigas,UY-AR,regular_grid_25km,EPSG:32721,25000,425000.0,6600000.0,"geoBoundaries URY ADM1, año representativo 2017, OpenStreetMap/Wambacher",-30.730525,-57.783413
+URY_AR_G_E425000_N6625000,Artigas,UY-AR,regular_grid_25km,EPSG:32721,25000,425000.0,6625000.0,"geoBoundaries URY ADM1, año representativo 2017, OpenStreetMap/Wambacher",-30.504952,-57.781599
+URY_AR_G_E450000_N6600000,Artigas,UY-AR,regular_grid_25km,EPSG:32721,25000,450000.0,6600000.0,"geoBoundaries URY ADM1, año representativo 2017, OpenStreetMap/Wambacher",-30.731839,-57.522287
+URY_AR_G_E450000_N6625000,Artigas,UY-AR,regular_grid_25km,EPSG:32721,25000,450000.0,6625000.0,"geoBoundaries URY ADM1, año representativo 2017, OpenStreetMap/Wambacher",-30.506254,-57.521077
+URY_AR_G_E475000_N6575000,Artigas,UY-AR,regular_grid_25km,EPSG:32721,25000,475000.0,6575000.0,"geoBoundaries URY ADM1, año representativo 2017, OpenStreetMap/Wambacher",-30.958211,-57.261759
+URY_AR_G_E475000_N6600000,Artigas,UY-AR,regular_grid_25km,EPSG:32721,25000,475000.0,6600000.0,"geoBoundaries URY ADM1, año representativo 2017, OpenStreetMap/Wambacher",-30.732627,-57.261147
+URY_AR_G_E475000_N6625000,Artigas,UY-AR,regular_grid_25km,EPSG:32721,25000,475000.0,6625000.0,"geoBoundaries URY ADM1, año representativo 2017, OpenStreetMap/Wambacher",-30.507035,-57.260542
+URY_AR_G_E475000_N6650000,Artigas,UY-AR,regular_grid_25km,EPSG:32721,25000,475000.0,6650000.0,"geoBoundaries URY ADM1, año representativo 2017, OpenStreetMap/Wambacher",-30.281436,-57.259944
+URY_AR_G_E500000_N6575000,Artigas,UY-AR,regular_grid_25km,EPSG:32721,25000,500000.0,6575000.0,"geoBoundaries URY ADM1, año representativo 2017, OpenStreetMap/Wambacher",-30.958476,-57.0
+URY_AR_G_E500000_N6600000,Artigas,UY-AR,regular_grid_25km,EPSG:32721,25000,500000.0,6600000.0,"geoBoundaries URY ADM1, año representativo 2017, OpenStreetMap/Wambacher",-30.73289,-57.0
+URY_AR_G_E500000_N6625000,Artigas,UY-AR,regular_grid_25km,EPSG:32721,25000,500000.0,6625000.0,"geoBoundaries URY ADM1, año representativo 2017, OpenStreetMap/Wambacher",-30.507296,-57.0
+URY_AR_G_E500000_N6650000,Artigas,UY-AR,regular_grid_25km,EPSG:32721,25000,500000.0,6650000.0,"geoBoundaries URY ADM1, año representativo 2017, OpenStreetMap/Wambacher",-30.281694,-57.0
+URY_AR_G_E525000_N6575000,Artigas,UY-AR,regular_grid_25km,EPSG:32721,25000,525000.0,6575000.0,"geoBoundaries URY ADM1, año representativo 2017, OpenStreetMap/Wambacher",-30.958211,-56.738241
+URY_AR_G_E525000_N6600000,Artigas,UY-AR,regular_grid_25km,EPSG:32721,25000,525000.0,6600000.0,"geoBoundaries URY ADM1, año representativo 2017, OpenStreetMap/Wambacher",-30.732627,-56.738853
+URY_AR_G_E525000_N6625000,Artigas,UY-AR,regular_grid_25km,EPSG:32721,25000,525000.0,6625000.0,"geoBoundaries URY ADM1, año representativo 2017, OpenStreetMap/Wambacher",-30.507035,-56.739458
+URY_AR_G_E525000_N6650000,Artigas,UY-AR,regular_grid_25km,EPSG:32721,25000,525000.0,6650000.0,"geoBoundaries URY ADM1, año representativo 2017, OpenStreetMap/Wambacher",-30.281436,-56.740056
+URY_AR_G_E550000_N6600000,Artigas,UY-AR,regular_grid_25km,EPSG:32721,25000,550000.0,6600000.0,"geoBoundaries URY ADM1, año representativo 2017, OpenStreetMap/Wambacher",-30.731839,-56.477713
+URY_AR_G_E550000_N6625000,Artigas,UY-AR,regular_grid_25km,EPSG:32721,25000,550000.0,6625000.0,"geoBoundaries URY ADM1, año representativo 2017, OpenStreetMap/Wambacher",-30.506254,-56.478923
+URY_AR_G_E575000_N6600000,Artigas,UY-AR,regular_grid_25km,EPSG:32721,25000,575000.0,6600000.0,"geoBoundaries URY ADM1, año representativo 2017, OpenStreetMap/Wambacher",-30.730525,-56.216587
+URY_CA_G_E550000_N6175000,Canelones,UY-CA,regular_grid_25km,EPSG:32721,25000,550000.0,6175000.0,"geoBoundaries URY ADM1, año representativo 2017, OpenStreetMap/Wambacher",-34.565542,-56.454933
+URY_CA_G_E575000_N6175000,Canelones,UY-CA,regular_grid_25km,EPSG:32721,25000,575000.0,6175000.0,"geoBoundaries URY ADM1, año representativo 2017, OpenStreetMap/Wambacher",-34.564021,-56.18242
+URY_CA_G_E600000_N6150000,Canelones,UY-CA,regular_grid_25km,EPSG:32721,25000,600000.0,6150000.0,"geoBoundaries URY ADM1, año representativo 2017, OpenStreetMap/Wambacher",-34.787299,-55.906974
+URY_CA_G_E600000_N6175000,Canelones,UY-CA,regular_grid_25km,EPSG:32721,25000,600000.0,6175000.0,"geoBoundaries URY ADM1, año representativo 2017, OpenStreetMap/Wambacher",-34.561892,-55.909931
+URY_CA_G_E600000_N6200000,Canelones,UY-CA,regular_grid_25km,EPSG:32721,25000,600000.0,6200000.0,"geoBoundaries URY ADM1, año representativo 2017, OpenStreetMap/Wambacher",-34.336476,-55.912856
+URY_CA_G_E625000_N6175000,Canelones,UY-CA,regular_grid_25km,EPSG:32721,25000,625000.0,6175000.0,"geoBoundaries URY ADM1, año representativo 2017, OpenStreetMap/Wambacher",-34.559155,-55.637475
+URY_CA_G_E625000_N6200000,Canelones,UY-CA,regular_grid_25km,EPSG:32721,25000,625000.0,6200000.0,"geoBoundaries URY ADM1, año representativo 2017, OpenStreetMap/Wambacher",-34.333762,-55.641131
+URY_CL_G_E675000_N6350000,Cerro Largo,UY-CL,regular_grid_25km,EPSG:32721,25000,675000.0,6350000.0,"geoBoundaries URY ADM1, año representativo 2017, OpenStreetMap/Wambacher",-32.974348,-55.127335
+URY_CL_G_E675000_N6375000,Cerro Largo,UY-CL,regular_grid_25km,EPSG:32721,25000,675000.0,6375000.0,"geoBoundaries URY ADM1, año representativo 2017, OpenStreetMap/Wambacher",-32.748954,-55.132067
+URY_CL_G_E675000_N6400000,Cerro Largo,UY-CL,regular_grid_25km,EPSG:32721,25000,675000.0,6400000.0,"geoBoundaries URY ADM1, año representativo 2017, OpenStreetMap/Wambacher",-32.523551,-55.136746
+URY_CL_G_E700000_N6375000,Cerro Largo,UY-CL,regular_grid_25km,EPSG:32721,25000,700000.0,6375000.0,"geoBoundaries URY ADM1, año representativo 2017, OpenStreetMap/Wambacher",-32.744694,-54.865369
+URY_CL_G_E700000_N6400000,Cerro Largo,UY-CL,regular_grid_25km,EPSG:32721,25000,700000.0,6400000.0,"geoBoundaries URY ADM1, año representativo 2017, OpenStreetMap/Wambacher",-32.519328,-54.870716
+URY_CL_G_E725000_N6375000,Cerro Largo,UY-CL,regular_grid_25km,EPSG:32721,25000,725000.0,6375000.0,"geoBoundaries URY ADM1, año representativo 2017, OpenStreetMap/Wambacher",-32.739867,-54.598731
+URY_CL_G_E725000_N6400000,Cerro Largo,UY-CL,regular_grid_25km,EPSG:32721,25000,725000.0,6400000.0,"geoBoundaries URY ADM1, año representativo 2017, OpenStreetMap/Wambacher",-32.514542,-54.604744
+URY_CL_G_E725000_N6425000,Cerro Largo,UY-CL,regular_grid_25km,EPSG:32721,25000,725000.0,6425000.0,"geoBoundaries URY ADM1, año representativo 2017, OpenStreetMap/Wambacher",-32.289208,-54.61069
+URY_CL_G_E750000_N6400000,Cerro Largo,UY-CL,regular_grid_25km,EPSG:32721,25000,750000.0,6400000.0,"geoBoundaries URY ADM1, año representativo 2017, OpenStreetMap/Wambacher",-32.509195,-54.33884
+URY_CL_G_E750000_N6425000,Cerro Largo,UY-CL,regular_grid_25km,EPSG:32721,25000,750000.0,6425000.0,"geoBoundaries URY ADM1, año representativo 2017, OpenStreetMap/Wambacher",-32.283907,-54.345444
+URY_CL_G_E750000_N6450000,Cerro Largo,UY-CL,regular_grid_25km,EPSG:32721,25000,750000.0,6450000.0,"geoBoundaries URY ADM1, año representativo 2017, OpenStreetMap/Wambacher",-32.05861,-54.351975
+URY_CL_G_E750000_N6475000,Cerro Largo,UY-CL,regular_grid_25km,EPSG:32721,25000,750000.0,6475000.0,"geoBoundaries URY ADM1, año representativo 2017, OpenStreetMap/Wambacher",-31.833304,-54.358434
+URY_CL_G_E775000_N6375000,Cerro Largo,UY-CL,regular_grid_25km,EPSG:32721,25000,775000.0,6375000.0,"geoBoundaries URY ADM1, año representativo 2017, OpenStreetMap/Wambacher",-32.728515,-54.065666
+URY_CL_G_E775000_N6400000,Cerro Largo,UY-CL,regular_grid_25km,EPSG:32721,25000,775000.0,6400000.0,"geoBoundaries URY ADM1, año representativo 2017, OpenStreetMap/Wambacher",-32.503287,-54.073009
+URY_CL_G_E775000_N6425000,Cerro Largo,UY-CL,regular_grid_25km,EPSG:32721,25000,775000.0,6425000.0,"geoBoundaries URY ADM1, año representativo 2017, OpenStreetMap/Wambacher",-32.27805,-54.080271
+URY_CL_G_E775000_N6450000,Cerro Largo,UY-CL,regular_grid_25km,EPSG:32721,25000,775000.0,6450000.0,"geoBoundaries URY ADM1, año representativo 2017, OpenStreetMap/Wambacher",-32.052804,-54.087453
+URY_CL_G_E800000_N6375000,Cerro Largo,UY-CL,regular_grid_25km,EPSG:32721,25000,800000.0,6375000.0,"geoBoundaries URY ADM1, año representativo 2017, OpenStreetMap/Wambacher",-32.72199,-53.799253
+URY_CL_G_E800000_N6400000,Cerro Largo,UY-CL,regular_grid_25km,EPSG:32721,25000,800000.0,6400000.0,"geoBoundaries URY ADM1, año representativo 2017, OpenStreetMap/Wambacher",-32.496819,-53.80726
+URY_CL_G_E800000_N6425000,Cerro Largo,UY-CL,regular_grid_25km,EPSG:32721,25000,800000.0,6425000.0,"geoBoundaries URY ADM1, año representativo 2017, OpenStreetMap/Wambacher",-32.271638,-53.815179
+URY_CL_G_E825000_N6375000,Cerro Largo,UY-CL,regular_grid_25km,EPSG:32721,25000,825000.0,6375000.0,"geoBoundaries URY ADM1, año representativo 2017, OpenStreetMap/Wambacher",-32.714901,-53.532929
+URY_CL_G_E825000_N6400000,Cerro Largo,UY-CL,regular_grid_25km,EPSG:32721,25000,825000.0,6400000.0,"geoBoundaries URY ADM1, año representativo 2017, OpenStreetMap/Wambacher",-32.489791,-53.5416
+URY_CL_G_E850000_N6375000,Cerro Largo,UY-CL,regular_grid_25km,EPSG:32721,25000,850000.0,6375000.0,"geoBoundaries URY ADM1, año representativo 2017, OpenStreetMap/Wambacher",-32.707249,-53.266703
+URY_CO_G_E375000_N6250000,Colonia,UY-CO,regular_grid_25km,EPSG:32721,25000,375000.0,6250000.0,"geoBoundaries URY ADM1, año representativo 2017, OpenStreetMap/Wambacher",-33.882951,-58.351679
+URY_CO_G_E400000_N6225000,Colonia,UY-CO,regular_grid_25km,EPSG:32721,25000,400000.0,6225000.0,"geoBoundaries URY ADM1, año representativo 2017, OpenStreetMap/Wambacher",-34.111052,-58.084251
+URY_CO_G_E400000_N6250000,Colonia,UY-CO,regular_grid_25km,EPSG:32721,25000,400000.0,6250000.0,"geoBoundaries URY ADM1, año representativo 2017, OpenStreetMap/Wambacher",-33.88562,-58.081391
+URY_CO_G_E425000_N6200000,Colonia,UY-CO,regular_grid_25km,EPSG:32721,25000,425000.0,6200000.0,"geoBoundaries URY ADM1, año representativo 2017, OpenStreetMap/Wambacher",-34.338588,-57.815386
+URY_CO_G_E425000_N6225000,Colonia,UY-CO,regular_grid_25km,EPSG:32721,25000,425000.0,6225000.0,"geoBoundaries URY ADM1, año representativo 2017, OpenStreetMap/Wambacher",-34.113146,-57.813216
+URY_CO_G_E450000_N6200000,Colonia,UY-CO,regular_grid_25km,EPSG:32721,25000,450000.0,6200000.0,"geoBoundaries URY ADM1, año representativo 2017, OpenStreetMap/Wambacher",-34.340096,-57.543604
+URY_CO_G_E450000_N6225000,Colonia,UY-CO,regular_grid_25km,EPSG:32721,25000,450000.0,6225000.0,"geoBoundaries URY ADM1, año representativo 2017, OpenStreetMap/Wambacher",-34.114642,-57.542158
+URY_CO_G_E475000_N6200000,Colonia,UY-CO,regular_grid_25km,EPSG:32721,25000,475000.0,6200000.0,"geoBoundaries URY ADM1, año representativo 2017, OpenStreetMap/Wambacher",-34.341001,-57.271806
+URY_CO_G_E475000_N6225000,Colonia,UY-CO,regular_grid_25km,EPSG:32721,25000,475000.0,6225000.0,"geoBoundaries URY ADM1, año representativo 2017, OpenStreetMap/Wambacher",-34.115539,-57.271083
+URY_CO_G_E500000_N6225000,Colonia,UY-CO,regular_grid_25km,EPSG:32721,25000,500000.0,6225000.0,"geoBoundaries URY ADM1, año representativo 2017, OpenStreetMap/Wambacher",-34.115838,-57.0
+URY_DU_G_E525000_N6325000,Durazno,UY-DU,regular_grid_25km,EPSG:32721,25000,525000.0,6325000.0,"geoBoundaries URY ADM1, año representativo 2017, OpenStreetMap/Wambacher",-33.213608,-56.731732
+URY_DU_G_E525000_N6350000,Durazno,UY-DU,regular_grid_25km,EPSG:32721,25000,525000.0,6350000.0,"geoBoundaries URY ADM1, año representativo 2017, OpenStreetMap/Wambacher",-32.988105,-56.732416
+URY_DU_G_E550000_N6300000,Durazno,UY-DU,regular_grid_25km,EPSG:32721,25000,550000.0,6300000.0,"geoBoundaries URY ADM1, año representativo 2017, OpenStreetMap/Wambacher",-33.438228,-56.462087
+URY_DU_G_E550000_N6325000,Durazno,UY-DU,regular_grid_25km,EPSG:32721,25000,550000.0,6325000.0,"geoBoundaries URY ADM1, año representativo 2017, OpenStreetMap/Wambacher",-33.21274,-56.463471
+URY_DU_G_E550000_N6350000,Durazno,UY-DU,regular_grid_25km,EPSG:32721,25000,550000.0,6350000.0,"geoBoundaries URY ADM1, año representativo 2017, OpenStreetMap/Wambacher",-32.987244,-56.464839
+URY_DU_G_E575000_N6300000,Durazno,UY-DU,regular_grid_25km,EPSG:32721,25000,575000.0,6300000.0,"geoBoundaries URY ADM1, año representativo 2017, OpenStreetMap/Wambacher",-33.43677,-56.19315
+URY_DU_G_E575000_N6325000,Durazno,UY-DU,regular_grid_25km,EPSG:32721,25000,575000.0,6325000.0,"geoBoundaries URY ADM1, año representativo 2017, OpenStreetMap/Wambacher",-33.211295,-56.195225
+URY_DU_G_E575000_N6350000,Durazno,UY-DU,regular_grid_25km,EPSG:32721,25000,575000.0,6350000.0,"geoBoundaries URY ADM1, año representativo 2017, OpenStreetMap/Wambacher",-32.985811,-56.197277
+URY_DU_G_E575000_N6375000,Durazno,UY-DU,regular_grid_25km,EPSG:32721,25000,575000.0,6375000.0,"geoBoundaries URY ADM1, año representativo 2017, OpenStreetMap/Wambacher",-32.760319,-56.199307
+URY_DU_G_E600000_N6325000,Durazno,UY-DU,regular_grid_25km,EPSG:32721,25000,600000.0,6325000.0,"geoBoundaries URY ADM1, año representativo 2017, OpenStreetMap/Wambacher",-33.209271,-55.927003
+URY_DU_G_E600000_N6350000,Durazno,UY-DU,regular_grid_25km,EPSG:32721,25000,600000.0,6350000.0,"geoBoundaries URY ADM1, año representativo 2017, OpenStreetMap/Wambacher",-32.983804,-55.929739
+URY_DU_G_E600000_N6375000,Durazno,UY-DU,regular_grid_25km,EPSG:32721,25000,600000.0,6375000.0,"geoBoundaries URY ADM1, año representativo 2017, OpenStreetMap/Wambacher",-32.75833,-55.932444
+URY_DU_G_E625000_N6325000,Durazno,UY-DU,regular_grid_25km,EPSG:32721,25000,625000.0,6325000.0,"geoBoundaries URY ADM1, año representativo 2017, OpenStreetMap/Wambacher",-33.206669,-55.658811
+URY_DU_G_E625000_N6350000,Durazno,UY-DU,regular_grid_25km,EPSG:32721,25000,625000.0,6350000.0,"geoBoundaries URY ADM1, año representativo 2017, OpenStreetMap/Wambacher",-32.981225,-55.66223
+URY_DU_G_E625000_N6375000,Durazno,UY-DU,regular_grid_25km,EPSG:32721,25000,625000.0,6375000.0,"geoBoundaries URY ADM1, año representativo 2017, OpenStreetMap/Wambacher",-32.755772,-55.665612
+URY_DU_G_E625000_N6400000,Durazno,UY-DU,regular_grid_25km,EPSG:32721,25000,625000.0,6400000.0,"geoBoundaries URY ADM1, año representativo 2017, OpenStreetMap/Wambacher",-32.530311,-55.668956
+URY_DU_G_E650000_N6325000,Durazno,UY-DU,regular_grid_25km,EPSG:32721,25000,650000.0,6325000.0,"geoBoundaries URY ADM1, año representativo 2017, OpenStreetMap/Wambacher",-33.20349,-55.390657
+URY_DU_G_E650000_N6350000,Durazno,UY-DU,regular_grid_25km,EPSG:32721,25000,650000.0,6350000.0,"geoBoundaries URY ADM1, año representativo 2017, OpenStreetMap/Wambacher",-32.978073,-55.39476
+URY_DU_G_E650000_N6375000,Durazno,UY-DU,regular_grid_25km,EPSG:32721,25000,650000.0,6375000.0,"geoBoundaries URY ADM1, año representativo 2017, OpenStreetMap/Wambacher",-32.752647,-55.398817
+URY_DU_G_E650000_N6400000,Durazno,UY-DU,regular_grid_25km,EPSG:32721,25000,650000.0,6400000.0,"geoBoundaries URY ADM1, año representativo 2017, OpenStreetMap/Wambacher",-32.527212,-55.402829
+URY_FD_G_E550000_N6275000,Florida,UY-FD,regular_grid_25km,EPSG:32721,25000,550000.0,6275000.0,"geoBoundaries URY ADM1, año representativo 2017, OpenStreetMap/Wambacher",-33.663708,-56.460688
+URY_FD_G_E575000_N6200000,Florida,UY-FD,regular_grid_25km,EPSG:32721,25000,575000.0,6200000.0,"geoBoundaries URY ADM1, año representativo 2017, OpenStreetMap/Wambacher",-34.338588,-56.184614
+URY_FD_G_E575000_N6225000,Florida,UY-FD,regular_grid_25km,EPSG:32721,25000,575000.0,6225000.0,"geoBoundaries URY ADM1, año representativo 2017, OpenStreetMap/Wambacher",-34.113146,-56.186784
+URY_FD_G_E575000_N6250000,Florida,UY-FD,regular_grid_25km,EPSG:32721,25000,575000.0,6250000.0,"geoBoundaries URY ADM1, año representativo 2017, OpenStreetMap/Wambacher",-33.887696,-56.188929
+URY_FD_G_E575000_N6275000,Florida,UY-FD,regular_grid_25km,EPSG:32721,25000,575000.0,6275000.0,"geoBoundaries URY ADM1, año representativo 2017, OpenStreetMap/Wambacher",-33.662237,-56.191051
+URY_FD_G_E600000_N6225000,Florida,UY-FD,regular_grid_25km,EPSG:32721,25000,600000.0,6225000.0,"geoBoundaries URY ADM1, año representativo 2017, OpenStreetMap/Wambacher",-34.111052,-55.915749
+URY_FD_G_E600000_N6250000,Florida,UY-FD,regular_grid_25km,EPSG:32721,25000,600000.0,6250000.0,"geoBoundaries URY ADM1, año representativo 2017, OpenStreetMap/Wambacher",-33.88562,-55.918609
+URY_FD_G_E600000_N6275000,Florida,UY-FD,regular_grid_25km,EPSG:32721,25000,600000.0,6275000.0,"geoBoundaries URY ADM1, año representativo 2017, OpenStreetMap/Wambacher",-33.660178,-55.921438
+URY_FD_G_E600000_N6300000,Florida,UY-FD,regular_grid_25km,EPSG:32721,25000,600000.0,6300000.0,"geoBoundaries URY ADM1, año representativo 2017, OpenStreetMap/Wambacher",-33.434729,-55.924236
+URY_FD_G_E625000_N6225000,Florida,UY-FD,regular_grid_25km,EPSG:32721,25000,625000.0,6225000.0,"geoBoundaries URY ADM1, año representativo 2017, OpenStreetMap/Wambacher",-34.108361,-55.644746
+URY_FD_G_E625000_N6250000,Florida,UY-FD,regular_grid_25km,EPSG:32721,25000,625000.0,6250000.0,"geoBoundaries URY ADM1, año representativo 2017, OpenStreetMap/Wambacher",-33.882951,-55.648321
+URY_FD_G_E625000_N6275000,Florida,UY-FD,regular_grid_25km,EPSG:32721,25000,625000.0,6275000.0,"geoBoundaries URY ADM1, año representativo 2017, OpenStreetMap/Wambacher",-33.657532,-55.651857
+URY_FD_G_E625000_N6300000,Florida,UY-FD,regular_grid_25km,EPSG:32721,25000,625000.0,6300000.0,"geoBoundaries URY ADM1, año representativo 2017, OpenStreetMap/Wambacher",-33.432105,-55.655353
+URY_FD_G_E650000_N6250000,Florida,UY-FD,regular_grid_25km,EPSG:32721,25000,650000.0,6250000.0,"geoBoundaries URY ADM1, año representativo 2017, OpenStreetMap/Wambacher",-33.879689,-55.378072
+URY_FD_G_E650000_N6275000,Florida,UY-FD,regular_grid_25km,EPSG:32721,25000,650000.0,6275000.0,"geoBoundaries URY ADM1, año representativo 2017, OpenStreetMap/Wambacher",-33.654298,-55.382314
+URY_FD_G_E650000_N6300000,Florida,UY-FD,regular_grid_25km,EPSG:32721,25000,650000.0,6300000.0,"geoBoundaries URY ADM1, año representativo 2017, OpenStreetMap/Wambacher",-33.428898,-55.386509
+URY_FD_G_E675000_N6325000,Florida,UY-FD,regular_grid_25km,EPSG:32721,25000,675000.0,6325000.0,"geoBoundaries URY ADM1, año representativo 2017, OpenStreetMap/Wambacher",-33.199733,-55.12255
+URY_FS_G_E475000_N6300000,Flores,UY-FS,regular_grid_25km,EPSG:32721,25000,475000.0,6300000.0,"geoBoundaries URY ADM1, año representativo 2017, OpenStreetMap/Wambacher",-33.439103,-57.26896
+URY_FS_G_E500000_N6250000,Flores,UY-FS,regular_grid_25km,EPSG:32721,25000,500000.0,6250000.0,"geoBoundaries URY ADM1, año representativo 2017, OpenStreetMap/Wambacher",-33.890365,-57.0
+URY_FS_G_E500000_N6275000,Flores,UY-FS,regular_grid_25km,EPSG:32721,25000,500000.0,6275000.0,"geoBoundaries URY ADM1, año representativo 2017, OpenStreetMap/Wambacher",-33.664884,-57.0
+URY_FS_G_E500000_N6300000,Flores,UY-FS,regular_grid_25km,EPSG:32721,25000,500000.0,6300000.0,"geoBoundaries URY ADM1, año representativo 2017, OpenStreetMap/Wambacher",-33.439395,-57.0
+URY_FS_G_E500000_N6325000,Flores,UY-FS,regular_grid_25km,EPSG:32721,25000,500000.0,6325000.0,"geoBoundaries URY ADM1, año representativo 2017, OpenStreetMap/Wambacher",-33.213897,-57.0
+URY_FS_G_E525000_N6250000,Flores,UY-FS,regular_grid_25km,EPSG:32721,25000,525000.0,6250000.0,"geoBoundaries URY ADM1, año representativo 2017, OpenStreetMap/Wambacher",-33.890069,-56.729633
+URY_FS_G_E525000_N6275000,Flores,UY-FS,regular_grid_25km,EPSG:32721,25000,525000.0,6275000.0,"geoBoundaries URY ADM1, año representativo 2017, OpenStreetMap/Wambacher",-33.66459,-56.73034
+URY_FS_G_E525000_N6300000,Flores,UY-FS,regular_grid_25km,EPSG:32721,25000,525000.0,6300000.0,"geoBoundaries URY ADM1, año representativo 2017, OpenStreetMap/Wambacher",-33.439103,-56.73104
+URY_FS_G_E550000_N6250000,Flores,UY-FS,regular_grid_25km,EPSG:32721,25000,550000.0,6250000.0,"geoBoundaries URY ADM1, año representativo 2017, OpenStreetMap/Wambacher",-33.889179,-56.459273
+URY_LA_G_E650000_N6175000,Lavalleja,UY-LA,regular_grid_25km,EPSG:32721,25000,650000.0,6175000.0,"geoBoundaries URY ADM1, año representativo 2017, OpenStreetMap/Wambacher",-34.55581,-55.36506
+URY_LA_G_E650000_N6200000,Lavalleja,UY-LA,regular_grid_25km,EPSG:32721,25000,650000.0,6200000.0,"geoBoundaries URY ADM1, año representativo 2017, OpenStreetMap/Wambacher",-34.330445,-55.369446
+URY_LA_G_E650000_N6225000,Lavalleja,UY-LA,regular_grid_25km,EPSG:32721,25000,650000.0,6225000.0,"geoBoundaries URY ADM1, año representativo 2017, OpenStreetMap/Wambacher",-34.105072,-55.373783
+URY_LA_G_E675000_N6200000,Lavalleja,UY-LA,regular_grid_25km,EPSG:32721,25000,675000.0,6200000.0,"geoBoundaries URY ADM1, año representativo 2017, OpenStreetMap/Wambacher",-34.326526,-55.097809
+URY_LA_G_E675000_N6225000,Lavalleja,UY-LA,regular_grid_25km,EPSG:32721,25000,675000.0,6225000.0,"geoBoundaries URY ADM1, año representativo 2017, OpenStreetMap/Wambacher",-34.101185,-55.102868
+URY_LA_G_E675000_N6250000,Lavalleja,UY-LA,regular_grid_25km,EPSG:32721,25000,675000.0,6250000.0,"geoBoundaries URY ADM1, año representativo 2017, OpenStreetMap/Wambacher",-33.875836,-55.107871
+URY_LA_G_E675000_N6275000,Lavalleja,UY-LA,regular_grid_25km,EPSG:32721,25000,675000.0,6275000.0,"geoBoundaries URY ADM1, año representativo 2017, OpenStreetMap/Wambacher",-33.650477,-55.112818
+URY_LA_G_E700000_N6200000,Lavalleja,UY-LA,regular_grid_25km,EPSG:32721,25000,700000.0,6200000.0,"geoBoundaries URY ADM1, año representativo 2017, OpenStreetMap/Wambacher",-34.322005,-54.826229
+URY_LA_G_E700000_N6225000,Lavalleja,UY-LA,regular_grid_25km,EPSG:32721,25000,700000.0,6225000.0,"geoBoundaries URY ADM1, año representativo 2017, OpenStreetMap/Wambacher",-34.096702,-54.832009
+URY_LA_G_E700000_N6250000,Lavalleja,UY-LA,regular_grid_25km,EPSG:32721,25000,700000.0,6250000.0,"geoBoundaries URY ADM1, año representativo 2017, OpenStreetMap/Wambacher",-33.87139,-54.837725
+URY_LA_G_E700000_N6275000,Lavalleja,UY-LA,regular_grid_25km,EPSG:32721,25000,700000.0,6275000.0,"geoBoundaries URY ADM1, año representativo 2017, OpenStreetMap/Wambacher",-33.646069,-54.843377
+URY_LA_G_E700000_N6300000,Lavalleja,UY-LA,regular_grid_25km,EPSG:32721,25000,700000.0,6300000.0,"geoBoundaries URY ADM1, año representativo 2017, OpenStreetMap/Wambacher",-33.420738,-54.848967
+URY_LA_G_E725000_N6250000,Lavalleja,UY-LA,regular_grid_25km,EPSG:32721,25000,725000.0,6250000.0,"geoBoundaries URY ADM1, año representativo 2017, OpenStreetMap/Wambacher",-33.866353,-54.567642
+URY_LA_G_E725000_N6275000,Lavalleja,UY-LA,regular_grid_25km,EPSG:32721,25000,725000.0,6275000.0,"geoBoundaries URY ADM1, año representativo 2017, OpenStreetMap/Wambacher",-33.641074,-54.573999
+URY_LA_G_E750000_N6300000,Lavalleja,UY-LA,regular_grid_25km,EPSG:32721,25000,750000.0,6300000.0,"geoBoundaries URY ADM1, año representativo 2017, OpenStreetMap/Wambacher",-33.410253,-54.311673
+URY_MA_G_E650000_N6150000,Maldonado,UY-MA,regular_grid_25km,EPSG:32721,25000,650000.0,6150000.0,"geoBoundaries URY ADM1, año representativo 2017, OpenStreetMap/Wambacher",-34.781166,-55.360626
+URY_MA_G_E675000_N6150000,Maldonado,UY-MA,regular_grid_25km,EPSG:32721,25000,675000.0,6150000.0,"geoBoundaries URY ADM1, año representativo 2017, OpenStreetMap/Wambacher",-34.777181,-55.087522
+URY_MA_G_E675000_N6175000,Maldonado,UY-MA,regular_grid_25km,EPSG:32721,25000,675000.0,6175000.0,"geoBoundaries URY ADM1, año representativo 2017, OpenStreetMap/Wambacher",-34.551858,-55.092694
+URY_MA_G_E700000_N6150000,Maldonado,UY-MA,regular_grid_25km,EPSG:32721,25000,700000.0,6150000.0,"geoBoundaries URY ADM1, año representativo 2017, OpenStreetMap/Wambacher",-34.772583,-54.814476
+URY_MA_G_E700000_N6175000,Maldonado,UY-MA,regular_grid_25km,EPSG:32721,25000,700000.0,6175000.0,"geoBoundaries URY ADM1, año representativo 2017, OpenStreetMap/Wambacher",-34.547299,-54.820385
+URY_MA_G_E725000_N6175000,Maldonado,UY-MA,regular_grid_25km,EPSG:32721,25000,725000.0,6175000.0,"geoBoundaries URY ADM1, año representativo 2017, OpenStreetMap/Wambacher",-34.542133,-54.548141
+URY_MA_G_E725000_N6200000,Maldonado,UY-MA,regular_grid_25km,EPSG:32721,25000,725000.0,6200000.0,"geoBoundaries URY ADM1, año representativo 2017, OpenStreetMap/Wambacher",-34.316882,-54.554714
+URY_MA_G_E725000_N6225000,Maldonado,UY-MA,regular_grid_25km,EPSG:32721,25000,725000.0,6225000.0,"geoBoundaries URY ADM1, año representativo 2017, OpenStreetMap/Wambacher",-34.091622,-54.561214
+URY_MO_G_E575000_N6150000,Montevideo,UY-MO,regular_grid_25km,EPSG:32721,25000,575000.0,6150000.0,"geoBoundaries URY ADM1, año representativo 2017, OpenStreetMap/Wambacher",-34.789446,-56.180201
+URY_PA_G_E400000_N6425000,Paysandú,UY-PA,regular_grid_25km,EPSG:32721,25000,400000.0,6425000.0,"geoBoundaries URY ADM1, año representativo 2017, OpenStreetMap/Wambacher",-32.307355,-58.062234
+URY_PA_G_E400000_N6450000,Paysandú,UY-PA,regular_grid_25km,EPSG:32721,25000,400000.0,6450000.0,"geoBoundaries URY ADM1, año representativo 2017, OpenStreetMap/Wambacher",-32.081856,-58.059617
+URY_PA_G_E400000_N6475000,Paysandú,UY-PA,regular_grid_25km,EPSG:32721,25000,400000.0,6475000.0,"geoBoundaries URY ADM1, año representativo 2017, OpenStreetMap/Wambacher",-31.856348,-58.05703
+URY_PA_G_E425000_N6400000,Paysandú,UY-PA,regular_grid_25km,EPSG:32721,25000,425000.0,6400000.0,"geoBoundaries URY ADM1, año representativo 2017, OpenStreetMap/Wambacher",-32.534819,-57.798686
+URY_PA_G_E425000_N6425000,Paysandú,UY-PA,regular_grid_25km,EPSG:32721,25000,425000.0,6425000.0,"geoBoundaries URY ADM1, año representativo 2017, OpenStreetMap/Wambacher",-32.309311,-57.796701
+URY_PA_G_E425000_N6450000,Paysandú,UY-PA,regular_grid_25km,EPSG:32721,25000,425000.0,6450000.0,"geoBoundaries URY ADM1, año representativo 2017, OpenStreetMap/Wambacher",-32.083794,-57.794738
+URY_PA_G_E425000_N6475000,Paysandú,UY-PA,regular_grid_25km,EPSG:32721,25000,425000.0,6475000.0,"geoBoundaries URY ADM1, año representativo 2017, OpenStreetMap/Wambacher",-31.858269,-57.792798
+URY_PA_G_E425000_N6500000,Paysandú,UY-PA,regular_grid_25km,EPSG:32721,25000,425000.0,6500000.0,"geoBoundaries URY ADM1, año representativo 2017, OpenStreetMap/Wambacher",-31.632737,-57.790878
+URY_PA_G_E450000_N6425000,Paysandú,UY-PA,regular_grid_25km,EPSG:32721,25000,450000.0,6425000.0,"geoBoundaries URY ADM1, año representativo 2017, OpenStreetMap/Wambacher",-32.310708,-57.531146
+URY_PA_G_E450000_N6450000,Paysandú,UY-PA,regular_grid_25km,EPSG:32721,25000,450000.0,6450000.0,"geoBoundaries URY ADM1, año representativo 2017, OpenStreetMap/Wambacher",-32.085179,-57.529838
+URY_PA_G_E450000_N6475000,Paysandú,UY-PA,regular_grid_25km,EPSG:32721,25000,450000.0,6475000.0,"geoBoundaries URY ADM1, año representativo 2017, OpenStreetMap/Wambacher",-31.859642,-57.528544
+URY_PA_G_E450000_N6500000,Paysandú,UY-PA,regular_grid_25km,EPSG:32721,25000,450000.0,6500000.0,"geoBoundaries URY ADM1, año representativo 2017, OpenStreetMap/Wambacher",-31.634098,-57.527264
+URY_PA_G_E475000_N6425000,Paysandú,UY-PA,regular_grid_25km,EPSG:32721,25000,475000.0,6425000.0,"geoBoundaries URY ADM1, año representativo 2017, OpenStreetMap/Wambacher",-32.311546,-57.265577
+URY_PA_G_E475000_N6450000,Paysandú,UY-PA,regular_grid_25km,EPSG:32721,25000,475000.0,6450000.0,"geoBoundaries URY ADM1, año representativo 2017, OpenStreetMap/Wambacher",-32.08601,-57.264923
+URY_PA_G_E475000_N6475000,Paysandú,UY-PA,regular_grid_25km,EPSG:32721,25000,475000.0,6475000.0,"geoBoundaries URY ADM1, año representativo 2017, OpenStreetMap/Wambacher",-31.860466,-57.264275
+URY_PA_G_E500000_N6425000,Paysandú,UY-PA,regular_grid_25km,EPSG:32721,25000,500000.0,6425000.0,"geoBoundaries URY ADM1, año representativo 2017, OpenStreetMap/Wambacher",-32.311825,-57.0
+URY_PA_G_E500000_N6450000,Paysandú,UY-PA,regular_grid_25km,EPSG:32721,25000,500000.0,6450000.0,"geoBoundaries URY ADM1, año representativo 2017, OpenStreetMap/Wambacher",-32.086287,-57.0
+URY_PA_G_E500000_N6475000,Paysandú,UY-PA,regular_grid_25km,EPSG:32721,25000,500000.0,6475000.0,"geoBoundaries URY ADM1, año representativo 2017, OpenStreetMap/Wambacher",-31.860741,-57.0
+URY_PA_G_E525000_N6425000,Paysandú,UY-PA,regular_grid_25km,EPSG:32721,25000,525000.0,6425000.0,"geoBoundaries URY ADM1, año representativo 2017, OpenStreetMap/Wambacher",-32.311546,-56.734423
+URY_PA_G_E525000_N6450000,Paysandú,UY-PA,regular_grid_25km,EPSG:32721,25000,525000.0,6450000.0,"geoBoundaries URY ADM1, año representativo 2017, OpenStreetMap/Wambacher",-32.08601,-56.735077
+URY_PA_G_E525000_N6475000,Paysandú,UY-PA,regular_grid_25km,EPSG:32721,25000,525000.0,6475000.0,"geoBoundaries URY ADM1, año representativo 2017, OpenStreetMap/Wambacher",-31.860466,-56.735725
+URY_PA_G_E550000_N6450000,Paysandú,UY-PA,regular_grid_25km,EPSG:32721,25000,550000.0,6450000.0,"geoBoundaries URY ADM1, año representativo 2017, OpenStreetMap/Wambacher",-32.085179,-56.470162
+URY_RN_G_E375000_N6325000,Río Negro,UY-RN,regular_grid_25km,EPSG:32721,25000,375000.0,6325000.0,"geoBoundaries URY ADM1, año representativo 2017, OpenStreetMap/Wambacher",-33.206669,-58.341189
+URY_RN_G_E400000_N6325000,Río Negro,UY-RN,regular_grid_25km,EPSG:32721,25000,400000.0,6325000.0,"geoBoundaries URY ADM1, año representativo 2017, OpenStreetMap/Wambacher",-33.209271,-58.072997
+URY_RN_G_E400000_N6350000,Río Negro,UY-RN,regular_grid_25km,EPSG:32721,25000,400000.0,6350000.0,"geoBoundaries URY ADM1, año representativo 2017, OpenStreetMap/Wambacher",-32.983804,-58.070261
+URY_RN_G_E400000_N6375000,Río Negro,UY-RN,regular_grid_25km,EPSG:32721,25000,400000.0,6375000.0,"geoBoundaries URY ADM1, año representativo 2017, OpenStreetMap/Wambacher",-32.75833,-58.067556
+URY_RN_G_E400000_N6400000,Río Negro,UY-RN,regular_grid_25km,EPSG:32721,25000,400000.0,6400000.0,"geoBoundaries URY ADM1, año representativo 2017, OpenStreetMap/Wambacher",-32.532847,-58.06488
+URY_RN_G_E425000_N6350000,Río Negro,UY-RN,regular_grid_25km,EPSG:32721,25000,425000.0,6350000.0,"geoBoundaries URY ADM1, año representativo 2017, OpenStreetMap/Wambacher",-32.985811,-57.802723
+URY_RN_G_E425000_N6375000,Río Negro,UY-RN,regular_grid_25km,EPSG:32721,25000,425000.0,6375000.0,"geoBoundaries URY ADM1, año representativo 2017, OpenStreetMap/Wambacher",-32.760319,-57.800693
+URY_RN_G_E450000_N6350000,Río Negro,UY-RN,regular_grid_25km,EPSG:32721,25000,450000.0,6350000.0,"geoBoundaries URY ADM1, año representativo 2017, OpenStreetMap/Wambacher",-32.987244,-57.535161
+URY_RN_G_E450000_N6375000,Río Negro,UY-RN,regular_grid_25km,EPSG:32721,25000,450000.0,6375000.0,"geoBoundaries URY ADM1, año representativo 2017, OpenStreetMap/Wambacher",-32.76174,-57.533808
+URY_RN_G_E450000_N6400000,Río Negro,UY-RN,regular_grid_25km,EPSG:32721,25000,450000.0,6400000.0,"geoBoundaries URY ADM1, año representativo 2017, OpenStreetMap/Wambacher",-32.536228,-57.53247
+URY_RN_G_E475000_N6350000,Río Negro,UY-RN,regular_grid_25km,EPSG:32721,25000,475000.0,6350000.0,"geoBoundaries URY ADM1, año representativo 2017, OpenStreetMap/Wambacher",-32.988105,-57.267584
+URY_RN_G_E475000_N6375000,Río Negro,UY-RN,regular_grid_25km,EPSG:32721,25000,475000.0,6375000.0,"geoBoundaries URY ADM1, año representativo 2017, OpenStreetMap/Wambacher",-32.762593,-57.266908
+URY_RN_G_E475000_N6400000,Río Negro,UY-RN,regular_grid_25km,EPSG:32721,25000,475000.0,6400000.0,"geoBoundaries URY ADM1, año representativo 2017, OpenStreetMap/Wambacher",-32.537073,-57.266239
+URY_RN_G_E500000_N6350000,Río Negro,UY-RN,regular_grid_25km,EPSG:32721,25000,500000.0,6350000.0,"geoBoundaries URY ADM1, año representativo 2017, OpenStreetMap/Wambacher",-32.988391,-57.0
+URY_RN_G_E500000_N6375000,Río Negro,UY-RN,regular_grid_25km,EPSG:32721,25000,500000.0,6375000.0,"geoBoundaries URY ADM1, año representativo 2017, OpenStreetMap/Wambacher",-32.762877,-57.0
+URY_RN_G_E500000_N6400000,Río Negro,UY-RN,regular_grid_25km,EPSG:32721,25000,500000.0,6400000.0,"geoBoundaries URY ADM1, año representativo 2017, OpenStreetMap/Wambacher",-32.537355,-57.0
+URY_RN_G_E525000_N6375000,Río Negro,UY-RN,regular_grid_25km,EPSG:32721,25000,525000.0,6375000.0,"geoBoundaries URY ADM1, año representativo 2017, OpenStreetMap/Wambacher",-32.762593,-56.733092
+URY_RN_G_E525000_N6400000,Río Negro,UY-RN,regular_grid_25km,EPSG:32721,25000,525000.0,6400000.0,"geoBoundaries URY ADM1, año representativo 2017, OpenStreetMap/Wambacher",-32.537073,-56.733761
+URY_RO_G_E725000_N6150000,Rocha,UY-RO,regular_grid_25km,EPSG:32721,25000,725000.0,6150000.0,"geoBoundaries URY ADM1, año representativo 2017, OpenStreetMap/Wambacher",-34.767374,-54.541496
+URY_RO_G_E750000_N6175000,Rocha,UY-RO,regular_grid_25km,EPSG:32721,25000,750000.0,6175000.0,"geoBoundaries URY ADM1, año representativo 2017, OpenStreetMap/Wambacher",-34.536361,-54.275971
+URY_RO_G_E750000_N6200000,Rocha,UY-RO,regular_grid_25km,EPSG:32721,25000,750000.0,6200000.0,"geoBoundaries URY ADM1, año representativo 2017, OpenStreetMap/Wambacher",-34.311159,-54.283271
+URY_RO_G_E750000_N6225000,Rocha,UY-RO,regular_grid_25km,EPSG:32721,25000,750000.0,6225000.0,"geoBoundaries URY ADM1, año representativo 2017, OpenStreetMap/Wambacher",-34.085947,-54.29049
+URY_RO_G_E750000_N6250000,Rocha,UY-RO,regular_grid_25km,EPSG:32721,25000,750000.0,6250000.0,"geoBoundaries URY ADM1, año representativo 2017, OpenStreetMap/Wambacher",-33.860725,-54.29763
+URY_RO_G_E750000_N6275000,Rocha,UY-RO,regular_grid_25km,EPSG:32721,25000,750000.0,6275000.0,"geoBoundaries URY ADM1, año representativo 2017, OpenStreetMap/Wambacher",-33.635494,-54.304691
+URY_RO_G_E775000_N6200000,Rocha,UY-RO,regular_grid_25km,EPSG:32721,25000,775000.0,6200000.0,"geoBoundaries URY ADM1, año representativo 2017, OpenStreetMap/Wambacher",-34.304835,-54.011908
+URY_RO_G_E775000_N6225000,Rocha,UY-RO,regular_grid_25km,EPSG:32721,25000,775000.0,6225000.0,"geoBoundaries URY ADM1, año representativo 2017, OpenStreetMap/Wambacher",-34.079676,-54.019846
+URY_RO_G_E775000_N6250000,Rocha,UY-RO,regular_grid_25km,EPSG:32721,25000,775000.0,6250000.0,"geoBoundaries URY ADM1, año representativo 2017, OpenStreetMap/Wambacher",-33.854507,-54.027697
+URY_RO_G_E775000_N6275000,Rocha,UY-RO,regular_grid_25km,EPSG:32721,25000,775000.0,6275000.0,"geoBoundaries URY ADM1, año representativo 2017, OpenStreetMap/Wambacher",-33.629328,-54.03546
+URY_RO_G_E800000_N6225000,Rocha,UY-RO,regular_grid_25km,EPSG:32721,25000,800000.0,6225000.0,"geoBoundaries URY ADM1, año representativo 2017, OpenStreetMap/Wambacher",-34.07281,-53.74929
+URY_RO_G_E800000_N6250000,Rocha,UY-RO,regular_grid_25km,EPSG:32721,25000,800000.0,6250000.0,"geoBoundaries URY ADM1, año representativo 2017, OpenStreetMap/Wambacher",-33.847699,-53.75785
+URY_RO_G_E800000_N6275000,Rocha,UY-RO,regular_grid_25km,EPSG:32721,25000,800000.0,6275000.0,"geoBoundaries URY ADM1, año representativo 2017, OpenStreetMap/Wambacher",-33.622577,-53.766316
+URY_RO_G_E800000_N6300000,Rocha,UY-RO,regular_grid_25km,EPSG:32721,25000,800000.0,6300000.0,"geoBoundaries URY ADM1, año representativo 2017, OpenStreetMap/Wambacher",-33.397445,-53.774688
+URY_RO_G_E825000_N6250000,Rocha,UY-RO,regular_grid_25km,EPSG:32721,25000,825000.0,6250000.0,"geoBoundaries URY ADM1, año representativo 2017, OpenStreetMap/Wambacher",-33.840301,-53.488099
+URY_RV_G_E600000_N6550000,Rivera,UY-RV,regular_grid_25km,EPSG:32721,25000,600000.0,6550000.0,"geoBoundaries URY ADM1, año representativo 2017, OpenStreetMap/Wambacher",-31.179775,-55.950561
+URY_RV_G_E625000_N6525000,Rivera,UY-RV,regular_grid_25km,EPSG:32721,25000,625000.0,6525000.0,"geoBoundaries URY ADM1, año representativo 2017, OpenStreetMap/Wambacher",-31.40288,-55.685127
+URY_RV_G_E625000_N6550000,Rivera,UY-RV,regular_grid_25km,EPSG:32721,25000,625000.0,6550000.0,"geoBoundaries URY ADM1, año representativo 2017, OpenStreetMap/Wambacher",-31.177369,-55.688253
+URY_RV_G_E625000_N6575000,Rivera,UY-RV,regular_grid_25km,EPSG:32721,25000,625000.0,6575000.0,"geoBoundaries URY ADM1, año representativo 2017, OpenStreetMap/Wambacher",-30.95185,-55.691345
+URY_RV_G_E650000_N6500000,Rivera,UY-RV,regular_grid_25km,EPSG:32721,25000,650000.0,6500000.0,"geoBoundaries URY ADM1, año representativo 2017, OpenStreetMap/Wambacher",-31.62539,-55.418436
+URY_RV_G_E650000_N6525000,Rivera,UY-RV,regular_grid_25km,EPSG:32721,25000,650000.0,6525000.0,"geoBoundaries URY ADM1, año representativo 2017, OpenStreetMap/Wambacher",-31.399914,-55.42223
+URY_RV_G_E650000_N6550000,Rivera,UY-RV,regular_grid_25km,EPSG:32721,25000,650000.0,6550000.0,"geoBoundaries URY ADM1, año representativo 2017, OpenStreetMap/Wambacher",-31.174429,-55.425981
+URY_RV_G_E675000_N6500000,Rivera,UY-RV,regular_grid_25km,EPSG:32721,25000,675000.0,6500000.0,"geoBoundaries URY ADM1, año representativo 2017, OpenStreetMap/Wambacher",-31.621854,-55.15495
+URY_RV_G_E675000_N6525000,Rivera,UY-RV,regular_grid_25km,EPSG:32721,25000,675000.0,6525000.0,"geoBoundaries URY ADM1, año representativo 2017, OpenStreetMap/Wambacher",-31.396409,-55.159375
+URY_RV_G_E700000_N6475000,Rivera,UY-RV,regular_grid_25km,EPSG:32721,25000,700000.0,6475000.0,"geoBoundaries URY ADM1, año representativo 2017, OpenStreetMap/Wambacher",-31.843176,-54.886401
+URY_RV_G_E700000_N6500000,Rivera,UY-RV,regular_grid_25km,EPSG:32721,25000,700000.0,6500000.0,"geoBoundaries URY ADM1, año representativo 2017, OpenStreetMap/Wambacher",-31.617775,-54.891514
+URY_RV_G_E700000_N6525000,Rivera,UY-RV,regular_grid_25km,EPSG:32721,25000,700000.0,6525000.0,"geoBoundaries URY ADM1, año representativo 2017, OpenStreetMap/Wambacher",-31.392365,-54.89657
+URY_RV_G_E725000_N6450000,Rivera,UY-RV,regular_grid_25km,EPSG:32721,25000,725000.0,6450000.0,"geoBoundaries URY ADM1, año representativo 2017, OpenStreetMap/Wambacher",-32.063866,-54.61657
+URY_RV_G_E725000_N6475000,Rivera,UY-RV,regular_grid_25km,EPSG:32721,25000,725000.0,6475000.0,"geoBoundaries URY ADM1, año representativo 2017, OpenStreetMap/Wambacher",-31.838514,-54.622385
+URY_RV_G_E725000_N6500000,Rivera,UY-RV,regular_grid_25km,EPSG:32721,25000,725000.0,6500000.0,"geoBoundaries URY ADM1, año representativo 2017, OpenStreetMap/Wambacher",-31.613153,-54.628135
+URY_SA_G_E425000_N6525000,Salto,UY-SA,regular_grid_25km,EPSG:32721,25000,425000.0,6525000.0,"geoBoundaries URY ADM1, año representativo 2017, OpenStreetMap/Wambacher",-31.407196,-57.788981
+URY_SA_G_E425000_N6550000,Salto,UY-SA,regular_grid_25km,EPSG:32721,25000,425000.0,6550000.0,"geoBoundaries URY ADM1, año representativo 2017, OpenStreetMap/Wambacher",-31.181647,-57.787104
+URY_SA_G_E425000_N6575000,Salto,UY-SA,regular_grid_25km,EPSG:32721,25000,425000.0,6575000.0,"geoBoundaries URY ADM1, año representativo 2017, OpenStreetMap/Wambacher",-30.95609,-57.785248
+URY_SA_G_E450000_N6525000,Salto,UY-SA,regular_grid_25km,EPSG:32721,25000,450000.0,6525000.0,"geoBoundaries URY ADM1, año representativo 2017, OpenStreetMap/Wambacher",-31.408545,-57.525999
+URY_SA_G_E450000_N6550000,Salto,UY-SA,regular_grid_25km,EPSG:32721,25000,450000.0,6550000.0,"geoBoundaries URY ADM1, año representativo 2017, OpenStreetMap/Wambacher",-31.182984,-57.524748
+URY_SA_G_E450000_N6575000,Salto,UY-SA,regular_grid_25km,EPSG:32721,25000,450000.0,6575000.0,"geoBoundaries URY ADM1, año representativo 2017, OpenStreetMap/Wambacher",-30.957415,-57.52351
+URY_SA_G_E475000_N6500000,Salto,UY-SA,regular_grid_25km,EPSG:32721,25000,475000.0,6500000.0,"geoBoundaries URY ADM1, año representativo 2017, OpenStreetMap/Wambacher",-31.634914,-57.263636
+URY_SA_G_E475000_N6525000,Salto,UY-SA,regular_grid_25km,EPSG:32721,25000,475000.0,6525000.0,"geoBoundaries URY ADM1, año representativo 2017, OpenStreetMap/Wambacher",-31.409354,-57.263003
+URY_SA_G_E475000_N6550000,Salto,UY-SA,regular_grid_25km,EPSG:32721,25000,475000.0,6550000.0,"geoBoundaries URY ADM1, año representativo 2017, OpenStreetMap/Wambacher",-31.183786,-57.262377
+URY_SA_G_E500000_N6500000,Salto,UY-SA,regular_grid_25km,EPSG:32721,25000,500000.0,6500000.0,"geoBoundaries URY ADM1, año representativo 2017, OpenStreetMap/Wambacher",-31.635186,-57.0
+URY_SA_G_E500000_N6525000,Salto,UY-SA,regular_grid_25km,EPSG:32721,25000,500000.0,6525000.0,"geoBoundaries URY ADM1, año representativo 2017, OpenStreetMap/Wambacher",-31.409624,-57.0
+URY_SA_G_E500000_N6550000,Salto,UY-SA,regular_grid_25km,EPSG:32721,25000,500000.0,6550000.0,"geoBoundaries URY ADM1, año representativo 2017, OpenStreetMap/Wambacher",-31.184054,-57.0
+URY_SA_G_E525000_N6500000,Salto,UY-SA,regular_grid_25km,EPSG:32721,25000,525000.0,6500000.0,"geoBoundaries URY ADM1, año representativo 2017, OpenStreetMap/Wambacher",-31.634914,-56.736364
+URY_SA_G_E525000_N6525000,Salto,UY-SA,regular_grid_25km,EPSG:32721,25000,525000.0,6525000.0,"geoBoundaries URY ADM1, año representativo 2017, OpenStreetMap/Wambacher",-31.409354,-56.736997
+URY_SA_G_E525000_N6550000,Salto,UY-SA,regular_grid_25km,EPSG:32721,25000,525000.0,6550000.0,"geoBoundaries URY ADM1, año representativo 2017, OpenStreetMap/Wambacher",-31.183786,-56.737623
+URY_SA_G_E550000_N6475000,Salto,UY-SA,regular_grid_25km,EPSG:32721,25000,550000.0,6475000.0,"geoBoundaries URY ADM1, año representativo 2017, OpenStreetMap/Wambacher",-31.859642,-56.471456
+URY_SA_G_E550000_N6500000,Salto,UY-SA,regular_grid_25km,EPSG:32721,25000,550000.0,6500000.0,"geoBoundaries URY ADM1, año representativo 2017, OpenStreetMap/Wambacher",-31.634098,-56.472736
+URY_SA_G_E550000_N6525000,Salto,UY-SA,regular_grid_25km,EPSG:32721,25000,550000.0,6525000.0,"geoBoundaries URY ADM1, año representativo 2017, OpenStreetMap/Wambacher",-31.408545,-56.474001
+URY_SA_G_E550000_N6550000,Salto,UY-SA,regular_grid_25km,EPSG:32721,25000,550000.0,6550000.0,"geoBoundaries URY ADM1, año representativo 2017, OpenStreetMap/Wambacher",-31.182984,-56.475252
+URY_SA_G_E550000_N6575000,Salto,UY-SA,regular_grid_25km,EPSG:32721,25000,550000.0,6575000.0,"geoBoundaries URY ADM1, año representativo 2017, OpenStreetMap/Wambacher",-30.957415,-56.47649
+URY_SA_G_E575000_N6525000,Salto,UY-SA,regular_grid_25km,EPSG:32721,25000,575000.0,6525000.0,"geoBoundaries URY ADM1, año representativo 2017, OpenStreetMap/Wambacher",-31.407196,-56.211019
+URY_SA_G_E575000_N6550000,Salto,UY-SA,regular_grid_25km,EPSG:32721,25000,575000.0,6550000.0,"geoBoundaries URY ADM1, año representativo 2017, OpenStreetMap/Wambacher",-31.181647,-56.212896
+URY_SA_G_E575000_N6575000,Salto,UY-SA,regular_grid_25km,EPSG:32721,25000,575000.0,6575000.0,"geoBoundaries URY ADM1, año representativo 2017, OpenStreetMap/Wambacher",-30.95609,-56.214752
+URY_SJ_G_E500000_N6200000,San José,UY-SJ,regular_grid_25km,EPSG:32721,25000,500000.0,6200000.0,"geoBoundaries URY ADM1, año representativo 2017, OpenStreetMap/Wambacher",-34.341303,-57.0
+URY_SJ_G_E525000_N6175000,San José,UY-SJ,regular_grid_25km,EPSG:32721,25000,525000.0,6175000.0,"geoBoundaries URY ADM1, año representativo 2017, OpenStreetMap/Wambacher",-34.566455,-56.727462
+URY_SJ_G_E525000_N6200000,San José,UY-SJ,regular_grid_25km,EPSG:32721,25000,525000.0,6200000.0,"geoBoundaries URY ADM1, año representativo 2017, OpenStreetMap/Wambacher",-34.341001,-56.728194
+URY_SJ_G_E525000_N6225000,San José,UY-SJ,regular_grid_25km,EPSG:32721,25000,525000.0,6225000.0,"geoBoundaries URY ADM1, año representativo 2017, OpenStreetMap/Wambacher",-34.115539,-56.728917
+URY_SJ_G_E550000_N6200000,San José,UY-SJ,regular_grid_25km,EPSG:32721,25000,550000.0,6200000.0,"geoBoundaries URY ADM1, año representativo 2017, OpenStreetMap/Wambacher",-34.340096,-56.456396
+URY_SJ_G_E550000_N6225000,San José,UY-SJ,regular_grid_25km,EPSG:32721,25000,550000.0,6225000.0,"geoBoundaries URY ADM1, año representativo 2017, OpenStreetMap/Wambacher",-34.114642,-56.457842
+URY_SO_G_E375000_N6275000,Soriano,UY-SO,regular_grid_25km,EPSG:32721,25000,375000.0,6275000.0,"geoBoundaries URY ADM1, año representativo 2017, OpenStreetMap/Wambacher",-33.657532,-58.348143
+URY_SO_G_E375000_N6300000,Soriano,UY-SO,regular_grid_25km,EPSG:32721,25000,375000.0,6300000.0,"geoBoundaries URY ADM1, año representativo 2017, OpenStreetMap/Wambacher",-33.432105,-58.344647
+URY_SO_G_E400000_N6275000,Soriano,UY-SO,regular_grid_25km,EPSG:32721,25000,400000.0,6275000.0,"geoBoundaries URY ADM1, año representativo 2017, OpenStreetMap/Wambacher",-33.660178,-58.078562
+URY_SO_G_E400000_N6300000,Soriano,UY-SO,regular_grid_25km,EPSG:32721,25000,400000.0,6300000.0,"geoBoundaries URY ADM1, año representativo 2017, OpenStreetMap/Wambacher",-33.434729,-58.075764
+URY_SO_G_E425000_N6250000,Soriano,UY-SO,regular_grid_25km,EPSG:32721,25000,425000.0,6250000.0,"geoBoundaries URY ADM1, año representativo 2017, OpenStreetMap/Wambacher",-33.887696,-57.811071
+URY_SO_G_E425000_N6275000,Soriano,UY-SO,regular_grid_25km,EPSG:32721,25000,425000.0,6275000.0,"geoBoundaries URY ADM1, año representativo 2017, OpenStreetMap/Wambacher",-33.662237,-57.808949
+URY_SO_G_E425000_N6300000,Soriano,UY-SO,regular_grid_25km,EPSG:32721,25000,425000.0,6300000.0,"geoBoundaries URY ADM1, año representativo 2017, OpenStreetMap/Wambacher",-33.43677,-57.80685
+URY_SO_G_E425000_N6325000,Soriano,UY-SO,regular_grid_25km,EPSG:32721,25000,425000.0,6325000.0,"geoBoundaries URY ADM1, año representativo 2017, OpenStreetMap/Wambacher",-33.211295,-57.804775
+URY_SO_G_E450000_N6250000,Soriano,UY-SO,regular_grid_25km,EPSG:32721,25000,450000.0,6250000.0,"geoBoundaries URY ADM1, año representativo 2017, OpenStreetMap/Wambacher",-33.889179,-57.540727
+URY_SO_G_E450000_N6275000,Soriano,UY-SO,regular_grid_25km,EPSG:32721,25000,450000.0,6275000.0,"geoBoundaries URY ADM1, año representativo 2017, OpenStreetMap/Wambacher",-33.663708,-57.539312
+URY_SO_G_E450000_N6300000,Soriano,UY-SO,regular_grid_25km,EPSG:32721,25000,450000.0,6300000.0,"geoBoundaries URY ADM1, año representativo 2017, OpenStreetMap/Wambacher",-33.438228,-57.537913
+URY_SO_G_E450000_N6325000,Soriano,UY-SO,regular_grid_25km,EPSG:32721,25000,450000.0,6325000.0,"geoBoundaries URY ADM1, año representativo 2017, OpenStreetMap/Wambacher",-33.21274,-57.536529
+URY_SO_G_E475000_N6250000,Soriano,UY-SO,regular_grid_25km,EPSG:32721,25000,475000.0,6250000.0,"geoBoundaries URY ADM1, año representativo 2017, OpenStreetMap/Wambacher",-33.890069,-57.270367
+URY_SO_G_E475000_N6275000,Soriano,UY-SO,regular_grid_25km,EPSG:32721,25000,475000.0,6275000.0,"geoBoundaries URY ADM1, año representativo 2017, OpenStreetMap/Wambacher",-33.66459,-57.26966
+URY_SO_G_E475000_N6325000,Soriano,UY-SO,regular_grid_25km,EPSG:32721,25000,475000.0,6325000.0,"geoBoundaries URY ADM1, año representativo 2017, OpenStreetMap/Wambacher",-33.213608,-57.268268
+URY_TA_G_E550000_N6375000,Tacuarembó,UY-TA,regular_grid_25km,EPSG:32721,25000,550000.0,6375000.0,"geoBoundaries URY ADM1, año representativo 2017, OpenStreetMap/Wambacher",-32.76174,-56.466192
+URY_TA_G_E550000_N6400000,Tacuarembó,UY-TA,regular_grid_25km,EPSG:32721,25000,550000.0,6400000.0,"geoBoundaries URY ADM1, año representativo 2017, OpenStreetMap/Wambacher",-32.536228,-56.46753
+URY_TA_G_E550000_N6425000,Tacuarembó,UY-TA,regular_grid_25km,EPSG:32721,25000,550000.0,6425000.0,"geoBoundaries URY ADM1, año representativo 2017, OpenStreetMap/Wambacher",-32.310708,-56.468854
+URY_TA_G_E575000_N6400000,Tacuarembó,UY-TA,regular_grid_25km,EPSG:32721,25000,575000.0,6400000.0,"geoBoundaries URY ADM1, año representativo 2017, OpenStreetMap/Wambacher",-32.534819,-56.201314
+URY_TA_G_E575000_N6425000,Tacuarembó,UY-TA,regular_grid_25km,EPSG:32721,25000,575000.0,6425000.0,"geoBoundaries URY ADM1, año representativo 2017, OpenStreetMap/Wambacher",-32.309311,-56.203299
+URY_TA_G_E575000_N6450000,Tacuarembó,UY-TA,regular_grid_25km,EPSG:32721,25000,575000.0,6450000.0,"geoBoundaries URY ADM1, año representativo 2017, OpenStreetMap/Wambacher",-32.083794,-56.205262
+URY_TA_G_E575000_N6475000,Tacuarembó,UY-TA,regular_grid_25km,EPSG:32721,25000,575000.0,6475000.0,"geoBoundaries URY ADM1, año representativo 2017, OpenStreetMap/Wambacher",-31.858269,-56.207202
+URY_TA_G_E575000_N6500000,Tacuarembó,UY-TA,regular_grid_25km,EPSG:32721,25000,575000.0,6500000.0,"geoBoundaries URY ADM1, año representativo 2017, OpenStreetMap/Wambacher",-31.632737,-56.209122
+URY_TA_G_E600000_N6400000,Tacuarembó,UY-TA,regular_grid_25km,EPSG:32721,25000,600000.0,6400000.0,"geoBoundaries URY ADM1, año representativo 2017, OpenStreetMap/Wambacher",-32.532847,-55.93512
+URY_TA_G_E600000_N6425000,Tacuarembó,UY-TA,regular_grid_25km,EPSG:32721,25000,600000.0,6425000.0,"geoBoundaries URY ADM1, año representativo 2017, OpenStreetMap/Wambacher",-32.307355,-55.937766
+URY_TA_G_E600000_N6450000,Tacuarembó,UY-TA,regular_grid_25km,EPSG:32721,25000,600000.0,6450000.0,"geoBoundaries URY ADM1, año representativo 2017, OpenStreetMap/Wambacher",-32.081856,-55.940383
+URY_TA_G_E600000_N6475000,Tacuarembó,UY-TA,regular_grid_25km,EPSG:32721,25000,600000.0,6475000.0,"geoBoundaries URY ADM1, año representativo 2017, OpenStreetMap/Wambacher",-31.856348,-55.94297
+URY_TA_G_E600000_N6500000,Tacuarembó,UY-TA,regular_grid_25km,EPSG:32721,25000,600000.0,6500000.0,"geoBoundaries URY ADM1, año representativo 2017, OpenStreetMap/Wambacher",-31.630832,-55.945529
+URY_TA_G_E600000_N6525000,Tacuarembó,UY-TA,regular_grid_25km,EPSG:32721,25000,600000.0,6525000.0,"geoBoundaries URY ADM1, año representativo 2017, OpenStreetMap/Wambacher",-31.405308,-55.948059
+URY_TA_G_E625000_N6425000,Tacuarembó,UY-TA,regular_grid_25km,EPSG:32721,25000,625000.0,6425000.0,"geoBoundaries URY ADM1, año representativo 2017, OpenStreetMap/Wambacher",-32.304842,-55.672263
+URY_TA_G_E625000_N6450000,Tacuarembó,UY-TA,regular_grid_25km,EPSG:32721,25000,625000.0,6450000.0,"geoBoundaries URY ADM1, año representativo 2017, OpenStreetMap/Wambacher",-32.079364,-55.675533
+URY_TA_G_E625000_N6475000,Tacuarembó,UY-TA,regular_grid_25km,EPSG:32721,25000,625000.0,6475000.0,"geoBoundaries URY ADM1, año representativo 2017, OpenStreetMap/Wambacher",-31.853877,-55.678767
+URY_TA_G_E625000_N6500000,Tacuarembó,UY-TA,regular_grid_25km,EPSG:32721,25000,625000.0,6500000.0,"geoBoundaries URY ADM1, año representativo 2017, OpenStreetMap/Wambacher",-31.628383,-55.681965
+URY_TA_G_E650000_N6425000,Tacuarembó,UY-TA,regular_grid_25km,EPSG:32721,25000,650000.0,6425000.0,"geoBoundaries URY ADM1, año representativo 2017, OpenStreetMap/Wambacher",-32.30177,-55.406796
+URY_TA_G_E650000_N6450000,Tacuarembó,UY-TA,regular_grid_25km,EPSG:32721,25000,650000.0,6450000.0,"geoBoundaries URY ADM1, año representativo 2017, OpenStreetMap/Wambacher",-32.076318,-55.41072
+URY_TA_G_E650000_N6475000,Tacuarembó,UY-TA,regular_grid_25km,EPSG:32721,25000,650000.0,6475000.0,"geoBoundaries URY ADM1, año representativo 2017, OpenStreetMap/Wambacher",-31.850859,-55.414599
+URY_TA_G_E675000_N6425000,Tacuarembó,UY-TA,regular_grid_25km,EPSG:32721,25000,675000.0,6425000.0,"geoBoundaries URY ADM1, año representativo 2017, OpenStreetMap/Wambacher",-32.29814,-55.141374
+URY_TA_G_E675000_N6450000,Tacuarembó,UY-TA,regular_grid_25km,EPSG:32721,25000,675000.0,6450000.0,"geoBoundaries URY ADM1, año representativo 2017, OpenStreetMap/Wambacher",-32.07272,-55.14595
+URY_TA_G_E675000_N6475000,Tacuarembó,UY-TA,regular_grid_25km,EPSG:32721,25000,675000.0,6475000.0,"geoBoundaries URY ADM1, año representativo 2017, OpenStreetMap/Wambacher",-31.847291,-55.150475
+URY_TA_G_E700000_N6425000,Tacuarembó,UY-TA,regular_grid_25km,EPSG:32721,25000,700000.0,6425000.0,"geoBoundaries URY ADM1, año representativo 2017, OpenStreetMap/Wambacher",-32.293953,-54.876003
+URY_TA_G_E700000_N6450000,Tacuarembó,UY-TA,regular_grid_25km,EPSG:32721,25000,700000.0,6450000.0,"geoBoundaries URY ADM1, año representativo 2017, OpenStreetMap/Wambacher",-32.068569,-54.881231
+URY_TT_G_E675000_N6300000,Treinta y Tres,UY-TT,regular_grid_25km,EPSG:32721,25000,675000.0,6300000.0,"geoBoundaries URY ADM1, año representativo 2017, OpenStreetMap/Wambacher",-33.425109,-55.117711
+URY_TT_G_E700000_N6325000,Treinta y Tres,UY-TT,regular_grid_25km,EPSG:32721,25000,700000.0,6325000.0,"geoBoundaries URY ADM1, año representativo 2017, OpenStreetMap/Wambacher",-33.195399,-54.854496
+URY_TT_G_E700000_N6350000,Treinta y Tres,UY-TT,regular_grid_25km,EPSG:32721,25000,700000.0,6350000.0,"geoBoundaries URY ADM1, año representativo 2017, OpenStreetMap/Wambacher",-32.970051,-54.859963
+URY_TT_G_E725000_N6300000,Treinta y Tres,UY-TT,regular_grid_25km,EPSG:32721,25000,725000.0,6300000.0,"geoBoundaries URY ADM1, año representativo 2017, OpenStreetMap/Wambacher",-33.415786,-54.580285
+URY_TT_G_E725000_N6325000,Treinta y Tres,UY-TT,regular_grid_25km,EPSG:32721,25000,725000.0,6325000.0,"geoBoundaries URY ADM1, año representativo 2017, OpenStreetMap/Wambacher",-33.190489,-54.586503
+URY_TT_G_E725000_N6350000,Treinta y Tres,UY-TT,regular_grid_25km,EPSG:32721,25000,725000.0,6350000.0,"geoBoundaries URY ADM1, año representativo 2017, OpenStreetMap/Wambacher",-32.965182,-54.592651
+URY_TT_G_E750000_N6325000,Treinta y Tres,UY-TT,regular_grid_25km,EPSG:32721,25000,750000.0,6325000.0,"geoBoundaries URY ADM1, año representativo 2017, OpenStreetMap/Wambacher",-33.185003,-54.318579
+URY_TT_G_E750000_N6350000,Treinta y Tres,UY-TT,regular_grid_25km,EPSG:32721,25000,750000.0,6350000.0,"geoBoundaries URY ADM1, año representativo 2017, OpenStreetMap/Wambacher",-32.959743,-54.325408
+URY_TT_G_E750000_N6375000,Treinta y Tres,UY-TT,regular_grid_25km,EPSG:32721,25000,750000.0,6375000.0,"geoBoundaries URY ADM1, año representativo 2017, OpenStreetMap/Wambacher",-32.734474,-54.332161
+URY_TT_G_E775000_N6300000,Treinta y Tres,UY-TT,regular_grid_25km,EPSG:32721,25000,775000.0,6300000.0,"geoBoundaries URY ADM1, año representativo 2017, OpenStreetMap/Wambacher",-33.404139,-54.043138
+URY_TT_G_E775000_N6325000,Treinta y Tres,UY-TT,regular_grid_25km,EPSG:32721,25000,775000.0,6325000.0,"geoBoundaries URY ADM1, año representativo 2017, OpenStreetMap/Wambacher",-33.178941,-54.050731
+URY_TT_G_E775000_N6350000,Treinta y Tres,UY-TT,regular_grid_25km,EPSG:32721,25000,775000.0,6350000.0,"geoBoundaries URY ADM1, año representativo 2017, OpenStreetMap/Wambacher",-32.953732,-54.05824
+URY_TT_G_E800000_N6325000,Treinta y Tres,UY-TT,regular_grid_25km,EPSG:32721,25000,800000.0,6325000.0,"geoBoundaries URY ADM1, año representativo 2017, OpenStreetMap/Wambacher",-33.172304,-53.782968
+URY_TT_G_E800000_N6350000,Treinta y Tres,UY-TT,regular_grid_25km,EPSG:32721,25000,800000.0,6350000.0,"geoBoundaries URY ADM1, año representativo 2017, OpenStreetMap/Wambacher",-32.947152,-53.791155
+URY_TT_G_E825000_N6350000,Treinta y Tres,UY-TT,regular_grid_25km,EPSG:32721,25000,825000.0,6350000.0,"geoBoundaries URY ADM1, año representativo 2017, OpenStreetMap/Wambacher",-32.940002,-53.524162

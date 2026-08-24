@@ -1,0 +1,6 @@
+coordenada_id,tipo_caso,departamento,lat_solicitada,lon_solicitada,lat_land,lon_land,distancia_land_m,departamento_land,land_mismo_departamento,lat_nearest,lon_nearest,distancia_nearest_m,departamento_nearest,nearest_mismo_departamento,diferencia_distancia_nearest_menos_land_m
+URY_CA_G_E600000_N6175000,departamento_intermedio,Canelones,-34.561892,-55.909931,-34.6,-55.9,4323.322759317986,Canelones,True,-34.6,-55.9,4323.322759317986,Canelones,True,0.0
+URY_MO_G_E575000_N6150000,montevideo,Montevideo,-34.789446,-56.180201,-34.8,-56.199997,2156.3374523101643,Montevideo,True,-34.8,-56.199997,2156.3374523101643,Montevideo,True,0.0
+URY_RO_G_E725000_N6150000,costa,Rocha,-34.767374,-54.541496,-34.8,-54.6,6464.587295814813,Maldonado,False,-34.8,-54.5,5247.681799145903,,False,-1216.90549666891
+URY_RV_G_E625000_N6575000,frontera_internacional,Rivera,-30.95185,-55.691345,-31.0,-55.699997,5400.821196340208,Rivera,True,-31.0,-55.699997,5400.821196340208,Rivera,True,0.0
+URY_TA_G_E600000_N6450000,interior_departamento_grande,Tacuarembó,-32.081856,-55.940383,-32.1,-55.9,4309.330712623822,Tacuarembó,True,-32.1,-55.9,4309.330712623822,Tacuarembó,True,0.0
