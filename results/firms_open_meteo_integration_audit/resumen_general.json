@@ -1,0 +1,67 @@
+{
+  "proceso": "integracion_historica_firms_open_meteo_semanal",
+  "fecha_ejecucion_utc": "2026-08-25T21:20:28.371970+00:00",
+  "inputs": {
+    "firms": "results/data/firms_departamento_semana_clean.parquet",
+    "open_meteo": "data/processed/open_meteo_department_weekly/open_meteo_department_weekly_2017_2025.parquet",
+    "firms_regional": "data/firms_2018_2025.parquet"
+  },
+  "clave": [
+    "departamento",
+    "fecha_inicio_semana"
+  ],
+  "auditoria_primera_semana": "A. Semana completa defendible",
+  "validacion_previa_firms": {
+    "filas": 7923,
+    "columnas": 11,
+    "departamentos": 19,
+    "semanas": 417,
+    "fecha_min": "2018-01-01",
+    "fecha_max": "2025-12-22",
+    "duplicados_clave": 0,
+    "suma_cantidad_detecciones": 8508,
+    "distribucion_target": {
+      "Sin detección": 4967,
+      "Bajo": 1237,
+      "Moderado": 1034,
+      "Alto": 685
+    }
+  },
+  "validacion_previa_open_meteo": {
+    "filas": 8911,
+    "columnas": 28,
+    "departamentos": 19,
+    "semanas": 469,
+    "fecha_min": "2017-01-02",
+    "fecha_max": "2025-12-22",
+    "duplicados_clave": 0,
+    "nulos_meteorologicos": 0
+  },
+  "salida_historica": "data/processed/firms_open_meteo_weekly/open_meteo_firms_weekly_history.parquet",
+  "salida_target_disponible": "data/processed/firms_open_meteo_weekly/open_meteo_firms_weekly_target_available.parquet",
+  "filas_integradas": 8911,
+  "columnas_integradas": 32,
+  "filas_target_disponible": 7923,
+  "filas_meteorologicas_sin_target": 988,
+  "firms_sin_open_meteo": 0,
+  "open_meteo_sin_firms": 988,
+  "cobertura_meteorologica_target_pct": 100.0,
+  "duplicados_clave_salida": 0,
+  "nulos_esperados_target": 2964,
+  "nulos_no_esperados": 0,
+  "reconciliacion_target_aprobada": true,
+  "semanas_meteorologicas_previas": 52,
+  "periodo_meteorologico_previo": [
+    "2017-01-02",
+    "2017-12-25"
+  ],
+  "antecedentes_suficientes_para_lag_semanas": {
+    "1": true,
+    "2": true,
+    "4": true,
+    "52": true
+  },
+  "secuencia_semanal_aprobada": true,
+  "resultado": "integracion aprobada con limitacion documental sobre la descarga FIRMS original",
+  "advertencia_fuga": "La meteorología corresponde a semana t y no integra aún X predictivo. Tampoco pueden usarse como X cantidad_detecciones, variables FIRMS de t ni el target."
+}

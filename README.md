@@ -312,7 +312,40 @@ la dirección utiliza media circular y longitud resultante.
 - dataset: `data/processed/open_meteo_department_weekly/open_meteo_department_weekly_2017_2025.parquet`;
 - auditoría: `results/open_meteo_department_weekly_audit/`.
 
-Las 7.923 claves del panel FIRMS limpio tienen correspondencia meteorológica,
-pero no se realizó el join. Estas variables describen la misma semana; para
+La auditoría previa confirmó que las 7.923 claves del panel FIRMS limpio tienen
+correspondencia meteorológica. Estas variables describen la misma semana; para
 predicción anticipada deberán generarse posteriormente versiones rezagadas con
 información cerrada antes de la semana objetivo.
+
+## Integración histórica FIRMS + Open-Meteo
+
+La primera integración utiliza Open-Meteo como tabla principal y realiza un
+`LEFT JOIN` 1:1 mediante la clave exacta
+`departamento + fecha_inicio_semana`:
+
+```bash
+python src/build_firms_open_meteo_weekly_history.py
+```
+
+Se conservan las 469 semanas meteorológicas y los 19 departamentos. Las 52
+semanas de 2017 mantienen `cantidad_detecciones`, `nivel_actividad_firms` y su
+código ordinal como nulos, con `target_firms_disponible=False`. Esos nulos
+significan **target no disponible** y no deben interpretarse como la clase
+`Sin detección`.
+
+Artefactos principales:
+
+- histórico completo: `data/processed/firms_open_meteo_weekly/open_meteo_firms_weekly_history.parquet`;
+- vista con target: `data/processed/firms_open_meteo_weekly/open_meteo_firms_weekly_target_available.parquet`;
+- auditoría: `results/firms_open_meteo_integration_audit/`.
+
+El archivo FIRMS regional contiene registros desde el 01/01/2018 en Argentina
+y Brasil; Uruguay presenta su primera detección positiva el 02/01/2018. Esto
+permite defender la semana iniciada el 01/01 como cubierta, aunque no se encontró
+en el repositorio el script o comprobante original de descarga FIRMS.
+
+Las variables meteorológicas integradas describen la misma semana `t` y todavía
+no forman el conjunto `X` predictivo. Tampoco pueden utilizarse directamente
+como predictores `cantidad_detecciones`, el nivel FIRMS, su código ni ninguna
+variable FIRMS de `t`. La historia de 2017 se conserva para construir en una
+etapa posterior lags y ventanas cerrados antes del inicio de la semana objetivo.

@@ -1,0 +1,8 @@
+control,valor_antes,valor_despues,coincide
+total,7923,7923,True
+suma_cantidad_detecciones,8508,8508,True
+clase_Sin detección,4967,4967,True
+clase_Bajo,1237,1237,True
+clase_Moderado,1034,1034,True
+clase_Alto,685,685,True
+claves_y_valores_sin_cambios,7923,7923,True

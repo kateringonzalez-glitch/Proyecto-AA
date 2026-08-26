@@ -1,0 +1,20 @@
+departamento,presente_firms,presente_open_meteo,iso_firms,iso_open_meteo,iso_coincide,espacio_exterior
+Artigas,True,True,UY-AR,UY-AR,True,False
+Canelones,True,True,UY-CA,UY-CA,True,False
+Cerro Largo,True,True,UY-CL,UY-CL,True,False
+Colonia,True,True,UY-CO,UY-CO,True,False
+Durazno,True,True,UY-DU,UY-DU,True,False
+Flores,True,True,UY-FS,UY-FS,True,False
+Florida,True,True,UY-FD,UY-FD,True,False
+Lavalleja,True,True,UY-LA,UY-LA,True,False
+Maldonado,True,True,UY-MA,UY-MA,True,False
+Montevideo,True,True,UY-MO,UY-MO,True,False
+Paysandú,True,True,UY-PA,UY-PA,True,False
+Rivera,True,True,UY-RV,UY-RV,True,False
+Rocha,True,True,UY-RO,UY-RO,True,False
+Río Negro,True,True,UY-RN,UY-RN,True,False
+Salto,True,True,UY-SA,UY-SA,True,False
+San José,True,True,UY-SJ,UY-SJ,True,False
+Soriano,True,True,UY-SO,UY-SO,True,False
+Tacuarembó,True,True,UY-TA,UY-TA,True,False
+Treinta y Tres,True,True,UY-TT,UY-TT,True,False

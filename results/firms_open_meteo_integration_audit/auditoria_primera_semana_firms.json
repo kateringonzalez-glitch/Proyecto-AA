@@ -1,0 +1,24 @@
+{
+  "archivo_regional_disponible": true,
+  "archivo_original_de_descarga_o_configuracion_encontrado": false,
+  "clasificacion": "A. Semana completa defendible",
+  "conclusion": "El archivo regional contiene detecciones del 01/01/2018 en países vecinos; la primera detección uruguaya del 02/01/2018 no marca el inicio del archivo.",
+  "limitacion": "No se encontró en este repositorio el script, parámetros o comprobante de la descarga FIRMS original; la clasificación se apoya en el contenido del Parquet regional.",
+  "fecha_minima_archivo_regional": "2018-01-01",
+  "fecha_maxima_archivo_regional": "2025-12-31",
+  "filas_regionales_2018_01_01": 101,
+  "filas_por_pais_2018_01_01": {
+    "ARG": 39,
+    "BRA": 62
+  },
+  "fecha_primera_deteccion_uruguay": "2018-01-02",
+  "detecciones_uruguay_2018_01_01": 0,
+  "detecciones_uruguay_2018_01_02": 2,
+  "filas_panel_primera_semana": 19,
+  "detecciones_asignadas_primera_semana": 46,
+  "impacto_si_se_excluyera": {
+    "filas": 19,
+    "semanas": 1,
+    "detecciones": 46
+  }
+}
