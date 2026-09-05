@@ -1,0 +1,145 @@
+{
+  "proceso": "incorporacion_firms_2017_como_historia_previa",
+  "fecha_ejecucion_utc": "2026-09-05T20:01:56.535591+00:00",
+  "archivo_firms_nuevo": "DL_FIRE_M-C61_799659.zip",
+  "auditoria_archivo": {
+    "filas": 1694,
+    "columnas": 16,
+    "columnas_reales": [
+      "LATITUDE",
+      "LONGITUDE",
+      "BRIGHTNESS",
+      "SCAN",
+      "TRACK",
+      "ACQ_DATE",
+      "ACQ_TIME",
+      "SATELLITE",
+      "INSTRUMENT",
+      "CONFIDENCE",
+      "VERSION",
+      "BRIGHT_T31",
+      "FRP",
+      "DAYNIGHT",
+      "TYPE",
+      "geometry"
+    ],
+    "tipos": {
+      "LATITUDE": "float64",
+      "LONGITUDE": "float64",
+      "BRIGHTNESS": "float64",
+      "SCAN": "float64",
+      "TRACK": "float64",
+      "ACQ_DATE": "datetime64[ms]",
+      "ACQ_TIME": "string",
+      "SATELLITE": "str",
+      "INSTRUMENT": "str",
+      "CONFIDENCE": "int32",
+      "VERSION": "str",
+      "BRIGHT_T31": "float64",
+      "FRP": "float64",
+      "DAYNIGHT": "str",
+      "TYPE": "int64",
+      "geometry": "geometry"
+    },
+    "crs": "EPSG:4326",
+    "fecha_min": "2017-01-01",
+    "fecha_max": "2018-12-31",
+    "filas_por_anio": {
+      "2017": 780,
+      "2018": 914
+    },
+    "columna_pais_disponible": false,
+    "paises_declarados": null,
+    "nulos_por_columna": {
+      "LATITUDE": 0,
+      "LONGITUDE": 0,
+      "BRIGHTNESS": 0,
+      "SCAN": 0,
+      "TRACK": 0,
+      "ACQ_DATE": 0,
+      "ACQ_TIME": 0,
+      "SATELLITE": 0,
+      "INSTRUMENT": 0,
+      "CONFIDENCE": 0,
+      "VERSION": 0,
+      "BRIGHT_T31": 0,
+      "FRP": 0,
+      "DAYNIGHT": 0,
+      "TYPE": 0,
+      "geometry": 0
+    },
+    "nulos_totales": 0,
+    "duplicados_exactos_sin_geometria": 0,
+    "instrumentos": [
+      "MODIS"
+    ],
+    "satelites": [
+      "Aqua",
+      "Terra"
+    ]
+  },
+  "compatibilidad_con_firms_2018_2025": {
+    "filas_zip_2018": 914,
+    "filas_regional_ury_2018": 914,
+    "coincidencias_exactas_campos_clave": 914,
+    "sin_coincidencia": 0,
+    "compatibilidad": "completa",
+    "mapeo_columnas": {
+      "LATITUDE": "latitud",
+      "LONGITUDE": "longitud",
+      "BRIGHTNESS": "brillo_ti4",
+      "ACQ_DATE": "fecha_adq",
+      "ACQ_TIME": "hora_adq_hhmm",
+      "SATELLITE": "satelite",
+      "INSTRUMENT": "instrumento",
+      "CONFIDENCE": "confianza_raw",
+      "BRIGHT_T31": "brillo_ti5",
+      "FRP": "potencia_radiativa",
+      "DAYNIGHT": "dia_noche",
+      "TYPE": "type"
+    }
+  },
+  "registros_2017": 780,
+  "registros_2017_asignados": 780,
+  "registros_2017_sin_departamento": 0,
+  "detecciones_excluidas_semana_parcial": 1,
+  "semana_parcial_excluida": [
+    "2016-12-26"
+  ],
+  "detecciones_2017_utilizadas": 779,
+  "semanas_completas_2017": 52,
+  "filas_departamento_semana_2017": 988,
+  "periodo_semanal_2017": [
+    "2017-01-02",
+    "2017-12-31"
+  ],
+  "panel_historico": "results/data/firms_departamento_semana_history_2017_2025.parquet",
+  "validacion_panel_historico": {
+    "filas": 8911,
+    "departamentos": 19,
+    "semanas": 469,
+    "duplicados_clave": 0,
+    "nulos": 0,
+    "saltos_distintos_7_dias": 0,
+    "filas_esperadas": 8911,
+    "claves_sin_open_meteo": 0
+  },
+  "base_integrada_actualizada": "data/processed/firms_open_meteo_weekly/open_meteo_firms_weekly_history.parquet",
+  "columnas_firms_historicas_integradas": [
+    "cantidad_detecciones_hist",
+    "nivel_actividad_firms_hist",
+    "nivel_actividad_firms_codigo_hist"
+  ],
+  "filas_objetivo_sin_cambios": 7923,
+  "detecciones_objetivo_sin_cambios": 8508,
+  "distribucion_objetivo_sin_cambios": {
+    "Sin detección": 4967,
+    "Bajo": 1237,
+    "Moderado": 1034,
+    "Alto": 685
+  },
+  "checksum_sha256_panel_objetivo_antes_y_despues": "32dfc44031812d27d87eaf44eb2cdd1db63fb6efb74a6a2356c5bd5fa4ee3a2c",
+  "nulos_target_esperados_en_2017": 2964,
+  "nulos_firms_historicos_inesperados": 0,
+  "nota": "FIRMS 2017 es historia previa para futuros lags; target_firms_disponible continúa falso en 2017."
+}

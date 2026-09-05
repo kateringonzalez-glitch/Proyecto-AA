@@ -1,0 +1,23 @@
+[
+  {
+    "filas_zip_2018":914,
+    "filas_regional_ury_2018":914,
+    "coincidencias_exactas_campos_clave":914,
+    "sin_coincidencia":0,
+    "compatibilidad":"completa",
+    "mapeo_columnas":{
+      "LATITUDE":"latitud",
+      "LONGITUDE":"longitud",
+      "BRIGHTNESS":"brillo_ti4",
+      "ACQ_DATE":"fecha_adq",
+      "ACQ_TIME":"hora_adq_hhmm",
+      "SATELLITE":"satelite",
+      "INSTRUMENT":"instrumento",
+      "CONFIDENCE":"confianza_raw",
+      "BRIGHT_T31":"brillo_ti5",
+      "FRP":"potencia_radiativa",
+      "DAYNIGHT":"dia_noche",
+      "TYPE":"type"
+    }
+  }
+]

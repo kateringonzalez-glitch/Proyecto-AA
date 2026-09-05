@@ -349,3 +349,30 @@ no forman el conjunto `X` predictivo. Tampoco pueden utilizarse directamente
 como predictores `cantidad_detecciones`, el nivel FIRMS, su código ni ninguna
 variable FIRMS de `t`. La historia de 2017 se conserva para construir en una
 etapa posterior lags y ventanas cerrados antes del inicio de la semana objetivo.
+
+## FIRMS 2017 como antecedente histórico
+
+El archivo `DL_FIRE_M-C61_799659.zip` incorpora detecciones MODIS de 2017. El ZIP
+también contiene 2018; sus 914 registros de ese año coinciden exactamente con el
+bloque uruguayo de la fuente FIRMS existente, por lo que el procesamiento toma
+únicamente 2017 y evita duplicar 2018.
+
+```bash
+python src/build_firms_history_2017_2025.py
+```
+
+La detección del 01/01/2017 pertenece a la semana iniciada el 26/12/2016, que no
+está completamente cubierta, y se excluye mediante la regla general que exige
+que inicio y fin de semana estén dentro del período disponible. Las 52 semanas
+completas del 02/01 al 31/12/2017 se combinan con el panel objetivo sin modificarlo:
+
+- histórico FIRMS: `results/data/firms_departamento_semana_history_2017_2025.parquet`;
+- auditoría: `results/firms_history_2017_audit/`;
+- histórico FIRMS + Open-Meteo actualizado:
+  `data/processed/firms_open_meteo_weekly/open_meteo_firms_weekly_history.parquet`.
+
+La base integrada mantiene las columnas de target nulas y
+`target_firms_disponible=False` durante 2017. La actividad previa se almacena en
+columnas separadas con sufijo `_hist`. FIRMS 2017 servirá solamente para futuros
+lags; no amplía el target 2018–2025 y esta etapa todavía no crea variables
+históricas rezagadas.
