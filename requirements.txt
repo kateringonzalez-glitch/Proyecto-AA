@@ -1,6 +1,8 @@
 altair>=5,<7
 geopandas>=1,<2
+matplotlib>=3.8,<4
 numpy>=1.26,<3
 pandas>=2,<4
 pyarrow>=14,<24
+scikit-learn>=1.4,<2
 shapely>=2,<3
