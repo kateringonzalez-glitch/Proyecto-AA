@@ -3,8 +3,8 @@
 Este repositorio construye y describe una unidad de análisis
 `departamento + semana` para los 19 departamentos de Uruguay. FIRMS se utiliza
 como fuente de **detecciones de focos de calor/anomalías térmicas**; no se
-interpretan como incendios forestales confirmados. No se entrenan modelos ni se
-definen clases finales de riesgo.
+interpretan como incendios forestales confirmados. La formulación supervisada
+vigente estima presencia/ausencia de detecciones FIRMS y no clases de riesgo.
 
 ## Insumos
 
@@ -74,20 +74,17 @@ git push origin main
 
 ## Salidas
 
-- `results/data/`: panel en Parquet/CSV, auditoría JSON, áreas y detecciones no
-  asignadas.
-- `results/analysis/`: estadísticas generales, departamentales, temporales,
-  frecuencias positivas y escenarios de cortes cuantílicos.
-- `results/figures/`: visualizaciones HTML interactivas (cargan las bibliotecas
-  Vega desde CDN al abrirse).
-- `results/target_audit/`: auditoría separada de clases candidatas, siete puntos
-  sin departamento y semana final parcial. No reemplaza el panel original.
+- `results/data/`: paneles FIRMS intermedios necesarios para la trazabilidad y
+  para reproducir integraciones posteriores.
 - `results/data/firms_departamento_semana_clean.parquet`: panel FIRMS depurado
-  para su futura integración con predictores. No sobrescribe el panel original.
-- `results/clean_audit/`: trazabilidad, distribuciones y filas excluidas durante
-  la construcción del panel limpio.
+  utilizado por procesos heredados de integración. No sobrescribe el panel
+  original.
 - `results/open_meteo_audit/`: auditoría de cobertura, esquema, calidad y
   compatibilidad potencial del METEO/Open-Meteo heredado con las claves FIRMS.
+
+Las tablas, estadísticas y visualizaciones exploratorias se conservan dentro
+de los notebooks correspondientes. No se mantienen copias HTML o CSV separadas
+cuando sólo duplican resultados visibles y reproducibles en Jupyter.
 
 La grilla va desde el lunes de la primera fecha FIRMS uruguaya hasta el lunes
 de la última, e incluye todas las combinaciones de departamento y semana. La
@@ -376,3 +373,48 @@ La base integrada mantiene las columnas de target nulas y
 columnas separadas con sufijo `_hist`. FIRMS 2017 servirá solamente para futuros
 lags; no amplía el target 2018–2025 y esta etapa todavía no crea variables
 históricas rezagadas.
+
+## Formulación supervisada vigente: presencia FIRMS
+
+El target principal es binario:
+
+- `presencia_firms = 0` cuando `cantidad_detecciones == 0`;
+- `presencia_firms = 1` cuando `cantidad_detecciones >= 1`.
+
+El análisis es contemporáneo: dadas las condiciones observadas de una
+combinación departamento–semana, se estima presencia de detecciones FIRMS. No
+es un pronóstico anticipado ni una predicción de incendios.
+
+El clustering meteorológico utiliza temperatura máxima, humedad mínima, viento
+máximo y precipitación semanal. Se aplica `log1p` a precipitación,
+`StandardScaler` y K-Means (`k=4`, `random_state=42`, `n_init=20`). FIRMS no
+participa en el ajuste. Los perfiles nominales A–D se usan después como una
+feature categórica y no como niveles de riesgo.
+
+La partición es:
+
+- train: 2018–2023;
+- validation: 2024;
+- test reservado: 2025.
+
+El scaler y K-Means se ajustan sólo con train. Validation y test reciben el
+perfil mediante `transform` y `predict`. Para el Entregable 2, el notebook de
+modelos conserva únicamente una línea base
+`DummyClassifier(strategy="most_frequent")`, evaluada en validation 2024. El
+test 2025 permanece sin predicciones ni métricas.
+
+Los modelos supervisados y la comparación de configuraciones se desarrollarán
+en el Entregable 3.
+
+La preparación reproducible y sus controles están documentados paso a paso en
+`Preparacion_Dataset_Modelado.ipynb`. El notebook puede ejecutarse completo
+desde la raíz del repositorio y vuelve a generar el Parquet utilizado para el
+modelado.
+
+Artefactos principales:
+
+- `data/processed/modelado/dataset_modelado_presencia_firms.parquet`;
+- `Preparacion_Dataset_Modelado.ipynb`;
+- `data/processed/modelado/Modelos.ipynb`;
+- `Analisis_No_supervisado.ipynb`;
+- `Calidad_Preparacion_Datos.ipynb`.

@@ -57,9 +57,9 @@ su departamento. El punto costero solicitado en Rocha
 Maldonado según la misma capa geoBoundaries. Esto ocurre en ambas ventanas y no
 es una variación temporal.
 
-La auditoría completa está en `results/open_meteo_pilot/auditoria_espacial.csv`.
-Una corrida preliminar con un criterio costero ambiguo fue preservada, no
-mezclada, en `results/open_meteo_pilot_preliminary_superseded/`.
+La auditoría válida está en `results/open_meteo_pilot/auditoria_espacial.csv`.
+La corrida preliminar con un criterio costero ambiguo fue descartada y no forma
+parte del estado actual del repositorio.
 
 ## Recomendación
 
