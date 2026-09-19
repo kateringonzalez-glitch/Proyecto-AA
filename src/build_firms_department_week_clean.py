@@ -34,7 +34,7 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--construction-audit", type=Path,
                         default=Path("results/data/auditoria_construccion.json"))
     parser.add_argument("--unassigned-audit", type=Path,
-                        default=Path("results/target_audit/detalle_sin_departamento.csv"))
+                        default=Path("results/data/firms_uruguay_sin_departamento.csv"))
     parser.add_argument("--output-dir", type=Path, default=Path("results/data"))
     parser.add_argument("--audit-dir", type=Path, default=Path("results/clean_audit"))
     return parser.parse_args()
