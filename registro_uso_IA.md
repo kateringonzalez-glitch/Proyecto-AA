@@ -239,3 +239,122 @@ Se decidió considerar trazables las variables meteorológicas originales, pero 
 
 También se identificó como posible estrategia futura realizar una nueva extracción homogénea y reproducible de Open-Meteo para los 19 departamentos, en lugar de corregir silenciosamente el dataset heredado.
 
+
+## Auditoría y depuración reproducible del panel FIRMS
+
+**Prompt relevante, resumido**
+
+> Auditar las detecciones sin departamento, los valores extremos y las semanas incompletas. Mantener los extremos si no hay evidencia de error y excluir las semanas incompletas mediante una regla general reproducible.
+
+**Respuesta obtenida / aporte de Codex**
+
+Codex apoyó la implementación del panel FIRMS limpio y de controles de departamentos, continuidad semanal, claves duplicadas, nulos y reconciliación de conteos. La regla aplicada a las semanas fue `fecha_fin_semana <= fecha máxima FIRMS Uruguay`; no se eliminaron manualmente fechas ni valores extremos.
+
+**Uso y verificación posterior**
+
+El panel inicial tenía 7.942 filas y 8.518 detecciones asignadas. Se excluyeron las 19 filas de la semana parcial iniciada el 29/12/2025, que contenían 10 detecciones. El panel limpio conservó 7.923 observaciones, 19 departamentos, 417 semanas y 8.508 detecciones. Los siete registros sin departamento permanecieron fuera de los conteos porque no había evidencia suficiente para reasignarlos. Los máximos semanales de 100 y 173 detecciones se conservaron tras la auditoría, sin tratarlos automáticamente como errores. Las comprobaciones quedaron en `src/build_firms_department_week_clean.py` y en los paneles FIRMS procesados.
+
+
+## Decisión sobre el METEO/Open-Meteo heredado de LIDIA
+
+**Prompt relevante, resumido**
+
+> Auditar cobertura temporal y espacial, frecuencia, variables, calidad, trazabilidad y compatibilidad del METEO/Open-Meteo heredado con `departamento + semana` antes de usarlo como fuente principal.
+
+**Respuesta obtenida / aporte de Codex**
+
+Además de la mezcla de datos diarios históricos y horarios de 2025 ya documentada, la auditoría señaló cobertura departamental no homogénea, cambios de esquema y documentación insuficiente para reproducir exactamente parámetros del request original, producto y unidades en todos los bloques.
+
+**Decisión y verificación posterior**
+
+El equipo no utilizó directamente ese Parquet heredado como fuente meteorológica principal del panel actual ni lo corrigió silenciosamente. Se conservó como antecedente y se diseñó una extracción homogénea nueva; las diferencias de cobertura y esquema se contrastaron con los archivos y el pipeline heredados.
+
+
+## Diseño y extracción homogénea de Open-Meteo
+
+**Prompt relevante, resumido**
+
+> Diseñar una extracción histórica trazable para los 19 departamentos, manteniendo producto, frecuencia, variables, unidades, zona horaria y criterio espacial constantes durante todo el período.
+
+**Respuesta obtenida / aporte de Codex**
+
+Codex apoyó el diseño de la configuración, el catálogo espacial reproducible, la extracción por lotes y los controles de respuesta, fechas, unidades, duplicados, nulos y cobertura. La configuración final utiliza Open-Meteo Historical Weather API, `era5_seamless`, frecuencia diaria, `cell_selection=land`, `America/Montevideo` y el período 02/01/2017–31/12/2025. Se validaron 187 coordenadas para los 19 departamentos.
+
+**Uso y verificación posterior**
+
+El diseño se incorporó en `config/open_meteo.json`, el catálogo validado y el pipeline `src/extract_open_meteo.py`. La extracción real produjo 614.482 filas coordenada-día (187 × 3.286), sin duplicados de clave ni nulos meteorológicos. Las auditorías de extracción e historial comprobaron cobertura temporal, estabilidad de coordenadas y ausencia de cruces departamentales en el catálogo validado. Los intentos fallidos de descarga se registraron en el manifiesto y no se interpretaron como filas faltantes del dataset final.
+
+
+## Agregación espacial Open-Meteo a departamento-día
+
+**Prompt relevante, resumido**
+
+> Agregar coordenadas meteorológicas por departamento y día respetando el significado físico de cada variable: no sumar precipitación ni ET0 entre puntos, tratar la dirección del viento circularmente y controlar la cobertura espacial.
+
+**Respuesta obtenida / aporte de Codex**
+
+Se propusieron medias y extremos espaciales según la variable, media circular y longitud resultante para la dirección del viento, además del contraste entre puntos observados y esperados por departamento.
+
+**Uso y verificación posterior**
+
+La implementación quedó en `src/build_open_meteo_department_daily.py`. El resultado contiene 62.434 filas departamento-día (19 × 3.286), sin claves duplicadas ni nulos y con cobertura espacial completa en las comprobaciones del proceso. Los tests y la reconciliación de muestras contrastaron agregados con las filas coordenada-día originales. La precipitación y ET0 no se sumaron entre coordenadas.
+
+
+## Calidad y selección de variables para clustering
+
+**Prompt relevante, resumido**
+
+> Revisar distribuciones, correlaciones y redundancias de las variables meteorológicas semanales y justificar las transformaciones y la matriz final del clustering.
+
+**Respuesta obtenida / aporte de Codex**
+
+Codex ayudó a examinar cuatro dimensiones meteorológicas: `temperature_2m_max_mean_weekly`, `relative_humidity_2m_min_mean_weekly`, `wind_speed_10m_max_mean_weekly` y `precipitation_sum_weekly`. Se discutió aplicar `log1p` sólo a precipitación y luego `StandardScaler`, ajustado con el período de desarrollo.
+
+**Uso y verificación posterior**
+
+La selección y sus controles se documentaron en `Calidad_Preparacion_Datos.ipynb` y se ejecutaron sobre el dataset semanal real. La matriz final no presentó faltantes, por lo que no se imputaron valores. FIRMS se examinó para diagnóstico y contraste, no como dimensión del clustering meteorológico.
+
+
+## Clustering meteorológico e interpretación de perfiles
+
+**Prompt relevante, resumido**
+
+> Comparar K-Means y DBSCAN usando sólo meteorología; evaluar distintos valores de `k`, Silhouette y estabilidad, sin forzar concordancia entre métodos. Interpretar A/B/C/D como perfiles nominales y contrastarlos después con FIRMS y estaciones, sin convertirlos automáticamente en niveles de riesgo.
+
+**Respuesta obtenida / aporte de Codex**
+
+La IA ayudó a separar la calidad matemática de la interpretabilidad meteorológica. En `Analisis_No_supervisado.ipynb`, Silhouette fue 0,2755 para `k=3` y 0,2561 para `k=4`; se mantuvo provisionalmente `k=4` para estudiar cuatro regímenes. Con `eps=0,50` y `min_samples=10`, DBSCAN obtuvo dos clusters y 397 observaciones de ruido (6,676 %); el ARI frente a K-Means, sin ruido, fue −0,0019. No se ajustó DBSCAN para que reprodujera K-Means.
+
+**Uso y verificación posterior**
+
+Las cifras proceden de las celdas ejecutadas del notebook, no de una respuesta de IA tomada como fuente primaria. Los perfiles se describieron como A (frío y más lluvioso/húmedo), B (frío y más seco), C (cálido y más lluvioso) y D (cálido y más seco). Las letras son nominales, no una escala Bajo–Alto. `cantidad_detecciones` quedó fuera de `StandardScaler`, K-Means y DBSCAN; se utilizó después para comparar asociaciones históricas por perfil, estación y departamento, sin afirmar causalidad ni identificar las detecciones con incendios confirmados.
+
+
+## Diseño supervisado M1–M4 como propuesta posterior al Entregable 2
+
+**Prompt relevante, resumido**
+
+> Formular un target binario de presencia FIRMS y comparar M1 (contexto), M2 (contexto + perfil), M3 (contexto + meteorología) y M4 (contexto + meteorología + perfil), con el mismo split cronológico y sin usar el test para elegir modelos.
+
+**Respuesta obtenida / aporte de Codex**
+
+La IA ayudó a plantear las ablaciones M2–M1, M2 frente a M3 y M4–M3, así como una línea base `DummyClassifier` y futuras comparaciones con Regresión Logística y Random Forest. Se estableció train 2018–2023, validation 2024 y test 2025 reservado. También se explicitó que una ausencia de mejora al añadir el perfil sería un resultado válido y no justificaría modificar los experimentos para forzarla.
+
+**Uso, revisión y estado actual**
+
+El diseño fue explorado, pero la experimentación supervisada avanzada se retiró del flujo principal por exceder el Entregable 2. El estado actual conserva el dataset binario, el split y únicamente el Dummy mayoritario evaluado en validation; no presenta M1–M4, Regresión Logística ni Random Forest como resultados vigentes del Entregable 2. El test 2025 permanece reservado. Esta entrada documenta el uso metodológico de IA y no implica que esos modelos deban incorporarse ahora.
+
+
+## Apoyo en redacción y presentación del Entregable 2
+
+**Prompt relevante, resumido**
+
+> Revisar coherencia conceptual y claridad de la redacción sobre FIRMS, clustering, Silhouette, DBSCAN, perfiles meteorológicos y causalidad en el Entregable 2 y su presentación.
+
+**Respuesta obtenida / aporte de ChatGPT**
+
+ChatGPT se utilizó como apoyo para detectar formulaciones potencialmente equívocas y proponer explicaciones más claras: detecciones FIRMS no equivalen a incendios confirmados; los perfiles meteorológicos no son niveles de riesgo; una asociación descriptiva no demuestra causalidad.
+
+**Uso y verificación posterior**
+
+El equipo revisó las propuestas antes de incorporarlas. Los valores numéricos y resultados experimentales se contrastaron con notebooks, datos y controles del proyecto. El registro no permite atribuir a la IA resultados experimentales como fuente primaria ni verificar desde el repositorio cada cambio concreto de una presentación externa.
