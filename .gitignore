@@ -20,6 +20,10 @@ Thumbs.db
 # Source datasets inherited from LIDIA (kept locally, not versioned)
 /data/*.parquet
 
+# Local exploratory source files (not versioned)
+/incendios_forestales_mira_0.csv
+/uruguay.zip
+
 # Raw API responses and restartable intermediate partitions
 /data/raw/
 /data/processed/open_meteo_daily/parts/
