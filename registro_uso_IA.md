@@ -358,3 +358,8 @@ ChatGPT se utilizó como apoyo para detectar formulaciones potencialmente equív
 **Uso y verificación posterior**
 
 El equipo revisó las propuestas antes de incorporarlas. Los valores numéricos y resultados experimentales se contrastaron con notebooks, datos y controles del proyecto. El registro no permite atribuir a la IA resultados experimentales como fuente primaria ni verificar desde el repositorio cada cambio concreto de una presentación externa.
+# Nota metodológica vigente — 30/09/2026
+
+El enfoque anterior basado en clustering meteorológico, perfiles nominales, `presencia_firms` y propuestas M1–M4 fue reemplazado. Las secciones históricas que siguen documentan decisiones anteriores y no describen el pipeline actual.
+
+El flujo vigente construye `nivel_actividad_firms` mediante K-Means sobre `log1p(cantidad_detecciones)` para semanas positivas, conserva los ceros como `Sin actividad` y utiliza ese nivel como target multiclase. Los modelos emplean meteorología, contexto y antecedentes FIRMS estrictamente anteriores, nunca el conteo de la semana objetivo.
