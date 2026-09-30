@@ -1,0 +1,38 @@
+{
+  "random_state": 42,
+  "target": "nivel_actividad_firms",
+  "estratificado": true,
+  "dataset": "data/processed/modelado/dataset_modelado_nivel_actividad_firms.parquet",
+  "particiones": {
+    "train": {
+      "filas": 5546,
+      "sha256_claves": "9f3ae5eac78a5b69ca8ec833ee739bb7d5db60f3ed357cc4a268bf558007d944",
+      "distribucion": {
+        "Sin actividad": 3477,
+        "Moderado": 886,
+        "Bajo": 866,
+        "Alto": 317
+      }
+    },
+    "validation": {
+      "filas": 1188,
+      "sha256_claves": "001ff6c54707051e4325e13d226fd9bfb8eb67f5f595017d8760a5ff03cfe3f2",
+      "distribucion": {
+        "Sin actividad": 745,
+        "Moderado": 190,
+        "Bajo": 185,
+        "Alto": 68
+      }
+    },
+    "test": {
+      "filas": 1189,
+      "sha256_claves": "cbd42ce416cb136d9cda483e1898677078aca3c0ad43622afd999746cfc51e76",
+      "distribucion": {
+        "Sin actividad": 745,
+        "Moderado": 190,
+        "Bajo": 186,
+        "Alto": 68
+      }
+    }
+  }
+}

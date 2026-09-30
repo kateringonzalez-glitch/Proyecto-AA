@@ -6,3 +6,6 @@ pandas>=2,<4
 pyarrow>=14,<24
 scikit-learn>=1.4,<2
 shapely>=2,<3
+# Serialización e interfaz del Entregable 3
+joblib
+streamlit

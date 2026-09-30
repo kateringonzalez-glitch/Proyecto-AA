@@ -1,48 +1,79 @@
 # Proyecto de Aprendizaje Automático 2026
 
-El PAA estudia **niveles de actividad FIRMS** a nivel departamento–semana en Uruguay. FIRMS registra anomalías térmicas o focos de calor; no confirma incendios forestales.
+El PAA estima **niveles de actividad FIRMS** por departamento y semana en Uruguay. FIRMS registra anomalías térmicas o focos de calor; no confirma incendios forestales.
 
-## Flujo metodológico vigente
+## Metodología vigente
 
-```text
-FIRMS histórico
-      ↓
-log1p(cantidad_detecciones)
-      ↓
-K-Means sobre semanas positivas
-      ↓
-Sin actividad + niveles positivos de actividad FIRMS
-      ↓
-target supervisado multiclase
-      ↓
-meteorología + contexto + antecedentes FIRMS
-      ↓
-clasificación del nivel de actividad FIRMS
-```
+El target `nivel_actividad_firms` conserva cuatro clases: `Sin actividad`, `Bajo`, `Moderado` y `Alto`. Los ceros se mantienen separados y las observaciones positivas se agrupan mediante K-Means sobre `log1p(cantidad_detecciones)`. El conteo de la semana objetivo nunca se utiliza como predictor.
 
-Los niveles son una segmentación estadística, no categorías naturales verdaderas ni niveles de riesgo de incendio.
+El Entregable 3 compara cuatro representaciones:
 
-## Notebooks principales
+- V1: departamento, mes y meteorología semanal.
+- V2: V1 más lags FIRMS t-1 a t-4.
+- V3: V1 más variables FIRMS rolling de cuatro semanas.
+- V4: V1 más lags y rolling FIRMS.
 
-1. `Calidad_Preparacion_Datos.ipynb`: calidad, cobertura, ceros, asimetría y variables disponibles.
-2. `Analisis_No_supervisado.ipynb`: tratamiento de ceros, comparación `k=2…5`, caracterización y creación del target.
-3. `Preparacion_Dataset_Modelado.ipynb`: lags FIRMS estrictamente históricos e integración supervisada.
-4. `data/processed/modelado/Modelos.ipynb`: baseline, Regresión Logística, Random Forest, test aleatorio y evaluación temporal.
-5. `Auditoria_Coherencia_PAA.ipynb`: controles automáticos de unidad, target y leakage.
+La partición común es 70 % train, 15 % validation y 15 % test, estratificada con `random_state=42`. La selección se realiza exclusivamente con validation; test se evalúa una sola vez después de congelar la solución.
 
-`Analisis_Nesterov.ipynb` es auxiliar. Los notebooks MIRA/FIREDpy son exploratorios. Los notebooks del enfoque anterior fueron retirados para evitar contradicciones con el pipeline vigente; su historia permanece disponible en Git.
+## Experimentación
 
-## Reproducción
-
-Ejecutar desde la raíz y en este orden:
+Ejecutar desde la raíz del repositorio:
 
 ```bash
-python -m nbconvert --to notebook --execute Calidad_Preparacion_Datos.ipynb --output Calidad_Preparacion_Datos.ipynb
-python -m nbconvert --to notebook --execute Analisis_No_supervisado.ipynb --output Analisis_No_supervisado.ipynb
-python -m nbconvert --to notebook --execute Preparacion_Dataset_Modelado.ipynb --output Preparacion_Dataset_Modelado.ipynb
-python -m nbconvert --to notebook --execute data/processed/modelado/Modelos.ipynb --output Modelos.ipynb --output-dir data/processed/modelado
-python -m nbconvert --to notebook --execute Analisis_Nesterov.ipynb --output Analisis_Nesterov.ipynb
-python -m nbconvert --to notebook --execute Auditoria_Coherencia_PAA.ipynb --output Auditoria_Coherencia_PAA.ipynb
+python -m nbconvert --to notebook --execute experimentos/00_Preparar_Splits.ipynb --inplace
+python -m nbconvert --to notebook --execute experimentos/Experimento_01_Dummy.ipynb --inplace
+python -m nbconvert --to notebook --execute experimentos/Experimento_02_LogisticRegression.ipynb --inplace
+python -m nbconvert --to notebook --execute experimentos/Experimento_03_RandomForest.ipynb --inplace
+python -m nbconvert --to notebook --execute experimentos/Experimento_04_HistGradientBoosting.ipynb --inplace
+python -m nbconvert --to notebook --execute experimentos/Comparacion_Modelos.ipynb --inplace
 ```
 
-No se debe incorporar a `X` `cantidad_detecciones` de la semana objetivo, el target ni derivados contemporáneos del target.
+Los notebooks usan las claves persistidas en `data/processed/modelado/splits/`. Los resultados parciales están en `results/experimentos_parciales/` y la tabla consolidada en `results/experimentos_entregable3.csv`.
+
+El notebook anterior se conserva sólo como antecedente en `archive/Modelos_Entregable2.ipynb`; ya no es la fuente metodológica principal.
+
+## Inferencia sin reentrenar
+
+`artifacts/modelo_final.joblib` contiene preprocessing y clasificador dentro de un único Pipeline. `artifacts/metadata_modelo.json` documenta variables, clases, parámetros, versiones y métricas.
+
+Ejemplo:
+
+```python
+import pandas as pd
+from src.inference import predict, predict_proba
+
+entrada = pd.DataFrame([{
+    "departamento": "Montevideo",
+    "mes": 1,
+    "temperature_2m_max_mean_weekly": 28.0,
+    "relative_humidity_2m_min_mean_weekly": 45.0,
+    "wind_speed_10m_max_mean_weekly": 22.0,
+    "precipitation_sum_weekly": 4.0,
+}])
+
+print(predict(entrada))
+print(predict_proba(entrada))
+```
+
+Una entrada incompleta o que incluya `cantidad_detecciones` contemporánea produce un error explícito.
+
+## Prototipo TRL 5
+
+```bash
+streamlit run app/streamlit_app.py
+```
+
+La interfaz carga el artefacto ya entrenado, ofrece ejemplos históricos sin target o ingreso manual y muestra el nivel estimado y sus probabilidades. No reentrena el modelo.
+
+## Pruebas y auditoría
+
+```bash
+python -m pytest -q tests/test_inference.py
+python -m nbconvert --to notebook --execute Auditoria_Coherencia_PAA.ipynb --inplace
+```
+
+La auditoría verifica particiones, ausencia de solapamiento y leakage, reserva de test, resultados, metadata, artefacto e inferencia.
+
+## Advertencia conceptual
+
+Los resultados representan niveles estimados de actividad FIRMS. No equivalen a incendios confirmados ni deben interpretarse automáticamente como riesgo de incendio.

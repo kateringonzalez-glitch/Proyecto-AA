@@ -363,3 +363,15 @@ El equipo revisó las propuestas antes de incorporarlas. Los valores numéricos 
 El enfoque anterior basado en clustering meteorológico, perfiles nominales, `presencia_firms` y propuestas M1–M4 fue reemplazado. Las secciones históricas que siguen documentan decisiones anteriores y no describen el pipeline actual.
 
 El flujo vigente construye `nivel_actividad_firms` mediante K-Means sobre `log1p(cantidad_detecciones)` para semanas positivas, conserva los ceros como `Sin actividad` y utiliza ese nivel como target multiclase. Los modelos emplean meteorología, contexto y antecedentes FIRMS estrictamente anteriores, nunca el conteo de la semana objetivo.
+
+## Entregable 3 — experimentación avanzada
+
+**Solicitud resumida**
+
+> Separar la experimentación por familia, comparar V1–V4 con particiones comunes, reservar test hasta fijar la solución y entregar un pipeline serializado, pruebas y prototipo de inferencia.
+
+**Aporte de Codex**
+
+Se organizó la experimentación en notebooks independientes para Dummy, Regresión Logística, Random Forest e HistGradientBoosting. Se centralizaron las claves del split estratificado 70/15/15 con `random_state=42`, se automatizó el registro de métricas de validation y se consolidó la comparación. La selección se fijó por F1 macro junto con Balanced Accuracy, desempeño por clase, simplicidad e interpretabilidad antes de cargar test.
+
+También se prepararon el Pipeline final serializado, metadata, funciones de inferencia, pruebas automatizadas y una interfaz Streamlit que no reentrena. La IA apoyó la implementación y documentación; las métricas provienen de la ejecución reproducible de los notebooks sobre los datos del proyecto.
