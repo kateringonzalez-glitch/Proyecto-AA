@@ -1,0 +1,16 @@
+﻿escenario,clase,observaciones,minimo,maximo,media,mediana,k,porcentaje_dataset
+k3,Sin actividad,4967,0,0,0.0,0.0,3,62.6909
+k3,Bajo,1237,1,1,1.0,1.0,3,15.612773
+k3,Moderado,1266,2,4,2.662717,2.0,3,15.978796
+k3,Alto,453,5,173,8.609272,7.0,3,5.717531
+k4,Sin actividad,4967,0,0,0.0,0.0,4,62.6909
+k4,Perfil positivo 1,1237,1,1,1.0,1.0,4,15.612773
+k4,Perfil positivo 2,1034,2,3,2.362669,2.0,4,13.050612
+k4,Perfil positivo 3,511,4,7,4.964775,5.0,4,6.449577
+k4,Perfil positivo 4,174,8,173,13.166667,10.0,4,2.196138
+k5,Sin actividad,4967,0,0,0.0,0.0,5,62.6909
+k5,Perfil positivo 1,1237,1,1,1.0,1.0,5,15.612773
+k5,Perfil positivo 2,659,2,2,2.0,2.0,5,8.317556
+k5,Perfil positivo 3,607,3,4,3.382208,3.0,5,7.661239
+k5,Perfil positivo 4,347,5,9,6.291066,6.0,5,4.379654
+k5,Perfil positivo 5,106,10,173,16.198113,13.0,5,1.337877

@@ -1,0 +1,45 @@
+{
+  "dataset": "data\\processed\\modelado\\dataset_modelado_nivel_actividad_firms.parquet",
+  "filas": 7923,
+  "features": [
+    "departamento",
+    "mes",
+    "temperature_2m_max_mean_weekly",
+    "relative_humidity_2m_min_mean_weekly",
+    "wind_speed_10m_max_mean_weekly",
+    "precipitation_sum_weekly"
+  ],
+  "hiperparametros_rf": {
+    "class_weight": "balanced_subsample",
+    "max_depth": null,
+    "max_features": "sqrt",
+    "min_samples_leaf": 5,
+    "n_estimators": 500,
+    "n_jobs": -1,
+    "random_state": 42
+  },
+  "splits": {
+    "train": {
+      "filas": 5546,
+      "claves_unicas": true
+    },
+    "validation": {
+      "filas": 1188,
+      "claves_unicas": true
+    },
+    "test": {
+      "filas": 1189,
+      "claves_unicas": true
+    }
+  },
+  "k3_target_mismatches_vs_dataset": 0,
+  "clases_por_k_suman_total": {
+    "k3": 7923,
+    "k4": 7923,
+    "k5": 7923
+  },
+  "salidas": {
+    "tablas": "results\\analisis_puntos_4_6_plus\\tables",
+    "figuras": "results\\analisis_puntos_4_6_plus\\figures"
+  }
+}
