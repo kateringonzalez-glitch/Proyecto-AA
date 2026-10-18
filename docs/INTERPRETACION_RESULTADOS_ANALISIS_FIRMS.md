@@ -15,6 +15,8 @@ La variable objetivo `nivel_actividad_firms` se construye en dos pasos:
 
 Separar los ceros es importante porque representan una masa grande de observaciones identicas. Si se mezclaran con las observaciones positivas dentro de K-Means, los ceros dominarian la particion y el algoritmo tenderia a crear un grupo de ceros automaticamente. En cambio, el proyecto trata los ceros como una categoria explicita y aplica el agrupamiento solo donde hay actividad positiva.
 
+Esta separacion se apoya solamente en una logica conceptual semejante a los modelos *hurdle*, que distinguen el proceso de ceros del de conteos positivos (Feng, 2021). El proyecto no implementa ni estima un modelo *hurdle* o inflado en ceros.
+
 La transformacion `log1p(x)` calcula `log(1+x)`. Se usa porque la distribucion de detecciones es muy asimetrica: hay muchas semanas con pocas detecciones y pocas semanas con valores altos. La escala logaritmica reduce la influencia de valores extremos y permite que K-Means separe mejor rangos de actividad positiva sin que las semanas excepcionales dominen toda la distancia.
 
 K-Means agrupa observaciones segun cercania en esa escala transformada. Luego, los clusters positivos se ordenan por sus centroides de menor a mayor y se renombran ordinalmente. Para la solucion principal con k=3 positivos, los nombres son:
@@ -78,6 +80,8 @@ La inercia mide la compactacion interna de los clusters: cuanto menor, mas cerca
 
 Silhouette mide que tan separada esta una observacion de otros clusters en comparacion con su propio cluster. Valores mayores sugieren grupos mas separados. En estos datos, Silhouette aumenta al pasar de k=2 a k=5.
 
+Siguiendo el uso de Silhouette como ayuda para interpretar y validar agrupamientos (Rousseeuw, 1987), el indicador se considera junto con el tamaño de los grupos y la utilidad posterior. No se adopta como regla mecanica de seleccion.
+
 El tamano minimo de cluster aporta otra informacion: muestra si el agrupamiento genera clases suficientemente grandes para ser interpretables y utiles despues en el clasificador supervisado. A medida que aumenta K, el grupo positivo mas chico cae de 453 observaciones en k=3 a 174 en k=4 y 106 en k=5.
 
 Por eso, un Silhouette mayor no implica automaticamente una mejor decision para el proyecto. k=5 separa mejor algunos valores de conteo, pero tambien crea grupos pequenos. Esos grupos pueden ser descriptivamente interesantes, aunque menos estables y mas dificiles de aprender en la etapa supervisada.
@@ -137,6 +141,7 @@ El modelo final documentado es Random Forest V1, con estos hiperparametros:
 
 - `n_estimators=500`
 - `min_samples_leaf=5`
+- `max_depth=None`
 - `max_features="sqrt"`
 - `class_weight="balanced_subsample"`
 - `random_state=42`
@@ -154,30 +159,34 @@ Metricas de test del modelo final:
 
 | Metrica | Valor |
 |---|---:|
-| Accuracy test | 0.555088 |
-| Balanced Accuracy test | 0.413409 |
-| F1 macro test | 0.396289 |
-| F1 weighted test | 0.571018 |
+| Accuracy test | 0.555929 |
+| Balanced Accuracy test | 0.413745 |
+| Precision macro test | 0.388613 |
+| Recall macro test | 0.413745 |
+| F1 macro test | 0.396723 |
+| F1 weighted test | 0.571963 |
 
 Metricas por clase en test:
 
 | Clase | Precision | Recall | F1 | Soporte |
 |---|---:|---:|---:|---:|
-| Sin actividad | 0.787009 | 0.699329 | 0.740583 | 745 |
-| Bajo | 0.242574 | 0.263441 | 0.252577 | 186 |
-| Moderado | 0.305936 | 0.352632 | 0.327628 | 190 |
+| Sin actividad | 0.788520 | 0.700671 | 0.742004 | 745 |
+| Bajo | 0.240196 | 0.263441 | 0.251282 | 186 |
+| Moderado | 0.308756 | 0.352632 | 0.329238 | 190 |
 | Alto | 0.216981 | 0.338235 | 0.264368 | 68 |
 
 Matriz de confusion en test para k=3:
 
 | Real \ Predicho | Sin actividad | Bajo | Moderado | Alto |
 |---|---:|---:|---:|---:|
-| Sin actividad | 521 | 104 | 87 | 33 |
+| Sin actividad | 522 | 106 | 84 | 33 |
 | Bajo | 72 | 49 | 46 | 19 |
 | Moderado | 53 | 39 | 67 | 31 |
-| Alto | 16 | 10 | 19 | 23 |
+| Alto | 15 | 10 | 20 | 23 |
 
-El modelo reconoce mejor `Sin actividad` que las clases positivas. Su F1 para `Sin actividad` es 0.741. En cambio, las clases positivas tienen F1 bajos: 0.253 para `Bajo`, 0.328 para `Moderado` y 0.264 para `Alto`.
+El modelo reconoce mejor `Sin actividad` que las clases positivas. Su F1 para `Sin actividad` es 0.742. En cambio, las clases positivas tienen F1 bajos: 0.251 para `Bajo`, 0.329 para `Moderado` y 0.264 para `Alto`.
+
+Estas son las metricas oficiales de `artifacts/metadata_modelo.json` y del Pipeline de `artifacts/modelo_final.joblib`. En el entorno documentado (`scikit-learn 1.8.0`, `pandas 3.0.1`), reentrenar k=3 con las mismas claves, orden de desarrollo, variables e hiperparametros produjo exactamente las mismas predicciones y probabilidades equivalentes salvo precision numerica. Una ejecucion historica del analisis de sensibilidad habia producido diferencias minimas; su causa exacta no puede determinarse con los artefactos disponibles porque aquella salida no registro versiones, hash del orden de entrenamiento ni predicciones fila a fila.
 
 Precision indica, entre las semanas que el modelo predice como una clase, que proporcion realmente era de esa clase. Recall indica, entre las semanas reales de una clase, que proporcion logro recuperar el modelo. F1 resume precision y recall.
 
@@ -225,9 +234,9 @@ Al pasar de k=3 a k=4 y k=5, los ceros y el grupo de una deteccion se mantienen 
 
 | Escenario | Clases | F1 macro test | Balanced Accuracy test |
 |---|---:|---:|---:|
-| k3 | 4 | 0.396289 | 0.413409 |
-| k4 | 5 | 0.338449 | 0.364950 |
-| k5 | 6 | 0.266697 | 0.283632 |
+| k3 | 4 | 0.396723 | 0.413745 |
+| k4 | 5 | 0.337121 | 0.363607 |
+| k5 | 6 | 0.266867 | 0.283632 |
 
 k=4 y k=5 no mejoran el rendimiento general. Ambas metricas globales bajan al aumentar K. Esto es importante: aunque Silhouette era mayor para k=4 y k=5 en la etapa no supervisada, la capacidad del Random Forest para clasificar esas categorias empeora.
 
@@ -235,27 +244,27 @@ k=4 y k=5 no mejoran el rendimiento general. Ambas metricas globales bajan al au
 
 | Escenario | Clase | F1 | Soporte test |
 |---|---|---:|---:|
-| k3 | Sin actividad | 0.740583 | 745 |
-| k3 | Bajo | 0.252577 | 186 |
-| k3 | Moderado | 0.327628 | 190 |
+| k3 | Sin actividad | 0.742004 | 745 |
+| k3 | Bajo | 0.251282 | 186 |
+| k3 | Moderado | 0.329238 | 190 |
 | k3 | Alto | 0.264368 | 68 |
-| k4 | Sin actividad | 0.728704 | 745 |
-| k4 | Perfil positivo 1 | 0.240602 | 186 |
-| k4 | Perfil positivo 2 | 0.267062 | 157 |
+| k4 | Sin actividad | 0.727273 | 745 |
+| k4 | Perfil positivo 1 | 0.236181 | 186 |
+| k4 | Perfil positivo 2 | 0.266272 | 157 |
 | k4 | Perfil positivo 3 | 0.209302 | 76 |
 | k4 | Perfil positivo 4 | 0.246575 | 25 |
 | k5 | Sin actividad | 0.729361 | 745 |
-| k5 | Perfil positivo 1 | 0.246914 | 186 |
+| k5 | Perfil positivo 1 | 0.245700 | 186 |
 | k5 | Perfil positivo 2 | 0.149254 | 97 |
-| k5 | Perfil positivo 3 | 0.204301 | 93 |
-| k5 | Perfil positivo 4 | 0.157143 | 51 |
+| k5 | Perfil positivo 3 | 0.205405 | 93 |
+| k5 | Perfil positivo 4 | 0.158273 | 51 |
 | k5 | Perfil positivo 5 | 0.113208 | 17 |
 
 Las clases nuevas no son reconocidas de forma solida. k=5 crea una clase superior con soporte de test de solo 17 casos y F1 de 0.113. Esto muestra que la mayor granularidad no se traduce en una clasificacion supervisada mas util.
 
 ### Matrices de confusion
 
-En k=3, el modelo acierta 521 de 745 semanas `Sin actividad`, pero reparte muchas semanas positivas entre clases vecinas y tambien hacia `Sin actividad`.
+En k=3, el modelo acierta 522 de 745 semanas `Sin actividad`, pero reparte muchas semanas positivas entre clases vecinas y tambien hacia `Sin actividad`.
 
 En k=4 y k=5, la confusion se distribuye entre mas clases. Esto vuelve mas dificil distinguir perfiles positivos finos, especialmente los de mayor intensidad, porque hay menos ejemplos por clase.
 
