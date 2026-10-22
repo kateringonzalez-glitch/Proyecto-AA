@@ -55,12 +55,11 @@ METEO_LABELS = {
     "wind_speed_10m_max_mean_weekly": "Viento max medio semanal (m/s)",
     "precipitation_sum_weekly": "Precipitacion semanal (mm)",
 }
-COLORS = {
-    "Sin actividad": "#6B7280",
-    "Bajo": "#2563EB",
-    "Moderado": "#F59E0B",
-    "Alto": "#DC2626",
-}
+try:
+    from src.visual_style import COLORS, CLASS_COLORS
+except ModuleNotFoundError:
+    from visual_style import COLORS, CLASS_COLORS
+
 
 
 def ensure_dirs() -> None:
@@ -196,8 +195,8 @@ def boxplot_by_class(
         flierprops={"marker": "o", "markersize": 2.2, "alpha": 0.35},
     )
     for patch, label in zip(bp["boxes"], order):
-        patch.set_facecolor(COLORS.get(label, "#94A3B8"))
-        patch.set_alpha(0.72)
+        patch.set_facecolor(CLASS_COLORS[label])
+        patch.set_alpha(1.0)
     ax.set_title(title)
     ax.set_ylabel(ylabel)
     ax.grid(axis="y", alpha=0.25)
@@ -554,7 +553,7 @@ def plot_plus_class_sizes(class_summary: pd.DataFrame, close: bool = True) -> pl
     bottom = np.zeros(len(pivot))
     x = np.arange(len(pivot))
     for label in pivot.columns:
-        color = COLORS.get(label, None)
+        color = CLASS_COLORS[label]
         ax.bar(x, pivot[label], bottom=bottom, label=label, color=color)
         bottom += pivot[label].to_numpy()
     ax.set_xticks(x)
@@ -572,7 +571,7 @@ def plot_plus_f1(per_class: pd.DataFrame, close: bool = True) -> plt.Figure:
     plot["clase_escenario"] = plot["escenario"] + " | " + plot["clase"]
     fig, ax = plt.subplots(figsize=(12, 5.8), constrained_layout=True)
     x = np.arange(len(plot))
-    ax.bar(x, plot["f1"], color="#2563EB")
+    ax.bar(x, plot["f1"], color=[CLASS_COLORS[label] for label in plot["clase"]])
     ax.set_xticks(x)
     ax.set_xticklabels(plot["clase_escenario"], rotation=55, ha="right")
     ax.set_ylim(0, 1)
@@ -899,7 +898,7 @@ fig = firms.plot_plus_global(global_metrics, close=False)
 plt.show()"""
         ),
         md(
-            f"""**Interpretación.** La sensibilidad no mejora al aumentar K: k=3 obtiene F1 macro={k3['f1_macro_test']:.3f} y Balanced Accuracy={k3['balanced_accuracy_test']:.3f}; k=4 baja a {k4['f1_macro_test']:.3f}/{k4['balanced_accuracy_test']:.3f}; k=5 baja a {k5['f1_macro_test']:.3f}/{k5['balanced_accuracy_test']:.3f}. Además, con k=5 aparece una clase de solo {small_k5['observaciones']:.0f} observaciones ({small_k5['porcentaje_dataset']:.2f}% del dataset)."""
+            f"""**Interpretación.** La sensibilidad no mejora al aumentar K: k=3 obtiene F1 macro={k3['f1_macro_test']:.4f} y Balanced Accuracy={k3['balanced_accuracy_test']:.4f}; k=4 baja a {k4['f1_macro_test']:.4f}/{k4['balanced_accuracy_test']:.4f}; k=5 baja a {k5['f1_macro_test']:.4f}/{k5['balanced_accuracy_test']:.4f}. Además, con k=5 aparece una clase de solo {small_k5['observaciones']:.0f} observaciones ({small_k5['porcentaje_dataset']:.2f}% del dataset)."""
         ),
         code(
             """fig = firms.plot_plus_class_sizes(class_summary, close=False)
@@ -937,6 +936,21 @@ print(
 )"""
         ),
     ]
+    # Actualizar las interpretaciones desde las tablas, sin conservar cifras antiguas.
+    # Las celdas de código sin cambios mantienen sus salidas: generar el documento
+    # no debe ejecutar ni volver a ajustar los modelos del análisis.
+    previous_notebook = None
+    if notebook_path.exists():
+        previous_notebook = json.loads(notebook_path.read_text(encoding="utf-8"))
+        previous = previous_notebook["cells"]
+        if len(previous) == len(cells) and all(
+            old["cell_type"] == new["cell_type"] for old, new in zip(previous, cells)
+        ):
+            for old, new in zip(previous, cells):
+                if old["source"] == new["source"]:
+                    new.update(old)
+                elif new["cell_type"] == "markdown":
+                    new.update({key: value for key, value in old.items() if key != "source"})
     notebook = {
         "cells": cells,
         "metadata": {
@@ -953,7 +967,9 @@ print(
         "nbformat": 4,
         "nbformat_minor": 5,
     }
-    notebook_path.write_text(json.dumps(notebook, ensure_ascii=False, indent=1), encoding="utf-8")
+    if previous_notebook is not None:
+        notebook["metadata"] = previous_notebook.get("metadata", notebook["metadata"])
+    notebook_path.write_text(json.dumps(notebook, ensure_ascii=False, indent=1) + "\n", encoding="utf-8")
 
 
 def make_interpretation(

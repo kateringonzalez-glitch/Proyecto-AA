@@ -8,10 +8,10 @@
 ## Punto 6
 - La inercia baja de 265.63 con k=2 a 34.09 con k=5. La mejora se desacelera, y Silhouette por si sola no define la solucion porque al aumentar K se fragmentan los conteos positivos.
 - Los boxplots meteorologicos comparan distribuciones por clase; son evidencia descriptiva y no prueban causalidad ni significacion estadistica.
-- En el Random Forest V1 evaluado en test, la clase con menor F1 en k=3 es `Bajo` (F1=0.253).
+- En el Random Forest V1 evaluado en test, la clase con menor F1 en k=3 es `Bajo` (F1=0.251).
 
 ## Plus
-- El mejor F1 macro de test dentro de la sensibilidad fue 0.3963 en k3; esto no reabre la seleccion del modelo, solo documenta sensibilidad al target.
+- El mejor F1 macro de test dentro de la sensibilidad fue 0.3967 en k3; esto no reabre la seleccion del modelo, solo documenta sensibilidad al target.
 - Al aumentar K, las clases positivas representan particiones distintas del conteo, por lo que sus F1 por clase no son comparables como si fueran las mismas categorias.
 - Clase mas pequena por escenario:
   - k3: Alto, 453 observaciones (5.72%).
