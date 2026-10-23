@@ -1,5 +1,5 @@
 ﻿nivel_actividad_firms,temperature_2m_max_mean_weekly,relative_humidity_2m_min_mean_weekly,wind_speed_10m_max_mean_weekly,precipitation_sum_weekly
-Sin actividad,21.7333,57.8857,5.5043,14.3
-Bajo,23.4119,54.0102,5.4362,10.24
-Moderado,22.119,53.0473,5.4832,9.0136
-Alto,20.0408,51.8571,5.4205,4.7929
+Sin detecciones,21.7333,57.8857,5.5043,14.3
+Clúster 1,23.4119,54.0102,5.4362,10.24
+Clúster 2,22.119,53.0473,5.4832,9.0136
+Clúster 3,20.0408,51.8571,5.4205,4.7929

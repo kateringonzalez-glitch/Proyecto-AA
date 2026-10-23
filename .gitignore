@@ -33,3 +33,8 @@ Thumbs.db
 *.log
 *.pid
 ~$*
+
+# Machine-local Git snapshots and reference images extracted from the Word report
+/docs/auditoria_nomenclatura/git_status*.txt
+/results/figuras_informe_actualizadas/auditoria/git_status*.txt
+/results/figuras_informe_actualizadas/auditoria/word_figura_*

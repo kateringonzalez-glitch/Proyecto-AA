@@ -4,6 +4,7 @@ import pytest
 from streamlit.testing.v1 import AppTest
 
 from src.historical_evaluation import KEY, TARGET, evaluate_prediction, load_test_examples
+from src.class_labels import display_label
 from src.inference import load_metadata, load_model, predict
 
 
@@ -85,8 +86,9 @@ def test_real_cases_and_manual_ui(monkeypatch):
         assert not app.exception
         text = " ".join(x.value for x in app.markdown)
         assert kind in text
-        assert test.iloc[i][TARGET] in text
-        assert predictions[i] in text
+        assert display_label(test.iloc[i][TARGET]) in text
+        assert display_label(predictions[i]) in text
+        assert not any(old in text for old in ("Sin actividad", "Bajo", "Moderado", "Alto"))
         assert captured[-1] == predictions[i]
         assert "Evaluación binaria de presencia" in text
         assert len(app.get("vega_lite_chart")) == 1
@@ -96,6 +98,7 @@ def test_real_cases_and_manual_ui(monkeypatch):
     app.button[0].click().run(timeout=30)
     assert not app.exception
     text = " ".join(x.value for x in app.markdown)
-    assert "Nivel de actividad FIRMS estimado" in text
+    assert "Categoría estadística FIRMS estimada" in text
     assert "Evaluación multiclase" not in text
     assert "Clase real" not in text
+    assert not any(old in text for old in ("Sin actividad", "Bajo", "Moderado", "Alto"))

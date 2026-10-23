@@ -1,0 +1,15 @@
+{
+  "pytest": "117 passed in 17.18s",
+  "archivos_inmutables": 449,
+  "hashes_identicos": true,
+  "word_identico": true,
+  "png_definitivos": 24,
+  "predicciones_test_identicas": 1189,
+  "f1_macro_test": 0.39672311525116466,
+  "balanced_accuracy_test": 0.4137447185549167,
+  "probabilidades_paralelo_rtol": 0,
+  "probabilidades_paralelo_atol": 1e-15,
+  "coordenadas_figuras_nuevo_notebook_identicas": 5,
+  "coordenadas_figuras_complementarias_identicas": 14,
+  "modelos_reentrenados": 0
+}

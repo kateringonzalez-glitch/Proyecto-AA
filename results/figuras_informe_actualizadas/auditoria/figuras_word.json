@@ -1,0 +1,62 @@
+[
+  {
+    "figura": 1,
+    "pie_original": "Figura 1. Distribución espacial de las detecciones FIRMS individuales durante el periodo de 2018-2025 en Uruguay.",
+    "imagen_word": "media/image15.jpg"
+  },
+  {
+    "figura": 1,
+    "pie_original": "Figura 1. Distribución espacial de las detecciones FIRMS individuales durante el periodo de 2018-2025 en Uruguay.",
+    "imagen_word": "media/image14.png"
+  },
+  {
+    "figura": 2,
+    "pie_original": "Figura 2. Distribución de detecciones de focos de calor por departamento-semana",
+    "imagen_word": "media/image12.png"
+  },
+  {
+    "figura": 3,
+    "pie_original": "Figura 3. Distribución de las observaciones según los cuatro niveles de actividad FIRMS definidos a partir de la cantidad semanal de detecciones.",
+    "imagen_word": "media/image9.png"
+  },
+  {
+    "figura": 4,
+    "pie_original": "Figura 4. Inercia y coeficiente Silhouette para las alternativas de K-Means.",
+    "imagen_word": "media/image8.png"
+  },
+  {
+    "figura": 5,
+    "pie_original": "Figura 5. Medianas meteorológicas estandarizadas según nivel de actividad FIRMS.",
+    "imagen_word": "media/image1.png"
+  },
+  {
+    "figura": 6,
+    "pie_original": "Figura 6. Distribución de la temperatura máxima media semanal según nivel de actividad FIRMS.",
+    "imagen_word": "media/image11.png"
+  },
+  {
+    "figura": 7,
+    "pie_original": "Figura 7. Distribución de la humedad relativa mínima media semanal según nivel de actividad FIRMS.",
+    "imagen_word": "media/image13.png"
+  },
+  {
+    "figura": 8,
+    "pie_original": "Figura 8. Distribución de la precipitación acumulada semanal según nivel de actividad FIRMS. El eje x se ha cortado en 50mm para mejorar la visualización.",
+    "imagen_word": "media/image10.png"
+  },
+  {
+    "figura": 9,
+    "pie_original": "Figura 9. Distribución de la velocidad máxima media semanal del viento según nivel de actividad FIRMS.",
+    "imagen_word": "media/image6.png"
+  },
+  {
+    "figura": 11,
+    "pie_original": "Figura 11. Matriz de confusión del modelo Random Forest V1 sobre el conjunto de prueba.",
+    "imagen_word": "media/image5.png"
+  },
+  {
+    "figura": 12,
+    "pie_original": "Figura 12. Importancia por permutación de las variables utilizadas por Random Forest V1.",
+    "imagen_word": "media/image4.png"
+  }
+]

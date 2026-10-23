@@ -4,12 +4,12 @@ from pathlib import Path
 
 import pandas as pd
 
-from src.visual_style import COLORS
+from .class_labels import INTERNAL_ORDER
 
 ROOT = Path(__file__).resolve().parents[1]
 KEY = ["departamento", "fecha_inicio_semana"]
 TARGET = "nivel_actividad_firms"
-ORDER = tuple(COLORS)
+ORDER = INTERNAL_ORDER
 
 
 def load_test_examples(features, root=ROOT):
@@ -42,16 +42,16 @@ def evaluate_prediction(actual, predicted):
         explanation = "La clase predicha coincide con la clase real."
     elif actual == "Sin actividad":
         kind = "Falso positivo de presencia"
-        explanation = "Se predijo actividad, pero la etiqueta real indica Sin actividad."
+        explanation = "Se predijeron detecciones, pero la categoría real es Sin detecciones."
     elif predicted == "Sin actividad":
         kind = "Falso negativo de presencia"
-        explanation = "Se predijo Sin actividad, pero la etiqueta real indica actividad."
+        explanation = "Se predijo Sin detecciones, pero se observaron detecciones."
     elif ORDER.index(predicted) < ORDER.index(actual):
         kind = "Subestimación del nivel"
-        explanation = "Se reconoció la presencia de actividad, pero se estimó un nivel menor al real."
+        explanation = "Se predijo un clúster con centroide menor que el de la clase observada; no es una escala externa de riesgo."
     else:
         kind = "Sobreestimación del nivel"
-        explanation = "Se reconoció la presencia de actividad, pero se estimó un nivel mayor al real."
+        explanation = "Se predijo un clúster con centroide mayor que el de la clase observada; no es una escala externa de riesgo."
     return {
         "correct": actual == predicted,
         "presence_correct": (actual == "Sin actividad") == (predicted == "Sin actividad"),

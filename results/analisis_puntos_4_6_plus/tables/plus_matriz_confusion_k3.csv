@@ -1,5 +1,5 @@
-﻿real,Sin actividad,Bajo,Moderado,Alto
-Sin actividad,522,106,84,33
-Bajo,72,49,46,19
-Moderado,53,39,67,31
-Alto,15,10,20,23
+﻿real,Sin detecciones,Clúster 1,Clúster 2,Clúster 3
+Sin detecciones,522,106,84,33
+Clúster 1,72,49,46,19
+Clúster 2,53,39,67,31
+Clúster 3,15,10,20,23

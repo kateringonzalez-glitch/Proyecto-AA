@@ -10,7 +10,9 @@ El proyecto incluye la preparación del panel, construcción reproducible del ta
 
 Clasificar el nivel semanal de actividad FIRMS de cada departamento utilizando contexto espacial y temporal junto con variables meteorológicas. El resultado es una estimación contemporánea de actividad FIRMS, no una predicción directa de incendios ni un pronóstico anticipado: las variables meteorológicas corresponden a la misma semana objetivo.
 
-Las categorías `Sin actividad`, `Bajo`, `Moderado` y `Alto` son clases estadísticas internas. No constituyen niveles oficiales de riesgo.
+Las categorías `Sin detecciones`, `Clúster 1`, `Clúster 2` y `Clúster 3` son clases estadísticas internas. No constituyen niveles oficiales de riesgo. Los clústeres positivos se numeran según el orden ascendente de sus centroides. `Sin detecciones` es una categoría definida previamente para conteo cero y no un clúster de K-Means.
+
+La nomenclatura visible se traduce desde los identificadores originales mediante `src/class_labels.py`; el modelo, los códigos, los datasets y las particiones conservan su contrato original. Para actualizar las figuras sin ajustar modelos: `python -m src.refresh_presentation`. Ver [informe de la corrección](docs/CORRECCION_NOMENCLATURA.md).
 
 ## Flujo metodológico
 
@@ -40,10 +42,10 @@ Las semanas sin detecciones se conservan explícitamente. Sobre las observacione
 
 | Clase | Cantidad de detecciones | Observaciones |
 |---|---:|---:|
-| Sin actividad | 0 | 4.967 |
-| Bajo | 1 | 1.237 |
-| Moderado | 2–4 | 1.266 |
-| Alto | 5–173 | 453 |
+| Sin detecciones | 0 | 4.967 |
+| Clúster 1 | 1 | 1.237 |
+| Clúster 2 | 2–4 | 1.266 |
+| Clúster 3 | 5–173 | 453 |
 
 Estas clases son una discretización estadística de actividad FIRMS, no categorías naturales ni niveles confirmados de riesgo de incendio.
 
@@ -119,7 +121,7 @@ Después de congelar modelo, variables e hiperparámetros, se entrenó con train
 | F1 macro | 0,3967 |
 | F1 weighted | 0,5720 |
 
-El Dummy obtuvo un F1 macro aproximado de 0,1926 en el mismo test. No se prioriza Accuracy porque `Sin actividad` es mayoritaria y esa métrica puede ocultar diferencias importantes entre clases.
+El Dummy obtuvo un F1 macro aproximado de 0,1926 en el mismo test. No se prioriza Accuracy porque `Sin detecciones` es mayoritaria y esa métrica puede ocultar diferencias importantes entre clases.
 
 El análisis posterior de sensibilidad `k=3/k=4/k=5` reutiliza test para estudiar qué ocurre al fragmentar las clases positivas, pero no se utilizó para seleccionar nuevamente el modelo ni sus hiperparámetros. Las métricas oficiales son las almacenadas en `artifacts/metadata_modelo.json` y corresponden al Pipeline serializado.
 
@@ -127,7 +129,7 @@ El análisis posterior de sensibilidad `k=3/k=4/k=5` reutiliza test para estudia
 
 - FIRMS no equivale a un incendio confirmado.
 - El target surge de una discretización estadística del conteo.
-- `Bajo` continúa siendo una clase difícil de distinguir y `Alto` es minoritaria.
+- `Clúster 1` continúa siendo una clase difícil de distinguir y `Clúster 3` es minoritaria.
 - Persisten confusiones entre niveles, incluidas algunas no adyacentes.
 - La meteorología corresponde a la semana objetivo; un uso anticipado requeriría pronósticos equivalentes disponibles al momento de inferencia.
 - K-Means fue ajustado sobre los positivos de todo 2018–2025 y no exclusivamente sobre train.

@@ -1,0 +1,27 @@
+{
+  "poblacion_cuantiles": "conteos positivos (>0), misma población y fórmulas que la celda 11",
+  "dataset": "data/processed/firms_open_meteo_weekly/open_meteo_firms_weekly_target_available.parquet",
+  "observaciones_representadas": 7923,
+  "observaciones_positivas": 2956,
+  "valores": {
+    "q1": 1.0,
+    "mediana": 2.0,
+    "q3": 3.0,
+    "ric": 2.0,
+    "limite_superior_tukey": 6.0
+  },
+  "escala": "log1p; posiciones log(1 + valor), etiquetas del eje en detecciones originales",
+  "posiciones_transformadas": {
+    "q1": 0.6931471805599453,
+    "mediana": 1.0986122886681096,
+    "q3": 1.3862943611198906,
+    "limite_superior_tukey": 1.9459101490553132
+  },
+  "puntos_identicos": true,
+  "limites_y_ticks_identicos": true,
+  "lineas_textos_y_banda_verificados": true,
+  "otros_png_y_datos_modelo_sin_cambios": true,
+  "archivos_protegidos": 440,
+  "png": "/home/pepo/Materias/PAA/results/figuras_informe_actualizadas/figura_02_distribucion_detecciones.png",
+  "dpi": 300
+}

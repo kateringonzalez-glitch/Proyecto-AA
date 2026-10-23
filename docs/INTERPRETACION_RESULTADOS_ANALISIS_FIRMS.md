@@ -10,7 +10,7 @@ La unidad de analisis del proyecto es una observacion `departamento-semana`: par
 
 La variable objetivo `nivel_actividad_firms` se construye en dos pasos:
 
-1. Las semanas con `cantidad_detecciones == 0` se mantienen separadas como la clase `Sin actividad`.
+1. Las semanas con `cantidad_detecciones == 0` se mantienen separadas como la clase `Sin detecciones`.
 2. Las semanas con detecciones positivas se agrupan con K-Means usando `log1p(cantidad_detecciones)`.
 
 Separar los ceros es importante porque representan una masa grande de observaciones identicas. Si se mezclaran con las observaciones positivas dentro de K-Means, los ceros dominarian la particion y el algoritmo tenderia a crear un grupo de ceros automaticamente. En cambio, el proyecto trata los ceros como una categoria explicita y aplica el agrupamiento solo donde hay actividad positiva.
@@ -21,11 +21,11 @@ La transformacion `log1p(x)` calcula `log(1+x)`. Se usa porque la distribucion d
 
 K-Means agrupa observaciones segun cercania en esa escala transformada. Luego, los clusters positivos se ordenan por sus centroides de menor a mayor y se renombran ordinalmente. Para la solucion principal con k=3 positivos, los nombres son:
 
-- `Bajo`
-- `Moderado`
-- `Alto`
+- `Clúster 1`
+- `Clúster 2`
+- `Clúster 3`
 
-Junto con `Sin actividad`, esto genera cuatro clases finales. Estas clases son discretizaciones estadisticas de actividad FIRMS, no niveles oficiales de riesgo.
+Junto con `Sin detecciones`, esto genera cuatro clases finales. Estas clases son discretizaciones estadisticas de actividad FIRMS, no niveles oficiales de riesgo.
 
 Despues de construir esas clases con aprendizaje no supervisado, se entrena un clasificador supervisado Random Forest para asignar niveles a partir de variables disponibles. El modelo final seleccionado es Random Forest V1, con estas variables:
 
@@ -44,10 +44,10 @@ La tabla siguiente resume la distribucion real de `cantidad_detecciones` por cla
 
 | Clase | Observaciones | % dataset | Min | Q1 | Mediana | Q3 | Max | Media |
 |---|---:|---:|---:|---:|---:|---:|---:|---:|
-| Sin actividad | 4967 | 62.6909 | 0 | 0.0 | 0.0 | 0.0 | 0 | 0.0000 |
-| Bajo | 1237 | 15.6128 | 1 | 1.0 | 1.0 | 1.0 | 1 | 1.0000 |
-| Moderado | 1266 | 15.9788 | 2 | 2.0 | 2.0 | 3.0 | 4 | 2.6627 |
-| Alto | 453 | 5.7175 | 5 | 5.0 | 7.0 | 9.0 | 173 | 8.6093 |
+| Sin detecciones | 4967 | 62.6909 | 0 | 0.0 | 0.0 | 0.0 | 0 | 0.0000 |
+| Clúster 1 | 1237 | 15.6128 | 1 | 1.0 | 1.0 | 1.0 | 1 | 1.0000 |
+| Clúster 2 | 1266 | 15.9788 | 2 | 2.0 | 2.0 | 3.0 | 4 | 2.6627 |
+| Clúster 3 | 453 | 5.7175 | 5 | 5.0 | 7.0 | 9.0 | 173 | 8.6093 |
 
 Los estadisticos se interpretan asi:
 
@@ -55,15 +55,15 @@ Los estadisticos se interpretan asi:
 - `Q1`, mediana y `Q3` describen la parte central de la distribucion.
 - La media resume el promedio, pero puede subir cuando hay valores extremos.
 
-La clase `Sin actividad` concentra 62.69% del dataset y todos sus valores son cero. Esto confirma que la ausencia de detecciones es el estado mayoritario.
+La clase `Sin detecciones` concentra 62.69% del dataset y todos sus valores son cero. Esto confirma que la ausencia de detecciones es el estado mayoritario.
 
-La clase `Bajo` esta completamente concentrada en una deteccion. No hay dispersion interna: todas las observaciones tienen exactamente 1 deteccion.
+La clase `Clúster 1` esta completamente concentrada en una deteccion. No hay dispersion interna: todas las observaciones tienen exactamente 1 deteccion.
 
-La clase `Moderado` cubre de 2 a 4 detecciones. Su mediana es 2 y Q3 es 3, por lo que la mayor parte de sus observaciones queda en valores bajos dentro del rango positivo.
+La clase `Clúster 2` cubre de 2 a 4 detecciones. Su mediana es 2 y Q3 es 3, por lo que la mayor parte de sus observaciones queda en valores bajos dentro del rango positivo.
 
-La clase `Alto` conserva el rango documentado de 5 a 173 detecciones. Sin embargo, su mediana es 7 y Q3 es 9. Esto significa que la mayor parte de las semanas `Alto` no esta cerca del maximo, sino concentrada en cantidades relativamente bajas para esa clase. La media de 8.61 es mayor que la mediana, lo que indica asimetria hacia la derecha: existen pocas semanas con conteos excepcionalmente altos que elevan el promedio.
+La clase `Clúster 3` conserva el rango documentado de 5 a 173 detecciones. Sin embargo, su mediana es 7 y Q3 es 9. Esto significa que la mayor parte de las semanas `Clúster 3` no esta cerca del maximo, sino concentrada en cantidades relativamente bajas para esa clase. La media de 8.61 es mayor que la mediana, lo que indica asimetria hacia la derecha: existen pocas semanas con conteos excepcionalmente altos que elevan el promedio.
 
-Conclusion del punto 4: la clase `Alto` no debe describirse como si todas sus observaciones fueran extremas. Es una clase con umbral minimo de 5 detecciones, mucha concentracion entre 5 y 9 detecciones, y una cola alta que llega hasta 173.
+Conclusion del punto 4: la clase `Clúster 3` no debe describirse como si todas sus observaciones fueran extremas. Es una clase con umbral minimo de 5 detecciones, mucha concentracion entre 5 y 9 detecciones, y una cola alta que llega hasta 173.
 
 ## 3. Punto 6.1: seleccion de K en K-Means
 
@@ -96,12 +96,12 @@ Los boxplots de temperatura y humedad comparan las distribuciones de las variabl
 
 | Clase | Temp. max media semanal | Humedad relativa min media semanal | Viento max medio semanal | Precipitacion semanal |
 |---|---:|---:|---:|---:|
-| Sin actividad | 21.7333 | 57.8857 | 5.5043 | 14.3000 |
-| Bajo | 23.4119 | 54.0102 | 5.4362 | 10.2400 |
-| Moderado | 22.1190 | 53.0473 | 5.4832 | 9.0136 |
-| Alto | 20.0408 | 51.8571 | 5.4205 | 4.7929 |
+| Sin detecciones | 21.7333 | 57.8857 | 5.5043 | 14.3000 |
+| Clúster 1 | 23.4119 | 54.0102 | 5.4362 | 10.2400 |
+| Clúster 2 | 22.1190 | 53.0473 | 5.4832 | 9.0136 |
+| Clúster 3 | 20.0408 | 51.8571 | 5.4205 | 4.7929 |
 
-La temperatura mediana mas alta aparece en `Bajo`, no en `Alto`. La humedad y la precipitacion medianas disminuyen al pasar hacia niveles de mayor actividad, especialmente la precipitacion, cuya mediana es 4.79 mm en `Alto` frente a 14.30 mm en `Sin actividad`.
+La temperatura mediana mas alta aparece en `Clúster 1`, no en `Clúster 3`. La humedad y la precipitacion medianas disminuyen al pasar hacia niveles de mayor actividad, especialmente la precipitacion, cuya mediana es 4.79 mm en `Clúster 3` frente a 14.30 mm en `Sin detecciones`.
 
 Estos patrones son descriptivos y deben leerse con cuidado. Los boxplots muestran solapamiento entre clases, por lo que no se puede afirmar que una variable meteorologica por si sola determine la clase. Tampoco se puede afirmar causalidad: las variables se asocian con los niveles observados, pero no prueban que causen mayor actividad FIRMS.
 
@@ -109,15 +109,15 @@ Estos patrones son descriptivos y deben leerse con cuidado. Los boxplots muestra
 
 El heatmap usa medianas por clase estandarizadas por variable. Esto permite comparar variables con unidades diferentes. La escala de color indica desvios respecto al promedio de cada variable, no valores absolutos comparables entre temperatura, humedad, viento y precipitacion.
 
-El patron mas visible es que `Alto` aparece por debajo del promedio en precipitacion y humedad. `Bajo` muestra la mediana de temperatura mas alta. El viento presenta diferencias pequenas entre clases. En conjunto, el heatmap sugiere que las variables meteorologicas aportan senal, pero no separan perfectamente los niveles.
+El patron mas visible es que `Clúster 3` aparece por debajo del promedio en precipitacion y humedad. `Clúster 1` muestra la mediana de temperatura mas alta. El viento presenta diferencias pequenas entre clases. En conjunto, el heatmap sugiere que las variables meteorologicas aportan senal, pero no separan perfectamente los niveles.
 
 ### Distribucion por departamento
 
 La distribucion territorial se calculo como porcentaje dentro de cada departamento. Esto evita confundir cantidad total de filas con mayor actividad relativa.
 
-Departamentos con mayor porcentaje combinado de actividad positiva (`Bajo` + `Moderado` + `Alto`):
+Departamentos con mayor porcentaje combinado de actividad positiva (`Clúster 1` + `Clúster 2` + `Clúster 3`):
 
-| Departamento | Sin actividad | Bajo | Moderado | Alto |
+| Departamento | Sin detecciones | Clúster 1 | Clúster 2 | Clúster 3 |
 |---|---:|---:|---:|---:|
 | Lavalleja | 47.0024 | 18.9448 | 24.7002 | 9.3525 |
 | Artigas | 50.5995 | 16.5468 | 23.7410 | 9.1127 |
@@ -125,9 +125,9 @@ Departamentos con mayor porcentaje combinado de actividad positiva (`Bajo` + `Mo
 | Rocha | 51.7986 | 17.7458 | 20.8633 | 9.5923 |
 | San Jose | 53.9568 | 20.1439 | 20.3837 | 5.5156 |
 
-Departamentos con mayor porcentaje de `Sin actividad`:
+Departamentos con mayor porcentaje de `Sin detecciones`:
 
-| Departamento | Sin actividad | Bajo | Moderado | Alto |
+| Departamento | Sin detecciones | Clúster 1 | Clúster 2 | Clúster 3 |
 |---|---:|---:|---:|---:|
 | Montevideo | 88.2494 | 6.7146 | 4.0767 | 0.9592 |
 | Flores | 80.0959 | 13.4293 | 5.7554 | 0.7194 |
@@ -170,27 +170,27 @@ Metricas por clase en test:
 
 | Clase | Precision | Recall | F1 | Soporte |
 |---|---:|---:|---:|---:|
-| Sin actividad | 0.788520 | 0.700671 | 0.742004 | 745 |
-| Bajo | 0.240196 | 0.263441 | 0.251282 | 186 |
-| Moderado | 0.308756 | 0.352632 | 0.329238 | 190 |
-| Alto | 0.216981 | 0.338235 | 0.264368 | 68 |
+| Sin detecciones | 0.788520 | 0.700671 | 0.742004 | 745 |
+| Clúster 1 | 0.240196 | 0.263441 | 0.251282 | 186 |
+| Clúster 2 | 0.308756 | 0.352632 | 0.329238 | 190 |
+| Clúster 3 | 0.216981 | 0.338235 | 0.264368 | 68 |
 
 Matriz de confusion en test para k=3:
 
-| Real \ Predicho | Sin actividad | Bajo | Moderado | Alto |
+| Real \ Predicho | Sin detecciones | Clúster 1 | Clúster 2 | Clúster 3 |
 |---|---:|---:|---:|---:|
-| Sin actividad | 522 | 106 | 84 | 33 |
-| Bajo | 72 | 49 | 46 | 19 |
-| Moderado | 53 | 39 | 67 | 31 |
-| Alto | 15 | 10 | 20 | 23 |
+| Sin detecciones | 522 | 106 | 84 | 33 |
+| Clúster 1 | 72 | 49 | 46 | 19 |
+| Clúster 2 | 53 | 39 | 67 | 31 |
+| Clúster 3 | 15 | 10 | 20 | 23 |
 
-El modelo reconoce mejor `Sin actividad` que las clases positivas. Su F1 para `Sin actividad` es 0.742. En cambio, las clases positivas tienen F1 bajos: 0.251 para `Bajo`, 0.329 para `Moderado` y 0.264 para `Alto`.
+El modelo reconoce mejor `Sin detecciones` que las clases positivas. Su F1 para `Sin detecciones` es 0.742. En cambio, las clases positivas tienen F1 bajos: 0.251 para `Clúster 1`, 0.329 para `Clúster 2` y 0.264 para `Clúster 3`.
 
 Estas son las metricas oficiales de `artifacts/metadata_modelo.json` y del Pipeline de `artifacts/modelo_final.joblib`. En el entorno documentado (`scikit-learn 1.8.0`, `pandas 3.0.1`), reentrenar k=3 con las mismas claves, orden de desarrollo, variables e hiperparametros produjo exactamente las mismas predicciones y probabilidades equivalentes salvo precision numerica. Una ejecucion historica del analisis de sensibilidad habia producido diferencias minimas; su causa exacta no puede determinarse con los artefactos disponibles porque aquella salida no registro versiones, hash del orden de entrenamiento ni predicciones fila a fila.
 
 Precision indica, entre las semanas que el modelo predice como una clase, que proporcion realmente era de esa clase. Recall indica, entre las semanas reales de una clase, que proporcion logro recuperar el modelo. F1 resume precision y recall.
 
-Confundir `Alto` con `Moderado` significa subestimar una semana de mayor actividad estadistica. Confundir `Sin actividad` con `Bajo` significa marcar actividad donde no hubo detecciones. En este proyecto ambas confusiones son relevantes, pero tienen implicancias distintas: una afecta la intensidad asignada y la otra afecta la presencia misma de actividad.
+Confundir `Clúster 3` con `Clúster 2` significa subestimar el orden del grupo según sus centroides de conteos. Confundir `Sin detecciones` con `Clúster 1` significa marcar actividad donde no hubo detecciones. En este proyecto ambas confusiones son relevantes, pero tienen implicancias distintas: una afecta el grupo estadístico asignado y la otra afecta la presencia misma de actividad.
 
 El rendimiento es razonable como aproximacion exploratoria, porque supera claramente al baseline mayoritario en F1 macro de validation y aprende senales asociadas a la clase sin usar `cantidad_detecciones` como predictor. Sin embargo, sus limitaciones son importantes: la separacion entre niveles positivos es dificil y las clases minoritarias tienen desempeno bajo.
 
@@ -204,7 +204,7 @@ El analisis de sensibilidad mantiene constantes:
 - las mismas variables predictoras V1;
 - los mismos hiperparametros del Random Forest;
 - el mismo criterio de evaluacion en test;
-- la separacion de ceros como `Sin actividad`.
+- la separacion de ceros como `Sin detecciones`.
 
 Ademas, se verifico que el target reconstruido con k=3 coincide exactamente con el target vigente: 0 diferencias.
 
@@ -212,16 +212,16 @@ Ademas, se verifico que el target reconstruido con k=3 coincide exactamente con 
 
 | Escenario | Clase | Observaciones | % dataset | Rango |
 |---|---|---:|---:|---|
-| k3 | Sin actividad | 4967 | 62.6909 | 0-0 |
-| k3 | Bajo | 1237 | 15.6128 | 1-1 |
-| k3 | Moderado | 1266 | 15.9788 | 2-4 |
-| k3 | Alto | 453 | 5.7175 | 5-173 |
-| k4 | Sin actividad | 4967 | 62.6909 | 0-0 |
+| k3 | Sin detecciones | 4967 | 62.6909 | 0-0 |
+| k3 | Clúster 1 | 1237 | 15.6128 | 1-1 |
+| k3 | Clúster 2 | 1266 | 15.9788 | 2-4 |
+| k3 | Clúster 3 | 453 | 5.7175 | 5-173 |
+| k4 | Sin detecciones | 4967 | 62.6909 | 0-0 |
 | k4 | Perfil positivo 1 | 1237 | 15.6128 | 1-1 |
 | k4 | Perfil positivo 2 | 1034 | 13.0506 | 2-3 |
 | k4 | Perfil positivo 3 | 511 | 6.4496 | 4-7 |
 | k4 | Perfil positivo 4 | 174 | 2.1961 | 8-173 |
-| k5 | Sin actividad | 4967 | 62.6909 | 0-0 |
+| k5 | Sin detecciones | 4967 | 62.6909 | 0-0 |
 | k5 | Perfil positivo 1 | 1237 | 15.6128 | 1-1 |
 | k5 | Perfil positivo 2 | 659 | 8.3176 | 2-2 |
 | k5 | Perfil positivo 3 | 607 | 7.6612 | 3-4 |
@@ -244,16 +244,16 @@ k=4 y k=5 no mejoran el rendimiento general. Ambas metricas globales bajan al au
 
 | Escenario | Clase | F1 | Soporte test |
 |---|---|---:|---:|
-| k3 | Sin actividad | 0.742004 | 745 |
-| k3 | Bajo | 0.251282 | 186 |
-| k3 | Moderado | 0.329238 | 190 |
-| k3 | Alto | 0.264368 | 68 |
-| k4 | Sin actividad | 0.727273 | 745 |
+| k3 | Sin detecciones | 0.742004 | 745 |
+| k3 | Clúster 1 | 0.251282 | 186 |
+| k3 | Clúster 2 | 0.329238 | 190 |
+| k3 | Clúster 3 | 0.264368 | 68 |
+| k4 | Sin detecciones | 0.727273 | 745 |
 | k4 | Perfil positivo 1 | 0.236181 | 186 |
 | k4 | Perfil positivo 2 | 0.266272 | 157 |
 | k4 | Perfil positivo 3 | 0.209302 | 76 |
 | k4 | Perfil positivo 4 | 0.246575 | 25 |
-| k5 | Sin actividad | 0.729361 | 745 |
+| k5 | Sin detecciones | 0.729361 | 745 |
 | k5 | Perfil positivo 1 | 0.245700 | 186 |
 | k5 | Perfil positivo 2 | 0.149254 | 97 |
 | k5 | Perfil positivo 3 | 0.205405 | 93 |
@@ -264,9 +264,9 @@ Las clases nuevas no son reconocidas de forma solida. k=5 crea una clase superio
 
 ### Matrices de confusion
 
-En k=3, el modelo acierta 522 de 745 semanas `Sin actividad`, pero reparte muchas semanas positivas entre clases vecinas y tambien hacia `Sin actividad`.
+En k=3, el modelo acierta 522 de 745 semanas `Sin detecciones`, pero reparte muchas semanas positivas entre clases vecinas y tambien hacia `Sin detecciones`.
 
-En k=4 y k=5, la confusion se distribuye entre mas clases. Esto vuelve mas dificil distinguir perfiles positivos finos, especialmente los de mayor intensidad, porque hay menos ejemplos por clase.
+En k=4 y k=5, la confusion se distribuye entre mas clases. Esto vuelve mas dificil distinguir perfiles positivos finos, especialmente los de mayores conteos, porque hay menos ejemplos por clase.
 
 Respuestas a las preguntas principales:
 
@@ -276,19 +276,19 @@ Respuestas a las preguntas principales:
 4. Tampoco mejoran todas las clases individualmente. Varias clases nuevas tienen F1 bajo.
 5. Las clases pequenas tienen soportes reducidos y el modelo las reconoce peor.
 6. La mejora descriptiva de Silhouette no justifica, con estos resultados, la perdida de simplicidad e interpretabilidad.
-7. La alternativa recomendada por ahora es conservar k=3 positivos + `Sin actividad`.
+7. La alternativa recomendada por ahora es conservar k=3 positivos + `Sin detecciones`.
 
 ## 7. Conclusiones
 
 ### Resultados observados
 
-- La mayoria de observaciones no tiene detecciones FIRMS: 62.69% son `Sin actividad`.
-- `Bajo` equivale a una deteccion, `Moderado` a 2-4 y `Alto` a 5-173.
-- `Alto` tiene cola larga: mediana 7, Q3 9 y maximo 173.
+- La mayoria de observaciones no tiene detecciones FIRMS: 62.69% son `Sin detecciones`.
+- `Clúster 1` equivale a una deteccion, `Clúster 2` a 2-4 y `Clúster 3` a 5-173.
+- `Clúster 3` tiene cola larga: mediana 7, Q3 9 y maximo 173.
 - K-Means mejora Silhouette al aumentar K, pero reduce mucho el tamano de las clases positivas mas pequenas.
-- Las variables meteorologicas muestran patrones descriptivos, especialmente menor precipitacion mediana en `Alto`, pero con solapamiento entre clases.
+- Las variables meteorologicas muestran patrones descriptivos, especialmente menor precipitacion mediana en `Clúster 3`, pero con solapamiento entre clases.
 - Hay diferencias territoriales en la composicion de niveles por departamento.
-- El Random Forest reconoce mejor `Sin actividad` que los niveles positivos.
+- El Random Forest reconoce mejor `Sin detecciones` que los niveles positivos.
 - En sensibilidad, k=4 y k=5 empeoran F1 macro y Balanced Accuracy frente a k=3.
 
 ### Interpretacion
@@ -299,10 +299,10 @@ El proyecto trabaja con una senal dificil: muchas semanas sin detecciones, mucha
 
 Conviene conservar, por ahora, la solucion principal:
 
-- `Sin actividad`
-- `Bajo`
-- `Moderado`
-- `Alto`
+- `Sin detecciones`
+- `Clúster 1`
+- `Clúster 2`
+- `Clúster 3`
 
 Esta alternativa no es perfecta, pero ofrece el mejor equilibrio observado entre interpretabilidad, tamanos de clase y rendimiento supervisado.
 

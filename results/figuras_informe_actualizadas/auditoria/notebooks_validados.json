@@ -1,0 +1,23 @@
+[
+  {
+    "notebook": "Analisis_Puntos_4_6_Plus.ipynb",
+    "ejecucion_completa": true,
+    "errores": 0,
+    "salidas_sobrescritas": false,
+    "ajustes_bloqueados": true
+  },
+  {
+    "notebook": "Calidad_Preparacion_Datos.ipynb",
+    "ejecucion_completa": true,
+    "errores": 0,
+    "salidas_sobrescritas": false,
+    "ajustes_bloqueados": true
+  },
+  {
+    "notebook": "Auditoria_Coherencia_PAA.ipynb",
+    "ejecucion_completa": true,
+    "errores": 0,
+    "salidas_sobrescritas": false,
+    "ajustes_bloqueados": true
+  }
+]

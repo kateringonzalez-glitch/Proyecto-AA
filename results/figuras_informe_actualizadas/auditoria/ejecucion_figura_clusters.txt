@@ -1,0 +1,1 @@
+figura_clusters.ipynb: 22 celdas de código ejecutadas sin errores; ajustes bloqueados.

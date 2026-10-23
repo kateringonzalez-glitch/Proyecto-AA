@@ -1,0 +1,3 @@
+Analisis_Puntos_4_6_Plus.ipynb : sin errores
+Calidad_Preparacion_Datos.ipynb : sin errores
+Auditoria_Coherencia_PAA.ipynb : sin errores

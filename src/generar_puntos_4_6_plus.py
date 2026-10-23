@@ -38,7 +38,7 @@ FIGURES = OUT / "figures"
 KEY = ["departamento", "fecha_inicio_semana"]
 TARGET = "nivel_actividad_firms"
 COUNT = "cantidad_detecciones"
-ORDER = ["Sin actividad", "Bajo", "Moderado", "Alto"]
+ORDER = ["Sin detecciones", "Clúster 1", "Clúster 2", "Clúster 3"]
 RS = 42
 FEATURES = [
     "departamento",
@@ -68,12 +68,13 @@ def ensure_dirs() -> None:
 
 
 def load_data() -> pd.DataFrame:
-    data = pd.read_parquet(DATA).copy()
+    from src.class_labels import display_frame
+    data = display_frame(pd.read_parquet(DATA))
     data["fecha_inicio_semana"] = pd.to_datetime(data["fecha_inicio_semana"])
     assert not data.duplicated(KEY).any(), "Hay claves departamento-semana duplicadas."
     assert set(ORDER).issubset(set(data[TARGET].unique())), "Faltan clases del target vigente."
-    assert data.loc[data[COUNT].eq(0), TARGET].eq("Sin actividad").all()
-    assert data.loc[data[COUNT].gt(0), TARGET].ne("Sin actividad").all()
+    assert data.loc[data[COUNT].eq(0), TARGET].eq("Sin detecciones").all()
+    assert data.loc[data[COUNT].gt(0), TARGET].ne("Sin detecciones").all()
     return data
 
 
@@ -130,8 +131,18 @@ def save_json(obj: dict, name: str) -> Path:
     return path
 
 
+def color_class_labels(fig: plt.Figure) -> None:
+    """Colorea etiquetas de clase sin cambiar escalas cuantitativas del gráfico."""
+    for ax in fig.axes:
+        for tick in [*ax.get_xticklabels(), *ax.get_yticklabels()]:
+            label = tick.get_text().split(" | ")[-1]
+            if label in CLASS_COLORS:
+                tick.set_color(CLASS_COLORS[label])
+
+
 def save_figure(fig: plt.Figure, name: str, close: bool = True) -> Path:
     path = FIGURES / name
+    color_class_labels(fig)
     fig.savefig(path, dpi=180)
     if close:
         plt.close(fig)
@@ -236,11 +247,11 @@ def plot_point4_distribution(data: pd.DataFrame, summary: pd.DataFrame, close: b
         transform=axes[0].transAxes,
         fontsize=9,
     )
-    alto = summary.loc[summary[TARGET].eq("Alto")].iloc[0]
+    alto = summary.loc[summary[TARGET].eq("Clúster 3")].iloc[0]
     axes[1].text(
         0.01,
         -0.22,
-        f"Alto: min={alto['minimo']:.0f}, Q1={alto['q1']:.0f}, mediana={alto['mediana']:.0f}, Q3={alto['q3']:.0f}, max={alto['maximo']:.0f}.",
+        f"Clúster 3: min={alto['minimo']:.0f}, Q1={alto['q1']:.0f}, mediana={alto['mediana']:.0f}, Q3={alto['q3']:.0f}, max={alto['maximo']:.0f}.",
         transform=axes[1].transAxes,
         fontsize=9,
     )
@@ -261,12 +272,12 @@ def kmeans_targets(data: pd.DataFrame, k: int) -> tuple[pd.Series, pd.DataFrame,
     centers["centroide_original"] = np.expm1(centers["centroide_log1p"])
     centers = centers.sort_values("centroide_original").reset_index(drop=True)
     if k == 3:
-        labels = ["Bajo", "Moderado", "Alto"]
+        labels = ["Clúster 1", "Clúster 2", "Clúster 3"]
     else:
         labels = [f"Perfil positivo {i}" for i in range(1, k + 1)]
     centers["etiqueta"] = labels
     mapping = centers.set_index("cluster_original")["etiqueta"].to_dict()
-    target = pd.Series("Sin actividad", index=data.index, dtype="object")
+    target = pd.Series("Sin detecciones", index=data.index, dtype="object")
     target.loc[positive_mask] = pd.Series(model.labels_, index=data.index[positive_mask]).map(mapping)
     ranges = (
         data.assign(target_alt=target)
@@ -277,7 +288,7 @@ def kmeans_targets(data: pd.DataFrame, k: int) -> tuple[pd.Series, pd.DataFrame,
     )
     ranges["k"] = k
     ranges["porcentaje_dataset"] = ranges["observaciones"] / len(data) * 100
-    order = ["Sin actividad"] + labels
+    order = ["Sin detecciones"] + labels
     ranges["orden"] = ranges["clase"].map({label: i for i, label in enumerate(order)})
     ranges = ranges.sort_values("orden").drop(columns="orden")
     return target, ranges, model
@@ -401,7 +412,7 @@ def heatmap_meteo(data: pd.DataFrame, close: bool = True) -> tuple[pd.DataFrame,
 def department_distribution(data: pd.DataFrame, close: bool = True) -> tuple[pd.DataFrame, pd.DataFrame, plt.Figure]:
     counts = pd.crosstab(data["departamento"], data[TARGET]).reindex(columns=ORDER, fill_value=0)
     proportions = counts.div(counts.sum(axis=1), axis=0) * 100
-    sort_index = proportions[["Alto", "Moderado", "Bajo"]].sum(axis=1).sort_values(ascending=False).index
+    sort_index = proportions[["Clúster 3", "Clúster 2", "Clúster 1"]].sum(axis=1).sort_values(ascending=False).index
     counts = counts.loc[sort_index]
     proportions = proportions.loc[sort_index]
     save_csv(counts.reset_index(), "punto6_departamento_recuentos_por_nivel.csv")
@@ -490,10 +501,12 @@ def plot_rf_class_metrics(per_class: pd.DataFrame, close: bool = True) -> plt.Fi
     x = np.arange(len(per_class))
     width = 0.24
     fig, ax = plt.subplots(figsize=(9, 5), constrained_layout=True)
-    palette = ["#2563EB", "#F59E0B", "#10B981"]
+    hatches = ["", "//", "xx"]
     for i, metric in enumerate(metrics):
         vals = per_class[metric].to_numpy()
-        ax.bar(x + (i - 1) * width, vals, width=width, label=metric.title(), color=palette[i])
+        ax.bar(x + (i - 1) * width, vals, width=width, label=metric.title(),
+               color=[CLASS_COLORS[label] for label in per_class["clase"]],
+               hatch=hatches[i], edgecolor="black", linewidth=0.35)
         for xi, val in zip(x + (i - 1) * width, vals):
             ax.text(xi, val + 0.015, f"{val:.2f}", ha="center", va="bottom", fontsize=8)
     ax.set_xticks(x)
@@ -501,7 +514,9 @@ def plot_rf_class_metrics(per_class: pd.DataFrame, close: bool = True) -> plt.Fi
     ax.set_ylim(0, 1)
     ax.set_ylabel("Valor de metrica en test")
     ax.set_title("Precision, Recall y F1 por clase - Random Forest V1")
-    ax.legend()
+    from matplotlib.patches import Patch
+    ax.legend(handles=[Patch(facecolor="white", edgecolor="black", hatch=h, label=m.title())
+                       for m, h in zip(metrics, hatches)])
     ax.grid(axis="y", alpha=0.25)
     save_figure(fig, "punto6_07_metricas_rf_por_clase_test.png", close=close)
     return fig
@@ -596,7 +611,7 @@ def run_sensitivity(data: pd.DataFrame, params: dict, close: bool = True) -> dic
         scenario = f"k{k}"
         ranges.insert(0, "escenario", scenario)
         class_summaries.append(ranges)
-        class_order = ["Sin actividad"] + (["Bajo", "Moderado", "Alto"] if k == 3 else [f"Perfil positivo {i}" for i in range(1, k + 1)])
+        class_order = ["Sin detecciones"] + (["Clúster 1", "Clúster 2", "Clúster 3"] if k == 3 else [f"Perfil positivo {i}" for i in range(1, k + 1)])
         if k == 3:
             assert int((target != data[TARGET]).sum()) == 0, "El target k=3 reconstruido no coincide con el vigente."
         gm, pc, cm, cm_fig = evaluate_rf_for_target(data, target, class_order, params, scenario, close=close)
@@ -638,17 +653,17 @@ def make_notebook() -> None:
     meteo_medians = pd.read_csv(TABLES / "punto6_heatmap_meteo_medianas_originales.csv")
     dept_props = pd.read_csv(TABLES / "punto6_departamento_porcentajes_por_nivel.csv")
 
-    alto = point4.loc[point4[TARGET].eq("Alto")].iloc[0]
-    sin = point4.loc[point4[TARGET].eq("Sin actividad")].iloc[0]
-    bajo = point4.loc[point4[TARGET].eq("Bajo")].iloc[0]
-    moderado = point4.loc[point4[TARGET].eq("Moderado")].iloc[0]
+    alto = point4.loc[point4[TARGET].eq("Clúster 3")].iloc[0]
+    sin = point4.loc[point4[TARGET].eq("Sin detecciones")].iloc[0]
+    bajo = point4.loc[point4[TARGET].eq("Clúster 1")].iloc[0]
+    moderado = point4.loc[point4[TARGET].eq("Clúster 2")].iloc[0]
     k3 = global_metrics.loc[global_metrics["escenario"].eq("k3")].iloc[0]
     k4 = global_metrics.loc[global_metrics["escenario"].eq("k4")].iloc[0]
     k5 = global_metrics.loc[global_metrics["escenario"].eq("k5")].iloc[0]
     worst_k3 = per_class.loc[per_class["escenario"].eq("k3")].sort_values("f1").iloc[0]
     temp_max_class = meteo_medians.sort_values("temperature_2m_max_mean_weekly", ascending=False).iloc[0]
     precip_min_class = meteo_medians.sort_values("precipitation_sum_weekly").iloc[0]
-    dept_high = dept_props.assign(positivas=dept_props[["Bajo", "Moderado", "Alto"]].sum(axis=1)).sort_values("positivas", ascending=False).iloc[0]
+    dept_high = dept_props.assign(positivas=dept_props[["Clúster 1", "Clúster 2", "Clúster 3"]].sum(axis=1)).sort_values("positivas", ascending=False).iloc[0]
     small_k5 = class_summary.loc[class_summary["escenario"].eq("k5")].sort_values("observaciones").iloc[0]
 
     def md(source: str) -> dict:
@@ -669,7 +684,7 @@ def make_notebook() -> None:
 
 Este notebook es el documento principal del análisis complementario. Ejecuta cálculos locales, renderiza tablas y gráficos directamente debajo de cada celda, y además guarda copias reproducibles en `results/analisis_puntos_4_6_plus/`.
 
-La metodología conserva los ceros como `Sin actividad`, aplica K-Means solamente sobre observaciones positivas con `log1p(cantidad_detecciones)` y usa el Random Forest V1 ya seleccionado para el análisis supervisado."""
+La metodología conserva los ceros como `Sin detecciones`, aplica K-Means solamente sobre observaciones positivas con `log1p(cantidad_detecciones)` y usa el Random Forest V1 ya seleccionado para el análisis supervisado."""
         ),
         code(
             """from pathlib import Path
@@ -703,16 +718,16 @@ fig = firms.plot_point4_distribution(data, point4, close=False)
 plt.show()"""
         ),
         md(
-            f"""**Interpretación.** `Sin actividad` concentra {sin['observaciones']:.0f} observaciones ({sin['porcentaje_dataset']:.2f}% del total) y todos sus valores son cero. `Bajo` queda fijado en una detección; `Moderado` agrupa semanas de {moderado['minimo']:.0f} a {moderado['maximo']:.0f} detecciones. `Alto` conserva el rango {alto['minimo']:.0f}-{alto['maximo']:.0f}, pero su mediana es {alto['mediana']:.0f}, Q3 es {alto['q3']:.0f} y la media es {alto['media']:.2f}; esto muestra una clase con muchas semanas relativamente cercanas al umbral inferior y una cola de eventos excepcionalmente altos."""
+            f"""**Interpretación.** `Sin detecciones` concentra {sin['observaciones']:.0f} observaciones ({sin['porcentaje_dataset']:.2f}% del total) y todos sus valores son cero. `Clúster 1` queda fijado en una detección; `Clúster 2` agrupa semanas de {moderado['minimo']:.0f} a {moderado['maximo']:.0f} detecciones. `Clúster 3` conserva el rango {alto['minimo']:.0f}-{alto['maximo']:.0f}, pero su mediana es {alto['mediana']:.0f}, Q3 es {alto['q3']:.0f} y la media es {alto['media']:.2f}; esto muestra una clase con muchas semanas relativamente cercanas al umbral inferior y una cola de eventos excepcionalmente altos."""
         ),
         code(
-            """alto = point4.loc[point4[firms.TARGET].eq("Alto")].iloc[0]
-bajo = point4.loc[point4[firms.TARGET].eq("Bajo")].iloc[0]
-moderado = point4.loc[point4[firms.TARGET].eq("Moderado")].iloc[0]
+            """alto = point4.loc[point4[firms.TARGET].eq("Clúster 3")].iloc[0]
+bajo = point4.loc[point4[firms.TARGET].eq("Clúster 1")].iloc[0]
+moderado = point4.loc[point4[firms.TARGET].eq("Clúster 2")].iloc[0]
 print(
-    f"Interpretacion: Bajo queda concentrado en {bajo['minimo']:.0f} deteccion. "
-    f"Moderado cubre {moderado['minimo']:.0f}-{moderado['maximo']:.0f}. "
-    f"Alto conserva el rango {alto['minimo']:.0f}-{alto['maximo']:.0f}, "
+    f"Interpretacion: Clúster 1 queda concentrado en {bajo['minimo']:.0f} deteccion. "
+    f"Clúster 2 cubre {moderado['minimo']:.0f}-{moderado['maximo']:.0f}. "
+    f"Clúster 3 conserva el rango {alto['minimo']:.0f}-{alto['maximo']:.0f}, "
     f"pero su mediana es {alto['mediana']:.0f} y Q3={alto['q3']:.0f}; "
     "por tanto, el maximo representa una cola alta, no el caso tipico."
 )"""
@@ -742,19 +757,19 @@ plt.show()"""
         md(
             """## Punto 6.2: boxplot de detecciones por perfil positivo
 
-Objetivo: visualizar la dispersión de `Bajo`, `Moderado` y `Alto` sin que la cola alta vuelva ilegible el gráfico."""
+Objetivo: visualizar la dispersión de `Clúster 1`, `Clúster 2` y `Clúster 3` sin que la cola alta vuelva ilegible el gráfico."""
         ),
         code(
             """fig = firms.plot_positive_boxplot(data, close=False)
 plt.show()"""
         ),
         md(
-            f"""**Interpretación.** El gráfico confirma que `Bajo` no tiene dispersión porque corresponde a una detección. `Moderado` concentra valores entre {moderado['minimo']:.0f} y {moderado['maximo']:.0f}. `Alto` tiene una mediana baja dentro de su rango ({alto['mediana']:.0f}), pero incluye valores extremos hasta {alto['maximo']:.0f}; por eso la escala logarítmica ayuda a ver la caja sin ocultar la cola."""
+            f"""**Interpretación.** El gráfico confirma que `Clúster 1` no tiene dispersión porque corresponde a una detección. `Clúster 2` concentra valores entre {moderado['minimo']:.0f} y {moderado['maximo']:.0f}. `Clúster 3` tiene una mediana baja dentro de su rango ({alto['mediana']:.0f}), pero incluye valores extremos hasta {alto['maximo']:.0f}; por eso la escala logarítmica ayuda a ver la caja sin ocultar la cola."""
         ),
         code(
             """print(
     "Interpretacion: se muestran valores extremos y se usa escala logaritmica en la escala original "
-    "de conteos. Esto permite ver simultaneamente la concentracion de cada clase y la cola de Alto."
+    "de conteos. Esto permite ver simultaneamente la concentracion de cada clase y la cola de Clúster 3."
 )"""
         ),
         md(
@@ -871,13 +886,13 @@ fig = firms.plot_rf_class_metrics(rf_class_metrics, close=False)
 plt.show()"""
         ),
         md(
-            f"""**Interpretación.** En test, el modelo reconoce mejor `Sin actividad` (F1={per_class[(per_class.escenario == 'k3') & (per_class.clase == 'Sin actividad')]['f1'].iloc[0]:.3f}) que las clases positivas. La clase más débil en k=3 es `{worst_k3['clase']}` (F1={worst_k3['f1']:.3f}). Esto indica que el modelo capta parte de la diferencia entre semanas sin actividad y con actividad, pero tiene dificultades para separar niveles positivos cercanos."""
+            f"""**Interpretación.** En test, el modelo reconoce mejor `Sin detecciones` (F1={per_class[(per_class.escenario == 'k3') & (per_class.clase == 'Sin detecciones')]['f1'].iloc[0]:.3f}) que las clases positivas. La clase más débil en k=3 es `{worst_k3['clase']}` (F1={worst_k3['f1']:.3f}). Esto indica que el modelo capta parte de la diferencia entre semanas sin actividad y con actividad, pero tiene dificultades para separar niveles positivos cercanos."""
         ),
         code(
             """worst = rf_class_metrics.sort_values("f1").iloc[0]
 print(
     f"Interpretacion: la clase con menor F1 en test es {worst['clase']} "
-    f"(F1={worst['f1']:.3f}). Las clases positivas son mas dificiles que Sin actividad."
+    f"(F1={worst['f1']:.3f}). Las clases positivas son mas dificiles que Sin detecciones."
 )"""
         ),
         md(
@@ -923,7 +938,7 @@ plt.show()"""
     plt.show()"""
         ),
         md(
-            """**Interpretación.** Las matrices de confusión muestran que muchas semanas positivas se reparten entre clases vecinas o se predicen como `Sin actividad`. En términos del problema, confundir `Alto` con `Moderado` implica subestimar una semana de mayor actividad estadística; confundir `Sin actividad` con `Bajo` implica marcar actividad donde no hubo detecciones."""
+            """**Interpretación.** Las matrices de confusión muestran que muchas semanas positivas se reparten entre clases vecinas o se predicen como `Sin detecciones`. En términos del problema, confundir `Clúster 3` con `Clúster 2` implica subestimar el orden del grupo según sus centroides de conteos; confundir `Sin detecciones` con `Clúster 1` implica marcar actividad donde no hubo detecciones."""
         ),
         code(
             """best = global_metrics.sort_values(["f1_macro_test", "balanced_accuracy_test"], ascending=False).iloc[0]
@@ -947,7 +962,7 @@ print(
             old["cell_type"] == new["cell_type"] for old, new in zip(previous, cells)
         ):
             for old, new in zip(previous, cells):
-                if old["source"] == new["source"]:
+                if new["cell_type"] == "code" or old["source"] == new["source"]:
                     new.update(old)
                 elif new["cell_type"] == "markdown":
                     new.update({key: value for key, value in old.items() if key != "source"})
@@ -979,8 +994,8 @@ def make_interpretation(
     class_summary: pd.DataFrame,
     per_class: pd.DataFrame,
 ) -> None:
-    alto = point4.loc[point4[TARGET].eq("Alto")].iloc[0]
-    sin = point4.loc[point4[TARGET].eq("Sin actividad")].iloc[0]
+    alto = point4.loc[point4[TARGET].eq("Clúster 3")].iloc[0]
+    sin = point4.loc[point4[TARGET].eq("Sin detecciones")].iloc[0]
     best = global_metrics.sort_values(["f1_macro_test", "balanced_accuracy_test"], ascending=False).iloc[0]
     rf_k3 = per_class[per_class["escenario"].eq("k3")].sort_values("f1").iloc[0]
     min_classes = class_summary.sort_values(["escenario", "observaciones"]).groupby("escenario").first().reset_index()
@@ -988,8 +1003,8 @@ def make_interpretation(
         "# Interpretaciones sinteticas",
         "",
         "## Punto 4",
-        f"- `Sin actividad` concentra {sin['observaciones']:.0f} observaciones ({sin['porcentaje_dataset']:.2f}% del dataset) y todos sus conteos son cero.",
-        f"- `Alto` conserva en los datos locales el rango {alto['minimo']:.0f}-{alto['maximo']:.0f}, pero su mediana es {alto['mediana']:.0f} y el tercer cuartil es {alto['q3']:.0f}; el maximo representa una cola extrema, no el comportamiento tipico.",
+        f"- `Sin detecciones` concentra {sin['observaciones']:.0f} observaciones ({sin['porcentaje_dataset']:.2f}% del dataset) y todos sus conteos son cero.",
+        f"- `Clúster 3` conserva en los datos locales el rango {alto['minimo']:.0f}-{alto['maximo']:.0f}, pero su mediana es {alto['mediana']:.0f} y el tercer cuartil es {alto['q3']:.0f}; el maximo representa una cola extrema, no el comportamiento tipico.",
         "- Los cuartiles se calcularon sobre observaciones reales agrupadas por la etiqueta final; no se eliminaron valores extremos.",
         "",
         "## Punto 6",
@@ -1010,67 +1025,9 @@ def make_interpretation(
 
 
 def main() -> None:
-    ensure_dirs()
-    data = load_data()
-    params = read_rf_params()
-
-    point4 = point4_summary(data)
-    plot_point4_distribution(data, point4)
-
-    kmetrics = kmeans_metrics(data)
-    plot_kmeans_metrics(kmetrics)
-    plot_positive_boxplot(data)
-    plot_meteo_boxplot(
-        data,
-        "temperature_2m_max_mean_weekly",
-        "punto6_03_boxplot_temperatura_por_nivel.png",
-        "Temperatura maxima media semanal por nivel FIRMS",
-    )
-    plot_meteo_boxplot(
-        data,
-        "relative_humidity_2m_min_mean_weekly",
-        "punto6_04_boxplot_humedad_por_nivel.png",
-        "Humedad relativa minima media semanal por nivel FIRMS",
-    )
-    heatmap_meteo(data)
-    department_distribution(data)
-
-    validations = {
-        "dataset": str(DATA.relative_to(ROOT)),
-        "filas": int(len(data)),
-        "features": FEATURES,
-        "hiperparametros_rf": params,
-        "splits": {},
-        "k3_target_mismatches_vs_dataset": None,
-    }
-    for split in ["train", "validation", "test"]:
-        part = subset_by_keys(data, split)
-        validations["splits"][split] = {
-            "filas": int(len(part)),
-            "claves_unicas": bool(not part.duplicated(KEY).any()),
-        }
-
-    target_k3, _, _ = kmeans_targets(data, 3)
-    validations["k3_target_mismatches_vs_dataset"] = int((target_k3 != data[TARGET]).sum())
-    assert validations["k3_target_mismatches_vs_dataset"] == 0, "El target k=3 reconstruido no coincide con el vigente."
-
-    sensitivity = run_sensitivity(data, params)
-    class_summary = sensitivity["class_summary"]
-    global_df = sensitivity["global_metrics"]
-    per_class_df = sensitivity["per_class"]
-
-    validations["clases_por_k_suman_total"] = {
-        row.escenario: int(class_summary.loc[class_summary.escenario.eq(row.escenario), "observaciones"].sum())
-        for row in global_df.itertuples()
-    }
-    validations["salidas"] = {
-        "tablas": str(TABLES.relative_to(ROOT)),
-        "figuras": str(FIGURES.relative_to(ROOT)),
-    }
-    save_json(validations, "resumen_validaciones.json")
-    make_interpretation(point4, kmetrics, global_df, class_summary, per_class_df)
-    make_notebook()
-    print("Analisis generado en", OUT.relative_to(ROOT))
+    """Reproduce solamente la presentación de resultados ya guardados."""
+    from src.refresh_presentation import main as refresh
+    refresh()
 
 
 if __name__ == "__main__":

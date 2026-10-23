@@ -1,0 +1,311 @@
+[
+  {
+    "archivo": "figura_01_mapa_firms_uruguay.png",
+    "ruta_absoluta": "/home/pepo/Materias/PAA/results/figuras_informe_actualizadas/figura_01_mapa_firms_uruguay.png",
+    "pixeles": [
+      987,
+      965
+    ],
+    "dpi": [
+      99.9998,
+      99.9998
+    ],
+    "sha256": "b42a44c6ecbf49d6570e2fae10407a3e9c7cc3c202ee9d8258cf29a23bf113b6"
+  },
+  {
+    "archivo": "figura_02_distribucion_detecciones.png",
+    "ruta_absoluta": "/home/pepo/Materias/PAA/results/figuras_informe_actualizadas/figura_02_distribucion_detecciones.png",
+    "pixeles": [
+      3331,
+      1348
+    ],
+    "dpi": [
+      299.9994,
+      299.9994
+    ],
+    "sha256": "b0835f3072779f0e594ec353a9620e864c86d795ad1ec72f4616eeb3ec333a29"
+  },
+  {
+    "archivo": "figura_03_distribucion_categorias_firms.png",
+    "ruta_absoluta": "/home/pepo/Materias/PAA/results/figuras_informe_actualizadas/figura_03_distribucion_categorias_firms.png",
+    "pixeles": [
+      3315,
+      1348
+    ],
+    "dpi": [
+      299.9994,
+      299.9994
+    ],
+    "sha256": "b26dad05dd3fa8ce7800c2ddd0f7214bd7a5d6b600b8fd540eea3cdc4718d506"
+  },
+  {
+    "archivo": "figura_04_inercia_silhouette.png",
+    "ruta_absoluta": "/home/pepo/Materias/PAA/results/figuras_informe_actualizadas/figura_04_inercia_silhouette.png",
+    "pixeles": [
+      3600,
+      1380
+    ],
+    "dpi": [
+      299.9994,
+      299.9994
+    ],
+    "sha256": "f87b74458710fcfd5aa89bde8166299ea9945bb1e4327f96ef287df75c1461be"
+  },
+  {
+    "archivo": "figura_05_medianas_meteorologicas_estandarizadas.png",
+    "ruta_absoluta": "/home/pepo/Materias/PAA/results/figuras_informe_actualizadas/figura_05_medianas_meteorologicas_estandarizadas.png",
+    "pixeles": [
+      2760,
+      1440
+    ],
+    "dpi": [
+      299.9994,
+      299.9994
+    ],
+    "sha256": "08d3fed82fad23252c1b77a1691621fb4f6770d37ea36a0f9925f49813d666b6"
+  },
+  {
+    "archivo": "figura_06_distribucion_temperatura.png",
+    "ruta_absoluta": "/home/pepo/Materias/PAA/results/figuras_informe_actualizadas/figura_06_distribucion_temperatura.png",
+    "pixeles": [
+      3509,
+      1350
+    ],
+    "dpi": [
+      299.9994,
+      299.9994
+    ],
+    "sha256": "8ef65401058aae44ec05d73db4d0f43302ad5afdf2705c2aac5dac8415e3ac7f"
+  },
+  {
+    "archivo": "figura_07_distribucion_humedad.png",
+    "ruta_absoluta": "/home/pepo/Materias/PAA/results/figuras_informe_actualizadas/figura_07_distribucion_humedad.png",
+    "pixeles": [
+      3509,
+      1350
+    ],
+    "dpi": [
+      299.9994,
+      299.9994
+    ],
+    "sha256": "f8157d063ab8608cb6da032bab4f8f72267081b8a511146fb067a9b30cdf7354"
+  },
+  {
+    "archivo": "figura_08_distribucion_precipitacion.png",
+    "ruta_absoluta": "/home/pepo/Materias/PAA/results/figuras_informe_actualizadas/figura_08_distribucion_precipitacion.png",
+    "pixeles": [
+      3536,
+      1350
+    ],
+    "dpi": [
+      299.9994,
+      299.9994
+    ],
+    "sha256": "bc9261f24936404b2c576088d38190abf9e8c8738afae7995e306d60292189e1"
+  },
+  {
+    "archivo": "figura_09_distribucion_viento.png",
+    "ruta_absoluta": "/home/pepo/Materias/PAA/results/figuras_informe_actualizadas/figura_09_distribucion_viento.png",
+    "pixeles": [
+      3509,
+      1350
+    ],
+    "dpi": [
+      299.9994,
+      299.9994
+    ],
+    "sha256": "bf90b0f1b1ebdf320e78827946e62eb64c11632167d30c03d01e0264a6a2c6d0"
+  },
+  {
+    "archivo": "figura_10_sensibilidad_metricas_k3_k4_k5.png",
+    "ruta_absoluta": "/home/pepo/Materias/PAA/results/figuras_informe_actualizadas/figura_10_sensibilidad_metricas_k3_k4_k5.png",
+    "pixeles": [
+      2250,
+      1440
+    ],
+    "dpi": [
+      299.9994,
+      299.9994
+    ],
+    "sha256": "3e9bc566068832a2cb7a4d30526ab655d12aaa112d31f424afaed735e3369681"
+  },
+  {
+    "archivo": "figura_11_matriz_confusion_random_forest_v1.png",
+    "ruta_absoluta": "/home/pepo/Materias/PAA/results/figuras_informe_actualizadas/figura_11_matriz_confusion_random_forest_v1.png",
+    "pixeles": [
+      1828,
+      1604
+    ],
+    "dpi": [
+      299.9994,
+      299.9994
+    ],
+    "sha256": "a06f58d25a3a0df2dcd6cac9a27a92be96585aa8780372a191cbfdb1f2280523"
+  },
+  {
+    "archivo": "figura_12_importancia_permutacion_original.png",
+    "ruta_absoluta": "/home/pepo/Materias/PAA/results/figuras_informe_actualizadas/figura_12_importancia_permutacion_original.png",
+    "pixeles": [
+      960,
+      469
+    ],
+    "dpi": null,
+    "sha256": "b1f1ac8fe9ac8d7904db671a3268017188cb4181294c9bc966abc268616d8616"
+  },
+  {
+    "archivo": "suplementaria_clusters_log_conteos_tamanos.png",
+    "ruta_absoluta": "/home/pepo/Materias/PAA/results/figuras_informe_actualizadas/suplementaria_clusters_log_conteos_tamanos.png",
+    "pixeles": [
+      4769,
+      1169
+    ],
+    "dpi": [
+      299.9994,
+      299.9994
+    ],
+    "sha256": "020db7907b5f480e6ccbb2bcde300047d44b72d5a8ce28e68487b190b2c05aae"
+  },
+  {
+    "archivo": "suplementaria_conteos_clusters_positivos.png",
+    "ruta_absoluta": "/home/pepo/Materias/PAA/results/figuras_informe_actualizadas/suplementaria_conteos_clusters_positivos.png",
+    "pixeles": [
+      2340,
+      1500
+    ],
+    "dpi": [
+      299.9994,
+      299.9994
+    ],
+    "sha256": "77de21b87fee1257424107be61c5a9a3c8dfea66b1ff2f2b57ceb44f4945c158"
+  },
+  {
+    "archivo": "suplementaria_conteos_por_categoria_boxplots.png",
+    "ruta_absoluta": "/home/pepo/Materias/PAA/results/figuras_informe_actualizadas/suplementaria_conteos_por_categoria_boxplots.png",
+    "pixeles": [
+      3900,
+      1500
+    ],
+    "dpi": [
+      299.9994,
+      299.9994
+    ],
+    "sha256": "f9f24032644a20ac58793b49c814bb7d17adca55e9cee078f9ca0f30bba8d3b6"
+  },
+  {
+    "archivo": "suplementaria_humedad_boxplots.png",
+    "ruta_absoluta": "/home/pepo/Materias/PAA/results/figuras_informe_actualizadas/suplementaria_humedad_boxplots.png",
+    "pixeles": [
+      2520,
+      1500
+    ],
+    "dpi": [
+      299.9994,
+      299.9994
+    ],
+    "sha256": "619016f4fc10aa07c71b0d0e9f0b8c85f7eaeecfdd6212def8b6f4c5ce07a976"
+  },
+  {
+    "archivo": "suplementaria_matriz_confusion_k3.png",
+    "ruta_absoluta": "/home/pepo/Materias/PAA/results/figuras_informe_actualizadas/suplementaria_matriz_confusion_k3.png",
+    "pixeles": [
+      2040,
+      1740
+    ],
+    "dpi": [
+      299.9994,
+      299.9994
+    ],
+    "sha256": "a048102622bcbd2f42264f0d510c167977d1d372866251935d15245d6c6fead8"
+  },
+  {
+    "archivo": "suplementaria_matriz_confusion_k4.png",
+    "ruta_absoluta": "/home/pepo/Materias/PAA/results/figuras_informe_actualizadas/suplementaria_matriz_confusion_k4.png",
+    "pixeles": [
+      2040,
+      1740
+    ],
+    "dpi": [
+      299.9994,
+      299.9994
+    ],
+    "sha256": "422342d5a3f912f7995fe675188fcc25a0d3cdec073d3d0f25c5b95e8425ac8e"
+  },
+  {
+    "archivo": "suplementaria_matriz_confusion_k5.png",
+    "ruta_absoluta": "/home/pepo/Materias/PAA/results/figuras_informe_actualizadas/suplementaria_matriz_confusion_k5.png",
+    "pixeles": [
+      2040,
+      1740
+    ],
+    "dpi": [
+      299.9994,
+      299.9994
+    ],
+    "sha256": "abebb8c0e7d54c22d3b4084329cddcdfeadd53bf610460f1f15e853093251b69"
+  },
+  {
+    "archivo": "suplementaria_porcentajes_departamento.png",
+    "ruta_absoluta": "/home/pepo/Materias/PAA/results/figuras_informe_actualizadas/suplementaria_porcentajes_departamento.png",
+    "pixeles": [
+      3450,
+      1950
+    ],
+    "dpi": [
+      299.9994,
+      299.9994
+    ],
+    "sha256": "d1cf8f4035f9261ce6b55cce3def1d59c85a7d04578e17bc627fbcd40dabc543"
+  },
+  {
+    "archivo": "suplementaria_precision_recall_f1_por_clase.png",
+    "ruta_absoluta": "/home/pepo/Materias/PAA/results/figuras_informe_actualizadas/suplementaria_precision_recall_f1_por_clase.png",
+    "pixeles": [
+      2700,
+      1500
+    ],
+    "dpi": [
+      299.9994,
+      299.9994
+    ],
+    "sha256": "b9fe39758e2d9577af8a2f39ac73a4cdc7ae787eb5c14d986f6d3de88d9c299b"
+  },
+  {
+    "archivo": "suplementaria_sensibilidad_f1_por_clase.png",
+    "ruta_absoluta": "/home/pepo/Materias/PAA/results/figuras_informe_actualizadas/suplementaria_sensibilidad_f1_por_clase.png",
+    "pixeles": [
+      3600,
+      1740
+    ],
+    "dpi": [
+      299.9994,
+      299.9994
+    ],
+    "sha256": "c87fc2c05bfc52b65f0d0c847c3b46b8f89c36ab3e1f5b85ac0691a32deabba7"
+  },
+  {
+    "archivo": "suplementaria_sensibilidad_tamanos_clase.png",
+    "ruta_absoluta": "/home/pepo/Materias/PAA/results/figuras_informe_actualizadas/suplementaria_sensibilidad_tamanos_clase.png",
+    "pixeles": [
+      3000,
+      1620
+    ],
+    "dpi": [
+      299.9994,
+      299.9994
+    ],
+    "sha256": "07598f7c39795e52ba5ec3c28a4802cc67bed8f18d01c32121bae091e3f544bd"
+  },
+  {
+    "archivo": "suplementaria_temperatura_boxplots.png",
+    "ruta_absoluta": "/home/pepo/Materias/PAA/results/figuras_informe_actualizadas/suplementaria_temperatura_boxplots.png",
+    "pixeles": [
+      2520,
+      1500
+    ],
+    "dpi": [
+      299.9994,
+      299.9994
+    ],
+    "sha256": "b84ebef43ad9cfcf0622aed782a4deb6b530ac1089c1ed6f420df0ce3a0ab857"
+  }
+]

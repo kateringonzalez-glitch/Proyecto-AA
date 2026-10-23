@@ -15,7 +15,7 @@ Mantiene las seis variables de `artifacts/metadata_modelo.json`. El modelo seria
 - El archivo `app/demo_examples.parquet` conserva sus cinco ejemplos originales: coinciden de forma única con las primeras cinco filas de test, pero la interfaz permite consultar test completo.
 - Sólo las seis variables predictoras llegan a `predict()` y `predict_proba()`. La clase real se consulta después para evaluar; nunca se usa como predictor.
 - La evaluación distingue acierto exacto, falso positivo de presencia, falso negativo de presencia, subestimación y sobreestimación. Acertar presencia no implica acertar el nivel. En modo manual no se afirma Correcto/Incorrecto.
-- Las clases usan una paleta compartida: Sin actividad `#6B7280`, Bajo `#2563EB`, Moderado `#F59E0B`, Alto `#DC2626`. Los perfiles de sensibilidad k=4/k=5 mantienen colores propios, sin equipararlos a los niveles de k=3.
+- Las clases usan una paleta compartida: Sin detecciones `#6B7280`, Clúster 1 `#2563EB`, Clúster 2 `#F59E0B`, Clúster 3 `#DC2626`. Los perfiles de sensibilidad k=4/k=5 mantienen colores propios, sin equipararlos a los niveles de k=3.
 
 Las etiquetas reales son categorías estadísticas del dataset; FIRMS representa detecciones térmicas y no confirma incendios forestales. La meteorología corresponde a la semana objetivo: el prototipo no demuestra alerta anticipada. Test se reservó durante la selección y luego se consultó en sensibilidad y demostración; no debe reutilizarse para elegir otro modelo.
 
@@ -44,3 +44,6 @@ Son 28 casos: inferencia (6), artefactos oficiales (7), evaluación histórica/i
 La integración con el dashboard anterior se aloja en `pedrodesouza-code/Proyecto-LIDIA`, bajo `dashboard/main.py`. Su entorno se fija por separado y usa los recursos de este repositorio mediante `PAA_ROOT`; no cambia la metodología ni las métricas oficiales. Las clases predichas permanecen iguales; para probabilidades en paralelo se admite el redondeo de sumas de punto flotante, comprobando además igualdad exacta con un hilo en instancias de prueba.
 
 Verificación de publicación del 22/10/2026: los 28 casos anteriores y la suite completa de 100 casos PAA pasaron sin fallos. No se ejecutó el notebook completo ni entrenamientos para esta comprobación.
+
+
+La presentación utiliza `class_labels.py` tanto en PAA como en el módulo integrado. `predict`, `predict_proba`, el orden de columnas del modelo y las etiquetas reales de los datasets conservan los identificadores originales. Sólo al renderizar se traduce cada etiqueta; no se ordenan ni recalculan probabilidades. Sin detecciones es la categoría previa de cero, no un clúster; los clústeres positivos siguen el orden ascendente de centroides, sin representar una escala externa de riesgo.

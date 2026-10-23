@@ -1,0 +1,790 @@
+Analisis_Puntos_4_6_Plus.ipynb:11:     "La metodología conserva los ceros como `Sin actividad`, aplica K-Means solamente sobre observaciones positivas con `log1p(cantidad_detecciones)` y usa el Random Forest V1 ya seleccionado para el análisis supervisado."
+Analisis_Puntos_4_6_Plus.ipynb:116:        "      <td>Sin actividad</td>\n",
+Analisis_Puntos_4_6_Plus.ipynb:128:        "      <td>Bajo</td>\n",
+Analisis_Puntos_4_6_Plus.ipynb:140:        "      <td>Moderado</td>\n",
+Analisis_Puntos_4_6_Plus.ipynb:152:        "      <td>Alto</td>\n",
+Analisis_Puntos_4_6_Plus.ipynb:168:        "0         Sin actividad           4967             62.6909       0  0.0      0.0  0.0       0     0.0\n",
+Analisis_Puntos_4_6_Plus.ipynb:169:        "1                  Bajo           1237             15.6128       1  1.0      1.0  1.0       1     1.0\n",
+Analisis_Puntos_4_6_Plus.ipynb:170:        "2              Moderado           1266             15.9788       2  2.0      2.0  3.0       4  2.6627\n",
+Analisis_Puntos_4_6_Plus.ipynb:171:        "3                  Alto            453              5.7175       5  5.0      7.0  9.0     173  8.6093"
+Analisis_Puntos_4_6_Plus.ipynb:201:     "**Interpretación.** `Sin actividad` concentra 4967 observaciones (62.69% del total) y todos sus valores son cero. `Bajo` queda fijado en una detección; `Moderado` agrupa semanas de 2 a 4 detecciones. `Alto` conserva el rango 5-173, pero su mediana es 7, Q3 es 9 y la media es 8.61; esto muestra una clase con muchas semanas relativamente cercanas al umbral inferior y una cola de eventos excepcionalmente altos."
+Analisis_Puntos_4_6_Plus.ipynb:221:       "Interpretacion: Bajo queda concentrado en 1 deteccion. Moderado cubre 2-4. Alto conserva el rango 5-173, pero su mediana es 7 y Q3=9; por tanto, el maximo representa una cola alta, no el caso tipico.\n"
+Analisis_Puntos_4_6_Plus.ipynb:226:     "alto = point4.loc[point4[firms.TARGET].eq(\"Alto\")].iloc[0]\n",
+Analisis_Puntos_4_6_Plus.ipynb:227:     "bajo = point4.loc[point4[firms.TARGET].eq(\"Bajo\")].iloc[0]\n",
+Analisis_Puntos_4_6_Plus.ipynb:228:     "moderado = point4.loc[point4[firms.TARGET].eq(\"Moderado\")].iloc[0]\n",
+Analisis_Puntos_4_6_Plus.ipynb:230:     "    f\"Interpretacion: Bajo queda concentrado en {bajo['minimo']:.0f} deteccion. \"\n",
+Analisis_Puntos_4_6_Plus.ipynb:231:     "    f\"Moderado cubre {moderado['minimo']:.0f}-{moderado['maximo']:.0f}. \"\n",
+Analisis_Puntos_4_6_Plus.ipynb:232:     "    f\"Alto conserva el rango {alto['minimo']:.0f}-{alto['maximo']:.0f}, \"\n",
+Analisis_Puntos_4_6_Plus.ipynb:400:     "Objetivo: visualizar la dispersión de `Bajo`, `Moderado` y `Alto` sin que la cola alta vuelva ilegible el gráfico."
+Analisis_Puntos_4_6_Plus.ipynb:437:     "**Interpretación.** El gráfico confirma que `Bajo` no tiene dispersión porque corresponde a una detección. `Moderado` concentra valores entre 2 y 4. `Alto` tiene una mediana baja dentro de su rango (7), pero incluye valores extremos hasta 173; por eso la escala logarítmica ayuda a ver la caja sin ocultar la cola."
+Analisis_Puntos_4_6_Plus.ipynb:457:       "Interpretacion: se muestran valores extremos y se usa escala logaritmica en la escala original de conteos. Esto permite ver simultaneamente la concentracion de cada clase y la cola de Alto.\n"
+Analisis_Puntos_4_6_Plus.ipynb:464:     "    \"de conteos. Esto permite ver simultaneamente la concentracion de cada clase y la cola de Alto.\"\n",
+Analisis_Puntos_4_6_Plus.ipynb:519:        "      <td>Sin actividad</td>\n",
+Analisis_Puntos_4_6_Plus.ipynb:524:        "      <td>Bajo</td>\n",
+Analisis_Puntos_4_6_Plus.ipynb:529:        "      <td>Moderado</td>\n",
+Analisis_Puntos_4_6_Plus.ipynb:534:        "      <td>Alto</td>\n",
+Analisis_Puntos_4_6_Plus.ipynb:543:        "0         Sin actividad                                    4967\n",
+Analisis_Puntos_4_6_Plus.ipynb:544:        "1                  Bajo                                    1237\n",
+Analisis_Puntos_4_6_Plus.ipynb:545:        "2              Moderado                                    1266\n",
+Analisis_Puntos_4_6_Plus.ipynb:546:        "3                  Alto                                     453"
+Analisis_Puntos_4_6_Plus.ipynb:580:     "**Interpretación.** En medianas, la temperatura máxima media semanal más alta aparece en `Bajo` (23.41 °C). Las distribuciones se solapan, de modo que el gráfico sugiere asociación descriptiva, no una regla suficiente para separar las clases ni evidencia causal."
+Analisis_Puntos_4_6_Plus.ipynb:662:        "      <td>Sin actividad</td>\n",
+Analisis_Puntos_4_6_Plus.ipynb:667:        "      <td>Bajo</td>\n",
+Analisis_Puntos_4_6_Plus.ipynb:672:        "      <td>Moderado</td>\n",
+Analisis_Puntos_4_6_Plus.ipynb:677:        "      <td>Alto</td>\n",
+Analisis_Puntos_4_6_Plus.ipynb:686:        "0         Sin actividad                                          4967\n",
+Analisis_Puntos_4_6_Plus.ipynb:687:        "1                  Bajo                                          1237\n",
+Analisis_Puntos_4_6_Plus.ipynb:688:        "2              Moderado                                          1266\n",
+Analisis_Puntos_4_6_Plus.ipynb:689:        "3                  Alto                                           453"
+Analisis_Puntos_4_6_Plus.ipynb:813:        "      <th>Sin actividad</th>\n",
+Analisis_Puntos_4_6_Plus.ipynb:820:        "      <th>Bajo</th>\n",
+Analisis_Puntos_4_6_Plus.ipynb:827:        "      <th>Moderado</th>\n",
+Analisis_Puntos_4_6_Plus.ipynb:834:        "      <th>Alto</th>\n",
+Analisis_Puntos_4_6_Plus.ipynb:847:        "Sin actividad                                  21.733                                57.886                           5.504   \n",
+Analisis_Puntos_4_6_Plus.ipynb:848:        "Bajo                                           23.412                                54.010                           5.436   \n",
+Analisis_Puntos_4_6_Plus.ipynb:849:        "Moderado                                       22.119                                53.047                           5.483   \n",
+Analisis_Puntos_4_6_Plus.ipynb:850:        "Alto                                           20.041                                51.857                           5.420   \n",
+Analisis_Puntos_4_6_Plus.ipynb:854:        "Sin actividad                            14.300  \n",
+Analisis_Puntos_4_6_Plus.ipynb:855:        "Bajo                                     10.240  \n",
+Analisis_Puntos_4_6_Plus.ipynb:856:        "Moderado                                  9.014  \n",
+Analisis_Puntos_4_6_Plus.ipynb:857:        "Alto                                      4.793  "
+Analisis_Puntos_4_6_Plus.ipynb:894:        "      <td>Alto</td>\n",
+Analisis_Puntos_4_6_Plus.ipynb:902:        "      <td>Bajo</td>\n",
+Analisis_Puntos_4_6_Plus.ipynb:910:        "      <td>Moderado</td>\n",
+Analisis_Puntos_4_6_Plus.ipynb:918:        "      <td>Sin actividad</td>\n",
+Analisis_Puntos_4_6_Plus.ipynb:930:        "0                  Alto                               0                                     0                               0   \n",
+Analisis_Puntos_4_6_Plus.ipynb:931:        "1                  Bajo                               0                                     0                               0   \n",
+Analisis_Puntos_4_6_Plus.ipynb:932:        "2              Moderado                               0                                     0                               0   \n",
+Analisis_Puntos_4_6_Plus.ipynb:933:        "3         Sin actividad                               0                                     0                               0   \n",
+Analisis_Puntos_4_6_Plus.ipynb:968:     "**Interpretación.** El heatmap estandariza las medianas para comparar variables con unidades distintas. La precipitación semanal mediana más baja aparece en `Alto` (4.79 mm). Esta lectura es descriptiva: permite ver perfiles relativos, no afirmar que una variable meteorológica cause el nivel de actividad."
+Analisis_Puntos_4_6_Plus.ipynb:1043:        "      <th>Sin actividad</th>\n",
+Analisis_Puntos_4_6_Plus.ipynb:1044:        "      <th>Bajo</th>\n",
+Analisis_Puntos_4_6_Plus.ipynb:1045:        "      <th>Moderado</th>\n",
+Analisis_Puntos_4_6_Plus.ipynb:1046:        "      <th>Alto</th>\n",
+Analisis_Puntos_4_6_Plus.ipynb:1195:        "nivel_actividad_firms  Sin actividad  Bajo  Moderado  Alto\n",
+Analisis_Puntos_4_6_Plus.ipynb:1242:        "      <th>Sin actividad</th>\n",
+Analisis_Puntos_4_6_Plus.ipynb:1243:        "      <th>Bajo</th>\n",
+Analisis_Puntos_4_6_Plus.ipynb:1244:        "      <th>Moderado</th>\n",
+Analisis_Puntos_4_6_Plus.ipynb:1245:        "      <th>Alto</th>\n",
+Analisis_Puntos_4_6_Plus.ipynb:1394:        "nivel_actividad_firms  Sin actividad   Bajo  Moderado   Alto\n",
+Analisis_Puntos_4_6_Plus.ipynb:1584:        "      <td>Sin actividad</td>\n",
+Analisis_Puntos_4_6_Plus.ipynb:1593:        "      <td>Bajo</td>\n",
+Analisis_Puntos_4_6_Plus.ipynb:1602:        "      <td>Moderado</td>\n",
+Analisis_Puntos_4_6_Plus.ipynb:1611:        "      <td>Alto</td>\n",
+Analisis_Puntos_4_6_Plus.ipynb:1623:        "0        k3  Sin actividad     0.7885  0.7007  0.7420    745.0\n",
+Analisis_Puntos_4_6_Plus.ipynb:1624:        "1        k3           Bajo     0.2402  0.2634  0.2513    186.0\n",
+Analisis_Puntos_4_6_Plus.ipynb:1625:        "2        k3       Moderado     0.3088  0.3526  0.3292    190.0\n",
+Analisis_Puntos_4_6_Plus.ipynb:1626:        "3        k3           Alto     0.2170  0.3382  0.2644     68.0"
+Analisis_Puntos_4_6_Plus.ipynb:1665:     "**Interpretación.** En test, el modelo reconoce mejor `Sin actividad` (F1=0.742) que las clases positivas. La clase más débil en k=3 es `Bajo` (F1=0.251). Esto indica que el modelo capta parte de la diferencia entre semanas sin actividad y con actividad, pero tiene dificultades para separar niveles positivos cercanos."
+Analisis_Puntos_4_6_Plus.ipynb:1685:       "Interpretacion: la clase con menor F1 en test es Bajo (F1=0.251). Las clases positivas son mas dificiles que Sin actividad.\n"
+Analisis_Puntos_4_6_Plus.ipynb:1693:     "    f\"(F1={worst['f1']:.3f}). Las clases positivas son mas dificiles que Sin actividad.\"\n",
+Analisis_Puntos_4_6_Plus.ipynb:1827:        "      <td>Sin actividad</td>\n",
+Analisis_Puntos_4_6_Plus.ipynb:1839:        "      <td>Bajo</td>\n",
+Analisis_Puntos_4_6_Plus.ipynb:1851:        "      <td>Moderado</td>\n",
+Analisis_Puntos_4_6_Plus.ipynb:1863:        "      <td>Alto</td>\n",
+Analisis_Puntos_4_6_Plus.ipynb:1875:        "      <td>Sin actividad</td>\n",
+Analisis_Puntos_4_6_Plus.ipynb:1935:        "      <td>Sin actividad</td>\n",
+Analisis_Puntos_4_6_Plus.ipynb:2010:        "0         k3      Sin actividad           4967       0       0      0.0      0.0  3             62.6909\n",
+Analisis_Puntos_4_6_Plus.ipynb:2011:        "1         k3               Bajo           1237       1       1      1.0      1.0  3             15.6128\n",
+Analisis_Puntos_4_6_Plus.ipynb:2012:        "2         k3           Moderado           1266       2       4   2.6627      2.0  3             15.9788\n",
+Analisis_Puntos_4_6_Plus.ipynb:2013:        "3         k3               Alto            453       5     173   8.6093      7.0  3              5.7175\n",
+Analisis_Puntos_4_6_Plus.ipynb:2014:        "4         k4      Sin actividad           4967       0       0      0.0      0.0  4             62.6909\n",
+Analisis_Puntos_4_6_Plus.ipynb:2019:        "9         k5      Sin actividad           4967       0       0      0.0      0.0  5             62.6909\n",
+Analisis_Puntos_4_6_Plus.ipynb:2145:        "      <td>Sin actividad</td>\n",
+Analisis_Puntos_4_6_Plus.ipynb:2154:        "      <td>Bajo</td>\n",
+Analisis_Puntos_4_6_Plus.ipynb:2163:        "      <td>Moderado</td>\n",
+Analisis_Puntos_4_6_Plus.ipynb:2172:        "      <td>Alto</td>\n",
+Analisis_Puntos_4_6_Plus.ipynb:2181:        "      <td>Sin actividad</td>\n",
+Analisis_Puntos_4_6_Plus.ipynb:2226:        "      <td>Sin actividad</td>\n",
+Analisis_Puntos_4_6_Plus.ipynb:2283:        "0         k3      Sin actividad     0.7885  0.7007  0.7420    745.0\n",
+Analisis_Puntos_4_6_Plus.ipynb:2284:        "1         k3               Bajo     0.2402  0.2634  0.2513    186.0\n",
+Analisis_Puntos_4_6_Plus.ipynb:2285:        "2         k3           Moderado     0.3088  0.3526  0.3292    190.0\n",
+Analisis_Puntos_4_6_Plus.ipynb:2286:        "3         k3               Alto     0.2170  0.3382  0.2644     68.0\n",
+Analisis_Puntos_4_6_Plus.ipynb:2287:        "4         k4      Sin actividad     0.7791  0.6819  0.7273    745.0\n",
+Analisis_Puntos_4_6_Plus.ipynb:2292:        "9         k5      Sin actividad     0.7840  0.6819  0.7294    745.0\n",
+Analisis_Puntos_4_6_Plus.ipynb:2369:        "      <th>Sin actividad</th>\n",
+Analisis_Puntos_4_6_Plus.ipynb:2370:        "      <th>Bajo</th>\n",
+Analisis_Puntos_4_6_Plus.ipynb:2371:        "      <th>Moderado</th>\n",
+Analisis_Puntos_4_6_Plus.ipynb:2372:        "      <th>Alto</th>\n",
+Analisis_Puntos_4_6_Plus.ipynb:2384:        "      <th>Sin actividad</th>\n",
+Analisis_Puntos_4_6_Plus.ipynb:2391:        "      <th>Bajo</th>\n",
+Analisis_Puntos_4_6_Plus.ipynb:2398:        "      <th>Moderado</th>\n",
+Analisis_Puntos_4_6_Plus.ipynb:2405:        "      <th>Alto</th>\n",
+Analisis_Puntos_4_6_Plus.ipynb:2416:        "predicho       Sin actividad  Bajo  Moderado  Alto\n",
+Analisis_Puntos_4_6_Plus.ipynb:2418:        "Sin actividad            522   106        84    33\n",
+Analisis_Puntos_4_6_Plus.ipynb:2419:        "Bajo                      72    49        46    19\n",
+Analisis_Puntos_4_6_Plus.ipynb:2420:        "Moderado                  53    39        67    31\n",
+Analisis_Puntos_4_6_Plus.ipynb:2421:        "Alto                      15    10        20    23"
+Analisis_Puntos_4_6_Plus.ipynb:2465:        "      <th>Sin actividad</th>\n",
+Analisis_Puntos_4_6_Plus.ipynb:2482:        "      <th>Sin actividad</th>\n",
+Analisis_Puntos_4_6_Plus.ipynb:2526:        "predicho           Sin actividad  Perfil positivo 1  Perfil positivo 2  Perfil positivo 3  Perfil positivo 4\n",
+Analisis_Puntos_4_6_Plus.ipynb:2528:        "Sin actividad                508                119                 75                 27                 16\n",
+Analisis_Puntos_4_6_Plus.ipynb:2576:        "      <th>Sin actividad</th>\n",
+Analisis_Puntos_4_6_Plus.ipynb:2595:        "      <th>Sin actividad</th>\n",
+Analisis_Puntos_4_6_Plus.ipynb:2653:        "predicho           Sin actividad  Perfil positivo 1  Perfil positivo 2  Perfil positivo 3  Perfil positivo 4  Perfil positivo 5\n",
+Analisis_Puntos_4_6_Plus.ipynb:2655:        "Sin actividad                508                130                 40                 26                 28                 13\n",
+Analisis_Puntos_4_6_Plus.ipynb:2690:     "**Interpretación.** Las matrices de confusión muestran que muchas semanas positivas se reparten entre clases vecinas o se predicen como `Sin actividad`. En términos del problema, confundir `Alto` con `Moderado` implica subestimar una semana de mayor actividad estadística; confundir `Sin actividad` con `Bajo` implica marcar actividad donde no hubo detecciones."
+Analisis_Puntos_4_6_Plus.ipynb:2737:        "      <td>Alto</td>\n",
+Analisis_Puntos_4_6_Plus.ipynb:2761:        "0        k3               Alto            453              5.7175\n",
+Preparacion_Dataset_Modelado.ipynb:356:       "Sin actividad    4967\n",
+Preparacion_Dataset_Modelado.ipynb:357:       "Moderado         1266\n",
+Preparacion_Dataset_Modelado.ipynb:358:       "Bajo             1237\n",
+Preparacion_Dataset_Modelado.ipynb:359:       "Alto              453\n",
+Auditoria_Coherencia_PAA.ipynb:68:     "assert set(n.nivel_actividad_firms)=={\"Sin actividad\",\"Bajo\",\"Moderado\",\"Alto\"}\n",
+Auditoria_Coherencia_PAA.ipynb:69:     "assert n.loc[n.cantidad_detecciones.eq(0),\"nivel_actividad_firms\"].eq(\"Sin actividad\").all()\n",
+Auditoria_Coherencia_PAA.ipynb:70:     "assert n.loc[n.cantidad_detecciones.gt(0),\"nivel_actividad_firms\"].ne(\"Sin actividad\").all()\n",
+Auditoria_Coherencia_PAA.ipynb:360:       "Resultados, metadata, Pipeline e inferencia coherentes: Moderado\n"
+Analisis_No_supervisado.ipynb:47:     "El 62,69% de las observaciones es cero. Incluir esa masa idéntica en K-Means crea automáticamente un cluster y domina Silhouette. Se conserva como categoría explícita `Sin actividad` y K-Means se aplica a semanas positivas."
+Analisis_No_supervisado.ipynb:363:     "Aunque `k=5` logra mayor Silhouette, deja sólo 106 observaciones en su cluster menor; `k=4` deja 174. `k=3` conserva Silhouette alta, estabilidad y tres grupos positivos utilizables (1.237, 1.266 y 453 casos). Se adopta **k=3 sobre positivos**, más `Sin actividad`."
+Analisis_No_supervisado.ipynb:412:        "      <td>Bajo</td>\n",
+Analisis_No_supervisado.ipynb:419:        "      <td>Moderado</td>\n",
+Analisis_No_supervisado.ipynb:426:        "      <td>Alto</td>\n",
+Analisis_No_supervisado.ipynb:434:        "0                 0           0.6931              1.0000                  Bajo\n",
+Analisis_No_supervisado.ipynb:435:        "1                 2           1.2774              2.5874              Moderado\n",
+Analisis_No_supervisado.ipynb:436:        "2                 1           2.1433              7.5275                  Alto"
+Analisis_No_supervisado.ipynb:448:     "centroides=centroides.sort_values(\"centroide_original\").reset_index(drop=True); centroides[\"nivel_actividad_firms\"]=[\"Bajo\",\"Moderado\",\"Alto\"]\n",
+Analisis_No_supervisado.ipynb:530:        "      <th>Bajo</th>\n",
+Analisis_No_supervisado.ipynb:546:        "      <th>Moderado</th>\n",
+Analisis_No_supervisado.ipynb:562:        "      <th>Alto</th>\n",
+Analisis_No_supervisado.ipynb:584:        "Bajo                    1237    1.0     1.0    0.0    1    1  1.0  1.0  1.0   \n",
+Analisis_No_supervisado.ipynb:585:        "Moderado                1266  2.663     2.0  0.768    2    4  2.0  2.0  2.0   \n",
+Analisis_No_supervisado.ipynb:586:        "Alto                     453  8.609     7.0   9.74    5  173  5.0  5.0  7.0   \n",
+Analisis_No_supervisado.ipynb:590:        "Bajo                   1.0   1.0   1.0                41.847  \n",
+Analisis_No_supervisado.ipynb:591:        "Moderado               3.0   4.0   4.0                42.828  \n",
+Analisis_No_supervisado.ipynb:592:        "Alto                   9.0  13.0  16.4                15.325  "
+Analisis_No_supervisado.ipynb:602:     "orden_pos=[\"Bajo\",\"Moderado\",\"Alto\"]\n",
+Analisis_No_supervisado.ipynb:655:        "      <th>Bajo</th>\n",
+Analisis_No_supervisado.ipynb:661:        "      <th>Moderado</th>\n",
+Analisis_No_supervisado.ipynb:667:        "      <th>Alto</th>\n",
+Analisis_No_supervisado.ipynb:679:        "Bajo                     1    1   \n",
+Analisis_No_supervisado.ipynb:680:        "Moderado                 2    4   \n",
+Analisis_No_supervisado.ipynb:681:        "Alto                     5  173   \n",
+Analisis_No_supervisado.ipynb:685:        "Bajo                                                                 [1]  \n",
+Analisis_No_supervisado.ipynb:686:        "Moderado                                                       [2, 3, 4]  \n",
+Analisis_No_supervisado.ipynb:687:        "Alto                   [5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17...  "
+Analisis_No_supervisado.ipynb:784:        "      <th>Sin actividad</th>\n",
+Analisis_No_supervisado.ipynb:789:        "      <th>Bajo</th>\n",
+Analisis_No_supervisado.ipynb:794:        "      <th>Moderado</th>\n",
+Analisis_No_supervisado.ipynb:799:        "      <th>Alto</th>\n",
+Analisis_No_supervisado.ipynb:810:        "Sin actividad                   4967   62.690900\n",
+Analisis_No_supervisado.ipynb:811:        "Bajo                            1237   15.612773\n",
+Analisis_No_supervisado.ipynb:812:        "Moderado                        1266   15.978796\n",
+Analisis_No_supervisado.ipynb:813:        "Alto                             453    5.717531"
+Analisis_No_supervisado.ipynb:822:     "datos[\"nivel_actividad_firms\"]=\"Sin actividad\"; datos.loc[positivas.index,\"nivel_actividad_firms\"]=positivas.nivel_actividad_firms\n",
+Analisis_No_supervisado.ipynb:823:     "orden=[\"Sin actividad\",\"Bajo\",\"Moderado\",\"Alto\"]; cod={x:i for i,x in enumerate(orden)}\n",
+Analisis_No_supervisado.ipynb:825:     "assert datos.loc[datos.cantidad_detecciones.eq(0),\"nivel_actividad_firms\"].eq(\"Sin actividad\").all()\n",
+Analisis_No_supervisado.ipynb:848:       "Sin actividad    4967\n",
+Analisis_No_supervisado.ipynb:849:       "Moderado         1266\n",
+Analisis_No_supervisado.ipynb:850:       "Bajo             1237\n",
+Analisis_No_supervisado.ipynb:851:       "Alto              453\n",
+README.md:13: Las categorías `Sin actividad`, `Bajo`, `Moderado` y `Alto` son clases estadísticas internas. No constituyen niveles oficiales de riesgo.
+README.md:43: | Sin actividad | 0 | 4.967 |
+README.md:44: | Bajo | 1 | 1.237 |
+README.md:45: | Moderado | 2–4 | 1.266 |
+README.md:46: | Alto | 5–173 | 453 |
+README.md:122: El Dummy obtuvo un F1 macro aproximado de 0,1926 en el mismo test. No se prioriza Accuracy porque `Sin actividad` es mayoritaria y esa métrica puede ocultar diferencias importantes entre clases.
+README.md:130: - `Bajo` continúa siendo una clase difícil de distinguir y `Alto` es minoritaria.
+registro_uso_IA.md:330: Las cifras proceden de las celdas ejecutadas del notebook, no de una respuesta de IA tomada como fuente primaria. Los perfiles se describieron como A (frío y más lluvioso/húmedo), B (frío y más seco), C (cálido y más lluvioso) y D (cálido y más seco). Las letras son nominales, no una escala Bajo–Alto. `cantidad_detecciones` quedó fuera de `StandardScaler`, K-Means y DBSCAN; se utilizó después para comparar asociaciones históricas por perfil, estación y departamento, sin afirmar causalidad ni ide
+registro_uso_IA.md:365: El flujo vigente construye `nivel_actividad_firms` mediante K-Means sobre `log1p(cantidad_detecciones)` para semanas positivas, conserva los ceros como `Sin actividad` y utiliza ese nivel como target multiclase. Los modelos emplean meteorología, contexto y antecedentes FIRMS estrictamente anteriores, nunca el conteo de la semana objetivo.
+experimentos/00_Preparar_Splits.ipynb:83:        "   'distribucion': {'Sin actividad': 3477,\n",
+experimentos/00_Preparar_Splits.ipynb:84:        "    'Moderado': 886,\n",
+experimentos/00_Preparar_Splits.ipynb:85:        "    'Bajo': 866,\n",
+experimentos/00_Preparar_Splits.ipynb:86:        "    'Alto': 317}},\n",
+experimentos/00_Preparar_Splits.ipynb:89:        "   'distribucion': {'Sin actividad': 745,\n",
+experimentos/00_Preparar_Splits.ipynb:90:        "    'Moderado': 190,\n",
+experimentos/00_Preparar_Splits.ipynb:91:        "    'Bajo': 185,\n",
+experimentos/00_Preparar_Splits.ipynb:92:        "    'Alto': 68}},\n",
+experimentos/00_Preparar_Splits.ipynb:95:        "   'distribucion': {'Sin actividad': 745,\n",
+experimentos/00_Preparar_Splits.ipynb:96:        "    'Moderado': 190,\n",
+experimentos/00_Preparar_Splits.ipynb:97:        "    'Bajo': 186,\n",
+experimentos/00_Preparar_Splits.ipynb:98:        "    'Alto': 68}}}}"
+experimentos/Comparacion_Modelos.ipynb:50:     "ORDER=[\"Sin actividad\",\"Bajo\",\"Moderado\",\"Alto\"]; RS=42"
+experimentos/Comparacion_Modelos.ipynb:916:        "      <th>Sin actividad</th>\n",
+experimentos/Comparacion_Modelos.ipynb:917:        "      <th>Bajo</th>\n",
+experimentos/Comparacion_Modelos.ipynb:918:        "      <th>Moderado</th>\n",
+experimentos/Comparacion_Modelos.ipynb:919:        "      <th>Alto</th>\n",
+experimentos/Comparacion_Modelos.ipynb:924:        "      <th>Sin actividad</th>\n",
+experimentos/Comparacion_Modelos.ipynb:931:        "      <th>Bajo</th>\n",
+experimentos/Comparacion_Modelos.ipynb:938:        "      <th>Moderado</th>\n",
+experimentos/Comparacion_Modelos.ipynb:945:        "      <th>Alto</th>\n",
+experimentos/Comparacion_Modelos.ipynb:956:        "               Sin actividad  Bajo  Moderado  Alto\n",
+experimentos/Comparacion_Modelos.ipynb:957:        "Sin actividad            522   106        84    33\n",
+experimentos/Comparacion_Modelos.ipynb:958:        "Bajo                      72    49        46    19\n",
+experimentos/Comparacion_Modelos.ipynb:959:        "Moderado                  53    39        67    31\n",
+experimentos/Comparacion_Modelos.ipynb:960:        "Alto                      15    10        20    23"
+experimentos/Comparacion_Modelos.ipynb:995:        "      <th>Sin actividad</th>\n",
+experimentos/Comparacion_Modelos.ipynb:1002:        "      <th>Bajo</th>\n",
+experimentos/Comparacion_Modelos.ipynb:1009:        "      <th>Moderado</th>\n",
+experimentos/Comparacion_Modelos.ipynb:1016:        "      <th>Alto</th>\n",
+experimentos/Comparacion_Modelos.ipynb:1049:        "Sin actividad   0.788520  0.700671  0.742004   745.000000\n",
+experimentos/Comparacion_Modelos.ipynb:1050:        "Bajo            0.240196  0.263441  0.251282   186.000000\n",
+experimentos/Comparacion_Modelos.ipynb:1051:        "Moderado        0.308756  0.352632  0.329238   190.000000\n",
+experimentos/Comparacion_Modelos.ipynb:1052:        "Alto            0.216981  0.338235  0.264368    68.000000\n",
+experimentos/Comparacion_Modelos.ipynb:1215:        "      <th>Sin actividad</th>\n",
+experimentos/Comparacion_Modelos.ipynb:1216:        "      <th>Bajo</th>\n",
+experimentos/Comparacion_Modelos.ipynb:1217:        "      <th>Moderado</th>\n",
+experimentos/Comparacion_Modelos.ipynb:1218:        "      <th>Alto</th>\n",
+experimentos/Comparacion_Modelos.ipynb:1230:        "      <th>Sin actividad</th>\n",
+experimentos/Comparacion_Modelos.ipynb:1237:        "      <th>Bajo</th>\n",
+experimentos/Comparacion_Modelos.ipynb:1244:        "      <th>Moderado</th>\n",
+experimentos/Comparacion_Modelos.ipynb:1251:        "      <th>Alto</th>\n",
+experimentos/Comparacion_Modelos.ipynb:1262:        "predicho       Sin actividad  Bajo  Moderado  Alto\n",
+experimentos/Comparacion_Modelos.ipynb:1264:        "Sin actividad            522   106        84    33\n",
+experimentos/Comparacion_Modelos.ipynb:1265:        "Bajo                      72    49        46    19\n",
+experimentos/Comparacion_Modelos.ipynb:1266:        "Moderado                  53    39        67    31\n",
+experimentos/Comparacion_Modelos.ipynb:1267:        "Alto                      15    10        20    23"
+experimentos/Comparacion_Modelos.ipynb:1277:       "{'Sin actividad → Bajo': 106, 'Bajo → Sin actividad': 72, 'Bajo → Moderado': 46}\n"
+experimentos/Comparacion_Modelos.ipynb:1359:     "confusiones={\"Sin actividad → Bajo\":int(cruce.loc[\"Sin actividad\",\"Bajo\"]),\"Bajo → Sin actividad\":int(cruce.loc[\"Bajo\",\"Sin actividad\"]),\"Bajo → Moderado\":int(cruce.loc[\"Bajo\",\"Moderado\"])}\n",
+experimentos/Experimento_04_HistGradientBoosting.ipynb:39:     "KEY=[\"departamento\",\"fecha_inicio_semana\"];TARGET=\"nivel_actividad_firms\";ORDER=[\"Sin actividad\",\"Bajo\",\"Moderado\",\"Alto\"];RS=42\n",
+experimentos/Experimento_04_HistGradientBoosting.ipynb:111:        "      <th>Sin actividad</th>\n",
+experimentos/Experimento_04_HistGradientBoosting.ipynb:112:        "      <th>Bajo</th>\n",
+experimentos/Experimento_04_HistGradientBoosting.ipynb:113:        "      <th>Moderado</th>\n",
+experimentos/Experimento_04_HistGradientBoosting.ipynb:114:        "      <th>Alto</th>\n",
+experimentos/Experimento_04_HistGradientBoosting.ipynb:119:        "      <th>Sin actividad</th>\n",
+experimentos/Experimento_04_HistGradientBoosting.ipynb:126:        "      <th>Bajo</th>\n",
+experimentos/Experimento_04_HistGradientBoosting.ipynb:133:        "      <th>Moderado</th>\n",
+experimentos/Experimento_04_HistGradientBoosting.ipynb:140:        "      <th>Alto</th>\n",
+experimentos/Experimento_04_HistGradientBoosting.ipynb:151:        "               Sin actividad  Bajo  Moderado  Alto\n",
+experimentos/Experimento_04_HistGradientBoosting.ipynb:152:        "Sin actividad            678    28        33     6\n",
+experimentos/Experimento_04_HistGradientBoosting.ipynb:153:        "Bajo                     146    13        23     3\n",
+experimentos/Experimento_04_HistGradientBoosting.ipynb:154:        "Moderado                 130    14        37     9\n",
+experimentos/Experimento_04_HistGradientBoosting.ipynb:155:        "Alto                      36     3        16    13"
+experimentos/Experimento_04_HistGradientBoosting.ipynb:189:        "      <th>Sin actividad</th>\n",
+experimentos/Experimento_04_HistGradientBoosting.ipynb:190:        "      <th>Bajo</th>\n",
+experimentos/Experimento_04_HistGradientBoosting.ipynb:191:        "      <th>Moderado</th>\n",
+experimentos/Experimento_04_HistGradientBoosting.ipynb:192:        "      <th>Alto</th>\n",
+experimentos/Experimento_04_HistGradientBoosting.ipynb:197:        "      <th>Sin actividad</th>\n",
+experimentos/Experimento_04_HistGradientBoosting.ipynb:204:        "      <th>Bajo</th>\n",
+experimentos/Experimento_04_HistGradientBoosting.ipynb:211:        "      <th>Moderado</th>\n",
+experimentos/Experimento_04_HistGradientBoosting.ipynb:218:        "      <th>Alto</th>\n",
+experimentos/Experimento_04_HistGradientBoosting.ipynb:229:        "               Sin actividad  Bajo  Moderado  Alto\n",
+experimentos/Experimento_04_HistGradientBoosting.ipynb:230:        "Sin actividad            689    15        35     6\n",
+experimentos/Experimento_04_HistGradientBoosting.ipynb:231:        "Bajo                     148     8        27     2\n",
+experimentos/Experimento_04_HistGradientBoosting.ipynb:232:        "Moderado                 134    12        37     7\n",
+experimentos/Experimento_04_HistGradientBoosting.ipynb:233:        "Alto                      33     2        19    14"
+experimentos/Experimento_04_HistGradientBoosting.ipynb:267:        "      <th>Sin actividad</th>\n",
+experimentos/Experimento_04_HistGradientBoosting.ipynb:268:        "      <th>Bajo</th>\n",
+experimentos/Experimento_04_HistGradientBoosting.ipynb:269:        "      <th>Moderado</th>\n",
+experimentos/Experimento_04_HistGradientBoosting.ipynb:270:        "      <th>Alto</th>\n",
+experimentos/Experimento_04_HistGradientBoosting.ipynb:275:        "      <th>Sin actividad</th>\n",
+experimentos/Experimento_04_HistGradientBoosting.ipynb:282:        "      <th>Bajo</th>\n",
+experimentos/Experimento_04_HistGradientBoosting.ipynb:289:        "      <th>Moderado</th>\n",
+experimentos/Experimento_04_HistGradientBoosting.ipynb:296:        "      <th>Alto</th>\n",
+experimentos/Experimento_04_HistGradientBoosting.ipynb:307:        "               Sin actividad  Bajo  Moderado  Alto\n",
+experimentos/Experimento_04_HistGradientBoosting.ipynb:308:        "Sin actividad            680    27        31     7\n",
+experimentos/Experimento_04_HistGradientBoosting.ipynb:309:        "Bajo                     139    16        22     8\n",
+experimentos/Experimento_04_HistGradientBoosting.ipynb:310:        "Moderado                 135    16        29    10\n",
+experimentos/Experimento_04_HistGradientBoosting.ipynb:311:        "Alto                      31     6        14    17"
+experimentos/Experimento_04_HistGradientBoosting.ipynb:345:        "      <th>Sin actividad</th>\n",
+experimentos/Experimento_04_HistGradientBoosting.ipynb:346:        "      <th>Bajo</th>\n",
+experimentos/Experimento_04_HistGradientBoosting.ipynb:347:        "      <th>Moderado</th>\n",
+experimentos/Experimento_04_HistGradientBoosting.ipynb:348:        "      <th>Alto</th>\n",
+experimentos/Experimento_04_HistGradientBoosting.ipynb:353:        "      <th>Sin actividad</th>\n",
+experimentos/Experimento_04_HistGradientBoosting.ipynb:360:        "      <th>Bajo</th>\n",
+experimentos/Experimento_04_HistGradientBoosting.ipynb:367:        "      <th>Moderado</th>\n",
+experimentos/Experimento_04_HistGradientBoosting.ipynb:374:        "      <th>Alto</th>\n",
+experimentos/Experimento_04_HistGradientBoosting.ipynb:385:        "               Sin actividad  Bajo  Moderado  Alto\n",
+experimentos/Experimento_04_HistGradientBoosting.ipynb:386:        "Sin actividad            682    22        34     7\n",
+experimentos/Experimento_04_HistGradientBoosting.ipynb:387:        "Bajo                     142    11        25     7\n",
+experimentos/Experimento_04_HistGradientBoosting.ipynb:388:        "Moderado                 133    16        35     6\n",
+experimentos/Experimento_04_HistGradientBoosting.ipynb:389:        "Alto                      33     5        15    15"
+experimentos/Experimento_04_HistGradientBoosting.ipynb:696:        "      <th>Sin actividad</th>\n",
+experimentos/Experimento_04_HistGradientBoosting.ipynb:697:        "      <th>Bajo</th>\n",
+experimentos/Experimento_04_HistGradientBoosting.ipynb:698:        "      <th>Moderado</th>\n",
+experimentos/Experimento_04_HistGradientBoosting.ipynb:699:        "      <th>Alto</th>\n",
+experimentos/Experimento_04_HistGradientBoosting.ipynb:704:        "      <th>Sin actividad</th>\n",
+experimentos/Experimento_04_HistGradientBoosting.ipynb:711:        "      <th>Bajo</th>\n",
+experimentos/Experimento_04_HistGradientBoosting.ipynb:718:        "      <th>Moderado</th>\n",
+experimentos/Experimento_04_HistGradientBoosting.ipynb:725:        "      <th>Alto</th>\n",
+experimentos/Experimento_04_HistGradientBoosting.ipynb:736:        "               Sin actividad  Bajo  Moderado  Alto\n",
+experimentos/Experimento_04_HistGradientBoosting.ipynb:737:        "Sin actividad            685    25        30     5\n",
+experimentos/Experimento_04_HistGradientBoosting.ipynb:738:        "Bajo                     139    11        30     5\n",
+experimentos/Experimento_04_HistGradientBoosting.ipynb:739:        "Moderado                 137    15        29     9\n",
+experimentos/Experimento_04_HistGradientBoosting.ipynb:740:        "Alto                      35     5        13    15"
+experimentos/Experimento_04_HistGradientBoosting.ipynb:775:        "      <th>Sin actividad</th>\n",
+experimentos/Experimento_04_HistGradientBoosting.ipynb:782:        "      <th>Bajo</th>\n",
+experimentos/Experimento_04_HistGradientBoosting.ipynb:789:        "      <th>Moderado</th>\n",
+experimentos/Experimento_04_HistGradientBoosting.ipynb:796:        "      <th>Alto</th>\n",
+experimentos/Experimento_04_HistGradientBoosting.ipynb:808:        "Sin actividad     0.6878  0.9195    0.7869    745.0\n",
+experimentos/Experimento_04_HistGradientBoosting.ipynb:809:        "Bajo              0.1964  0.0595    0.0913    185.0\n",
+experimentos/Experimento_04_HistGradientBoosting.ipynb:810:        "Moderado          0.2843  0.1526    0.1986    190.0\n",
+experimentos/Experimento_04_HistGradientBoosting.ipynb:811:        "Alto              0.4412  0.2206    0.2941     68.0"
+experimentos/Experimento_03_RandomForest.ipynb:39:     "KEY=[\"departamento\",\"fecha_inicio_semana\"];TARGET=\"nivel_actividad_firms\";ORDER=[\"Sin actividad\",\"Bajo\",\"Moderado\",\"Alto\"];RS=42\n",
+experimentos/Experimento_03_RandomForest.ipynb:113:        "      <th>Sin actividad</th>\n",
+experimentos/Experimento_03_RandomForest.ipynb:114:        "      <th>Bajo</th>\n",
+experimentos/Experimento_03_RandomForest.ipynb:115:        "      <th>Moderado</th>\n",
+experimentos/Experimento_03_RandomForest.ipynb:116:        "      <th>Alto</th>\n",
+experimentos/Experimento_03_RandomForest.ipynb:121:        "      <th>Sin actividad</th>\n",
+experimentos/Experimento_03_RandomForest.ipynb:128:        "      <th>Bajo</th>\n",
+experimentos/Experimento_03_RandomForest.ipynb:135:        "      <th>Moderado</th>\n",
+experimentos/Experimento_03_RandomForest.ipynb:142:        "      <th>Alto</th>\n",
+experimentos/Experimento_03_RandomForest.ipynb:153:        "               Sin actividad  Bajo  Moderado  Alto\n",
+experimentos/Experimento_03_RandomForest.ipynb:154:        "Sin actividad            636    42        50    17\n",
+experimentos/Experimento_03_RandomForest.ipynb:155:        "Bajo                     119    21        34    11\n",
+experimentos/Experimento_03_RandomForest.ipynb:156:        "Moderado                  96    23        53    18\n",
+experimentos/Experimento_03_RandomForest.ipynb:157:        "Alto                      27     2        17    22"
+experimentos/Experimento_03_RandomForest.ipynb:191:        "      <th>Sin actividad</th>\n",
+experimentos/Experimento_03_RandomForest.ipynb:192:        "      <th>Bajo</th>\n",
+experimentos/Experimento_03_RandomForest.ipynb:193:        "      <th>Moderado</th>\n",
+experimentos/Experimento_03_RandomForest.ipynb:194:        "      <th>Alto</th>\n",
+experimentos/Experimento_03_RandomForest.ipynb:199:        "      <th>Sin actividad</th>\n",
+experimentos/Experimento_03_RandomForest.ipynb:206:        "      <th>Bajo</th>\n",
+experimentos/Experimento_03_RandomForest.ipynb:213:        "      <th>Moderado</th>\n",
+experimentos/Experimento_03_RandomForest.ipynb:220:        "      <th>Alto</th>\n",
+experimentos/Experimento_03_RandomForest.ipynb:231:        "               Sin actividad  Bajo  Moderado  Alto\n",
+experimentos/Experimento_03_RandomForest.ipynb:232:        "Sin actividad            647    24        61    13\n",
+experimentos/Experimento_03_RandomForest.ipynb:233:        "Bajo                     130    14        32     9\n",
+experimentos/Experimento_03_RandomForest.ipynb:234:        "Moderado                 117    18        45    10\n",
+experimentos/Experimento_03_RandomForest.ipynb:235:        "Alto                      29     2        21    16"
+experimentos/Experimento_03_RandomForest.ipynb:269:        "      <th>Sin actividad</th>\n",
+experimentos/Experimento_03_RandomForest.ipynb:270:        "      <th>Bajo</th>\n",
+experimentos/Experimento_03_RandomForest.ipynb:271:        "      <th>Moderado</th>\n",
+experimentos/Experimento_03_RandomForest.ipynb:272:        "      <th>Alto</th>\n",
+experimentos/Experimento_03_RandomForest.ipynb:277:        "      <th>Sin actividad</th>\n",
+experimentos/Experimento_03_RandomForest.ipynb:284:        "      <th>Bajo</th>\n",
+experimentos/Experimento_03_RandomForest.ipynb:291:        "      <th>Moderado</th>\n",
+experimentos/Experimento_03_RandomForest.ipynb:298:        "      <th>Alto</th>\n",
+experimentos/Experimento_03_RandomForest.ipynb:309:        "               Sin actividad  Bajo  Moderado  Alto\n",
+experimentos/Experimento_03_RandomForest.ipynb:310:        "Sin actividad            643    25        66    11\n",
+experimentos/Experimento_03_RandomForest.ipynb:311:        "Bajo                     119    18        37    11\n",
+experimentos/Experimento_03_RandomForest.ipynb:312:        "Moderado                 111    20        46    13\n",
+experimentos/Experimento_03_RandomForest.ipynb:313:        "Alto                      30     0        18    20"
+experimentos/Experimento_03_RandomForest.ipynb:347:        "      <th>Sin actividad</th>\n",
+experimentos/Experimento_03_RandomForest.ipynb:348:        "      <th>Bajo</th>\n",
+experimentos/Experimento_03_RandomForest.ipynb:349:        "      <th>Moderado</th>\n",
+experimentos/Experimento_03_RandomForest.ipynb:350:        "      <th>Alto</th>\n",
+experimentos/Experimento_03_RandomForest.ipynb:355:        "      <th>Sin actividad</th>\n",
+experimentos/Experimento_03_RandomForest.ipynb:362:        "      <th>Bajo</th>\n",
+experimentos/Experimento_03_RandomForest.ipynb:369:        "      <th>Moderado</th>\n",
+experimentos/Experimento_03_RandomForest.ipynb:376:        "      <th>Alto</th>\n",
+experimentos/Experimento_03_RandomForest.ipynb:387:        "               Sin actividad  Bajo  Moderado  Alto\n",
+experimentos/Experimento_03_RandomForest.ipynb:388:        "Sin actividad            651    24        60    10\n",
+experimentos/Experimento_03_RandomForest.ipynb:389:        "Bajo                     129    15        34     7\n",
+experimentos/Experimento_03_RandomForest.ipynb:390:        "Moderado                 120    18        41    11\n",
+experimentos/Experimento_03_RandomForest.ipynb:391:        "Alto                      29     1        17    21"
+experimentos/Experimento_03_RandomForest.ipynb:698:        "      <th>Sin actividad</th>\n",
+experimentos/Experimento_03_RandomForest.ipynb:699:        "      <th>Bajo</th>\n",
+experimentos/Experimento_03_RandomForest.ipynb:700:        "      <th>Moderado</th>\n",
+experimentos/Experimento_03_RandomForest.ipynb:701:        "      <th>Alto</th>\n",
+experimentos/Experimento_03_RandomForest.ipynb:706:        "      <th>Sin actividad</th>\n",
+experimentos/Experimento_03_RandomForest.ipynb:713:        "      <th>Bajo</th>\n",
+experimentos/Experimento_03_RandomForest.ipynb:720:        "      <th>Moderado</th>\n",
+experimentos/Experimento_03_RandomForest.ipynb:727:        "      <th>Alto</th>\n",
+experimentos/Experimento_03_RandomForest.ipynb:738:        "               Sin actividad  Bajo  Moderado  Alto\n",
+experimentos/Experimento_03_RandomForest.ipynb:739:        "Sin actividad            554    74        79    38\n",
+experimentos/Experimento_03_RandomForest.ipynb:740:        "Bajo                      84    46        39    16\n",
+experimentos/Experimento_03_RandomForest.ipynb:741:        "Moderado                  65    38        54    33\n",
+experimentos/Experimento_03_RandomForest.ipynb:742:        "Alto                      16     8        15    29"
+experimentos/Experimento_03_RandomForest.ipynb:777:        "      <th>Sin actividad</th>\n",
+experimentos/Experimento_03_RandomForest.ipynb:784:        "      <th>Bajo</th>\n",
+experimentos/Experimento_03_RandomForest.ipynb:791:        "      <th>Moderado</th>\n",
+experimentos/Experimento_03_RandomForest.ipynb:798:        "      <th>Alto</th>\n",
+experimentos/Experimento_03_RandomForest.ipynb:810:        "Sin actividad     0.7705  0.7436    0.7568    745.0\n",
+experimentos/Experimento_03_RandomForest.ipynb:811:        "Bajo              0.2771  0.2486    0.2621    185.0\n",
+experimentos/Experimento_03_RandomForest.ipynb:812:        "Moderado          0.2888  0.2842    0.2865    190.0\n",
+experimentos/Experimento_03_RandomForest.ipynb:813:        "Alto              0.2500  0.4265    0.3152     68.0"
+experimentos/Experimento_01_Dummy.ipynb:39:     "KEY=[\"departamento\",\"fecha_inicio_semana\"];TARGET=\"nivel_actividad_firms\";ORDER=[\"Sin actividad\",\"Bajo\",\"Moderado\",\"Alto\"];RS=42\n",
+experimentos/Experimento_01_Dummy.ipynb:79:       "Sin actividad    3477\n",
+experimentos/Experimento_01_Dummy.ipynb:80:       "Moderado          886\n",
+experimentos/Experimento_01_Dummy.ipynb:81:       "Bajo              866\n",
+experimentos/Experimento_01_Dummy.ipynb:82:       "Alto              317\n",
+experimentos/Experimento_01_Dummy.ipynb:85:       "Sin actividad    745\n",
+experimentos/Experimento_01_Dummy.ipynb:86:       "Moderado         190\n",
+experimentos/Experimento_01_Dummy.ipynb:87:       "Bajo             185\n",
+experimentos/Experimento_01_Dummy.ipynb:88:       "Alto              68\n",
+experimentos/Experimento_01_Dummy.ipynb:236:        "      <th>Sin actividad</th>\n",
+experimentos/Experimento_01_Dummy.ipynb:237:        "      <th>Bajo</th>\n",
+experimentos/Experimento_01_Dummy.ipynb:238:        "      <th>Moderado</th>\n",
+experimentos/Experimento_01_Dummy.ipynb:239:        "      <th>Alto</th>\n",
+experimentos/Experimento_01_Dummy.ipynb:244:        "      <th>Sin actividad</th>\n",
+experimentos/Experimento_01_Dummy.ipynb:251:        "      <th>Bajo</th>\n",
+experimentos/Experimento_01_Dummy.ipynb:258:        "      <th>Moderado</th>\n",
+experimentos/Experimento_01_Dummy.ipynb:265:        "      <th>Alto</th>\n",
+experimentos/Experimento_01_Dummy.ipynb:276:        "               Sin actividad  Bajo  Moderado  Alto\n",
+experimentos/Experimento_01_Dummy.ipynb:277:        "Sin actividad            745     0         0     0\n",
+experimentos/Experimento_01_Dummy.ipynb:278:        "Bajo                     185     0         0     0\n",
+experimentos/Experimento_01_Dummy.ipynb:279:        "Moderado                 190     0         0     0\n",
+experimentos/Experimento_01_Dummy.ipynb:280:        "Alto                      68     0         0     0"
+experimentos/Experimento_01_Dummy.ipynb:315:        "      <th>Sin actividad</th>\n",
+experimentos/Experimento_01_Dummy.ipynb:322:        "      <th>Bajo</th>\n",
+experimentos/Experimento_01_Dummy.ipynb:329:        "      <th>Moderado</th>\n",
+experimentos/Experimento_01_Dummy.ipynb:336:        "      <th>Alto</th>\n",
+experimentos/Experimento_01_Dummy.ipynb:348:        "Sin actividad     0.6271     1.0    0.7708    745.0\n",
+experimentos/Experimento_01_Dummy.ipynb:349:        "Bajo              0.0000     0.0    0.0000    185.0\n",
+experimentos/Experimento_01_Dummy.ipynb:350:        "Moderado          0.0000     0.0    0.0000    190.0\n",
+experimentos/Experimento_01_Dummy.ipynb:351:        "Alto              0.0000     0.0    0.0000     68.0"
+experimentos/Experimento_02_LogisticRegression.ipynb:39:     "KEY=[\"departamento\",\"fecha_inicio_semana\"];TARGET=\"nivel_actividad_firms\";ORDER=[\"Sin actividad\",\"Bajo\",\"Moderado\",\"Alto\"];RS=42\n",
+experimentos/Experimento_02_LogisticRegression.ipynb:109:        "      <th>Sin actividad</th>\n",
+experimentos/Experimento_02_LogisticRegression.ipynb:110:        "      <th>Bajo</th>\n",
+experimentos/Experimento_02_LogisticRegression.ipynb:111:        "      <th>Moderado</th>\n",
+experimentos/Experimento_02_LogisticRegression.ipynb:112:        "      <th>Alto</th>\n",
+experimentos/Experimento_02_LogisticRegression.ipynb:117:        "      <th>Sin actividad</th>\n",
+experimentos/Experimento_02_LogisticRegression.ipynb:124:        "      <th>Bajo</th>\n",
+experimentos/Experimento_02_LogisticRegression.ipynb:131:        "      <th>Moderado</th>\n",
+experimentos/Experimento_02_LogisticRegression.ipynb:138:        "      <th>Alto</th>\n",
+experimentos/Experimento_02_LogisticRegression.ipynb:149:        "               Sin actividad  Bajo  Moderado  Alto\n",
+experimentos/Experimento_02_LogisticRegression.ipynb:150:        "Sin actividad            416   129        87   113\n",
+experimentos/Experimento_02_LogisticRegression.ipynb:151:        "Bajo                      49    51        40    45\n",
+experimentos/Experimento_02_LogisticRegression.ipynb:152:        "Moderado                  44    39        47    60\n",
+experimentos/Experimento_02_LogisticRegression.ipynb:153:        "Alto                       8     7        13    40"
+experimentos/Experimento_02_LogisticRegression.ipynb:187:        "      <th>Sin actividad</th>\n",
+experimentos/Experimento_02_LogisticRegression.ipynb:188:        "      <th>Bajo</th>\n",
+experimentos/Experimento_02_LogisticRegression.ipynb:189:        "      <th>Moderado</th>\n",
+experimentos/Experimento_02_LogisticRegression.ipynb:190:        "      <th>Alto</th>\n",
+experimentos/Experimento_02_LogisticRegression.ipynb:195:        "      <th>Sin actividad</th>\n",
+experimentos/Experimento_02_LogisticRegression.ipynb:202:        "      <th>Bajo</th>\n",
+experimentos/Experimento_02_LogisticRegression.ipynb:209:        "      <th>Moderado</th>\n",
+experimentos/Experimento_02_LogisticRegression.ipynb:216:        "      <th>Alto</th>\n",
+experimentos/Experimento_02_LogisticRegression.ipynb:227:        "               Sin actividad  Bajo  Moderado  Alto\n",
+experimentos/Experimento_02_LogisticRegression.ipynb:228:        "Sin actividad            443   131        99    72\n",
+experimentos/Experimento_02_LogisticRegression.ipynb:229:        "Bajo                      58    42        42    43\n",
+experimentos/Experimento_02_LogisticRegression.ipynb:230:        "Moderado                  52    51        43    44\n",
+experimentos/Experimento_02_LogisticRegression.ipynb:231:        "Alto                       7     8        13    40"
+experimentos/Experimento_02_LogisticRegression.ipynb:265:        "      <th>Sin actividad</th>\n",
+experimentos/Experimento_02_LogisticRegression.ipynb:266:        "      <th>Bajo</th>\n",
+experimentos/Experimento_02_LogisticRegression.ipynb:267:        "      <th>Moderado</th>\n",
+experimentos/Experimento_02_LogisticRegression.ipynb:268:        "      <th>Alto</th>\n",
+experimentos/Experimento_02_LogisticRegression.ipynb:273:        "      <th>Sin actividad</th>\n",
+experimentos/Experimento_02_LogisticRegression.ipynb:280:        "      <th>Bajo</th>\n",
+experimentos/Experimento_02_LogisticRegression.ipynb:287:        "      <th>Moderado</th>\n",
+experimentos/Experimento_02_LogisticRegression.ipynb:294:        "      <th>Alto</th>\n",
+experimentos/Experimento_02_LogisticRegression.ipynb:305:        "               Sin actividad  Bajo  Moderado  Alto\n",
+experimentos/Experimento_02_LogisticRegression.ipynb:306:        "Sin actividad            436   133        96    80\n",
+experimentos/Experimento_02_LogisticRegression.ipynb:307:        "Bajo                      55    42        46    42\n",
+experimentos/Experimento_02_LogisticRegression.ipynb:308:        "Moderado                  50    41        51    48\n",
+experimentos/Experimento_02_LogisticRegression.ipynb:309:        "Alto                       8     8        14    38"
+experimentos/Experimento_02_LogisticRegression.ipynb:343:        "      <th>Sin actividad</th>\n",
+experimentos/Experimento_02_LogisticRegression.ipynb:344:        "      <th>Bajo</th>\n",
+experimentos/Experimento_02_LogisticRegression.ipynb:345:        "      <th>Moderado</th>\n",
+experimentos/Experimento_02_LogisticRegression.ipynb:346:        "      <th>Alto</th>\n",
+experimentos/Experimento_02_LogisticRegression.ipynb:351:        "      <th>Sin actividad</th>\n",
+experimentos/Experimento_02_LogisticRegression.ipynb:358:        "      <th>Bajo</th>\n",
+experimentos/Experimento_02_LogisticRegression.ipynb:365:        "      <th>Moderado</th>\n",
+experimentos/Experimento_02_LogisticRegression.ipynb:372:        "      <th>Alto</th>\n",
+experimentos/Experimento_02_LogisticRegression.ipynb:383:        "               Sin actividad  Bajo  Moderado  Alto\n",
+experimentos/Experimento_02_LogisticRegression.ipynb:384:        "Sin actividad            438   131       102    74\n",
+experimentos/Experimento_02_LogisticRegression.ipynb:385:        "Bajo                      57    40        46    42\n",
+experimentos/Experimento_02_LogisticRegression.ipynb:386:        "Moderado                  50    43        49    48\n",
+experimentos/Experimento_02_LogisticRegression.ipynb:387:        "Alto                       8     8        12    40"
+experimentos/Experimento_02_LogisticRegression.ipynb:858:        "      <th>Sin actividad</th>\n",
+experimentos/Experimento_02_LogisticRegression.ipynb:859:        "      <th>Bajo</th>\n",
+experimentos/Experimento_02_LogisticRegression.ipynb:860:        "      <th>Moderado</th>\n",
+experimentos/Experimento_02_LogisticRegression.ipynb:861:        "      <th>Alto</th>\n",
+experimentos/Experimento_02_LogisticRegression.ipynb:866:        "      <th>Sin actividad</th>\n",
+experimentos/Experimento_02_LogisticRegression.ipynb:873:        "      <th>Bajo</th>\n",
+experimentos/Experimento_02_LogisticRegression.ipynb:880:        "      <th>Moderado</th>\n",
+experimentos/Experimento_02_LogisticRegression.ipynb:887:        "      <th>Alto</th>\n",
+experimentos/Experimento_02_LogisticRegression.ipynb:898:        "               Sin actividad  Bajo  Moderado  Alto\n",
+experimentos/Experimento_02_LogisticRegression.ipynb:899:        "Sin actividad            449   131        88    77\n",
+experimentos/Experimento_02_LogisticRegression.ipynb:900:        "Bajo                      58    42        45    40\n",
+experimentos/Experimento_02_LogisticRegression.ipynb:901:        "Moderado                  56    38        52    44\n",
+experimentos/Experimento_02_LogisticRegression.ipynb:902:        "Alto                       9     7        12    40"
+experimentos/Experimento_02_LogisticRegression.ipynb:937:        "      <th>Sin actividad</th>\n",
+experimentos/Experimento_02_LogisticRegression.ipynb:944:        "      <th>Bajo</th>\n",
+experimentos/Experimento_02_LogisticRegression.ipynb:951:        "      <th>Moderado</th>\n",
+experimentos/Experimento_02_LogisticRegression.ipynb:958:        "      <th>Alto</th>\n",
+experimentos/Experimento_02_LogisticRegression.ipynb:970:        "Sin actividad     0.7850  0.6027    0.6819    745.0\n",
+experimentos/Experimento_02_LogisticRegression.ipynb:971:        "Bajo              0.1927  0.2270    0.2084    185.0\n",
+experimentos/Experimento_02_LogisticRegression.ipynb:972:        "Moderado          0.2640  0.2737    0.2687    190.0\n",
+experimentos/Experimento_02_LogisticRegression.ipynb:973:        "Alto              0.1990  0.5882    0.2974     68.0"
+experimentos/Experimento_02_LogisticRegression.ipynb:1012:       " Sin actividad\n"
+experimentos/Experimento_02_LogisticRegression.ipynb:1081:       " Bajo\n"
+experimentos/Experimento_02_LogisticRegression.ipynb:1150:       " Moderado\n"
+experimentos/Experimento_02_LogisticRegression.ipynb:1219:       " Alto\n"
+docs/INTERPRETACION_RESULTADOS_ANALISIS_FIRMS.md:13: 1. Las semanas con `cantidad_detecciones == 0` se mantienen separadas como la clase `Sin actividad`.
+docs/INTERPRETACION_RESULTADOS_ANALISIS_FIRMS.md:24: - `Bajo`
+docs/INTERPRETACION_RESULTADOS_ANALISIS_FIRMS.md:25: - `Moderado`
+docs/INTERPRETACION_RESULTADOS_ANALISIS_FIRMS.md:26: - `Alto`
+docs/INTERPRETACION_RESULTADOS_ANALISIS_FIRMS.md:28: Junto con `Sin actividad`, esto genera cuatro clases finales. Estas clases son discretizaciones estadisticas de actividad FIRMS, no niveles oficiales de riesgo.
+docs/INTERPRETACION_RESULTADOS_ANALISIS_FIRMS.md:47: | Sin actividad | 4967 | 62.6909 | 0 | 0.0 | 0.0 | 0.0 | 0 | 0.0000 |
+docs/INTERPRETACION_RESULTADOS_ANALISIS_FIRMS.md:48: | Bajo | 1237 | 15.6128 | 1 | 1.0 | 1.0 | 1.0 | 1 | 1.0000 |
+docs/INTERPRETACION_RESULTADOS_ANALISIS_FIRMS.md:49: | Moderado | 1266 | 15.9788 | 2 | 2.0 | 2.0 | 3.0 | 4 | 2.6627 |
+docs/INTERPRETACION_RESULTADOS_ANALISIS_FIRMS.md:50: | Alto | 453 | 5.7175 | 5 | 5.0 | 7.0 | 9.0 | 173 | 8.6093 |
+docs/INTERPRETACION_RESULTADOS_ANALISIS_FIRMS.md:58: La clase `Sin actividad` concentra 62.69% del dataset y todos sus valores son cero. Esto confirma que la ausencia de detecciones es el estado mayoritario.
+docs/INTERPRETACION_RESULTADOS_ANALISIS_FIRMS.md:60: La clase `Bajo` esta completamente concentrada en una deteccion. No hay dispersion interna: todas las observaciones tienen exactamente 1 deteccion.
+docs/INTERPRETACION_RESULTADOS_ANALISIS_FIRMS.md:62: La clase `Moderado` cubre de 2 a 4 detecciones. Su mediana es 2 y Q3 es 3, por lo que la mayor parte de sus observaciones queda en valores bajos dentro del rango positivo.
+docs/INTERPRETACION_RESULTADOS_ANALISIS_FIRMS.md:64: La clase `Alto` conserva el rango documentado de 5 a 173 detecciones. Sin embargo, su mediana es 7 y Q3 es 9. Esto significa que la mayor parte de las semanas `Alto` no esta cerca del maximo, sino concentrada en cantidades relativamente bajas para esa clase. La media de 8.61 es mayor que la mediana, lo que indica asimetria hacia la derecha: existen pocas semanas con conteos excepcionalmente altos que elevan el promedio.
+docs/INTERPRETACION_RESULTADOS_ANALISIS_FIRMS.md:66: Conclusion del punto 4: la clase `Alto` no debe describirse como si todas sus observaciones fueran extremas. Es una clase con umbral minimo de 5 detecciones, mucha concentracion entre 5 y 9 detecciones, y una cola alta que llega hasta 173.
+docs/INTERPRETACION_RESULTADOS_ANALISIS_FIRMS.md:99: | Sin actividad | 21.7333 | 57.8857 | 5.5043 | 14.3000 |
+docs/INTERPRETACION_RESULTADOS_ANALISIS_FIRMS.md:100: | Bajo | 23.4119 | 54.0102 | 5.4362 | 10.2400 |
+docs/INTERPRETACION_RESULTADOS_ANALISIS_FIRMS.md:101: | Moderado | 22.1190 | 53.0473 | 5.4832 | 9.0136 |
+docs/INTERPRETACION_RESULTADOS_ANALISIS_FIRMS.md:102: | Alto | 20.0408 | 51.8571 | 5.4205 | 4.7929 |
+docs/INTERPRETACION_RESULTADOS_ANALISIS_FIRMS.md:104: La temperatura mediana mas alta aparece en `Bajo`, no en `Alto`. La humedad y la precipitacion medianas disminuyen al pasar hacia niveles de mayor actividad, especialmente la precipitacion, cuya mediana es 4.79 mm en `Alto` frente a 14.30 mm en `Sin actividad`.
+docs/INTERPRETACION_RESULTADOS_ANALISIS_FIRMS.md:112: El patron mas visible es que `Alto` aparece por debajo del promedio en precipitacion y humedad. `Bajo` muestra la mediana de temperatura mas alta. El viento presenta diferencias pequenas entre clases. En conjunto, el heatmap sugiere que las variables meteorologicas aportan senal, pero no separan perfectamente los niveles.
+docs/INTERPRETACION_RESULTADOS_ANALISIS_FIRMS.md:118: Departamentos con mayor porcentaje combinado de actividad positiva (`Bajo` + `Moderado` + `Alto`):
+docs/INTERPRETACION_RESULTADOS_ANALISIS_FIRMS.md:120: | Departamento | Sin actividad | Bajo | Moderado | Alto |
+docs/INTERPRETACION_RESULTADOS_ANALISIS_FIRMS.md:128: Departamentos con mayor porcentaje de `Sin actividad`:
+docs/INTERPRETACION_RESULTADOS_ANALISIS_FIRMS.md:130: | Departamento | Sin actividad | Bajo | Moderado | Alto |
+docs/INTERPRETACION_RESULTADOS_ANALISIS_FIRMS.md:173: | Sin actividad | 0.788520 | 0.700671 | 0.742004 | 745 |
+docs/INTERPRETACION_RESULTADOS_ANALISIS_FIRMS.md:174: | Bajo | 0.240196 | 0.263441 | 0.251282 | 186 |
+docs/INTERPRETACION_RESULTADOS_ANALISIS_FIRMS.md:175: | Moderado | 0.308756 | 0.352632 | 0.329238 | 190 |
+docs/INTERPRETACION_RESULTADOS_ANALISIS_FIRMS.md:176: | Alto | 0.216981 | 0.338235 | 0.264368 | 68 |
+docs/INTERPRETACION_RESULTADOS_ANALISIS_FIRMS.md:180: | Real \ Predicho | Sin actividad | Bajo | Moderado | Alto |
+docs/INTERPRETACION_RESULTADOS_ANALISIS_FIRMS.md:182: | Sin actividad | 522 | 106 | 84 | 33 |
+docs/INTERPRETACION_RESULTADOS_ANALISIS_FIRMS.md:183: | Bajo | 72 | 49 | 46 | 19 |
+docs/INTERPRETACION_RESULTADOS_ANALISIS_FIRMS.md:184: | Moderado | 53 | 39 | 67 | 31 |
+docs/INTERPRETACION_RESULTADOS_ANALISIS_FIRMS.md:185: | Alto | 15 | 10 | 20 | 23 |
+docs/INTERPRETACION_RESULTADOS_ANALISIS_FIRMS.md:187: El modelo reconoce mejor `Sin actividad` que las clases positivas. Su F1 para `Sin actividad` es 0.742. En cambio, las clases positivas tienen F1 bajos: 0.251 para `Bajo`, 0.329 para `Moderado` y 0.264 para `Alto`.
+docs/INTERPRETACION_RESULTADOS_ANALISIS_FIRMS.md:193: Confundir `Alto` con `Moderado` significa subestimar una semana de mayor actividad estadistica. Confundir `Sin actividad` con `Bajo` significa marcar actividad donde no hubo detecciones. En este proyecto ambas confusiones son relevantes, pero tienen implicancias distintas: una afecta la intensidad asignada y la otra afecta la presencia misma de actividad.
+docs/INTERPRETACION_RESULTADOS_ANALISIS_FIRMS.md:207: - la separacion de ceros como `Sin actividad`.
+docs/INTERPRETACION_RESULTADOS_ANALISIS_FIRMS.md:215: | k3 | Sin actividad | 4967 | 62.6909 | 0-0 |
+docs/INTERPRETACION_RESULTADOS_ANALISIS_FIRMS.md:216: | k3 | Bajo | 1237 | 15.6128 | 1-1 |
+docs/INTERPRETACION_RESULTADOS_ANALISIS_FIRMS.md:217: | k3 | Moderado | 1266 | 15.9788 | 2-4 |
+docs/INTERPRETACION_RESULTADOS_ANALISIS_FIRMS.md:218: | k3 | Alto | 453 | 5.7175 | 5-173 |
+docs/INTERPRETACION_RESULTADOS_ANALISIS_FIRMS.md:219: | k4 | Sin actividad | 4967 | 62.6909 | 0-0 |
+docs/INTERPRETACION_RESULTADOS_ANALISIS_FIRMS.md:224: | k5 | Sin actividad | 4967 | 62.6909 | 0-0 |
+docs/INTERPRETACION_RESULTADOS_ANALISIS_FIRMS.md:247: | k3 | Sin actividad | 0.742004 | 745 |
+docs/INTERPRETACION_RESULTADOS_ANALISIS_FIRMS.md:248: | k3 | Bajo | 0.251282 | 186 |
+docs/INTERPRETACION_RESULTADOS_ANALISIS_FIRMS.md:249: | k3 | Moderado | 0.329238 | 190 |
+docs/INTERPRETACION_RESULTADOS_ANALISIS_FIRMS.md:250: | k3 | Alto | 0.264368 | 68 |
+docs/INTERPRETACION_RESULTADOS_ANALISIS_FIRMS.md:251: | k4 | Sin actividad | 0.727273 | 745 |
+docs/INTERPRETACION_RESULTADOS_ANALISIS_FIRMS.md:256: | k5 | Sin actividad | 0.729361 | 745 |
+docs/INTERPRETACION_RESULTADOS_ANALISIS_FIRMS.md:267: En k=3, el modelo acierta 522 de 745 semanas `Sin actividad`, pero reparte muchas semanas positivas entre clases vecinas y tambien hacia `Sin actividad`.
+docs/INTERPRETACION_RESULTADOS_ANALISIS_FIRMS.md:279: 7. La alternativa recomendada por ahora es conservar k=3 positivos + `Sin actividad`.
+docs/INTERPRETACION_RESULTADOS_ANALISIS_FIRMS.md:285: - La mayoria de observaciones no tiene detecciones FIRMS: 62.69% son `Sin actividad`.
+docs/INTERPRETACION_RESULTADOS_ANALISIS_FIRMS.md:286: - `Bajo` equivale a una deteccion, `Moderado` a 2-4 y `Alto` a 5-173.
+docs/INTERPRETACION_RESULTADOS_ANALISIS_FIRMS.md:287: - `Alto` tiene cola larga: mediana 7, Q3 9 y maximo 173.
+docs/INTERPRETACION_RESULTADOS_ANALISIS_FIRMS.md:289: - Las variables meteorologicas muestran patrones descriptivos, especialmente menor precipitacion mediana en `Alto`, pero con solapamiento entre clases.
+docs/INTERPRETACION_RESULTADOS_ANALISIS_FIRMS.md:291: - El Random Forest reconoce mejor `Sin actividad` que los niveles positivos.
+docs/INTERPRETACION_RESULTADOS_ANALISIS_FIRMS.md:302: - `Sin actividad`
+docs/INTERPRETACION_RESULTADOS_ANALISIS_FIRMS.md:303: - `Bajo`
+docs/INTERPRETACION_RESULTADOS_ANALISIS_FIRMS.md:304: - `Moderado`
+docs/INTERPRETACION_RESULTADOS_ANALISIS_FIRMS.md:305: - `Alto`
+docs/INTERFAZ_Y_VALIDACION.md:18: - Las clases usan una paleta compartida: Sin actividad `#6B7280`, Bajo `#2563EB`, Moderado `#F59E0B`, Alto `#DC2626`. Los perfiles de sensibilidad k=4/k=5 mantienen colores propios, sin equipararlos a los niveles de k=3.
+artifacts/metadata_modelo.json:7:     "Sin actividad",
+artifacts/metadata_modelo.json:8:     "Bajo",
+artifacts/metadata_modelo.json:9:     "Moderado",
+artifacts/metadata_modelo.json:10:     "Alto"
+src/visual_style.py:4:     "Sin actividad": "#6B7280",
+src/visual_style.py:5:     "Bajo": "#2563EB",
+src/visual_style.py:6:     "Moderado": "#F59E0B",
+src/visual_style.py:7:     "Alto": "#DC2626",
+src/build_firms_department_week_clean.py:20: CLASS_ORDER = ["Sin detección", "Bajo", "Moderado", "Alto"]
+src/build_firms_department_week_clean.py:182:         "Sin detección": 4967, "Bajo": 1237, "Moderado": 1034, "Alto": 685,
+src/build_firms_department_week_clean.py:223:             "0": "Sin detección", "1": "Bajo", "2-3": "Moderado", ">=4": "Alto",
+src/historical_evaluation.py:43:     elif actual == "Sin actividad":
+src/historical_evaluation.py:45:         explanation = "Se predijo actividad, pero la etiqueta real indica Sin actividad."
+src/historical_evaluation.py:46:     elif predicted == "Sin actividad":
+src/historical_evaluation.py:48:         explanation = "Se predijo Sin actividad, pero la etiqueta real indica actividad."
+src/historical_evaluation.py:57:         "presence_correct": (actual == "Sin actividad") == (predicted == "Sin actividad"),
+src/build_firms_open_meteo_weekly_history.py:29: CLASS_ORDER = ["Sin detección", "Bajo", "Moderado", "Alto"]
+src/generar_puntos_4_6_plus.py:41: ORDER = ["Sin actividad", "Bajo", "Moderado", "Alto"]
+src/generar_puntos_4_6_plus.py:75:     assert data.loc[data[COUNT].eq(0), TARGET].eq("Sin actividad").all()
+src/generar_puntos_4_6_plus.py:76:     assert data.loc[data[COUNT].gt(0), TARGET].ne("Sin actividad").all()
+src/generar_puntos_4_6_plus.py:239:     alto = summary.loc[summary[TARGET].eq("Alto")].iloc[0]
+src/generar_puntos_4_6_plus.py:243:         f"Alto: min={alto['minimo']:.0f}, Q1={alto['q1']:.0f}, mediana={alto['mediana']:.0f}, Q3={alto['q3']:.0f}, max={alto['maximo']:.0f}.",
+src/generar_puntos_4_6_plus.py:264:         labels = ["Bajo", "Moderado", "Alto"]
+src/generar_puntos_4_6_plus.py:269:     target = pd.Series("Sin actividad", index=data.index, dtype="object")
+src/generar_puntos_4_6_plus.py:280:     order = ["Sin actividad"] + labels
+src/generar_puntos_4_6_plus.py:404:     sort_index = proportions[["Alto", "Moderado", "Bajo"]].sum(axis=1).sort_values(ascending=False).index
+src/generar_puntos_4_6_plus.py:599:         class_order = ["Sin actividad"] + (["Bajo", "Moderado", "Alto"] if k == 3 else [f"Perfil positivo {i}" for i in range(1, k + 1)])
+src/generar_puntos_4_6_plus.py:641:     alto = point4.loc[point4[TARGET].eq("Alto")].iloc[0]
+src/generar_puntos_4_6_plus.py:642:     sin = point4.loc[point4[TARGET].eq("Sin actividad")].iloc[0]
+src/generar_puntos_4_6_plus.py:643:     bajo = point4.loc[point4[TARGET].eq("Bajo")].iloc[0]
+src/generar_puntos_4_6_plus.py:644:     moderado = point4.loc[point4[TARGET].eq("Moderado")].iloc[0]
+src/generar_puntos_4_6_plus.py:651:     dept_high = dept_props.assign(positivas=dept_props[["Bajo", "Moderado", "Alto"]].sum(axis=1)).sort_values("positivas", ascending=False).iloc[0]
+src/generar_puntos_4_6_plus.py:672: La metodología conserva los ceros como `Sin actividad`, aplica K-Means solamente sobre observaciones positivas con `log1p(cantidad_detecciones)` y usa el Random Forest V1 ya seleccionado para el análisis supervisado."""
+src/generar_puntos_4_6_plus.py:706:             f"""**Interpretación.** `Sin actividad` concentra {sin['observaciones']:.0f} observaciones ({sin['porcentaje_dataset']:.2f}% del total) y todos sus valores son cero. `Bajo` queda fijado en una detección; `Moderado` agrupa semanas de {moderado['minimo']:.0f} a {moderado['maximo']:.0f} detecciones. `Alto` conserva el rango {alto['minimo']:.0f}-{alto['maximo']:.0f}, pero su mediana es {alto['mediana']:.0f}, Q3 es {alto['q3']:.0f} y la media es {alto['media']:.2f}; esto muestra una clase
+src/generar_puntos_4_6_plus.py:709:             """alto = point4.loc[point4[firms.TARGET].eq("Alto")].iloc[0]
+src/generar_puntos_4_6_plus.py:710: bajo = point4.loc[point4[firms.TARGET].eq("Bajo")].iloc[0]
+src/generar_puntos_4_6_plus.py:711: moderado = point4.loc[point4[firms.TARGET].eq("Moderado")].iloc[0]
+src/generar_puntos_4_6_plus.py:713:     f"Interpretacion: Bajo queda concentrado en {bajo['minimo']:.0f} deteccion. "
+src/generar_puntos_4_6_plus.py:714:     f"Moderado cubre {moderado['minimo']:.0f}-{moderado['maximo']:.0f}. "
+src/generar_puntos_4_6_plus.py:715:     f"Alto conserva el rango {alto['minimo']:.0f}-{alto['maximo']:.0f}, "
+src/generar_puntos_4_6_plus.py:745: Objetivo: visualizar la dispersión de `Bajo`, `Moderado` y `Alto` sin que la cola alta vuelva ilegible el gráfico."""
+src/generar_puntos_4_6_plus.py:752:             f"""**Interpretación.** El gráfico confirma que `Bajo` no tiene dispersión porque corresponde a una detección. `Moderado` concentra valores entre {moderado['minimo']:.0f} y {moderado['maximo']:.0f}. `Alto` tiene una mediana baja dentro de su rango ({alto['mediana']:.0f}), pero incluye valores extremos hasta {alto['maximo']:.0f}; por eso la escala logarítmica ayuda a ver la caja sin ocultar la cola."""
+src/generar_puntos_4_6_plus.py:757:     "de conteos. Esto permite ver simultaneamente la concentracion de cada clase y la cola de Alto."
+src/generar_puntos_4_6_plus.py:874:             f"""**Interpretación.** En test, el modelo reconoce mejor `Sin actividad` (F1={per_class[(per_class.escenario == 'k3') & (per_class.clase == 'Sin actividad')]['f1'].iloc[0]:.3f}) que las clases positivas. La clase más débil en k=3 es `{worst_k3['clase']}` (F1={worst_k3['f1']:.3f}). Esto indica que el modelo capta parte de la diferencia entre semanas sin actividad y con actividad, pero tiene dificultades para separar niveles positivos cercanos."""
+src/generar_puntos_4_6_plus.py:880:     f"(F1={worst['f1']:.3f}). Las clases positivas son mas dificiles que Sin actividad."
+src/generar_puntos_4_6_plus.py:926:             """**Interpretación.** Las matrices de confusión muestran que muchas semanas positivas se reparten entre clases vecinas o se predicen como `Sin actividad`. En términos del problema, confundir `Alto` con `Moderado` implica subestimar una semana de mayor actividad estadística; confundir `Sin actividad` con `Bajo` implica marcar actividad donde no hubo detecciones."""
+src/generar_puntos_4_6_plus.py:982:     alto = point4.loc[point4[TARGET].eq("Alto")].iloc[0]
+src/generar_puntos_4_6_plus.py:983:     sin = point4.loc[point4[TARGET].eq("Sin actividad")].iloc[0]
+src/generar_puntos_4_6_plus.py:991:         f"- `Sin actividad` concentra {sin['observaciones']:.0f} observaciones ({sin['porcentaje_dataset']:.2f}% del dataset) y todos sus conteos son cero.",
+src/generar_puntos_4_6_plus.py:992:         f"- `Alto` conserva en los datos locales el rango {alto['minimo']:.0f}-{alto['maximo']:.0f}, pero su mediana es {alto['mediana']:.0f} y el tercer cuartil es {alto['q3']:.0f}; el maximo representa una cola extrema, no el comportamiento tipico.",
+app/streamlit_app.py:121:         st.caption("Presencia agrupa Bajo, Moderado y Alto como actividad. "
+tests/test_firms_open_meteo_weekly_history.py:30:                 ["Sin detección", "Moderado"],
+tests/test_firms_open_meteo_weekly_history.py:31:                 categories=["Sin detección", "Bajo", "Moderado", "Alto"],
+tests/test_analysis_interpretations.py:114:     before["cells"][32]["source"] = ["Interpretación antigua: F1=0.741; Bajo=0.253."]
+tests/test_official_artifacts.py:19: OFFICIAL_CLASSES = {"Sin actividad", "Bajo", "Moderado", "Alto"}
+tests/test_official_artifacts.py:71:     expected = pd.Series("Alto", index=data.index)
+tests/test_official_artifacts.py:72:     expected.loc[data["cantidad_detecciones"].eq(0)] = "Sin actividad"
+tests/test_official_artifacts.py:73:     expected.loc[data["cantidad_detecciones"].eq(1)] = "Bajo"
+tests/test_official_artifacts.py:74:     expected.loc[data["cantidad_detecciones"].between(2, 4)] = "Moderado"
+tests/test_firms_history_2017_2025.py:52:             "Sin detección", "Bajo", "Moderado", "Moderado", "Alto", "Alto"
+tests/test_build_firms_department_week_clean.py:26:         self.assert_class(1, "Bajo", 1)
+tests/test_build_firms_department_week_clean.py:29:         self.assert_class(2, "Moderado", 2)
+tests/test_build_firms_department_week_clean.py:30:         self.assert_class(3, "Moderado", 2)
+tests/test_build_firms_department_week_clean.py:33:         self.assert_class(4, "Alto", 3)
+tests/test_build_firms_department_week_clean.py:34:         self.assert_class(25, "Alto", 3)
+tests/test_historical_evaluation.py:11:     ("Bajo", "Bajo", "Acierto exacto", True),
+tests/test_historical_evaluation.py:12:     ("Sin actividad", "Alto", "Falso positivo de presencia", False),
+tests/test_historical_evaluation.py:13:     ("Moderado", "Sin actividad", "Falso negativo de presencia", False),
+tests/test_historical_evaluation.py:14:     ("Alto", "Bajo", "Subestimación del nivel", True),
+tests/test_historical_evaluation.py:15:     ("Bajo", "Moderado", "Sobreestimación del nivel", True),
+tests/test_historical_evaluation.py:26:         evaluate_prediction(None, "Bajo")
+tests/test_historical_evaluation.py:46:     row.assign(nivel_actividad_firms="Bajo").to_parquet(directory / "dataset_modelado_nivel_actividad_firms.parquet")
+results/firms_open_meteo_integration_audit/resumen_general.json:25:       "Bajo": 1237,
+results/firms_open_meteo_integration_audit/resumen_general.json:26:       "Moderado": 1034,
+results/firms_open_meteo_integration_audit/resumen_general.json:27:       "Alto": 685
+results/firms_open_meteo_integration_audit/reconciliacion_target.csv:5: clase_Bajo,1237,1237,True
+results/firms_open_meteo_integration_audit/reconciliacion_target.csv:6: clase_Moderado,1034,1034,True
+results/firms_open_meteo_integration_audit/reconciliacion_target.csv:7: clase_Alto,685,685,True
+results/analisis_puntos_4_6_plus/interpretaciones.md:4: - `Sin actividad` concentra 4967 observaciones (62.69% del dataset) y todos sus conteos son cero.
+results/analisis_puntos_4_6_plus/interpretaciones.md:5: - `Alto` conserva en los datos locales el rango 5-173, pero su mediana es 7 y el tercer cuartil es 9; el maximo representa una cola extrema, no el comportamiento tipico.
+results/analisis_puntos_4_6_plus/interpretaciones.md:11: - En el Random Forest V1 evaluado en test, la clase con menor F1 en k=3 es `Bajo` (F1=0.251).
+results/analisis_puntos_4_6_plus/interpretaciones.md:17:   - k3: Alto, 453 observaciones (5.72%).
+results/firms_history_2017_audit/resumen_general.json:137:     "Bajo": 1237,
+results/firms_history_2017_audit/resumen_general.json:138:     "Moderado": 1034,
+results/firms_history_2017_audit/resumen_general.json:139:     "Alto": 685
+results/analisis_puntos_4_6_plus/tables/punto6_meteo_nulos_por_clase.csv:2: Alto,0,0,0,0
+results/analisis_puntos_4_6_plus/tables/punto6_meteo_nulos_por_clase.csv:3: Bajo,0,0,0,0
+results/analisis_puntos_4_6_plus/tables/punto6_meteo_nulos_por_clase.csv:4: Moderado,0,0,0,0
+results/analisis_puntos_4_6_plus/tables/punto6_meteo_nulos_por_clase.csv:5: Sin actividad,0,0,0,0
+results/analisis_puntos_4_6_plus/tables/punto6_heatmap_meteo_medianas_estandarizadas.csv:2: Sin actividad,-0.0606,0.2725,0.0072,-0.2576
+results/analisis_puntos_4_6_plus/tables/punto6_heatmap_meteo_medianas_estandarizadas.csv:3: Bajo,0.2448,-0.1018,-0.0705,-0.4196
+results/analisis_puntos_4_6_plus/tables/punto6_heatmap_meteo_medianas_estandarizadas.csv:4: Moderado,0.0095,-0.1948,-0.0168,-0.4685
+results/analisis_puntos_4_6_plus/tables/punto6_heatmap_meteo_medianas_estandarizadas.csv:5: Alto,-0.3686,-0.3097,-0.0884,-0.6369
+results/analisis_puntos_4_6_plus/tables/plus_matriz_confusion_k4.csv:1: ﻿real,Sin actividad,Perfil positivo 1,Perfil positivo 2,Perfil positivo 3,Perfil positivo 4
+results/analisis_puntos_4_6_plus/tables/plus_matriz_confusion_k4.csv:2: Sin actividad,508,119,75,27,16
+results/analisis_puntos_4_6_plus/tables/punto6_metricas_rf_final_test_por_clase.csv:2: k3,Sin actividad,0.78852,0.700671,0.742004,745.0
+results/analisis_puntos_4_6_plus/tables/punto6_metricas_rf_final_test_por_clase.csv:3: k3,Bajo,0.240196,0.263441,0.251282,186.0
+results/analisis_puntos_4_6_plus/tables/punto6_metricas_rf_final_test_por_clase.csv:4: k3,Moderado,0.308756,0.352632,0.329238,190.0
+results/analisis_puntos_4_6_plus/tables/punto6_metricas_rf_final_test_por_clase.csv:5: k3,Alto,0.216981,0.338235,0.264368,68.0
+results/analisis_puntos_4_6_plus/tables/plus_metricas_por_clase_test.csv:2: k3,Sin actividad,0.78852,0.700671,0.742004,745.0
+results/analisis_puntos_4_6_plus/tables/plus_metricas_por_clase_test.csv:3: k3,Bajo,0.240196,0.263441,0.251282,186.0
+results/analisis_puntos_4_6_plus/tables/plus_metricas_por_clase_test.csv:4: k3,Moderado,0.308756,0.352632,0.329238,190.0
+results/analisis_puntos_4_6_plus/tables/plus_metricas_por_clase_test.csv:5: k3,Alto,0.216981,0.338235,0.264368,68.0
+results/analisis_puntos_4_6_plus/tables/plus_metricas_por_clase_test.csv:6: k4,Sin actividad,0.779141,0.681879,0.727273,745.0
+results/analisis_puntos_4_6_plus/tables/plus_metricas_por_clase_test.csv:11: k5,Sin actividad,0.783951,0.681879,0.729361,745.0
+results/analisis_puntos_4_6_plus/tables/punto6_04_boxplot_humedad_por_nivel_observaciones_validas.csv:2: Sin actividad,4967
+results/analisis_puntos_4_6_plus/tables/punto6_04_boxplot_humedad_por_nivel_observaciones_validas.csv:3: Bajo,1237
+results/analisis_puntos_4_6_plus/tables/punto6_04_boxplot_humedad_por_nivel_observaciones_validas.csv:4: Moderado,1266
+results/analisis_puntos_4_6_plus/tables/punto6_04_boxplot_humedad_por_nivel_observaciones_validas.csv:5: Alto,453
+results/analisis_puntos_4_6_plus/tables/plus_matriz_confusion_k3.csv:1: ﻿real,Sin actividad,Bajo,Moderado,Alto
+results/analisis_puntos_4_6_plus/tables/plus_matriz_confusion_k3.csv:2: Sin actividad,522,106,84,33
+results/analisis_puntos_4_6_plus/tables/plus_matriz_confusion_k3.csv:3: Bajo,72,49,46,19
+results/analisis_puntos_4_6_plus/tables/plus_matriz_confusion_k3.csv:4: Moderado,53,39,67,31
+results/analisis_puntos_4_6_plus/tables/plus_matriz_confusion_k3.csv:5: Alto,15,10,20,23
+results/analisis_puntos_4_6_plus/tables/punto6_heatmap_meteo_medianas_originales.csv:2: Sin actividad,21.7333,57.8857,5.5043,14.3
+results/analisis_puntos_4_6_plus/tables/punto6_heatmap_meteo_medianas_originales.csv:3: Bajo,23.4119,54.0102,5.4362,10.24
+results/analisis_puntos_4_6_plus/tables/punto6_heatmap_meteo_medianas_originales.csv:4: Moderado,22.119,53.0473,5.4832,9.0136
+results/analisis_puntos_4_6_plus/tables/punto6_heatmap_meteo_medianas_originales.csv:5: Alto,20.0408,51.8571,5.4205,4.7929
+results/analisis_puntos_4_6_plus/tables/punto6_departamento_recuentos_por_nivel.csv:1: ﻿departamento,Sin actividad,Bajo,Moderado,Alto
+results/analisis_puntos_4_6_plus/tables/plus_matriz_confusion_k5.csv:1: ﻿real,Sin actividad,Perfil positivo 1,Perfil positivo 2,Perfil positivo 3,Perfil positivo 4,Perfil positivo 5
+results/analisis_puntos_4_6_plus/tables/plus_matriz_confusion_k5.csv:2: Sin actividad,508,130,40,26,28,13
+results/analisis_puntos_4_6_plus/tables/punto6_03_boxplot_temperatura_por_nivel_observaciones_validas.csv:2: Sin actividad,4967
+results/analisis_puntos_4_6_plus/tables/punto6_03_boxplot_temperatura_por_nivel_observaciones_validas.csv:3: Bajo,1237
+results/analisis_puntos_4_6_plus/tables/punto6_03_boxplot_temperatura_por_nivel_observaciones_validas.csv:4: Moderado,1266
+results/analisis_puntos_4_6_plus/tables/punto6_03_boxplot_temperatura_por_nivel_observaciones_validas.csv:5: Alto,453
+results/analisis_puntos_4_6_plus/tables/punto6_departamento_porcentajes_por_nivel.csv:1: ﻿departamento,Sin actividad,Bajo,Moderado,Alto
+results/analisis_puntos_4_6_plus/tables/plus_distribucion_clases_por_k.csv:2: k3,Sin actividad,4967,0,0,0.0,0.0,3,62.6909
+results/analisis_puntos_4_6_plus/tables/plus_distribucion_clases_por_k.csv:3: k3,Bajo,1237,1,1,1.0,1.0,3,15.612773
+results/analisis_puntos_4_6_plus/tables/plus_distribucion_clases_por_k.csv:4: k3,Moderado,1266,2,4,2.662717,2.0,3,15.978796
+results/analisis_puntos_4_6_plus/tables/plus_distribucion_clases_por_k.csv:5: k3,Alto,453,5,173,8.609272,7.0,3,5.717531
+results/analisis_puntos_4_6_plus/tables/plus_distribucion_clases_por_k.csv:6: k4,Sin actividad,4967,0,0,0.0,0.0,4,62.6909
+results/analisis_puntos_4_6_plus/tables/plus_distribucion_clases_por_k.csv:11: k5,Sin actividad,4967,0,0,0.0,0.0,5,62.6909
+results/analisis_puntos_4_6_plus/tables/punto4_resumen_estadistico_niveles.csv:2: Sin actividad,4967,62.6909,0,0.0,0.0,0.0,0,0.0
+results/analisis_puntos_4_6_plus/tables/punto4_resumen_estadistico_niveles.csv:3: Bajo,1237,15.6128,1,1.0,1.0,1.0,1,1.0
+results/analisis_puntos_4_6_plus/tables/punto4_resumen_estadistico_niveles.csv:4: Moderado,1266,15.9788,2,2.0,2.0,3.0,4,2.6627
+results/analisis_puntos_4_6_plus/tables/punto4_resumen_estadistico_niveles.csv:5: Alto,453,5.7175,5,5.0,7.0,9.0,173,8.6093
+data/processed/modelado/splits/splits_metadata.json:11:         "Sin actividad": 3477,
+data/processed/modelado/splits/splits_metadata.json:12:         "Moderado": 886,
+data/processed/modelado/splits/splits_metadata.json:13:         "Bajo": 866,
+data/processed/modelado/splits/splits_metadata.json:14:         "Alto": 317
+data/processed/modelado/splits/splits_metadata.json:21:         "Sin actividad": 745,
+data/processed/modelado/splits/splits_metadata.json:22:         "Moderado": 190,
+data/processed/modelado/splits/splits_metadata.json:23:         "Bajo": 185,
+data/processed/modelado/splits/splits_metadata.json:24:         "Alto": 68
+data/processed/modelado/splits/splits_metadata.json:31:         "Sin actividad": 745,
+data/processed/modelado/splits/splits_metadata.json:32:         "Moderado": 190,
+data/processed/modelado/splits/splits_metadata.json:33:         "Bajo": 186,
+data/processed/modelado/splits/splits_metadata.json:34:         "Alto": 68
+archive/entregable2/Modelos_Entregable2.ipynb:160:        "      <th>Sin actividad</th>\n",
+archive/entregable2/Modelos_Entregable2.ipynb:166:        "      <th>Bajo</th>\n",
+archive/entregable2/Modelos_Entregable2.ipynb:172:        "      <th>Moderado</th>\n",
+archive/entregable2/Modelos_Entregable2.ipynb:178:        "      <th>Alto</th>\n",
+archive/entregable2/Modelos_Entregable2.ipynb:190:        "Sin actividad           3477         745             745\n",
+archive/entregable2/Modelos_Entregable2.ipynb:191:        "Bajo                     866         185             186\n",
+archive/entregable2/Modelos_Entregable2.ipynb:192:        "Moderado                 886         190             190\n",
+archive/entregable2/Modelos_Entregable2.ipynb:193:        "Alto                     317          68              68"
+archive/entregable2/Modelos_Entregable2.ipynb:202:     "RS=42;ORDEN=[\"Sin actividad\",\"Bajo\",\"Moderado\",\"Alto\"]\n",
+archive/entregable2/Modelos_Entregable2.ipynb:404:        "      <th>Sin actividad</th>\n",
+archive/entregable2/Modelos_Entregable2.ipynb:411:        "      <th>Bajo</th>\n",
+archive/entregable2/Modelos_Entregable2.ipynb:418:        "      <th>Moderado</th>\n",
+archive/entregable2/Modelos_Entregable2.ipynb:425:        "      <th>Alto</th>\n",
+archive/entregable2/Modelos_Entregable2.ipynb:437:        "Sin actividad     0.6271     1.0    0.7708    745.0\n",
+archive/entregable2/Modelos_Entregable2.ipynb:438:        "Bajo              0.0000     0.0    0.0000    185.0\n",
+archive/entregable2/Modelos_Entregable2.ipynb:439:        "Moderado          0.0000     0.0    0.0000    190.0\n",
+archive/entregable2/Modelos_Entregable2.ipynb:440:        "Alto              0.0000     0.0    0.0000     68.0"
+archive/entregable2/Modelos_Entregable2.ipynb:483:        "      <th>Sin actividad</th>\n",
+archive/entregable2/Modelos_Entregable2.ipynb:490:        "      <th>Bajo</th>\n",
+archive/entregable2/Modelos_Entregable2.ipynb:497:        "      <th>Moderado</th>\n",
+archive/entregable2/Modelos_Entregable2.ipynb:504:        "      <th>Alto</th>\n",
+archive/entregable2/Modelos_Entregable2.ipynb:516:        "Sin actividad     0.7920  0.5879    0.6749    745.0\n",
+archive/entregable2/Modelos_Entregable2.ipynb:517:        "Bajo              0.1802  0.2162    0.1966    185.0\n",
+archive/entregable2/Modelos_Entregable2.ipynb:518:        "Moderado          0.2344  0.2579    0.2456    190.0\n",
+archive/entregable2/Modelos_Entregable2.ipynb:519:        "Alto              0.1961  0.5882    0.2941     68.0"
+archive/entregable2/Modelos_Entregable2.ipynb:562:        "      <th>Sin actividad</th>\n",
+archive/entregable2/Modelos_Entregable2.ipynb:569:        "      <th>Bajo</th>\n",
+archive/entregable2/Modelos_Entregable2.ipynb:576:        "      <th>Moderado</th>\n",
+archive/entregable2/Modelos_Entregable2.ipynb:583:        "      <th>Alto</th>\n",
+archive/entregable2/Modelos_Entregable2.ipynb:595:        "Sin actividad     0.6933  0.8738    0.7732    745.0\n",
+archive/entregable2/Modelos_Entregable2.ipynb:596:        "Bajo              0.2609  0.0649    0.1039    185.0\n",
+archive/entregable2/Modelos_Entregable2.ipynb:597:        "Moderado          0.2632  0.2105    0.2339    190.0\n",
+archive/entregable2/Modelos_Entregable2.ipynb:598:        "Alto              0.4118  0.3088    0.3529     68.0"
+archive/entregable2/Modelos_Entregable2.ipynb:642:       "Clase: Sin actividad\n"
+archive/entregable2/Modelos_Entregable2.ipynb:711:       "Clase: Bajo\n"
+archive/entregable2/Modelos_Entregable2.ipynb:780:       "Clase: Moderado\n"
+archive/entregable2/Modelos_Entregable2.ipynb:849:       "Clase: Alto\n"
+archive/entregable2/Modelos_Entregable2.ipynb:1044:        "      <th>Sin actividad</th>\n",
+archive/entregable2/Modelos_Entregable2.ipynb:1045:        "      <th>Bajo</th>\n",
+archive/entregable2/Modelos_Entregable2.ipynb:1046:        "      <th>Moderado</th>\n",
+archive/entregable2/Modelos_Entregable2.ipynb:1047:        "      <th>Alto</th>\n",
+archive/entregable2/Modelos_Entregable2.ipynb:1052:        "      <th>Sin actividad</th>\n",
+archive/entregable2/Modelos_Entregable2.ipynb:1059:        "      <th>Bajo</th>\n",
+archive/entregable2/Modelos_Entregable2.ipynb:1066:        "      <th>Moderado</th>\n",
+archive/entregable2/Modelos_Entregable2.ipynb:1073:        "      <th>Alto</th>\n",
+archive/entregable2/Modelos_Entregable2.ipynb:1084:        "               Sin actividad  Bajo  Moderado  Alto\n",
+archive/entregable2/Modelos_Entregable2.ipynb:1085:        "Sin actividad            645    31        58    11\n",
+archive/entregable2/Modelos_Entregable2.ipynb:1086:        "Bajo                     126    17        39     4\n",
+archive/entregable2/Modelos_Entregable2.ipynb:1087:        "Moderado                 101    11        58    20\n",
+archive/entregable2/Modelos_Entregable2.ipynb:1088:        "Alto                      22     2        19    25"
+archive/entregable2/Modelos_Entregable2.ipynb:1133:        "      <th>Sin actividad</th>\n",
+archive/entregable2/Modelos_Entregable2.ipynb:1140:        "      <th>Bajo</th>\n",
+archive/entregable2/Modelos_Entregable2.ipynb:1147:        "      <th>Moderado</th>\n",
+archive/entregable2/Modelos_Entregable2.ipynb:1154:        "      <th>Alto</th>\n",
+archive/entregable2/Modelos_Entregable2.ipynb:1166:        "Sin actividad     0.7215  0.8658    0.7871    745.0\n",
+archive/entregable2/Modelos_Entregable2.ipynb:1167:        "Bajo              0.2787  0.0914    0.1377    186.0\n",
+archive/entregable2/Modelos_Entregable2.ipynb:1168:        "Moderado          0.3333  0.3053    0.3187    190.0\n",
+archive/entregable2/Modelos_Entregable2.ipynb:1169:        "Alto              0.4167  0.3676    0.3906     68.0"
+archive/entregable2/Modelos_Entregable2.ipynb:1426:        "      <th>Sin actividad</th>\n",
+archive/entregable2/Modelos_Entregable2.ipynb:1427:        "      <th>Bajo</th>\n",
+archive/entregable2/Modelos_Entregable2.ipynb:1428:        "      <th>Moderado</th>\n",
+archive/entregable2/Modelos_Entregable2.ipynb:1429:        "      <th>Alto</th>\n",
+archive/entregable2/Modelos_Entregable2.ipynb:1434:        "      <th>Sin actividad</th>\n",
+archive/entregable2/Modelos_Entregable2.ipynb:1441:        "      <th>Bajo</th>\n",
+archive/entregable2/Modelos_Entregable2.ipynb:1448:        "      <th>Moderado</th>\n",
+archive/entregable2/Modelos_Entregable2.ipynb:1455:        "      <th>Alto</th>\n",
+archive/entregable2/Modelos_Entregable2.ipynb:1466:        "               Sin actividad  Bajo  Moderado  Alto\n",
+archive/entregable2/Modelos_Entregable2.ipynb:1467:        "Sin actividad            537    23        48     5\n",
+archive/entregable2/Modelos_Entregable2.ipynb:1468:        "Bajo                     105    11        33     2\n",
+archive/entregable2/Modelos_Entregable2.ipynb:1469:        "Moderado                  78     9        49     7\n",
+archive/entregable2/Modelos_Entregable2.ipynb:1470:        "Alto                      22     3        19    18"
+archive/nesterov/Analisis_Nesterov.ipynb:115:        "      <th>Sin actividad</th>\n",
+archive/nesterov/Analisis_Nesterov.ipynb:126:        "      <th>Bajo</th>\n",
+archive/nesterov/Analisis_Nesterov.ipynb:137:        "      <th>Moderado</th>\n",
+archive/nesterov/Analisis_Nesterov.ipynb:148:        "      <th>Alto</th>\n",
+archive/nesterov/Analisis_Nesterov.ipynb:165:        "Sin actividad          4967.0  3530.004735  4073.809933    0.000000   \n",
+archive/nesterov/Analisis_Nesterov.ipynb:166:        "Bajo                   1237.0  4100.554248  4058.700114  187.915043   \n",
+archive/nesterov/Analisis_Nesterov.ipynb:167:        "Moderado               1266.0  3987.753391  3979.039612  319.023893   \n",
+archive/nesterov/Analisis_Nesterov.ipynb:168:        "Alto                    453.0  4362.586380  4408.261720  422.268333   \n",
+archive/nesterov/Analisis_Nesterov.ipynb:172:        "Sin actividad          1076.210396  2062.164753  4370.217869  33954.128489  \n",
+archive/nesterov/Analisis_Nesterov.ipynb:173:        "Bajo                   1695.486189  2882.258242  4877.404433  41992.754009  \n",
+archive/nesterov/Analisis_Nesterov.ipynb:174:        "Moderado               1618.285192  2744.768436  4672.833612  38979.338100  \n",
+archive/nesterov/Analisis_Nesterov.ipynb:175:        "Alto                   1823.389244  2945.132045  4928.221638  30684.492469  "
+archive/nesterov/Analisis_Nesterov.ipynb:184:     "ORDEN=[\"Sin actividad\",\"Bajo\",\"Moderado\",\"Alto\"]\n",
+archive/analisis_antiguos/src/audit_firms_target_definition.py:20: CLASS_ORDER = ["Sin detección", "Bajo", "Moderado", "Alto"]
+archive/analisis_antiguos/src/audit_firms_target_definition.py:103:     high = panel.loc[panel["clase_preliminar"].eq("Alto")].copy()
+archive/analisis_antiguos/src/audit_firms_target_definition.py:235:             "Sin detección": "0", "Bajo": "1", "Moderado": "2–3", "Alto": ">=4"
+archive/analisis_antiguos/src/audit_firms_target_definition.py:242:             float(year.loc[year["clase_preliminar"].eq("Alto"), "porcentaje"].min()),
+archive/analisis_antiguos/src/audit_firms_target_definition.py:243:             float(year.loc[year["clase_preliminar"].eq("Alto"), "porcentaje"].max()),

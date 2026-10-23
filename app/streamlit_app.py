@@ -13,6 +13,7 @@ if str(ROOT) not in sys.path:
     sys.path.insert(0, str(ROOT))
 
 from src.inference import load_metadata, load_model, predict, predict_proba  # noqa: E402
+from src.class_labels import display_label
 from src.visual_style import COLORS  # noqa: E402
 from src.historical_evaluation import TARGET, load_test_examples, evaluate_prediction  # noqa: E402
 
@@ -47,8 +48,8 @@ def historical_examples():
 metadata, model = resources()
 features = metadata["variables"]
 
-st.title("Nivel estimado de actividad FIRMS")
-st.caption("Prototipo del Proyecto de Aprendizaje Automático 2026")
+st.title("Categoría estadística de detecciones FIRMS")
+st.caption("Prototipo del Proyecto de Aprendizaje Automático 2026. Sin detecciones corresponde a cero y no es un clúster. Clústeres 1–3 ordenados por centroide: 1, 2–4 y 5–173 detecciones; no indican riesgo ni intensidad de incendio.")
 mode = st.radio("Entrada", ["Ejemplo histórico", "Ingreso manual"], horizontal=True)
 
 if mode == "Ejemplo histórico":
@@ -99,8 +100,8 @@ if st.button("Estimar nivel"):
     probabilities = predict_proba(input_data, model, metadata).iloc[0].rename("Probabilidad")
     if mode == "Ingreso manual":
         st.markdown(
-            f'<div style="border-left:6px solid {COLORS[prediction]};padding:1rem">'
-            f'Nivel de actividad FIRMS estimado: <strong>{prediction}</strong></div>',
+            f'<div style="border-left:6px solid {COLORS[display_label(prediction)]};padding:1rem">'
+            f'Categoría estadística FIRMS estimada: <strong>{display_label(prediction)}</strong></div>',
             unsafe_allow_html=True,
         )
     if mode == "Ejemplo histórico":
@@ -110,17 +111,18 @@ if st.button("Estimar nivel"):
         for column, label, value in [(real_col, "Clase real", actual),
                                       (predicted_col, "Clase predicha", prediction)]:
             column.markdown(
-                f'<div style="border-left:4px solid {COLORS[value]};padding:0.5rem">'
-                f'{label}<br><strong>{value}</strong></div>', unsafe_allow_html=True,
+                f'<div style="border-left:4px solid {COLORS[display_label(value)]};padding:0.5rem">'
+                f'{label}<br><strong>{display_label(value)}</strong></div>', unsafe_allow_html=True,
             )
         result = "Correcto" if evaluation["correct"] else "Incorrecto"
         st.write(f"**Evaluación multiclase: {result} — {evaluation['kind']}.**")
         st.caption(evaluation["explanation"])
         presence = "Correcto" if evaluation["presence_correct"] else "Incorrecto"
         st.write(f"**Evaluación binaria de presencia: {presence}.**")
-        st.caption("Presencia agrupa Bajo, Moderado y Alto como actividad. "
+        st.caption("Presencia agrupa Clúster 1, Clúster 2 y Clúster 3 como actividad. "
                    "Puede acertar la presencia y equivocarse en el nivel.")
     st.caption("Probabilidades estimadas para las cuatro clases")
+    probabilities.index = probabilities.index.map(display_label)
     chart_data = probabilities.rename_axis("Clase").reset_index()
     chart = alt.Chart(chart_data).mark_bar().encode(
         x=alt.X("Clase:N", sort=list(COLORS)),

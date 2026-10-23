@@ -76,5 +76,12 @@
     "nivel_actividad_firms_codigo",
     "numero_semana",
     "presencia_firms"
-  ]
+  ],
+  "etiquetas_visibles": {
+    "Sin actividad": "Sin detecciones",
+    "Bajo": "Clúster 1",
+    "Moderado": "Clúster 2",
+    "Alto": "Clúster 3"
+  },
+  "interpretacion_clases": "Sin detecciones es la categoría previa de conteo cero, no un clúster. Clústeres 1–3 son grupos estadísticos ordenados por centroide de K-Means sobre log1p de conteos positivos; no representan niveles validados de riesgo, peligrosidad ni intensidad de incendio."
 }

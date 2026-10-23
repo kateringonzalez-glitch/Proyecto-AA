@@ -1,0 +1,24 @@
+{
+  "fecha_local": "2026-10-23",
+  "paa_pytest": {
+    "passed": 106,
+    "duration_seconds": 26.08
+  },
+  "lidia_pytest": {
+    "passed": 10,
+    "deselected_live_sql": 5,
+    "duration_seconds": 17.77
+  },
+  "test_rows": 1189,
+  "predicciones_identicas": true,
+  "probabilidades_1_hilo_identicas": true,
+  "probabilidades_paralelo_atol": 1e-15,
+  "probabilidades_paralelo_rtol": 0,
+  "f1_macro_test": 0.39672311525116466,
+  "balanced_accuracy_test": 0.4137447185549167,
+  "archivos_inmutables_verificados": 422,
+  "modelo_sha256": "553597e3448a64bd1922012fde856c55b3f00a65d31e20ac57c78b010d4f5582",
+  "metadata_campos_originales_identicos": true,
+  "tablas_cambios_exclusivamente_textuales": true,
+  "notebooks_salidas_no_graficas_cambios_exclusivamente_textuales": true
+}
