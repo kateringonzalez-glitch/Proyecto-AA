@@ -1,4 +1,5 @@
 import unittest
+from pathlib import Path
 
 import pandas as pd
 
@@ -16,6 +17,10 @@ class OpenMeteoAuditRulesTest(unittest.TestCase):
         self.assertEqual(completeness(168, 168), 100.0)
         self.assertEqual(completeness(84, 168), 50.0)
 
+    @unittest.skipUnless(
+        Path("data/meteo_2025.parquet").is_file(),
+        "La auditoría horaria requiere la fuente histórica local no versionada data/meteo_2025.parquet",
+    )
     def test_hourly_2025_has_nineteen_uruguay_points(self):
         data = pd.read_parquet("data/meteo_2025.parquet")
         uruguay = data.loc[data["pais_codigo"].eq("URY")]
