@@ -4,6 +4,11 @@
 Conserva el panel original, excluye semanas incompletas mediante una regla
 general y agrega una definición candidata del objetivo. No incorpora
 predictores ni entrena modelos.
+
+La discretización candidata de este intermedio (0 / 1 / 2–3 / ≥4) es
+histórica. NO es el target oficial K-Means (0 / 1 / 2–4 / 5–173).
+La construcción vigente está en Analisis_No_supervisado.ipynb; no traducir
+estas etiquetas históricas como si fueran los clústeres oficiales.
 """
 
 from __future__ import annotations

@@ -1,0 +1,56 @@
+{
+  "filas": 7923,
+  "semanas": 417,
+  "departamentos": 19,
+  "conteos": 8508,
+  "distribucion": {
+    "Sin detecciones": 4967,
+    "Clúster 2": 1266,
+    "Clúster 1": 1237,
+    "Clúster 3": 453
+  },
+  "centroides_log1p": [
+    0.6931471805599453,
+    1.2774371874699484,
+    2.143294220950683
+  ],
+  "centroides_original": [
+    1.0,
+    2.5874340135102165,
+    7.527482822562566
+  ],
+  "asignaciones_centroides_correctas": true,
+  "antecedentes_7923_filas_7_variables_correctos": true,
+  "experimentos": 21,
+  "probabilidades_identicas": true,
+  "predicciones_identicas": 1189,
+  "orden_probabilidades": [
+    "Clúster 3",
+    "Clúster 1",
+    "Clúster 2",
+    "Sin detecciones"
+  ],
+  "test": {
+    "accuracy": 0.5559293523969723,
+    "f1_macro": 0.39672311525116466,
+    "balanced_accuracy": 0.4137447185549167
+  },
+  "protegidos_inmutables": 629,
+  "archivos_modificados_desde_inicio": [
+    "Preparacion_Dataset_Modelado.ipynb",
+    "Analisis_No_supervisado.ipynb",
+    "README.md",
+    "registro_uso_IA.md",
+    "experimentos/00_Preparar_Splits.ipynb",
+    "experimentos/Comparacion_Modelos.ipynb",
+    "experimentos/Experimento_04_HistGradientBoosting.ipynb",
+    "experimentos/Experimento_03_RandomForest.ipynb",
+    "experimentos/Experimento_01_Dummy.ipynb",
+    "experimentos/Experimento_02_LogisticRegression.ipynb",
+    "src/build_firms_department_week_clean.py",
+    "src/build_firms_open_meteo_weekly_history.py",
+    "src/class_labels.py"
+  ],
+  "word_inmutable": true,
+  "integracion_archivos_leidos": 16
+}

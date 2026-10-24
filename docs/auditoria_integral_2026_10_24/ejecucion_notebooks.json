@@ -1,0 +1,32 @@
+[
+  {
+    "notebook": "Auditoria_Coherencia_PAA.ipynb",
+    "estado": "correcto",
+    "celdas_codigo": 7,
+    "restricciones": "sin fit; sin escribir datasets, tablas ni figuras originales"
+  },
+  {
+    "notebook": "Calidad_Preparacion_Datos.ipynb",
+    "estado": "correcto",
+    "celdas_codigo": 6,
+    "restricciones": "sin fit; sin escribir datasets, tablas ni figuras originales"
+  },
+  {
+    "notebook": "Preparacion_Dataset_Modelado.ipynb",
+    "estado": "correcto",
+    "celdas_codigo": 6,
+    "restricciones": "sin fit; sin escribir datasets, tablas ni figuras originales"
+  },
+  {
+    "notebook": "Analisis_Puntos_4_6_Plus.ipynb",
+    "estado": "correcto",
+    "celdas_codigo": 22,
+    "restricciones": "sin fit; sin escribir datasets, tablas ni figuras originales"
+  },
+  {
+    "notebook": "figura_clusters.ipynb",
+    "estado": "correcto",
+    "celdas_codigo": 22,
+    "restricciones": "sin fit; sin escribir datasets, tablas ni figuras originales"
+  }
+]

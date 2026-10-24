@@ -1,0 +1,92 @@
+{
+  "experimentos/00_Preparar_Splits.ipynb": {
+    "celdas": 5,
+    "salidas_actualizadas": [
+      3
+    ],
+    "fuentes_actualizadas": [
+      0,
+      1,
+      3
+    ]
+  },
+  "experimentos/Comparacion_Modelos.ipynb": {
+    "celdas": 19,
+    "salidas_actualizadas": [
+      11,
+      15
+    ],
+    "fuentes_actualizadas": [
+      0,
+      1,
+      3,
+      5,
+      9,
+      11,
+      13,
+      15,
+      17
+    ]
+  },
+  "experimentos/Experimento_01_Dummy.ipynb": {
+    "celdas": 5,
+    "salidas_actualizadas": [
+      2,
+      3
+    ],
+    "fuentes_actualizadas": [
+      0,
+      1,
+      2,
+      3
+    ]
+  },
+  "experimentos/Experimento_02_LogisticRegression.ipynb": {
+    "celdas": 7,
+    "salidas_actualizadas": [
+      2,
+      3,
+      4,
+      5
+    ],
+    "fuentes_actualizadas": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5
+    ]
+  },
+  "experimentos/Experimento_03_RandomForest.ipynb": {
+    "celdas": 6,
+    "salidas_actualizadas": [
+      2,
+      3,
+      4
+    ],
+    "fuentes_actualizadas": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5
+    ]
+  },
+  "experimentos/Experimento_04_HistGradientBoosting.ipynb": {
+    "celdas": 5,
+    "salidas_actualizadas": [
+      2,
+      3,
+      4
+    ],
+    "fuentes_actualizadas": [
+      0,
+      1,
+      2,
+      3,
+      4
+    ]
+  }
+}

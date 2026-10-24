@@ -1,0 +1,4 @@
+Directorio: /home/pepo/Datos completos/Proyecto-LIDIA-ec3-pedro
+Comando: /home/pepo/.venvs/lidia-paa-dashboard/bin/python -m pytest tests/test_unified_dashboard.py -q -k 'not live_lidia'
+Resultado observado: 10 passed, 5 deselected in 13.13s
+No se ejecutaron pruebas SQL live_lidia. No se modificaron archivos LIDIA.

@@ -229,6 +229,7 @@ La API real de [`src/inference.py`](src/inference.py) se utiliza así:
 ```python
 import pandas as pd
 from src.inference import load_model, predict, predict_proba
+from src.class_labels import present
 
 entrada = pd.DataFrame([{
     "departamento": "Montevideo",
@@ -240,11 +241,19 @@ entrada = pd.DataFrame([{
 }])
 
 modelo = load_model()
-print(predict(entrada, model=modelo))
-print(predict_proba(entrada, model=modelo))
+print(present(predict(entrada, model=modelo).tolist()))
+print(present(predict_proba(entrada, model=modelo)))
 ```
 
 La validación devuelve errores claros ante variables faltantes, nulos o inclusión accidental del conteo contemporáneo.
+
+`predict` y `predict_proba` conservan los identificadores del artefacto original.
+`present` traduce los resultados para mostrarlos sin modificar el modelo, los
+datos ni el orden de las columnas de probabilidades. Los notebooks experimentales
+usan esa misma capa, incluso para encabezados de métricas por clase.
+
+La revisión del 24/10/2026 y sus límites de inspección están documentados en
+[`docs/AUDITORIA_INTEGRAL_PAA_2026_10_24.md`](docs/AUDITORIA_INTEGRAL_PAA_2026_10_24.md).
 
 ## Prototipo Streamlit
 

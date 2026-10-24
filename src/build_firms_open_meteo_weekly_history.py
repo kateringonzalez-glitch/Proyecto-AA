@@ -1,5 +1,12 @@
 #!/usr/bin/env python3
-"""Integra Open-Meteo semanal con el target histórico FIRMS, sin crear predictores."""
+"""Integra Open-Meteo semanal con etiquetas históricas FIRMS.
+
+Las clases intermedias conservan cortes candidatos 0 / 1 / 2–3 / ≥4;
+no son el target oficial K-Means. Preparacion_Dataset_Modelado.ipynb toma
+los conteos de este histórico para antecedentes y une por claves el target
+oficial de dataset_niveles_actividad_firms.parquet. No traducir directamente
+estas clases intermedias a Clúster 1–3.
+"""
 
 from __future__ import annotations
 

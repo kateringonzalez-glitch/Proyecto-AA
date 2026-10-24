@@ -1,0 +1,66 @@
+ M README.md
+ M dashboard/paa_module/historical_evaluation.py
+ M dashboard/paa_module/ui.py
+ M dashboard/paa_module/visual_style.py
+ D data/processed/cams_2018_2025.parquet
+ D data/processed/chirps_2018_2025.parquet
+ D data/processed/chirps_2025.parquet
+ D data/processed/firms_2018_2025.parquet
+ D data/processed/inumet_2018_2025.parquet
+ D data/processed/inumet_procesado.parquet
+ D data/processed/meteo_2018_2025.parquet
+ D data/processed/meteo_2025.parquet
+ D data/processed/modis_2018_2025.parquet
+ M docs/ejecucion_local.md
+ M evidencia/logs/D5_README_EVIDENCIAS.md
+ M evidencia/logs/carga_completa_asociacion_ambiental.log
+ M evidencia/logs/carga_completa_cams.log
+ M evidencia/logs/carga_completa_chirps.log
+ M evidencia/logs/carga_completa_ddl.log
+ M evidencia/logs/carga_completa_firms.log
+ M evidencia/logs/carga_completa_local.log
+ M evidencia/logs/carga_completa_meteo.log
+ M evidencia/logs/carga_completa_modis.log
+ M evidencia/logs/ec3_reporte_estado_actual.md
+ M evidencia/logs/ec3_resumen_urgencias.json
+ M evidencia/logs/evidencia_idempotencia_final.txt
+ M evidencia/logs/local_mongo_carga.log
+ M evidencia/logs/local_reset_and_load.log
+ M evidencia/logs/mongodb_sharding_final.log
+ M evidencia/logs/resumen_cumplimiento_ec3.md
+ M tests/fixtures/paa_artifact_hashes.json
+ M tests/test_unified_dashboard.py
+?? dashboard/paa_module/class_labels.py
+?? docs/integracion_paa/ESTADO_PREVIO.md
+?? docs/integracion_paa/NOMENCLATURA.md
+?? docs/integracion_paa/estado_previo.json
+?? docs/integracion_paa/integridad.json
+?? docs/integracion_paa/postgres_verificacion.json
+?? evidencia/documentacion/resumen_carga_completa_local_final.md
+?? evidencia/logs/NOTA_EVIDENCIA.md
+?? evidencia/logs/auditoria_dashboard_performance_final.log
+?? evidencia/logs/carga_completa_inumet.log
+?? evidencia/logs/carga_completa_local_tiempo_final.log
+?? evidencia/logs/carga_regiones_administrativas_zip_lineal.log
+?? evidencia/logs/diagnostico_zip_departamentos.log
+?? evidencia/logs/ec3_verificacion_logrado_20260612T163901Z.log
+?? evidencia/logs/ec3_verificacion_logrado_20260613T174419Z.log
+?? evidencia/logs/ec3_verificacion_logrado_20260614T193036Z.log
+?? evidencia/logs/ec3_verificacion_logrado_20260615T140623Z.log
+?? evidencia/logs/ec3_verificacion_logrado_20260615T143951Z.log
+?? evidencia/logs/ec3_verificacion_logrado_20260617T005913Z.log
+?? evidencia/logs/ec3_verificacion_logrado_20260623T141255Z.log
+?? evidencia/logs/ec3_verificacion_logrado_20260624T211726Z.log
+?? evidencia/logs/ec3_verificacion_logrado_20260625T203218Z.log
+?? evidencia/logs/etl_all_local_20260613T151502.log
+?? evidencia/logs/etl_region_local_20260613T152108.log
+?? evidencia/logs/etl_region_local_vista_20260613T152840.log
+?? evidencia/logs/firms_controlado_1000.log
+?? evidencia/logs/local_etl_all_postgres_mongo_20260625.log
+?? evidencia/logs/local_mongo_backfill_20260625.log
+?? evidencia/logs/pytest_collect_tests.log
+?? evidencia/logs/pytest_collect_zip_departamentos.log
+?? evidencia/logs/pytest_tests_ok.log
+?? evidencia/logs/pytest_zip_departamentos_ok.log
+?? parquet_a_csv.ipynb
+?? scripts/evidencia_carga_completa_local_final.py

@@ -1,0 +1,66 @@
+[
+  {
+    "ruta": "/home/pepo/Datos completos/Proyecto-LIDIA-ec3-pedro/dashboard/paa_module/__init__.py",
+    "sha256": "304d402bc2ef39d83810c11ca6f02ffe57f6e7aa8316f6495edc0771169c35c7"
+  },
+  {
+    "ruta": "/home/pepo/Datos completos/Proyecto-LIDIA-ec3-pedro/dashboard/paa_module/class_labels.py",
+    "sha256": "c31f68bdd678a9bd772b6fb5958ec26ec1833b1fea94237ee2f0612e0f9ba9c5"
+  },
+  {
+    "ruta": "/home/pepo/Datos completos/Proyecto-LIDIA-ec3-pedro/dashboard/paa_module/historical_evaluation.py",
+    "sha256": "4f79ea434f9530907c5235ae949316bd326f40be081f4aaf6fb48e87eaff0553"
+  },
+  {
+    "ruta": "/home/pepo/Datos completos/Proyecto-LIDIA-ec3-pedro/dashboard/paa_module/inference.py",
+    "sha256": "5f932c1333b8ee164397acf80c195653310da2a71aba66a355c4eb10d4e9b435"
+  },
+  {
+    "ruta": "/home/pepo/Datos completos/Proyecto-LIDIA-ec3-pedro/dashboard/paa_module/paths.py",
+    "sha256": "2aba3f85dbf009ef6f8e30b2640d0a30e62db144db9a934af418ae7e95bdb7a6"
+  },
+  {
+    "ruta": "/home/pepo/Datos completos/Proyecto-LIDIA-ec3-pedro/dashboard/paa_module/ui.py",
+    "sha256": "751d71b2003649b0e2b7c14bfbfea3ce08b98bae9c650aa793cb21e2645c175c"
+  },
+  {
+    "ruta": "/home/pepo/Datos completos/Proyecto-LIDIA-ec3-pedro/dashboard/paa_module/visual_style.py",
+    "sha256": "618a6bb96afdb5b745d07a7a7c291bc3802369b47274a68e1055c4abcf7e090f"
+  },
+  {
+    "ruta": "/home/pepo/Datos completos/Proyecto-LIDIA-ec3-pedro/dashboard/main.py",
+    "sha256": "64fa95c4874ebda00a04eaf5b9f3d54cddb28127c9a625a1aa8fdaa9b7d5debd"
+  },
+  {
+    "ruta": "/home/pepo/Datos completos/Proyecto-LIDIA-ec3-pedro/tests/test_unified_dashboard.py",
+    "sha256": "ba1aad1aa65c9e852f8a0ef5b69392817292d23414529af51b8a97b67d741472"
+  },
+  {
+    "ruta": "/home/pepo/Datos completos/Proyecto-LIDIA-ec3-pedro/tests/fixtures/paa_artifact_hashes.json",
+    "sha256": "620fb1ce085ca74dfd51d23a0a67b749122c9581fd41e50e68d88808c28d59a1"
+  },
+  {
+    "ruta": "/home/pepo/Datos completos/Proyecto-LIDIA-ec3-pedro/docs/integracion_paa/COMPARACION_JUPYTER.md",
+    "sha256": "d119419b42594c3168f07832a2ef4b44234ad066d4b1951844633b2b69df27f4"
+  },
+  {
+    "ruta": "/home/pepo/Datos completos/Proyecto-LIDIA-ec3-pedro/docs/integracion_paa/ESTADO_PREVIO.md",
+    "sha256": "31cbd7b86a7baad33b458006a9a8ca5b0bb53c2b5ab1410d3b9cf8b31d1a91a3"
+  },
+  {
+    "ruta": "/home/pepo/Datos completos/Proyecto-LIDIA-ec3-pedro/docs/integracion_paa/NOMENCLATURA.md",
+    "sha256": "79bea934a8f0bf5923c7aaef8ec1060c78deff13897a92ac4af8765bdc0ef0c5"
+  },
+  {
+    "ruta": "/home/pepo/Datos completos/Proyecto-LIDIA-ec3-pedro/docs/integracion_paa/POSTGRES_LOCAL.md",
+    "sha256": "8a09349be5c0dbe366f71bb0bb0301c3fc34c5439e2eb7c3da3c6e707493d989"
+  },
+  {
+    "ruta": "/home/pepo/Datos completos/Proyecto-LIDIA-ec3-pedro/docs/integracion_paa/README.md",
+    "sha256": "4b201c709bd6863058b13920d7405935265d380f766aadc1291ca80056258f29"
+  },
+  {
+    "ruta": "/home/pepo/Datos completos/Proyecto-LIDIA-ec3-pedro/docs/integracion_paa/VALIDACION.md",
+    "sha256": "4696754f16305f13c81abc9b231ba87f7e740bf6e90f802dd97af1c0a402ef7f"
+  }
+]

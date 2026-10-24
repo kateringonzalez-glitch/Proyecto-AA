@@ -1,5 +1,13 @@
 # Registro de uso de Inteligencia Artificial
 
+Nota de lectura — 24/10/2026: este registro conserva decisiones y formulaciones
+históricas, incluidas propuestas temporales y nombres que fueron reemplazados.
+La presentación vigente utiliza Sin detecciones, Clúster 1, Clúster 2 y Clúster 3;
+las etiquetas textuales antiguas sólo se mantienen como identificadores internos.
+La metodología definitiva usa target retrospectivo, partición aleatoria
+estratificada y meteorología contemporánea. Véase
+[`docs/AUDITORIA_INTEGRAL_PAA_2026_10_24.md`](docs/AUDITORIA_INTEGRAL_PAA_2026_10_24.md).
+
 **Proyecto:** Proyecto de Aprendizaje Automático (PAA) 2026  
 **Herramientas utilizadas:** ChatGPT y Codex  
 **Finalidad del registro:** documentar las intervenciones de IA que tuvieron incidencia relevante en la formulación, verificación de viabilidad y documentación inicial del proyecto.
